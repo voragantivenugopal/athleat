@@ -1,0 +1,121 @@
+/* ======================================================
+
+                        Fonts
+
+          1. Fonts Loading
+          2. Headings
+          3. Bodytext
+          4. Colors
+
+
+   ============= Foodery Fit   * L I V E *  ===============
+   ====================================================== */
+
+/* ======================================================
+                   1. Fonts Loading
+   ====================================================== */
+
+/* Roboto Condensed */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i');
+
+
+/* Sailec */
+@font-face {
+    font-family: 'sailec';
+    src: url('../../fonts/sailec/sailec_bold.html');
+    src: url('../../fonts/sailec/sailec_bold.html') format('embedded-opentype'),
+         url('../fonts/sailec/sailec_bold.woff2') format('woff2'),
+         url('../fonts/sailec/sailec_bold.woff') format('woff'),
+         url('../fonts/sailec/sailec_bold.ttf') format('truetype'),
+         url('../fonts/sailec/sailec_bold.svg#sailec_bold') format('svg');
+    font-weight: 600; font-style: normal;
+}
+@font-face {
+    font-family: 'sailec';
+    src: url('../../fonts/sailec/sailec_bold_italic.html');
+    src: url('../../fonts/sailec/sailec_bold_italic.html') format('embedded-opentype'),
+         url('../fonts/sailec/sailec_bold_italic.woff2') format('woff2'),
+         url('../fonts/sailec/sailec_bold_italic.woff') format('woff'),
+         url('../fonts/sailec/sailec_bold_italic.ttf') format('truetype'),
+         url('../fonts/sailec/sailec_bold_italic.svg#sailec_bold_italic') format('svg');
+    font-weight: 600; font-style: italic;
+}
+@font-face {
+    font-family: 'sailec';
+    src: url('../fonts/sailec/sailec_black.eot');
+    src: url('../fonts/sailec/sailec_black.eot') format('embedded-opentype'),
+         url('../fonts/sailec/sailec_black.woff2') format('woff2'),
+         url('../fonts/sailec/sailec_black.woff') format('woff'),
+         url('../fonts/sailec/sailec_black.ttf') format('truetype'),
+         url('../fonts/sailec/sailec_black.svg#sailec_black') format('svg');
+    font-weight: 900; font-style: normal;
+}
+@font-face {
+    font-family: 'sailec';
+    src: url('../fonts/sailec/sailec_light.eot');
+    src: url('../fonts/sailec/sailec_light.eot') format('embedded-opentype'),
+         url('../fonts/sailec/sailec_light.woff2') format('woff2'),
+         url('../fonts/sailec/sailec_light.woff') format('woff'),
+         url('../fonts/sailec/sailec_light.ttf') format('truetype'),
+         url('../fonts/sailec/sailec_light.svg#sailec_light') format('svg');
+    font-weight: 200; font-style: normal;
+}
+
+
+/* ======================================================
+                  2. Headings
+   ====================================================== */
+
+h1, h2, h3, h4, h5, h6 {color: #1b1d1f;}
+h1 {font-family: 'sailec', sans-serif !important; font-weight: 600 !important; font-style: normal; font-size: 70px !important; line-height: 72px !important; letter-spacing: 0.5px;}
+h2 {font-family: 'sailec', sans-serif !important; font-weight: 900 !important; font-style: normal;  font-size: 50px !important; line-height: 55px !important;}
+h3 {font-family: 'sailec', sans-serif !important; font-weight: 900 !important; font-style: normal;  font-size: 35px !important; line-height: 40px !important;}
+
+/* h4 = footer menu title */
+h4 {font-family: 'sailec', sans-serif !important; font-weight: 600 !important; font-style: normal; font-size: 12px !important; line-height: normal !important; letter-spacing: 1px !important;}
+
+.post-content .content-inner .article-content-wrap .post-header h3.title, .masonry.classic_enhanced article.post.quote.masonry-blog-item h3.title {font-weight: 200 !important;}
+.ascend #sidebar h4 {margin-bottom: 12px; color: rgba(0, 0, 0, 0.8); font-family: Sailec !important; font-size: 20px !important; letter-spacing: 0 !important;}
+.ascend #sidebar div ul li a {line-height: 20px;}
+.icons-title h3 {margin-top: 5px !important; font-size: 18px !important; font-weight: 900; line-height: 22px !important;}
+
+@media only screen and (min-width:691px) and (max-width:999px) {
+    h1 {font-size: 50px !important; line-height: 52px !important;}
+    h2 {font-size: 40px !important; line-height: 45px !important;}
+    h3 {font-size: 30px !important; line-height: 35px !important;}
+}
+@media only screen and (max-width:690px) {
+    h1 {font-size: 45px !important; line-height: 47px !important;}
+    h2 {font-size: 35px !important; line-height: 40px !important;}
+    h3 {font-size: 25px !important; line-height: 30px !important;}
+}
+
+/* ======================================================
+                  3. Bodytext
+   ====================================================== */
+
+.bodytext0, .bodytext0 p {font-family: 'Roboto', sans-serif !important; font-weight: 300 !important; font-size: 20px !important; line-height: 34px !important; letter-spacing: 0.6px !important;}
+.bodytext1, .bodytext1 p {font-family: 'Roboto', sans-serif !important; font-weight: 300 !important; font-size: 18px !important; line-height: 30px !important; letter-spacing: 0.5px !important;}
+.bodytext2, .bodytext2 p {font-family: 'Roboto', sans-serif !important; font-weight: 300 !important; font-size: 16px !important; line-height: 28px !important; letter-spacing: 0.2px !important;}
+
+.bodytext_small, .bodytext_small p {font-family: 'Roboto', sans-serif; font-weight: 300; line-height: 28px; font-size: 14px;}
+
+@media only screen and (max-width:690px) {
+  .bodytext0, .bodytext0 p {font-size: 18px !important; line-height: 30px !important;}
+  .bodytext1, .bodytext1 p {font-size: 16px !important; line-height: 28px !important;}
+  .bodytext2, .bodytext2 p {font-size: 14px !important; line-height: 26px !important;}
+}
+
+.text-right {text-align: right;}
+
+/* ======================================================
+                    4. Colors
+   ====================================================== */
+
+.white, .white h1, .white h2, .white h3, .white h4, .white h5, .white h6, .white p,  .white a, .white span  {color: rgba(255,255,255, 1) !important;}
+.white80, .white80 h1, .white80 h2, .white80 h3, .white80 h4, .white80 h5, .white80 h6, .white80 p,  .white80 a, .white80 span {color: rgba(255,255,255, 0.8) !important;}
+.white60, .white60 h1, .white60 h2, .white60 h3, .white60 h4, .white60 h5, .white60 h6, .white60 p,  .white60 a, .white60 span {color: rgba(255,255,255, 0.6) !important;}
+
+.black, .black h1, .black h2, .black h3, .black h4, .black h5, .black h6, .black p,  .black a, .black span {color: rgba(57,50,64, 1) !important;}
+.black60, .black60 h1, .black60 h2, .black60 h3, .black60 h4, .black60 h5, .black60 h6, .black60 p,  .black60 a, .black60 span {color: rgba(57,50,64, 0.60) !important;}
+.black40, .black40 h1, .black40 h2, .black40 h3, .black40 h4, .black40 h5, .black40 h6, .black40 p,  .black40 a, .black40 span{color: rgba(57,50,64, 0.40) !important;}

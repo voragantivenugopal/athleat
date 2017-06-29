@@ -1,0 +1,387 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+body {font-family: 'Roboto', sans-serif,; margin: 0 auto; font-weight: 400;}
+
+html, body {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {-webkit-box-sizing: inherit; -moz-box-sizing: inherit; box-sizing: inherit;}
+
+.hid {display:none;}
+.clear {clear:both;}
+.hand {cursor:pointer; cursor:hand;}
+
+body.page-id-66 .container-wrap {margin: 0 !important;padding: 0 !important;}
+.cMainContainer {min-height: 800px; background-color:#f4f7f9;}
+
+.headerMealBuilderBreadcrumbs {height:160px; background-color:#ffffff; border-bottom:solid 1px #e8eef3;}
+.sticky_header {z-index:99999;}
+
+#cChooseFlow {padding:50px 0;}
+#cChooseGender {padding:50px 0;}
+#cChooseDays {padding:50px 0;}
+#cChooseMeals {padding:50px 0;}
+#cChooseWeeks {padding:50px 0;}
+#cChooseCalendarStarting {padding:50px 0;}
+
+
+/* -- Flávio */
+       span.btn-default {border: none !important; transition:0.3s; font-family: 'Roboto', sans-serif !important; border-radius: 4px;line-height: 1.8 !important;}
+       span.btn-default:hover {background-color:#4B5EEB; color: white; transition:0.3s; box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16)!important; -ms-transform: translateY(-3px); transform: translateY(-3px); -webkit-transform: translateY(-3px);}
+       span.btn.btn-default {margin: 5px !important; height: 40px;}
+       span.btn-success {background-color:#4B5EEB; color: white;}
+
+       /* Start Button */
+       #btnStart1 {background-color:#4B5EEB; color:white; max-height: 50px !important; padding: 25px 15px !important; font-weight: 700 !important; font-size: 16px !important; border-radius: 100px !important; transition: 0.3s; line-height: 1px !important;}
+
+       div#cChooseGender span.btn {width: 100px; margin: 0 5px !important;}
+       .btnDaysPerWeek {padding: 10px 0 !important; width: 40px !important; text-align: center !important;}
+       .btnWeekNumber {min-width: 50px !important;}
+       span.btnClearChoices {font-size: 14px; letter-spacing: 0.5px;}
+       span.btnClearChoices:hover {border-bottom: solid 1px #666; color: #666 !important;}
+
+       /* Meal Builder */
+      .cScreen.container h5 {margin-bottom: 20px;}
+      .customizerSpacer1 {display: none;}
+      .cWeekHeader {height: 50px; border-bottom: solid 1px #e8eef3; background: white; border-radius: 4px 4px 0 0 !important; padding: 0 20px;}
+      .cWeekTitle {float:left; background-color: transparent; height: 100%;}
+      .cWeekTitle h3 {font-family: 'Roboto', sans-serif !important;font-weight: 800 !important; font-size: 14px !important; text-transform: uppercase; letter-spacing: 1px; line-height: 50px !important;}
+      .cWeekDate {float: right; padding: 0; line-height: 50px; font-size: 14px;}
+      .cCustomizerWeek {height: 100% !important; padding:0; background: white; margin-bottom: 20px; border-radius: 0 0 4px 4px !important; display: flex;}
+      .cCustomizerDay {float: left; background-color: transparent; padding: 0;margin: 0; border-right: solid 1px #e8eef3; height: 100%;}
+      .cCustomizerDay > div:first-child /* Day # - header */ {padding: 10px 0 5px !important;}
+      .btnCustomizerMeal {width: 100%; min-width: 120px; height: 62px; margin: 0; padding: 15px 20px; border-top: solid 1px #e8eef3;}
+      .btnCustomizerMealDescBg{height: 4px; bottom: 0px !important;}
+      .cCustomizerDay h4 {color: #989898; font-weight: 400 !important; font-family: 'Roboto', sans-serif !important;}
+      .btnCustomizerMeal div {color: #676767;}
+      .btnCustomizerMeal:hover {background-color: #f4f7f9; transition: 0.3s !important;}
+      .btnCustomizerMealDescBg {position:absolute; left:0; bottom:0; right:0; opacity:1; height: 4px;}
+      .cCustomizerDayNutrition {background-color: rgba(242,246,248,0.2);}
+
+
+      /* stats */
+      /* calendar */
+      div#cBtnsNumWeeks br {display: none;}
+      div#cBtnsNumWeeks {max-width: 800px; margin: 0 auto;}
+
+      /* Responsive */
+      @media only screen and (min-width:1000px){
+        .cCustomizerCreateAddmeal, .cCheckAllWeeks {float: right !important;}
+        .cCheckAllWeeks  {margin-right:20px;}
+        .cCustomizerCreateBack {float: left !important;}
+      }
+      @media only screen and (max-width:999px) {
+          body.page-id-66 .container-wrap {background-color: #f4f7f9 !important;}
+          body.page-id-66 .container.main-content {width: 100% !important; max-width: none !important;}
+          .container-meal-builder.mainContainer_.sticky_header {width: 100% !important;}
+          .headerMealBuilderBreadcrumbs {width: 100% !important;}
+          .cMainContainer div#colEsq, .cMainContainer div#colDir {width: 100% !important; padding: 0 !important; float: none; margin: 0 auto !important;}
+          #sticky_stats {width: 80% !important; max-width: 400px; margin: auto !important; position: relative !important; top: 0 !important; z-index: 100 !important;}
+          #sticky_stats .sticky_stats_area1 > div:first-child {width: 100% !important; text-align: center !important;}
+          div#cBtnsNumWeeks {max-width: 420px !important;}
+          #cChooseCalendarStarting {padding: 50px 0 0 !important;}
+          #cChooseCalendarStarting .month {min-width: 400px; margin: 30px auto !important; display: block; padding: 10px; float: none;}
+          .cMainContainer .container {max-width: none !important;}
+          .cCustomizerDay {border-right: solid 1px #e8eef3; border-bottom: solid 1px #e8eef3; height: auto !important;}
+          div#cCustomizeMeals {width: 90% !important; min-width: 280px !important;}
+
+
+          .white-popup {height: auto !important;}
+          .white-popup .cCustomizerHeader {padding: 0 !important;}
+          .white-popup .btnCustomizerTab {width: 50% !important; text-align: center; line-height: 16px;}
+          .btnCustomizerTab.hand.btnCustomizerTabCreate {border-top-right-radius: 4px;}
+          .cCustomizerOriginalsMealsCol {padding: 0 !important;}
+          .cCustomizerOriginalsMealsCol.ColNutritionFacts {height: auto !important; padding: 30px 40px !important;}
+          .white-popup .nutritionTable {width: 150px !important; margin: 10px auto !important;}
+
+          .cCustomizerCreateCol.cNutritionFacts{min-height: 220px !important;}
+          .cCustomizerCreateCol > div:first-child, .txtNutritionFacts {float: none !important; width: 100% !important; text-align: center;}
+          .cCustomizerCreateCol:not(.cNutritionFacts) > div {width: 100% !important; padding: 20px 0; text-align: center; margin: auto; border-bottom: solid 1px #e8eef3;}
+          .cCustomizerCreateCol.cNutritionFacts {width: 100% !important;}
+          .cCustomizerCreateCol.cCarbs > div:last-child, .cCustomizerCreateCol.cVegs > div:last-child {border-bottom: 0 !important;}
+
+          .cCustomizerFooter {padding: 30px 40px 0 !important;}
+          .cCustomizerFooter > div:nth-child(2) {float: none !important; width: 100% !important; margin: auto !important;}
+          .cCustomizerFooter span.btnCustomizerAddmeal {width: 100% !important; height: 50px !important; padding: 13px 0 !important; margin: 0 !important;}
+          a.btnCustomizerOriginalsMealItem { padding: 20px 0px !important; border-bottom: solid 1px #e8eef3; text-align: center;}
+          .cCheckAllWeeks {float: right !important;}
+          .cCustomizerFooter > div:nth-child(4) {float: left !important; padding-left: 0;}
+      }
+
+@media only screen and (min-width:521px) and (max-width:999px) {
+  .headerMealBuilderBreadcrumbs {padding: 0 8% !important;}
+  .cCustomizerOriginalsMealsCol {width: 50% !important;}
+  .cCustomizerCreateCol:not(.cNutritionFacts) {width: 33% !important;}
+  .cCustomizerCreateCol {padding: 10px 0 0 !important}
+  .cCustomizerCreateCol.cCarbs {border-left: solid 1px #e8eef3; border-right: solid 1px #e8eef3;}
+  .cCustomizerOriginalsMealsCol.ColNutritionFacts {height: auto !important; min-height: 335px !important;}
+  .cCustomizerOriginalsMealsCol.ColMeals > div:last-child > a.btnCustomizerOriginalsMealItem {border-bottom: 0 !important;}
+  .cCustomizerOriginalsMealsRow {min-height: inherit !important; height: auto !important;}
+}
+@media only screen and (min-width:521px){.cCustomizerDayNutrition {padding: 2px 0 !important; min-height: 30px;}}
+@media only screen and (max-width:520px) {
+  .headerMealBuilderBreadcrumbs {padding: 0 12% !important;}#cChooseCalendarStarting .month {min-width: 340px !important;}
+  .white-popup {top: 60px !important;}
+  .cCustomizerOriginalsMealsCol, .cCustomizerCreateCol  {clear: both !important; width: 100% !important;}
+  .cCustomizerCreateCol {padding: 0 0 0 !important}
+  .mfp-bg.mfp-ready {min-height: 375% !important;}
+  .cCustomizerCreateCol:not(cNutritionFacts) > div:first-child {background-color: rgba(244, 247, 249, 0.5);}
+  .cCustomizerDay, .cCustomizerDayMeals {width: 100% !important;}
+  .btnCustomizerMeal {text-align: center;}
+  .cCustomizerDayNutrition {padding: 7px 0 !important; min-height: 40px !important;}
+}
+
+
+
+
+/* /End Flávio */
+
+/*.btnGender {margin:2px;}
+.btnDaysPerWeek {margin:2px;}
+.btnMealNumber {margin:2px;}
+.btnWeekNumber {margin:2px; min-width: 55px;}
+*/
+.txtStep {padding:2px 2px; font-size:12px;}
+.stepActive {background-color:green; color:#fff;}
+
+#cChooseCalendarStarting .month {min-height: 370px !important;}
+.txtMonthTitle {padding:10px 0; font-size:20px;}
+.btnWeeksActive {color:green !important;}
+.txtDebugTotalMeals {font-size:24px;}
+.cStartDateDayTitle {float:left; width:40px; height:40px; text-align:center; margin:3px; line-height:40px; text-transform: uppercase; font-size: 12px; font-weight: 400;}
+.cStartDateDayEmpty {float:left; width:40px; height:40px; border-radius:20px; text-align:center; line-height:36px; margin:3px; border:solid 2px #f6f6f6; background-color:#f6f6f6; cursor:not-allowed;}
+.cStartDateDayBefore {float:left; width:40px; height:40px; text-align:center; line-height:36px; margin:3px; color: #dcdcdc;  cursor:not-allowed;}
+.cStartDateDay {float:left; width:40px; height:40px; border-radius:20px; text-align:center; line-height:36px; margin:3px; border:solid 2px #d6d6d6; background-color:#ffffff; cursor:not-allowed;}
+.cStartDateDayToday {float:left; width:40px; height:40px; text-align:center; line-height:36px; margin:3px; cursor:not-allowed; color:#dcdcdc;}
+.cStartDateDayPossible {float:left; width:40px; height:40px; text-align:center; line-height:36px; margin:3px; cursor:hand; cursor:pointer;}
+.cStartDateDayPossibleChosen {float:left; width:40px; height:40px; border-radius:20px; text-align:center; line-height:36px; margin:3px; border:solid 2px #4b5eeb; background-color:#4b5eeb; color:#ffffff; cursor:hand; cursor:pointer;}
+.cStartDateDayPossibleFutureDelivery {float:left; width:40px; height:40px; border-radius:20px; text-align:center; line-height:36px; margin:3px; border:solid 2px #4b5eeb; background-color:#ffffff; ; cursor:hand; cursor:pointer;}
+.cStartDateDayPossibleCant {float:left; color:#dcdcdc; width:40px; height:40px; text-align:center; line-height:36px; margin:3px; cursor:hand; cursor:pointer;}
+.cStartDateDayFriday {float:left; width:40px; height:40px; text-align:center; line-height:36px; margin:3px; cursor:hand; cursor:pointer;}
+.cStartDateDayFridayChosen {float:left; width:40px; height:40px; border-radius:20px; text-align:center; line-height:36px; margin:3px; border:solid 2px #4b5eeb; background-color:#4b5eeb; cursor:hand; cursor:pointer;}
+.cStartDateDayFridayCant {float:left; width:40px; height:40px; border-radius:20px; text-align:center; line-height:36px; margin:3px; border:solid 2px #d6d6d6; background-color:#ffffff; cursor:not-allowed;}
+.cMonth1Days {width:322px; margin:0 auto;}
+.cMonth2Days {width:322px; margin:0 auto;}
+.cStartDateDayFriday {border-radius: 0px; border: none; background-color: transparent;}
+.cStartDateDayEmpty {background-color: transparent; border: none; border-radius: 0px; color: #000;}
+.month {background-color: #fff; width: 48%; margin: 1%;}
+hr {margin-bottom: 0; margin-top: 0; border-top: none;}
+.cMonth2Days div {line-height: 40px}
+
+/*.btn-default {display:inline-block; border:solid 1px #000;  min-width:55px; margin:2px; text-align: center;}*/
+/*.customizerSpacer1 {border-top:solid 1px #999;}
+.cCustomizerWeek {}
+.cCustomizerDay {float:left;  background-color:#eee; margin:5px; border-radius: 5px;}
+.btnCustomizerMeal { width:100px; margin:4px 4px; padding:5px; background-color: #fff; border:solid 1px #ddd; border-radius: 2px;}
+.btnCustomizerMealTitle { top:0; left:0; font-size:14px; color:#000;}
+*/
+
+.btnCustomizerMealDesc { top:0; left:0; font-size:9px; line-height: 9px; color:#000}
+.btnCustomizerTab {padding:10px; }
+/*.cCustomizerOriginals {padding:10px; width:100%; background-color:#fff; font-size:12px; line-height:15px;}*/
+.cCustomizerCreate {width:100%; background-color:#fff; font-size:12px; line-height:15px;}
+
+.txtCustomizerInfoItem {line-height:15px;}
+.inputCheckAllWeeks { margin-left:20px !important; height: auto !important; width: auto !important; position: relative !important; left: auto !important; -webkit-appearance: checkbox;}
+
+/* foodery */
+.bgMeal_jerkchicken {background-image:url(../../../../../../foodery.co.uk/wp-content/uploads/2016/10/jerk-table-shot.jpg); background-size:cover; background-position:center;}
+.bgMeal_chickentagine {background-image:url(../../../../../../foodery.co.uk/wp-content/uploads/2016/10/tagine-table-shot.jpg); background-size:cover; background-position:center;}
+.bgMeal_mexicanchilli {background-image:url(../../../../../../foodery.co.uk/wp-content/uploads/2016/11/chilli-table-shot.jpg); background-size:cover; background-position:center;}
+.bgMeal_italianmeatballs {background-image:url(../../../../../../foodery.co.uk/wp-content/uploads/2016/11/meatballs-table-shot.jpg); background-size:cover; background-position:center;}
+.bgMeal_thaicurry {background-image:url(../../../../../../foodery.co.uk/wp-content/uploads/2016/10/thai-curry-table-shot.jpg); background-size:cover; background-position:center;}
+
+/* Temporary color*/
+.bgColorMeal_thaicurry, .bgColorMeal_italianmeatballs, .bgColorMeal_jerkchicken, .bgColorMeal_chickentagine, .bgColorMeal_mexicanchilli, .bgColorMeal_custom  {background-color: #a4e420 !important;}
+
+/* ** Select new colors later **
+
+.bgColorMeal_jerkchicken {background-color:#a4e420;}
+.bgColorMeal_chickentagine {background-color:#a4e420;}
+.bgColorMeal_mexicanchilli {background-color:#a4e420;}
+.bgColorMeal_italianmeatballs {background-color:#a4e420;}
+.bgColorMeal_thaicurry {background-color:#a4e420;}
+.bgColorMeal_custom {background-color:#a4e420;}
+*/
+
+
+/*
+.icon_custom_beefmeatballs {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff0000;}
+.icon_custom_beefstrips {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff9900;}
+.icon_custom_chickenmeatballs {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff00ff;}
+.icon_custom_jerkchicken {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ffff;}
+.icon_custom_morrocanchicken {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ff00;}
+.icon_custom_thaichicken {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ff99;}
+.icon_custom_salmon {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#aaff33;}
+.icon_custom_whiterice {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff0000;}
+.icon_custom_couscous {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff9900;}
+.icon_custom_sweetpotato {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff00ff;}
+.icon_custom_pasta {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ffff;}
+.icon_custom_brownrice {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ff00;}
+.icon_custom_newpotato {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ff99;}
+.icon_custom_chickpeas {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#aaff33;}
+.icon_custom_spinach {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff0000;}
+.icon_custom_kale {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff9900;}
+.icon_custom_broccoli {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#ff00ff;}
+.icon_custom_asparagus {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ffff;}
+.icon_custom_chanachaat {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ff00;}
+.icon_custom_threebeanchaat {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#00ff99;}
+.icon_custom_quinoa {display:inline-block; width:6px; height:6px; margin:0 2px; background-color:#aaff33;}
+*/
+
+.cCustomizerCreate .txtNutritionFacts { padding: 10px 0; }
+.nutritionTable {font-size:11px; line-height:13px;}
+.cCustomizerOriginals .nutritionTable {margin-top: 10px;}
+.nutritionTable tr td {padding:0 5px;}
+.cCustomizerCreate .nutritionTable {margin: 10px 0 0 85px;}
+
+.foodery_fit_meal_builder_customize_custom_meal_item{font-size:9px;line-height: 12px;}
+
+/* -- Filipe + Flávio  */
+.icon_custom_beefmeatballs, .icon_custom_beefstrips, .icon_custom_chickenmeatballs, .icon_custom_jerkchicken, .icon_custom_morrocanchicken, .icon_custom_thaichicken, .icon_custom_salmon, .icon_custom_whiterice, .icon_custom_couscous, .icon_custom_sweetpotato , .icon_custom_pasta, .icon_custom_brownrice , .icon_custom_newpotato, .icon_custom_chickpeas, .icon_custom_spinach, .icon_custom_kale, .icon_custom_broccoli, .icon_custom_asparagus, .icon_custom_chanachaat, .icon_custom_threebeanchaat, .icon_custom_quinoa {display: none;}
+
+.white-popup {border-radius: 4px; background-color: #fff;position: relative; width: auto; max-width: 750px; height: 577px; margin: 20px auto;}
+.white-popup .cCustomizerHeader {padding: 0px 40px; border-bottom: solid 1px #e9eff4;}
+.btnCustomizerTab {padding:20px 30px 15px; text-transform: uppercase; font-size: 13px; font-weight: 400; color: #989898;}
+.btnCustomizerTab.active {font-weight: 600; background-color: rgb(255, 255, 255);}
+.btnCustomizerTab:not(.active):hover{background-color: #f4f7f9 !important; border-bottom: solid 3px #f4f7f9 !important;}
+.cCustomizerHeader .btnCustomizerTab:first-child {border-top-left-radius: 4px;}
+/* Foodery Recipes */
+.cCustomizerOriginals {padding: 0; border-radius: 4px;}
+.cCustomizerOriginalsMealsRow {width: 100%; height: 100%; min-height: 400px;}
+.cCustomizerOriginalsMealsCol.ColMeals{float: left; width: 50%; padding: 40px;}
+.cCustomizerOriginalsMealsCol.ColNutritionFacts {float: right; width: 50%; height: 401px; padding: 40px;}
+.imgCustomizerInfoItem {width:100%; height:100px; background-color:#ddd; color:#fff;}
+/* Create your own */
+.cCustomizerCreate {border-radius: 4px;}
+.cCustomizerCreateCol {float: left; width: 50%; padding: 30px 40px; min-height: 245px;}
+.cCustomizerCreate h5 {text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; font-family: 'Roboto', sans-serif; font-weight: 700;}
+.cCustomizerCreate h5 {color: #4da1ff;} .txtNutritionFacts {color: #ff6d4a;}
+.cProteinItem, .cCarbsItem, .cVegsItem {padding: 4px 10px; width: 70%; margin-left: 30%;}
+.cProteinItem a, .cCarbsItem a, .cVegsItem a {color: #323c47; font-weight: 400; text-decoration: none;}
+.cProteinItem a:hover, .cCarbsItem a:hover, .cVegsItem a:hover {text-decoration: none;}
+.cProteinItem:hover, .cCarbsItem:hover, .cVegsItem:hover {background-color: #f4f7f9 !important; border-radius: 4px;}
+.cProteinItem.selected {background-color: #4b5eeb; }
+.cProteinItem.selected a, .cCarbsItem.selected a, .cVegsItem.selected a {font-weight: 600;}
+.cCustomizerCreateCol > div:first-child, .txtNutritionFacts {width: 30%; float: left;}
+.txtNutritionFacts {text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; color: #ff6d4a; font-family: 'Roboto', sans-serif; font-weight: 700;}
+
+.cCustomizerCreateCol.cVegs, .cCustomizerCreateCol.cNutritionFacts {border-top: solid 1px #e8eef3;}
+.cCustomizerCreateCol.cNutritionFacts {padding-top: 25px; }
+.cNutritionFacts, .ColNutritionFacts {background-color: #f4f7f9; border-left: solid 1px #e8eef3;}
+.imgCustomizerInfoItem {display: none !important;}
+
+.cCustomizerFooter {margin: 0 !important; padding: 30px 40px; border-top: solid 1px #e8eef3; width: 100%; max-height: 220px;}
+table.nutritionTable tr {margin-bottom: 5px !important; display:block;}
+.cCheckAllWeeks, .btnCustomizerBack {line-height: 50px;font-size: 12px;}
+.cCustomizerOriginalsMealsCol.ColMeals > div {width: 100%;}
+a.btnCustomizerOriginalsMealItem {color: #323c47; font-weight: 400; padding: 8px 10px; width: 100% !important; display: block; transition: 0.3s; text-decoration: none;}
+a.btnCustomizerOriginalsMealItem:hover {border-radius: 4px; background-color: #f4f7f9; text-decoration: none; border-radius: 4px; transition: 0.3s;}
+/* /End Filipe */
+
+/*.white-popup {position: relative; background: #ddd; padding: 10px; width: auto; max-width: 700px; margin: 20px auto;}*/
+.white-popup-copypaste {position: relative; background: #ddd; padding: 10px; width: auto; max-width: 400px; margin: 20px auto;}
+
+#header .container_wrap_menu {position: relative !important;}
+#header-outer {position: absolute !important;}
+
+.is-sticky { /* > * {-webkit-transform: translateZ(0);}*/}
+
+
+/* -- Nuno
+.sticky_stats_area1 {height:0px; line-height: 60px; border:solid 1px #e8eef3; background-color: #ffffff; -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;}
+.sticky_stats_area2 {padding:13px 0 16px 40px; text-align: left; min-height: 100px;}
+.sticky_stats_area3 {padding:13px 0 16px 40px; text-align: left; min-height: 100px;}
+.sticky_stats_area4 {padding:0 0 15px 0; background-color:#ffffff; border-left: solid 1px #e8eef3; border-right: solid 1px #e8eef3;}
+*/
+.sticky_stats_area3 table, .sticky_stats_area3 tr, .sticky_stats_area3 td { border:none !important; background-color: transparent !important; padding:0 !important;}
+.sticky_stats_area5 {border:solid 1px #a4e420; background-color: #a4e420; min-height:80px; line-height: 80px; text-align: center; color:#ffffff; font-weight: 700; cursor: hand; cursor: pointer; -webkit-border-bottom-right-radius: 5px; -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
+
+/* -- Flávio */
+div#sticky_stats-sticky-wrapper {margin-bottom: 100px;}
+#sticky_stats {background: white; border-radius: 4px;}
+.sticky_stats_area1 {border:0; height: 50px; line-height: 52px; border-bottom: solid 1px #e8eef3;}
+.sticky_stats_area2, .sticky_stats_area3 {padding:30px; text-align: left; min-height: 100px;}
+.sticky_stats_area4 {padding: 0 0 15px 0;}
+.btnContinueToCheckout:hover {background-color: rgba(164, 228, 32, 0.8);}
+/* /End Flávio */
+
+.round8px {-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.tippy-tooltip.foodery-theme {background-color: #3366ff;}
+.tippy-tooltip.foodery-theme [x-arrow] {background-color: #3366ff;}
+
+
+.cCustomizerDayNutrition { padding-top:20px; font-size:11px; text-align: center;}
+.cDailyExtraValues {display:none;}
+.cDailyExtraShow {display:block;}
+
+/* HRZ Timeline --------------------------- */
+
+@media (max-width: 767px) {
+  .container_foodery_fit_meal_builder_nav {
+    width:90%;
+    margin:0 auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container_foodery_fit_meal_builder_nav {
+    width:90%;
+    margin:0 auto;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container_foodery_fit_meal_builder_nav {
+    width:900px;
+    margin:0 auto;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .container_foodery_fit_meal_builder_nav {
+    width:1100px;
+    margin:0 auto;
+  }
+}
+@media (min-width: 1400px) {
+  .container_foodery_fit_meal_builder_nav {
+    width:1300px;
+    margin:0 auto;
+  }
+}
+
+
+.foodery_fit_meal_timeline_ball_on {
+    opacity: 0;
+    position: absolute;
+    top: 59px;
+    width: 22px;
+    height: 22px;
+    border: solid 3px #4B5EEB;
+    border-radius: 100px;
+    background: #ffffff url(../../../../uploads/2017/05/circle_blue_20x20.svg) center center no-repeat !important;
+    background-size: 65% !important;
+}
+
+/*.foodery_fit_meal_timeline_ball_on{
+  opacity:0;
+  position:absolute; top:59px; width:22px; height:22px; border:solid 3px #3366ff; border-radius:11px; background-color:#ffffff;
+}*/
+
+/*.foodery_fit_meal_timeline_ball_on:before {
+  position:absolute;
+  content: '\25CF';
+  font-size: 25px;
+  top:-39.9%;
+  left:4%;
+  color:#3366ff;
+}*/
+
+.foodery_fit_meal_timeline_ball_ok{
+  opacity:0;
+  position:absolute; top:59px; width:22px; height:22px; border:solid 3px #3366ff; border-radius:11px; background-color:#3366ff;
+}
+
+.foodery_fit_meal_timeline_ball_text{
+  position:absolute; top:85px; width:100px; height:22px; text-align:center; font-weight:400; font-size:12px;
+}

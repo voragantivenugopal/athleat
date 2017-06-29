@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon - higher order values</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="353" width="989" height="438"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="989" height="438" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon---higher-order-values" stroke-width="2" stroke="#222829">
+            <g id="Page-1" transform="translate(10.000000, 12.000000)">
+                <g id="Group-5" stroke-linejoin="round">
+                    <path d="M5,0 L5,64" id="Stroke-1"></path>
+                    <path d="M0,59 L64,59" id="Stroke-3"></path>
+                </g>
+                <path d="M9,56 L9,54" id="Stroke-6" stroke-linejoin="round"></path>
+                <path d="M13,56 L13,54" id="Stroke-7" stroke-linejoin="round"></path>
+                <path d="M17,56 L17,54" id="Stroke-8" stroke-linejoin="round"></path>
+                <path d="M21,56 L21,54" id="Stroke-9" stroke-linejoin="round"></path>
+                <path d="M25,56 L25,54" id="Stroke-10" stroke-linejoin="round"></path>
+                <path d="M29,56 L29,54" id="Stroke-11" stroke-linejoin="round"></path>
+                <path d="M33,56 L33,54" id="Stroke-12" stroke-linejoin="round"></path>
+                <path d="M37,56 L37,54" id="Stroke-13" stroke-linejoin="round"></path>
+                <path d="M41,56 L41,54" id="Stroke-14" stroke-linejoin="round"></path>
+                <path d="M45,56 L45,54" id="Stroke-15" stroke-linejoin="round"></path>
+                <path d="M49,56 L49,54" id="Stroke-16" stroke-linejoin="round"></path>
+                <path d="M53,56 L53,54" id="Stroke-17" stroke-linejoin="round"></path>
+                <path d="M57,56 L57,54" id="Stroke-18" stroke-linejoin="round"></path>
+                <path d="M61,56 L61,54" id="Stroke-19" stroke-linejoin="round"></path>
+                <path d="M9,29 L9,27" id="Stroke-21" stroke-linejoin="round"></path>
+                <path d="M13,29 L13,27" id="Stroke-22" stroke-linejoin="round"></path>
+                <path d="M17,29 L17,27" id="Stroke-23" stroke-linejoin="round"></path>
+                <path d="M21,29 L21,27" id="Stroke-24" stroke-linejoin="round"></path>
+                <path d="M49,29 L49,27" id="Stroke-25" stroke-linejoin="round"></path>
+                <path d="M53,29 L53,27" id="Stroke-26" stroke-linejoin="round"></path>
+                <path d="M57,29 L57,27" id="Stroke-27" stroke-linejoin="round"></path>
+                <g id="Group-34" transform="translate(11.000000, 9.000000)">
+                    <path d="M50,20 L50,18" id="Stroke-28" stroke-linejoin="round"></path>
+                    <polyline id="Stroke-30" points="0 36 17 19 31 19 50 0"></polyline>
+                    <polyline id="Stroke-32" points="50 5 50 0 45 0"></polyline>
+                </g>
+            </g>
+        </g>
+        <g id="Organize" transform="translate(-542.000000, -488.000000)" stroke="#1B1D1F" stroke-width="8">
+            <use id="Rectangle-Copy" mask="url(#mask-2)" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

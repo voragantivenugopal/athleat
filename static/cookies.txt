@@ -1,0 +1,9 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.bing.com	TRUE	/	FALSE	1999999999	MUID	2AC6654FDF556B4D05A16FE0DB5568AB
+bat.bing.com	TRUE	/	FALSE	1999999999	MR	0
+bat.bing.com	TRUE	/	FALSE	1999999999	MUIDB	37F5977B956360B329449DD494346199
+.google.com	TRUE	/	FALSE	1999999999	NID	106=Kl_qZih2je0-hHuOz5t79datY3etOZJZllfIDo5NgOBE2Ao462XmgkZ3KDoGEI_WVl2NbOuqZIGsgnTaEUSN2jmMDh_M2P8WBJ3huU4y6Ta-10AKMEEOkZ7Qd93YT2DJ
+fooderyfit.com	TRUE	/	FALSE	1999999999	cxssh_status	off
+fooderyfit.com	TRUE	/	FALSE	1999999999	mailchimp_landing_site	https%3A%2F%2Ffooderyfit.com%2F2017%2F06%2F22%2Fweight-loss-stopped-heres%2FVersion%2F
+

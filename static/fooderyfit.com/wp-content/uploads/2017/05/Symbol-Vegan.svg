@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#Adobe_OpacityMaskFilter);}
+	.st1{fill:#FFFFFF;}
+	.st2{mask:url(#mask-2);fill:#7AAB17;}
+</style>
+<title>Symbol - Vegan</title>
+<desc>Created with Sketch.</desc>
+<g id="Symbols">
+	<g id="Symbol---Vegan">
+		<g id="Group-10">
+			<g id="Group-8" transform="translate(0.000000, 0.467500)">
+				<g id="Clip-7">
+				</g>
+				<defs>
+					<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0.3" y="0.5" width="19.4" height="18.5">
+						<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+					</filter>
+				</defs>
+				<mask maskUnits="userSpaceOnUse" x="0.3" y="0.5" width="19.4" height="18.5" id="mask-2">
+					<g class="st0">
+						<polygon id="path-1" class="st1" points="19.8,19 19.8,0.5 0.3,0.5 0.3,19 						"/>
+					</g>
+				</mask>
+				<path id="Fill-6" class="st2" d="M16.9,3.2c-1.8-1.7-4.3-2.7-6.9-2.7s-5,1-6.9,2.7c-3.8,3.6-3.8,9.5,0,13.1
+					C5.1,18.1,7.5,19,10,19c2.5,0,5-0.9,6.9-2.7c1.8-1.7,2.8-4.1,2.8-6.5S18.8,5,16.9,3.2"/>
+			</g>
+			<g>
+				<polygon id="Fill-9" class="st1" points="7,14.7 3,5.8 5.1,5.8 7.8,11.8 10.5,5.8 12.6,5.8 8.6,14.7 				"/>
+				<g>
+					<path class="st1" d="M18,10.1v1.2h-2.2v2.3h-1.3v-2.3h-2.2v-1.2h2.2V7.8h1.3v2.3H18z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

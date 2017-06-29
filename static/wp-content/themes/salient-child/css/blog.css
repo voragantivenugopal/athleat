@@ -1,0 +1,56 @@
+/* ======================================================
+
+                        Blog
+
+          1. Search
+          2. Category Archive
+
+
+   ============= Foodery Fit   * L I V E *  =============== 
+   ====================================================== */
+
+ .masonry.classic_enhanced .masonry-blog-item .inner-wrap, .masonry.classic_enhanced .masonry-blog-item .inner-wrap::before, .masonry.classic_enhanced .masonry-blog-item .inner-wrap::after {border-radius: 5px !important;}
+ @media only screen and (max-width: 1000px){#post-area.masonry, #post-area.masonry.span_9, body[data-ext-responsive="true"] #post-area.masonry.span_9 {width: 100%;}}
+
+ form input[type=submit].fooderyfit.search-submit {font-family: 'Fontawesome'; width: 75px; background: transparent; color: rgba(0, 0, 0, 0.4); height: 56px; padding-top: 11px !important; padding-right: 0 !important;}
+ form input[type=submit].fooderyfit.search-submit:hover {-webkit-box-shadow: none !important; box-shadow: none !important; background-color: transparent !important; color: blue;}
+ form input[type=text].fooderyfit.search-field {border-radius: 5px !important; background-color: #eaeaea !important; border: none !important;}
+ .ascend #sidebar div ul li {padding: 6px 0;}
+
+ /* ======================================================
+                      Search
+    ====================================================== */
+  #search-results .inner-wrap {padding: 0 !important; border-radius: 5px !important;}
+  #search-results img {border-radius: 5px 5px 0 0;}
+  #search-results .post-header {padding: 5px 30px 30px;}
+
+  #search-results .post-date {font-size: 12px;  color: rgba(57,50,64, 0.60);}
+  #search-results h3.title a {font-weight: 200 !important; font-size: 35px !important; line-height: 40px !important; color: rgba(57,50,64, 1) !important; }
+  #search-results .excerpt {font-size: 14px; color: rgba(57,50,64, 0.60) !important;}
+
+  /* ======================================================
+                 Category Archive
+     ====================================================== */
+     body.archive.category div.row.page-header-no-bg {background-color: #4397FF;}
+     body.archive.author div.row.page-header-no-bg {background-color: #FF6141;}
+
+
+     body.archive div.col.section-title {text-align: center !important; border-bottom: 0; padding: 50px !important;}
+     body.archive div.col.section-title span.subheader, body.archive div.col.section-title h1 {color: white !important}
+
+     body.archive .container-wrap {background-color: #F2F6F8 !important;}
+     body.archive .post-meta {top: 30px !important; left: 35px !important; z-index: 10;}
+     body.archive .content-inner {top: -35px; background-color: white !important; padding: 55px 35px 100px !important; border-radius: 5px;}
+
+     body.archive .container.main-content {padding-top: 100px;}
+     body.archive #post-area.standard-minimal .post-author {margin: 10px 0 0 !important;}
+     body.archive #post-area.standard-minimal .post-author .grav-wrap {margin-bottom: 12px !important;}
+     body.archive #post-area.standard-minimal .post-author .meta-category {display: none;}
+     body.archive #post-area.standard-minimal .post-author .meta-author a {font-size: 14px; color: rgba(57,50,64, 0.60) !important;}
+     body.archive #post-area.standard-minimal .post-author .meta-author a:hover {color: #4B5EEB !important;}
+     body.archive #post-area.standard-minimal article.post .post-meta .date a {font-size: 14px; color: rgba(57,50,64, 0.60) !important;}
+     body.archive #post-area.standard-minimal article.post .post-header h2 {line-height: 1 !important;}
+     body.archive #post-area.standard-minimal article.post .post-header h2 a {font-family: 'Sailec', sans-serif; font-weight: 200 !important; font-size: 35px !important; color: rgba(57,50,64, 1) !important;}
+     body.archive #post-area.standard-minimal article.post a.more-link {float: right; margin-top: 30px !important;}
+     body.archive #post-area.standard-minimal article.post a.more-link span {color: rgba(57,50,64, 0.40) !important;}
+     body.archive #post-area.standard-minimal article.post a.more-link:hover span {color: #4B5EEB !important;}
