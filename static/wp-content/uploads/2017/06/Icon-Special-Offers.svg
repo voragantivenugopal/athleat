@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon - Special Offers</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="353" width="989" height="438"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="989" height="438" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon---Special-Offers" stroke-width="2" stroke="#222829">
+            <g id="Page-1" transform="translate(11.000000, 18.000000)">
+                <g id="Group-5">
+                    <polyline id="Stroke-1" points="25 58 0 58 0 0 62 0 62 24"></polyline>
+                    <path d="M0,8 L62,8" id="Stroke-3"></path>
+                </g>
+                <path d="M3,4 L5,4" id="Stroke-6"></path>
+                <path d="M7,4 L9,4" id="Stroke-7"></path>
+                <path d="M11,4 L13,4" id="Stroke-8"></path>
+                <path d="M16,0 L16,8" id="Stroke-9"></path>
+                <path d="M19,4 L59,4" id="Stroke-11"></path>
+                <polyline id="Stroke-12" points="23 54 4 54 4 12 58 12 58 22"></polyline>
+                <g id="Group-49" transform="translate(24.000000, 20.000000)">
+                    <path d="M38,23 C38,33.493 29.493,42 19,42 C8.507,42 0,33.493 0,23 C0,12.507 8.507,4 19,4 C29.493,4 38,12.507 38,23 Z" id="Stroke-13"></path>
+                    <path d="M34,23 C34,31.284 27.284,38 19,38 C10.716,38 4,31.284 4,23 C4,14.716 10.716,8 19,8 C27.284,8 34,14.716 34,23 Z" id="Stroke-15"></path>
+                    <path d="M32,10 L36,6" id="Stroke-17"></path>
+                    <path d="M34,5 L37,8" id="Stroke-19"></path>
+                    <path d="M6,10 L2,6" id="Stroke-21"></path>
+                    <path d="M4,5 L1,8" id="Stroke-23"></path>
+                    <path d="M19,4 L19,0" id="Stroke-25"></path>
+                    <path d="M16,0 L22,0" id="Stroke-27"></path>
+                    <path d="M19,23 L27,23" id="Stroke-29"></path>
+                    <path d="M20,23 C20,23.553 19.553,24 19,24 C18.447,24 18,23.553 18,23 C18,22.447 18.447,22 19,22 C19.553,22 20,22.447 20,23 Z" id="Stroke-31"></path>
+                    <path d="M31,23 L29,23" id="Stroke-33"></path>
+                    <path d="M9,23 L7,23" id="Stroke-35"></path>
+                    <path d="M18,12 L20,12" id="Stroke-37"></path>
+                    <path d="M18,34 L20,34" id="Stroke-39"></path>
+                    <path d="M11,16 L13,16" id="Stroke-41"></path>
+                    <path d="M25,16 L27,16" id="Stroke-43"></path>
+                    <path d="M11,30 L13,30" id="Stroke-45"></path>
+                    <path d="M25,30 L27,30" id="Stroke-47"></path>
+                </g>
+            </g>
+        </g>
+        <g id="Organize" transform="translate(-302.000000, -488.000000)" stroke="#1B1D1F" stroke-width="8">
+            <use id="Rectangle-Copy" mask="url(#mask-2)" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

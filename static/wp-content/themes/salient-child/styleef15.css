@@ -1,0 +1,272 @@
+hide/*
+Theme Name: Salient Child Theme
+Theme URI: http: //mysite.com/
+Description: This is a custom child theme for Salient
+Author: My Name
+Author URI: http: //mysite.com/
+Template: salient
+Version: 0.1
+*/
+
+
+
+/* ============= Foodery Fit   * L I V E *  =============== */
+
+
+/* ======================================================
+                        Buttons
+   ====================================================== */
+
+ a {cursor: pointer;}
+ /*input {-webkit-appearance: none;}*/
+
+ a.nectar-button {font-family: 'Sailec' !important; font-weight: 600 !important; visibility: visible !important;}
+ a.nectar-button:hover {text-decoration: none !important; opacity: 1 !important;}
+
+.button_round_solid, body .col a.button_round_solid {max-height: 50px !important; padding: 16px 15px !important; text-align: center !important; font-family: 'Sailec', sans-serif !important; font-weight: 600 !important; font-style: normal; font-size: 15px !important; letter-spacing: 0.3px !important; -webkit-border-radius: 100px !important; border-radius: 100px !important;}
+.button-bottom-container {width: 100% !important; max-height: 80px; padding: 26px 15px !important; text-align: center !important; font-family: 'Sailec', sans-serif !important; font-weight: 600 !important; font-style: normal; font-size: 16px !important; letter-spacing: 0.3px !important; -webkit-border-radius: 5px !important; border-radius: 5px !important;}
+
+.bg-blue, a.bg-blue {background-color: #4b5eeb !important;}
+.outline-lightblue {border-color:#4397ff !important; color:#4397ff !important;background-color: transparent !important;}
+.outline-green {border-color:#9ce111 !important; color: #9ce111 !important; background-color: transparent !important;}
+.outline-red {border-color:#ff6141 !important; color:#ff6141 !important; background-color: transparent !important;}
+
+a.outline-lightblue:hover, a.outline-green:hover, a.outline-red:hover {transition: all 0.2s !important;}
+.outline-lightblue:hover, body .col a.nectar-button.see-through.outline-lightblue:hover {color: white !important; background-color:#4397ff !important; border: solid 3px #4397ff !important;}
+.outline-green:hover, body .col a.nectar-button.see-through.outline-green:hover {color: white !important; background-color:#9ce111 !important; border: solid 3px #9ce111 !important;}
+.outline-red:hover, body .col a.nectar-button.see-through.outline-red:hover {color: white !important; background-color:#ff6141 !important; border: solid 3px #ff6141 !important;}
+
+.text-black, a.text-black  {color: rgba(57,50,64, 1) !important;}
+.text-white, a.text-white  {color: white !important;}
+.text-blue, a.text-blue  {color: #4b5eeb !important;}
+.button-180, a.button-180 {width: 180px !important;}
+.button-200, a.button-200 {width: 200px !important}
+.button-250, a.button-250 {width: 250px !important}
+.button-300, a.button-300 {width: 300px !important}
+
+a.nectar-button.select-button, body .col .pricing_plan a.nectar-button.select-button {-webkit-border-radius: 100px !important; border-radius: 100px !important; padding: 11px 50px !important; height: 45px !important; font-weight: 600 !important; font-size: 16px !important;}
+a.nectar-button.medium.see-through-2.select-button {border-radius: 100px !important;}
+
+
+/* ======================================================
+                    Header (nav)
+   ====================================================== */
+  /* Free delivery bar */
+  div#header-outer::before {content: '\f0d1'; font-family: 'Fontawesome'; font-size: 12px; color: #B5B5B5 ; position: absolute !important; left: 0; right: 180px; top: 0; text-align: center; background-color: transparent; z-index: 15 !important;}
+  .using-mobile-browser  div#header-outer::before  {right: 200px !important;}
+  div#header-outer::after {content: 'Free Nationwide Delivery'; position: absolute; top: 0; width: 100vw !important; font-family: 'Sailec', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; text-align: center; font-weight: 600; background-color: #E8EEF3 ; color: #a9a7a7 ; padding: 1px 0 0 20px !important;}
+	header#top {margin-top: 25px;}
+
+  /* New Nav with Start Plan Button */
+  .NavLinks a, .NavLogin a  {font-family: 'Sailec', sans-serif !important; font-weight: 600 !important; letter-spacing: 0.3px;}
+  .NavLinks a {color: rgba(57,50,64, 1) !important; margin-left: 22px !important; margin-right: 22px !important;}
+  .NavLogin a {color: rgba(57,50,64, 0.4) !important;}
+  header#top nav .btnNavStartPlan a {width: 150px; font-family: 'Sailec', sans-serif !important; font-weight: 600 !important; font-size: 12px !important; line-height: 22px !important; letter-spacing: 1px !important; text-align: center !important; border-radius: 100px !important; -webkit-border-radius: 100px !important;}
+  .btnNavStartPlan a::before {min-height: 35px !important; height: 35px !important; border-radius: 100px !important;}
+
+  body.ascend #header-outer .cart-menu {border: 0 !important;}
+  body.ascend #header-outer .cart-menu::before {content: ''; height: 40%; width: 2px; border-left: 1px solid rgba(0,0,0,0.07); position: absolute; left: 0; top: 0; bottom: 0; margin: auto;}
+
+   @media only screen and (min-width:1001px){#header-outer .container {max-width: 1800px !important;}}
+   #header-outer {box-shadow: 0 2px 10px rgba(0,0,0,0.02), 0 0px 25px rgba(0,0,0,0.02);}
+   #header-outer #social-in-menu a:hover {text-decoration: none !important;}
+   header#top nav >ul >li >a {font-size: 14px !important;}
+   #header-outer #social-in-menu i {font-size: 18px !important;}
+
+   /* === MOBILE NAV === */
+   a#mobile-cart-link {margin-right: 12px;}
+	body[data-hhun="1"] #header-outer.invisible:not(.side-widget-open) {transition: all .2s!important;}
+   /* Slider */
+   div#slide-out-widget-area {background-color: white !important; border-left: solid 1px #e8eef3;}
+   #slide-out-widget-area  .icon-salient-x.icon-default-style::before {color: #f5343f !important;}
+   #slide-out-widget-area .off-canvas-menu-container {min-height: 400px !important; margin-top: 0 !important;}
+   #slide-out-widget-area .menu-wrap, #slide-out-widget-area ul.menuopen {height: 100% !important;}
+   body[data-full-width-header="false"].admin-bar #slide-out-widget-area a.slide_out_area_close {top: 50px !important;}
+   #slide-out-widget-area .menuwrapper {padding-top: 30px !important;}
+   #slide-out-widget-area .inner .off-canvas-menu-container li a {font-size: 24px; line-height: 1.8; font-family: 'Sailec', sans-serif !important; font-weight: 600; font-style: normal; letter-spacing: 0px;}
+    #slide-out-widget-area .mobile-only ul.menuopen li.menu-item {margin: 10px 0;}
+    #slide-out-widget-area .btnNavStartPlan, #slide-out-widget-area .NavLogin {position: relative; margin: auto;}
+    #slide-out-widget-area .btnNavStartPlan {top: 10px !important;} #slide-out-widget-area .NavLogin {top: 15px !important;}
+    #slide-out-widget-area .btnNavStartPlan a, #slide-out-widget-area .NavLogin a {font-size: 16px !important; line-height: 22px !important; letter-spacing: 0.7px !important; text-align: center !important; border-radius: 100px !important; -webkit-border-radius: 100px !important; opacity: 1 !important; display: block; width: 230px; min-height: 46px !important;}
+    #slide-out-widget-area .btnNavStartPlan a {background-color: #4b5eeb; min-height: 50px; padding: 15px 0px; color: white !important;}
+    #slide-out-widget-area .NavLogin a {border: solid 3px rgba(27,29,31, 0.20); min-height: 46px; padding: 12px 0px; color:rgba(27,29,31, 0.20) !important; opacity: 1 !important;}
+    #slide-out-widget-area .off-canvas-social-links {padding: 0 10px;}
+    #slide-out-widget-area .off-canvas-social-links li {width: 25%; text-align: center;}
+    #slide-out-widget-area .off-canvas-social-links li i {font-size: 24px !important; color:rgba(27,29,31, 0.20) !important;}
+	#slide-out-widget-area.slide-out-from-right {z-index: 100000;}
+
+
+	/* ======================================================
+                     Page Hero
+   ====================================================== */
+
+div#page-header-wrap h1 {text-shadow: 4px 6px 10px rgba(0,0,0, 0.08);}
+div#page-header-wrap .subheader {font-family: 'Sailec'; font-weight: 200; font-size: 24px; line-height: 1.3;}
+
+/* tablet */
+@media only screen and (min-width:690px) and (max-width:1000px){
+   div#page-header-bg h1, div#page-header-bg .span_6 h1, .hero-headline h1 {font-size: 54px !important; line-height: 56px !important;}
+   div#page-header-bg .subheader {font-size: 20px !important;}
+}
+/* mobile */
+@media only screen and (min-width:521px) and (max-width:689px){
+   div#page-header-bg h1, div#page-header-bg .span_6 h1, .hero-headline h1 {font-size: 44px !important; line-height: 46px !important;}
+   div#page-header-bg .subheader {font-size: 16px !important;}
+}
+@media only screen and (max-width:520px){
+   div#page-header-bg h1, div#page-header-bg .span_6 h1, .hero-headline h1 {font-size: 34px !important; line-height: 36px !important;}
+   div#page-header-bg .subheader {font-size: 14px !important; line-height: 18px;}
+}
+/* ======================================================
+                 Bottom Call To Action
+   ====================================================== */
+
+/* Bottom CTA */
+.bottom-cta {z-index: 10;}
+.bottom-cta_text p {line-height: 44px !important;}
+.bottom-cta_text {width: auto !important; display: inline-block; padding: 0 2% 0 0;}
+.bottom-cta_text h2 {font-size: 30px !important; font-family: 'sailec' !important; font-weight: 200 !important; font-style: normal;}
+@media only screen and (min-width:690px) {.bottom-cta_text h2 {line-height: 74px !important;}}
+@media only screen and (max-width:689px) {
+  .bottom-cta_text {width: 100% !important; text-align: center;}
+  a.bottom-cta_button {position: relative !important; top: 10px; left: 0; right: 0;}
+  .bottom-cta_text h2 {line-height: 40px !important; font-family: 'Sailec' !important; font-weight: 200 !important; font-style: normal; padding: 0 6% 6%;}
+}
+
+/* ======================================================
+                        Footer
+   ====================================================== */
+
+#footer_container {max-width: none; width: 95% !important; height: auto !important;}
+#footer-outer {background-image: url('../../uploads/2017/05/footer_bg_image_900h_v2.jpg'); background-position: bottom left; background-position-x: 20% !important; background-repeat: no-repeat; background-size: cover; height: auto !important; background-color: #010103 !important; z-index: 999;}
+
+.footer_custom.footer-col1 .span_3#one {width: 100%;}
+.footer-col1 a#ambassador_button {border-radius: 100px !important; -webkit-border-radius: 100px !important; margin-top: 20px;}
+.footer_headline.ambassador span {font-family: 'sailec', sans-serif !important; font-weight: 600 !important; font-style: italic; font-size: 50px !important; line-height: 51px !important;
+                                color: white !important; text-transform: uppercase; max-width: 340px; /*text-shadow: 4px 6px 10px rgba(150, 150, 150, 0.3)*/;}
+.footer_custom.footer-col2 {height: auto; float: right;}
+.footer_custom .menu a {font-family: 'Roboto', sans-serif !important; font-size: 14px !important; font-weight: 400; line-height: 1.5; color: rgba(255,255,255,0.7) !important;}
+.footer_custom .menu a:hover {text-decoration: none !important; color: rgba(255,255,255,1) !important;}
+
+.footer_custom.footer_row {width: 100% !important; height: 100% !important; display: flex !important;}
+.footer_custom.footer_row.row-one {margin-top: 0 !important;}
+.footer_custom.footer_row.row-two {margin-top: 40px !important;}
+@media only screen and (min-width:1100px) and (max-width:1200px){.footer_headline.ambassador span{font-size: 45px !important}}
+
+.footer-col2 h4 {color: white !important; text-transform: uppercase !important;}
+
+.footer_custom ul#social {margin-left: 0 !important;}
+.footer_custom ul#social li {display: inline-flex;}
+.footer_custom ul#social i.fa {color: #9fa3a7 !important;}
+.footer_custom ul#social li a:hover {text-decoration: none !important;}
+.footer_custom ul#social li a:hover i.fa {color: #4b5eeb !important;}
+
+.footer_custom form {margin-top: -12px !important;}
+.footer_newsletter_col1 {width: 80%; float: left;}
+.footer_custom input[type="email"] {background-color: transparent !important; border: 0 !important; border-bottom: solid 1px #9fa3a7 !important; color: white !important; padding-left: 5px !important; padding-bottom: 10px !important; font-size: 14px !important;}
+.footer_custom input.minimal_arrow {font-family: FontAwesome !important; margin-left: -30px !important;}
+.footer_custom .mc4wp-alert.mc4wp-error {margin-top: 30px; color: #4B5EEB;}
+
+.copyright_wrap {float: right; margin-right: 30px; line-height: 30px;}
+.cPaymentCards {float: right; text-align: right; padding-right: 0 !important;}
+.cPaymentCards img {width: 50px !important; height: auto; margin:0 0 0 3px !important;}
+
+/* Copyright */
+#copyright p {font-family: 'Roboto Condensed' !important; font-weight: 300; font-size: 12px; letter-spacing: 1px;}
+#copyright {border: 0 !important; width: 95% !important;}
+
+@media only screen and (min-width:1100px) {.footer_custom.footer-col {display: inline-block;}}
+@media only screen and (min-width:1101px){
+  .footer_custom.footer-col1 {height: 100% !important; min-height: 400px !important; padding-top: 130px;}
+  .footer_custom.footer-col2 {height: 100% !important; max-height: 450px; padding: 130px 0;}
+  #copyright p {text-align: right !important; padding-right: 9% !important;}
+}
+@media only screen and (min-width:691px){
+    #footer-outer {min-height: 650px !important;}
+    .footer_custom.footer-col2 .row-one .col.span_3, .footer_custom.footer-col2 .row-two .col.span_3#five {width: 33% !important;}
+    .footer_custom.footer-col2 .row-two .col#six {width: 67% !important;}
+}
+@media only screen and (min-width:691px) and (max-width:1000px) {
+  .cPaymentCards, .copyright_wrap {float: none; text-align: center; top: 0 !important; position: inherit !important;}
+}
+@media only screen and (max-width:690px){
+  #footer-outer {min-height: 940px !important; background-position: 37% bottom !important;}
+  .footer_custom div.col.span_3#four {margin-top: 30px; margin-bottom: 0 !important;}
+  .footer_custom.footer_row {display: inline-block !important;}
+  .footer_custom.footer_row.row-two {margin-top: 20px !important;}
+  .footer_custom.footer-col1 {min-height: 200px; padding-top: 0 !important;}
+  .footer_headline.ambassador {text-align: center;}
+  .footer_headline.ambassador span {margin: 0 auto;}
+  .footer_custom.footer-col2 .row-one .col.span_3 {width: 50% !important;}
+  .footer_custom.footer-col2 .row-two .col.span_3 {width: 100% !important;}
+  .footer_custom.footer-col2 .row-one .col.span_3:nth-child(2) {padding-left: 8% !important;}
+  .footer_custom div#four {margin-left: 0.1px !important;}
+  .footer_custom.footer-col2 .row-two .col#five { text-align: center !important; margin-top:100px !important; margin-bottom: 0 !important;}
+  .footer_custom.footer-col2 .row-two .col#six {margin-top: -140px !important; margin-bottom: 0 !important;}
+  .footer_custom ul#social li {margin: 0 7% !important;}
+  .footer_custom.footer-col2 .row-two .col#five h4 {display: none;}
+  .footer_custom.footer-col2 .row-two .footer_newsletter_col1 {width: 100% !important;}
+  .cPaymentCards img {width: 38px !important;}
+  .cPaymentCards{text-align: center !important; float: none !important; margin-bottom: 12px !important;}
+  .copyright_wrap {line-height: 20px !important; margin-right: 0 !important; padding: 10px 5% 0;}
+  }
+
+@media only screen and (min-width:1920px) {.footer_headline.ambassador{margin-left: 10% !important;}}
+@media only screen and (min-width:1300px) {.footer_headline.ambassador{max-width: 400px !important;} .footer_custom.footer-col2 {width: 63% !important;}}
+@media only screen and (min-width:1100px) and (max-width:1299px)  {.footer_custom.footer-col2 {width: 55% !important;}}
+@media only screen and (min-width:1101px) {.footer_custom ul#social li {margin-right: 6% !important;}}
+@media only screen and (min-width:1000px) and (max-width:1100px){.footer_custom.footer_row.row-two {margin-top: 30px !important;} #footer-outer #copyright {padding-top: 40px !important; margin-bottom: 0 !important; padding-bottom: 0 !important;}}
+@media only screen and (max-width:1100px) {
+    #footer-outer {background-position: 40% bottom !important;}
+    #footer-outer .row:nth-of-type(1) {padding: 55px 0 0 !important;}
+    .footer_custom.footer-col2 .row-one {min-height: 200px !important;}
+    .footer_headline.ambassador span {font-size: 35px !important; line-height: 38px !important;}
+    #copyright .col.span_12 {width: 100% !important;}
+    .footer_custom ul#social li {width: 25px !important;}
+    #copyright {padding-bottom: 0 !important; text-align: center !important; width: 100% !important; margin: 0 auto !important; left: 0;}
+}
+
+@media only screen and (max-width:1000px) {
+  #footer-widgets .container .col {margin-bottom: 0px !important;}
+}
+@media only screen and (max-width:600px) {#copyright {width: 100% !important;}}
+
+@media only screen and (min-width:691px) and (max-width:790px) {
+  .footer_headline.ambassador span {margin-left: 5% !important;}
+  .footer_headline.ambassador a#ambassador_button {width: 180px !important;}
+}
+@media only screen and (min-width:691px) and (max-width:1100px) {
+    #footer-outer {min-height: 600px !important;}
+    .footer_custom.footer-col1 {width: 100% !important;}
+    .footer_custom.footer-col2 {width: 90% !important; padding-left: 10%; float:none; margin:100px auto 0 !important;}
+    .footer_headline.ambassador {width: 90% !important; margin: 0 auto;}
+    .footer_headline.ambassador span {float: left; margin-left: 10%;}
+    .footer_headline.ambassador a#ambassador_button {margin-top: 15px !important;}
+    #copyright {margin-bottom: 30px !important;}
+}
+@media only screen and (min-width:691px) and (max-width:1000px) {.footer_custom ul#social li {margin-right: 4% !important;} .footer_custom.footer_row.row-two {margin-top: 0px !important;}}
+@media only screen and (min-width:1001px) and (max-width:1100px) {.footer_headline.ambassador{margin-bottom: 50px;} .footer_custom ul#social li {margin-right: 7% !important;}}
+
+
+.footer_custom li.NavLogin {display: none !important;}
+
+
+/* ======================================================
+                    Macro Calculator
+   ====================================================== */
+
+   .cCalculator .panel-heading {display: none;}
+   .cCalculator .panel.panel-default {border: 0 !important;}
+   .cCalculator div#mwp-diet-form-body, .cCalculator .panel.panel-default {border-radius: 4px !important;}
+   .cCalculator div#mwp-diet-form-body {margin-top: -300px; box-shadow: 0 10px 50px rgba(0,0,0,0.08), 0 13px 45px rgba(0,0,0,0.08); padding: 5%;}
+   .cCalculator .select2-container {display: none;}
+   .cCalculator h3 {font-size: 14px !important; letter-spacing: 1px !important; color: #8D8D8D;}
+
+/* ======================================================
+                   Ninja Forms
+   ====================================================== */
+
+.nf-multi-cell .nf-cell {padding: 0 15px !important;}
+.nf-field-element input[type="button"]:not(.button_round_solid) {padding: 20px 80px !important;}
+
+#nf-form-2-cont .nf-form-title {display: none;}
