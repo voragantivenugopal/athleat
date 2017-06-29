@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Symbol - Halal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="19.266546 0.533 0.798032074 0.533 0.798032074 18.9996 19.266546 18.9996 19.266546 0.533"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Symbol---Halal">
+            <g id="Group-9">
+                <g id="Group-3" transform="translate(0.000000, 0.467500)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M16.9277,3.6226 C15.2857,1.7806 13.0257,0.6886 10.5627,0.5476 C8.1007,0.4076 5.7287,1.2336 3.8877,2.8756 C2.0467,4.5176 0.9537,6.7776 0.8137,9.2406 C0.6717,11.7036 1.4987,14.0746 3.1407,15.9156 C4.9627,17.9586 7.4947,18.9996 10.0387,18.9996 C12.2277,18.9996 14.4237,18.2296 16.1817,16.6626 C19.9827,13.2726 20.3177,7.4236 16.9277,3.6226" id="Fill-1" fill="#E2475A" mask="url(#mask-2)"></path>
+                </g>
+                <polygon id="Fill-4" fill="#FFFFFF" points="11.8574 14.7224 11.8574 10.9444 8.2234 10.9444 8.2234 14.7224 6.3644 14.7224 6.3644 5.7504 8.2234 5.7504 8.2234 9.3014 11.8574 9.3014 11.8574 5.7504 13.7044 5.7504 13.7044 14.7224"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,62 @@
+/* ======================================================
+
+                        Misc
+
+
+  ============= Foodery Fit   * L I V E *  ===============
+  ======================================================== */
+
+/* Round Buttons - Force border-radius on buttons */
+   body[data-button-style*="slightly_rounded"]  header#top nav > ul > li[class*="button_solid_color"] > a:before, body[data-button-style*="slightly_rounded"]  header#top nav > ul > li[class*="button_bordered"] > a:before {border-radius:100px !important;}
+
+ /* Disable underline links */
+ a:hover, a:focus, a:visited {text-decoration: none !important;}
+
+/* Box Shadow class */
+.box-shadow {box-shadow: 0 10px 50px rgba(0,0,0,0.08), 0 13px 45px rgba(0,0,0,0.08);}
+
+/* Text Shadow class */
+.text-shadow {text-shadow: 4px 6px 10px rgba(0,0,0, 0.08);}
+
+/* Force center */
+.title-line-center .divider-wrap .divider-small-border {margin-left: auto; margin-right: auto;}
+.text-center p, .text-center span {margin-left: auto !important; margin-right: auto !important;}
+
+/* Overlapping Images */
+@media only screen and (min-width:1000px){.overlapping-image {position: absolute !important;}}
+
+/* Column Swap */
+@media only screen and (min-width:1001px){.col-desktop-push-6{left: 50%;} .col-desktop-pull-6{right: 50%;}}
+
+
+/* Image Responsive */
+@media only screen and (min-width:769px){.img-mobile {display: none !important;}}
+@media only screen and (max-width:768px){.img-desktop {display: none !important;}}
+
+/* Round Corners Image */
+.round-corners, .round-corners::before {border-radius: 5px !important;}
+
+/* Terms & Conditions */
+ol.terms-conditions li {margin-top: 10px;}
+p.back_to_top_button#to-top {display:block !important; width: auto !important; height: auto !important; position: relative !important; bottom: 0 !important; top: 0 !important; right: 0 !important; text-align: right !important; color: #4b5eeb !important; line-height: 2 !important; background-color: transparent !important;}
+body p.back_to_top_button#to-top:hover, body p.back_to_top_button#to-top::before, body p.back_to_top_button#to-top::after {background-color: transparent !important;box-shadow: none !important;transition: none !important;color: #4b5eeb !important;}
+p.back_to_top_button#to-top > i {display: none !important;}
+
+/* Line colors */
+.line-red .divider-small-border {background-color: #F5343F !important;}
+.line-purple .divider-small-border {background-color: #57388B !important;}
+.line-yellow .divider-small-border {background-color: #FFC914 !important;}
+.line-blue2 .divider-small-border {background-color: #4397FF !important;}
+.line-green .divider-small-border {background-color: #9CE111 !important;}
+
+
+@media only screen and (max-width: 1300px) and (min-width: 1000px) {
+.nectar-slider-wrap[data-full-width="false"] .swiper-slide .content p {font-size: 18px!important; line-height: 28px!important;}
+}
+
+/* Hide back to top */
+a#to-top {display: none;}
+
+/* Hide Responsive */
+@media only screen and (min-width:1000px) {.hide-desktop{display: none !important;}}
+@media only screen and (max-width:999px) {.hide-mobile{display: none !important;}}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon - Comission</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="353" width="989" height="438"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="989" height="438" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon---Comission" stroke="#222829" stroke-width="2">
+            <g id="Page-1" transform="translate(11.000000, 14.000000)">
+                <path d="M8,48.9996 L8,8.9996" id="Stroke-1" stroke-linejoin="round"></path>
+                <path d="M54,48.9996 L54,8.9996" id="Stroke-2" stroke-linejoin="round"></path>
+                <g id="Group-47">
+                    <path d="M51,48.9996 L57,48.9996 C59.762,48.9996 62,46.7616 62,43.9996 L62,13.9996 C62,11.2376 59.762,8.9996 57,8.9996 L51,8.9996" id="Stroke-3" stroke-linejoin="round"></path>
+                    <path d="M11,8.9996 L5,8.9996 C2.238,8.9996 0,11.2376 0,13.9996 L0,43.9996 C0,46.7616 2.238,48.9996 5,48.9996 L11,48.9996" id="Stroke-5" stroke-linejoin="round"></path>
+                    <path d="M4,34.9996 L4,22.9996" id="Stroke-7" stroke-linejoin="round"></path>
+                    <path d="M58,30.9996 L58,26.9996" id="Stroke-9" stroke-linejoin="round"></path>
+                    <path d="M48,3.9996 C48,1.7906 49.791,-0.0004 52,-0.0004 C54.209,-0.0004 56,1.7906 56,3.9996" id="Stroke-11" stroke-linejoin="round"></path>
+                    <path d="M14,3.9996 C14,1.7906 15.791,-0.0004 18,-0.0004" id="Stroke-13" stroke-linejoin="round"></path>
+                    <path d="M18,-0.0004 L52,-0.0004" id="Stroke-15" stroke-linejoin="round"></path>
+                    <path d="M56,3.9996 L56,5.9996" id="Stroke-17" stroke-linejoin="round"></path>
+                    <polyline id="Stroke-19" stroke-linejoin="round" points="48 3.9996 48 55.9996 46 57.9996 43 54.9996 40 57.9996 37 54.9996 34 57.9996 31 54.9996 28 57.9996 25 54.9996 22 57.9996 19 54.9996 16 57.9996 14 55.9996 14 3.9996"></polyline>
+                    <path d="M37,28.9996 L39,28.9996" id="Stroke-21"></path>
+                    <path d="M23,28.9996 L25,28.9996" id="Stroke-23"></path>
+                    <path d="M19,12.9996 L43,12.9996" id="Stroke-25"></path>
+                    <path d="M30,8.9996 L32,8.9996" id="Stroke-27"></path>
+                    <path d="M26,8.9996 L28,8.9996" id="Stroke-29"></path>
+                    <path d="M34,8.9996 L36,8.9996" id="Stroke-31"></path>
+                    <path d="M19,44.9996 L43,44.9996" id="Stroke-33"></path>
+                    <path d="M30,48.9996 L32,48.9996" id="Stroke-35"></path>
+                    <path d="M26,48.9996 L28,48.9996" id="Stroke-37"></path>
+                    <path d="M34,48.9996 L36,48.9996" id="Stroke-39"></path>
+                    <path d="M34.6279,23.5445 C33.6139,22.5535 32.1399,22.1045 30.8089,22.7025 C28.8669,23.5785 28.1019,25.8315 29.2009,27.7095 C31.8739,32.2665 28.3939,35.4855 28.0259,35.4855" id="Stroke-41" stroke-linejoin="bevel"></path>
+                    <path d="M27.3721,29.9937 L32.4661,29.9937" id="Stroke-43" stroke-linejoin="bevel"></path>
+                    <path d="M27.6406,35.567 L34.5936,35.567" id="Stroke-45" stroke-linejoin="bevel"></path>
+                </g>
+            </g>
+        </g>
+        <g id="Organize" transform="translate(-58.000000, -488.000000)" stroke="#1B1D1F" stroke-width="8">
+            <use id="Rectangle-Copy" mask="url(#mask-2)" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>
