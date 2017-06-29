@@ -1,0 +1,467 @@
+
+/* ======================================================
+
+                  All Pages
+
+      1. Homepage
+      2. About
+      3. Contact
+      4. Menu
+      5. Pricing
+      6. Coming Soon
+      7. Ambassadors
+      8. Macro Calculator
+      9. What are Macros
+
+
+  ============= Foodery Fit   * L I V E *  ===============
+  ======================================================== */
+
+/* ======================================================
+                    1. Homepage
+   ====================================================== */
+
+    /* ----- v3 ----- */
+   @media only screen and (max-width:689px) {.intro_plans_col .divider, .loveus_col .divider  {height: 20px !important;}}
+   /* hero */
+   @media only screen and (max-width:1000px){body.home #page-header-bg .inner-wrap {margin-top: -30px !important;}}
+
+   /* Intro */
+   .intro_plans {margin-bottom: 0 !important;}
+   .intro_plans_col {top: -80px !important;}
+   .intro_plans .intro_icons, .using-mobile-browser img.intro_icons {width: 100px !important; opacity: 0.2 !important;}
+   .intro_plans .plans_title h3 {font-size: 26px !important; font-weight: 900; letter-spacing: 0.2px !important; margin-top: 60px;}
+   .intro_plans .plans_description {font-size: 14px; letter-spacing: 0.5px !important; font-weight:400 !important; margin-top: 15px !important; min-height: 75px;}
+   .intro_plans a.button-bottom-container {margin: 0px 0 -10px !important;}
+   body.home .intro_plans a.nectar-button.button-bottom-container {border-radius: 0 0 5px 5px !important;}
+   @media only screen and (min-width:1001px) {
+     .intro_plans_col:not(.plan_maintenance) {padding: 50px 0 0 !important; min-height: 435px !important;} .intro_plans_col.plan_maintenance {min-height: 465px !important; margin-top: -25px !important; padding: 75px 0 0 !important;}
+   }
+   @media only screen and (max-width:1000px) {.intro_plans_col {top: -70px !important;}}
+   @media only screen and (min-width:690px) and (max-width:1000px) {
+     .intro_plans_col {min-height: 400px !important; padding-top: 50px !important;}
+     .intro_plans .plans_title h3 {margin-top: 40px !important;}
+     .intro_plans_col .divider {height: 20px !important;}
+   }
+   @media only screen and (max-width:689px) {
+     .intro_plans_col {min-height: 330px !important; padding-top: 20px !important;}
+     .intro_plans .plans_title h3 {font-size: 22px !important; margin-top: 20px !important;}
+     .intro_plans .plans_description {max-width: 220px !important; min-height: 70px !important; margin-top: 10px !important;}
+     .plan_maintenance .plans_description, .plan_musclegain .plans_description {margin-bottom: 20px !important;}
+   }
+   /*.intro_plans a.nectar-button.button-bottom-container:hover {transform: translateX(0) !important; box-shadow: none!important;}*/
+
+
+   /* How it Works */
+   .howitworks_icons_container {margin-bottom: 0 !important;}
+   .howitworks_col {min-height: 200px !important;}
+   .howitworks_icons, .loveus_icons {width: 100px !important;}
+   .howitworks_title h3 {margin-top: 5px !important; font-size: 18px !important; font-weight: 900; line-height: 22px !important;}
+   .howitworks_learnmore {margin-top: 15px !important;}
+   .howitworks_learnmore .link_text::after {width: 22px !important; height: 22px !important; margin-top: -12px !important;}
+   .howitworks_learnmore .arrow::before {width: 22px !important; height: 22px !important;}
+   .fullwidth-line-gray .divider-wrap > div.divider-border {background-color: #e8eef3 !important;}
+
+   @media only screen and (min-width:1001px) {.howitworks_col > div::after {content: '\f105'; font-family: 'FontAwesome'; font-weight: normal; font-style: normal; text-decoration: none; font-size: 34px !important; color: #ff6141; position: absolute;  right: -15px; top: 28px;}}
+   @media only screen and (min-width:690px) and (max-width:1000px) {.col > .howitworks_col:nth-child(1) > div::after, .col > .howitworks_col:nth-child(3) > div::after {content: '\f105'; font-family: 'FontAwesome'; font-weight: normal; font-style: normal; text-decoration: none; font-size: 34px !important; color: #ff6141; position: absolute;  right: -15px; top: 42px !important;}}
+   @media only screen and (max-width:689px) {
+     .howitworks_col > div::after {content: '\f107'; font-family: 'FontAwesome'; font-weight: normal; font-style: normal; text-decoration: none; font-size: 34px !important; color: #ff6141; position: absolute;  left:0; right:0; bottom: 0px;}
+     .homepage_howitworks_container .vc_column_container .wpb_wrapper > div:nth-child(5).divider-wrap > .divider {height: 60px !important;}
+   }
+
+   /* Why you'll love us */
+   .loveus_text {font-size: 14px; line-height: 24px; margin-top: 10px;}
+   .loveus_col {min-height: 220px;}
+
+   @media only screen and (max-width:689px) {
+     .homepage_products_section h2 {max-width: 230px !important; margin: auto !important;}
+     .loveus_col:nth-child(1) {min-height: 230px !important;} .loveus_col:nth-child(2), .loveus_col:nth-child(3), .loveus_col:nth-child(4) {min-height: 200px !important;}
+     }
+
+
+   /* Products listing */
+   .homepage_products .product-image {border-radius: 5px 5px 0 0; height: 240px;}
+   .homepage_products .product-info {background-color: white !important; padding: 30px 3%; border-radius: 0 0 5px 5px !important; height: 140px;}
+   .homepage_products h2.product-title {font-size: 20px !important; line-height: 24px !important; text-transform: uppercase !important; letter-spacing: 0 !important;}
+   @media only screen and (min-width:1001px) and (max-width:1200px) {.homepage_products h2.product-title {font-size: 16px !important; line-height: 20px !important;}.homepage_products p.product-macros{font-size: 14px !important;}}
+   .homepage_products p.product-macros {letter-spacing: 0.5px !important; margin-top: 15px;}
+   .homepage_products.product-col h2.product-title {max-width: 230px; margin-left: auto; margin-right: auto;}
+   .homepage_products.product-col.product3 h2.product-title {max-width: 200px !important;}
+   .homepage_products.product-col .vc_column-inner {transition: 0.5s;} .homepage_products.product-col:hover .vc_column-inner {transition: 0.5s;}
+   .homepage_products.product-col:hover .vc_column-inner {border-radius: 5px; cursor: pointer; box-shadow: 0 10px 50px rgba(0,0,0,0.1), 0 13px 45px rgba(0,0,0,0.1); -webkit-transform: translateY(-15px); transform: translateY(-15px);transition: 0.5s;}
+   .homepage_products.product-col:hover .product-info {background-color: #4b5eeb !important; transition: 0.2s;}
+   .homepage_products.product-col:hover .product-title {color: white !important;  transition: 0.2s;}
+   .homepage_products.product-col:hover .product-macros {color: rgba(255, 255, 255, 0.5) !important; transition: 0.2s;}
+   .homepage_products_section .products_listing {margin-top: -120px;}
+
+
+   @media only screen and (min-width:1001px){.homepage_products_section .text1 {text-align: left !important;} .homepage_products_section img.image-stairs {max-width: 110% !important;}}
+   @media only screen and (max-width:1000px){
+     .homepage_products_section .products_listing {margin-top: -180px;}
+     .homepage_products_section .products_listing, .loveus_container {padding-top: 40px !important;}
+     .homepage_products p.product-macros {font-size: 14px !important;}
+     .pricing_plan_wrapper .wpb_wrapper > div:nth-child(5).divider-wrap {display: none;}
+     .pricing_plan_wrapper .bodytext1 {max-width: 200px; margin: 0 auto !important;}
+   }
+
+   /* Pricing Plans */
+   .pricing_plan_wrapper div.tabbed ul.wpb_tabs_nav li a, .pricing_plan_wrapper div.tabbed ul.wpb_tabs_nav li a:hover {text-decoration: none !important;}
+   .plan_subscription_selector {margin-left: 0 !important;width: 50% !important;}
+   .pricing_plan { padding-top: 100px !important; padding-bottom: 100px !important; margin-left: 0 !important;}
+   .pricing_plans_section .pricing_plan:nth-child(1) {background: linear-gradient(#E8E9ED,#E8E9ED) no-repeat; background-size: 1px 55%; background-position: center right;}
+
+   .pricing_plan_wrapper ul.ui-tabs-nav {margin-top: 20px !important; margin-bottom: 40px !important;}
+   .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav li {margin: 0 9.4% !important;}
+   .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav li:not(.magic-line) {width: 90px;}
+   .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav a {font-family: 'Roboto', sans-serif !important; font-weight: 900 !important; text-transform: uppercase; letter-spacing: 2px !important; line-height: 20px !important; opacity: 0.4; font-size: 14px !important;}
+   .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav a:hover {opacity: 0.5 !important;}
+
+   .pricing_title {margin: 0 !important; font-family: 'Sailec', sans-serif; font-weight: 600 !important; font-style: normal; font-size: 18px; text-transform: capitalize; letter-spacing: 0.6px; color: #1b1d1f !important;}
+   .pricing_title_time {font-family: 'Roboto', sans-serif; font-weight: 200; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; margin-top: -8px !important;}
+   .pricing_plans_section .pricing_price p {font-family: 'Roboto', sans-serif !important; font-weight: 100 !important; font-size: 45px !important; color:#1b1d1f !important;}
+   .pricing_price h6, .pricing_price p {display: inline-block !important;}
+   .pricing_price h6 {transform: translateY(-7px); -webkit-transform: translateY(-7px); font-weight: 300 !important; margin-right: 4px;}
+   .pricing_description p {line-height: 24px; font-size: 14px !important;}
+
+   .pricing_plan.featured > .vc_column-inner > .wpb_wrapper {margin-top: -85px;}
+   .pricing_plan.featured .pricing_title, .pricing_plan.featured .pricing_title_time, .pricing_plan.featured .pricing_price h6, .pricing_plan.featured .pricing_price p, .pricing_plan.featured .pricing_description p {color: white !important;}
+   .pricing_plan.featured .pricing_description p {opacity: 0.6;}
+
+   .pricing_plan:not(.featured) a.nectar-button.select-button, .pricing_plan:not(.featured) a.nectar-button.select-button:hover {border: 2px solid #1b1d1f !important;}
+   div.pricing_plan.featured a.nectar-button.select-button, .pricing_plan.featured a.nectar-button.select-button:hover {border: 2px solid white !important;}
+
+   .pricing_plan:hover {background-color:  rgba(0, 0, 0, 0.03) !important;}
+   .pricing_plan.featured::before, .pricing_plan:hover {border-radius: 5px;}
+   @media only screen and (min-width:1001px) {.pricing_plan {width: 25% !important;}}
+   @media only screen and (min-width:1001px) and (max-width:1100px) {
+     .pricing_plans_section .pricing_price p {letter-spacing: -1.5px !important;}
+     body .col .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav li {margin: 0 7% !important;}
+   }
+   @media only screen and (max-width:1000px) {
+   .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav li {margin: 0 4% !important;}
+   .pricing_plan {min-height: 500px; margin: 0 !important;}
+   .pricing_plan .pricing_mostpopular {margin: 20px 0 40px !important;}
+   }
+   @media only screen and (min-width:768px) and (max-width:1000px) {.pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav {padding-left: 9% !important;}}
+   @media only screen and (min-width:690px) and (max-width:767px) {.pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav {padding-left: 5% !important;}}
+   @media only screen and (max-width:767px) {.pricing_plan {width: 100% !important;}}
+   @media only screen and (max-width:689px) {
+     .pricing_plans_section .pricing_plan:nth-child(1) {background: linear-gradient(#E8E9ED,#E8E9ED) no-repeat; background-size: 70% 1px; background-position: center bottom !important;}
+     .pricing_plan:not(.featured) {min-height: 400px !important;}
+     .pricing_plan.featured {min-height: 460px;}
+     .pricing_plan.featured .vc_column-inner {margin-top: 120px !important;}
+     .pricing_plan:not(.featured) .vc_column-inner {margin-top: 40px; padding-bottom: 30px !important;}
+     .pricing_plan .pricing_description {max-width: 200px; margin-left: auto; margin-right: auto;}
+     .pricing_plan .select-button {margin-top: 20px !important;}
+     .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav {padding-left: 5% !important;}
+     .pricing_plan_wrapper{padding-bottom: 0 !important;}}
+
+     @media only screen and (max-width:480px) {
+       .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav li:not(.magic-line) {width: 80px !important;}
+       .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav li {margin: 0 2% !important;}
+       .pricing_plan_wrapper .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav a {font-size: 12px !important;}
+     }
+
+
+
+/* ======================================================
+                  2. About
+   ====================================================== */
+
+     .about_hero .row-bg {background-size: cover !important;}
+     .about_hero img.hero_arrow_down, .using-mobile-browser .about_hero img.hero_arrow_down {max-width: 20px !important; position: absolute; left: 0; right: 0;}
+     .using-mobile-browser .about_hero img.hero_arrow_down {bottom: -100px !important;}
+     .about_howitworks h6 {font-size: 12px !important; letter-spacing: 2px !important;}
+     .about_logos_container .col:last-child {margin: 0 !important;}
+     .about_logos_header .wpb_wrapper > div {float: left;}
+
+     img.about_img_pushup {top: 23px !important; left: 0;}
+     img.about_howitworks_steps.img-desktop {max-width: 750px !important;}
+     img.about_howitworks_steps.img-mobile {max-width: 220px !important;}
+
+     @media only screen and (min-width:1000px) {
+       .about_hero, .about_hero .row-bg {max-height: 600px !important; min-height: 290px !important;}
+       .about_hero img.hero_arrow_down {bottom: -180px !important;}
+     }
+     @media only screen and (max-width:1000px) {
+       .about_hero {padding-top: 60px !important; padding-bottom: 60px !important;}
+       .about_hero .hero-headline {max-width: 480px !important;}
+       .about_intro.intro_row {padding-top: 20px !important;}
+       img.about_img_pushup {top: 110px !important; margin-top: -80px !important;}
+       .about_howitworks {padding-bottom: 60px !important;}
+       .about_hero img.hero_arrow_down {bottom: -100px !important;}
+     }
+     @media only screen and (min-width:690px) {
+       .about_logos_header .wpb_wrapper > div.divider-wrap {width: 35% !important;}
+       .about_logos_header .header_title {width: 30% !important;}
+     }
+     @media only screen and (max-width:689px) {
+       .about_logos_header .wpb_wrapper > div.divider-wrap {width: 30% !important;}
+       .about_logos_header .header_title {width: 40% !important;}
+     }
+
+/* ======================================================
+                  3. Contact
+   ====================================================== */
+
+     /* arrow */ .contact_blue_bg .arrow_blue {position: absolute; top: 24%; left: -9%;}
+     .contact_container > .col.span_12 > div.vc_col-sm-6.contact_blue_bg {min-height: 100vh !important;}
+     @media only screen and (min-width: 1001px) {.contact_blue_bg.col-desktop-push-6 {left: 51.2% !important;} .contact_container > .col.span_12 > div.vc_col-sm-6 {min-height: 100vh !important;}}
+     @media only screen and (max-width: 1000px) {.contact_blue_bg .arrow_blue {display: none !important;}}
+     @media only screen and (max-width:760px) {.contact_blue_bg {background-position: 170% 74% !important;}}
+     @media only screen and (min-width:761px) and (max-width:1000px) {.contact_blue_bg {background-position: 140% 74% !important;}}
+     @media only screen and (min-width:1001px) and (max-width:1200px) {.contact_blue_bg {background-position: 400px 74% !important;}.contact_blue_bg .arrow_blue {left: -16% !important;}}
+     @media only screen and (min-width:1201px) and (max-width:1300px) {.contact_blue_bg {background-position: 260% 74% !important;}}
+     @media only screen and (min-width:1301px) and (max-width:1500px) {.contact_blue_bg {background-position: 200% 74% !important;}}
+     @media only screen and (min-width:1501px) {.contact_blue_bg {background-position: 140% 74% !important;}}
+     .contact_form {background-repeat: no-repeat !important; background-size: 380px !important; background-position: -8% 112% !important;}
+
+     .contact_container .full-page-inner > .col.span_12.light.left {padding-bottom: 6% !important;}
+     .contact_blue_bg {background-color: #4b5eeb; background-size: 440px !important; background-repeat: no-repeat !important;}
+     .contact_container .full-page-inner .col.span_12.light.left {height: 100vh;}
+     .contact_form div#nf-form-1-cont {margin-bottom: 6px !important;}
+     .contact_form input.contact_field, .contact_form textarea.contact_field {background-color: #e9e9e9 !important; border: none !important;  font-family: 'Roboto', sans-serif !important; font-size: 16px !important; letter-spacing: 0.5px; color: #1B1D1F !important; margin: 15px 0 !important; border-radius: 5px;}
+     .contact_form input.contact_field, .contact_form input[type="button"] {height: 50px !important;}
+     .contact_form input[type="button"]{margin-top: 10px !important;}
+     .contact_form .nf-form-fields-required {display: none;}
+     .contact_form #nf-field-3-wrap .nf-field-element {width: 100% !important; overflow: visible;}
+     .contact_form .nf-error-wrap.nf-error {z-index: 999; position: absolute; margin-top: -15px; font-size: 14px;}
+     .contact_form input.contact_field ::-webkit-input-placeholder { /* Chrome/Opera/Safari */  color: #A9A8A8 !important;}
+     .contact_form input.contact_field ::-moz-placeholder { /* Firefox 19+ */  color: #A9A8A8 !important;}
+     .contact_form input.contact_field :-ms-input-placeholder { /* IE 10+ */  color: #A9A8A8 !important;}
+     .contact_form input.contact_field :-moz-placeholder { /* Firefox 18- */  color: #A9A8A8 !important;}
+
+     .contact_form .nf-field-container {margin-bottom: 0 !important;}
+
+     body .contact_form_submit input[type="button"] {padding: 0 !important; text-align: center !important; line-height: 0 !important; border-radius: 100px !important; -webkit-border-radius: 100px !important;}
+     body .contact_container a.button_round_solid, body .contact_container .button_round_solid {visibility: visible !important; -webkit-border-radius: 100px !important; border-radius: 100px !important;}
+
+     .contact_container span.opacity50 {opacity: 0.5 !important;}
+     .contact_container p strong {letter-spacing: 1px;}
+
+     /* Mobile */
+     @media only screen and (max-width:690px){.contact_form .submit-wrap {float: none !important; text-align: center;}.contact_form {background-image: none !important;} .contact_blue_bg {background-image: none !important;}}
+
+   /* Form messages */
+   .contact_form .nf-error-msg.nf-error-required-error {font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
+   .contact_form .nf-form-errors {width: 100%; position: absolute; margin-top: 35px; left: 8px; text-align: center;}
+   .contact_form .nf-error-msg.nf-error-field-errors {font-size: 16px; font-weight: 400; color: rgba(0,0,0,0.3); transition: 0.3s;}
+   .contact_form #nf-field-2-container .nf-error-msg.nf-error-afnf-error {display: none;} /* Hde Email address error*/
+
+
+
+/* ======================================================
+                    4. Menu
+   ====================================================== */
+
+      .cMenuContainer div.tabbed ul.wpb_tabs_nav li {min-width: 180px; text-align: center;}
+      .cMenuContainer div.tabbed ul.wpb_tabs_nav li a, .cMenuContainer div.tabbed ul.wpb_tabs_nav li a:hover {text-decoration: none !important;}
+      .cMenuContainer div.tabbed ul.wpb_tabs_nav li a {padding: 18px 40px !important;}
+      .cMenuContainer div.tabbed ul.wpb_tabs_nav li a.active-tab {font-weight: 700;}
+      .cMenuContainer .tabbed[data-style="minimal"] .wpb_tabs_nav {margin-bottom: 0px !important;}
+      .cMenuContainer .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav li {margin: 0 12% !important;}
+      .cMenuContainer .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav li:not(.magic-line) {width: 90px;}
+      .cMenuContainer .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav a {font-family: 'Roboto', sans-serif !important; font-weight: 900 !important; text-transform: uppercase; letter-spacing: 2px !important; line-height: 20px !important; opacity: 0.4; font-size: 14px !important;}
+      .cMenuContainer .tabbed[data-style="minimal_alt"] ul.ui-tabs-nav a:hover {opacity: 0.5 !important;}
+
+      /* Recipes - cards */
+      .cMenuCard {border: solid 1px #e8eef3; border-radius: 5px; margin-bottom: 30px !important;}
+      .wpb_row >.span_12 >.column_container.cMenuCard:last-child {margin-bottom: 30px !important;}
+        .txtMenuTitle {padding-top: 15px !important; margin-bottom: 5px !important; font-family: 'sailec', sans-serif !important; font-weight: 900 !important; font-style: normal; font-size: 22px !important; line-height: 30px !important;}
+        .txtMenuCategory {font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; margin-bottom: 0px !important;}
+        .txtMenuCategory.txtMen {color:#4397FF !important; /* Light Blue */} .txtMenuCategory.txtWomen {color:#FF6141 !important; /* Salmon */}
+        .txtMenuMacros {padding-right: 4% !important;font-size: 12px; margin-bottom: 0 !important;}
+        .txtMenuMacros p {font-weight: 400; letter-spacing: 0; font-size: 13px !important; line-height: 24px;}
+        .txtMenuTitle p, .txtMenuMacros p {padding-bottom: 0 !important;}
+
+        a.btnMenuCardCustomize {font-family: 'Roboto', sans-serif; font-weight: 300; width: 50px !important; height: 50px !important; border: solid 2px #E8EEF3; padding: 6px 16px; line-height: 0 !important; border-radius: 100px; background: transparent;  font-size: 28px;  color: #E8EEF3 !important;}
+        .txtMenuCardCustomize {color: #E8EEF3 !important; font-family: 'sailec', sans-serif !important; font-weight: 600 !important; font-style: normal; font-size: 22px !important; line-height: 30px !important;}
+
+        .cMenuCard.cCardCustomize:hover a.btnMenuCardCustomize {background-color:#E8EEF3 !important; color: white !important; transition: all 0.2s;}
+   @media only screen and (min-width:1300px) and (max-width:1450px){.cMenuCard .txtMenuTitle {letter-spacing: 0!important; font-size: 19px !important;}}
+   @media only screen and (min-width:1200px) and (max-width:1299px){.cMenuCard .txtMenuTitle {letter-spacing: 0!important; font-size: 17px !important;}}
+   @media only screen and (min-width:1280px){.imgMenuCard {width: 50% !important;} .txtMenuTitle {padding-top: 5% !important;}}
+   @media only screen and (min-width:1000px) and (max-width:1199px){.imgMenuCard {width: 20% !important;} .txtMenuTitle {letter-spacing: 0!important;}}
+   @media only screen and (min-width:690px) and (max-width:999px){.imgMenuCard {width: 36% !important;}}
+   @media only screen and (min-width:690px) {.imgMenuCard {float: left; margin:0 20px 0 0 !important; border-radius: 5px 0 0 5px;}  .cMenuCard.cCardCustomize {padding: 9.5% 0 7.5%;}}
+
+   @media only screen and (min-width:1200px) and (max-width:1279px){.imgMenuCard {width: 51% !important;}.txtMenuCategory {margin-top: 5px !important;}}
+   @media only screen and (min-width:1200px) {.cMenuCard.cCardCustomize {padding: 9.5% 0 0 !important;}}
+   @media only screen and (min-width:1100px) and (max-width:1199px){.imgMenuCard {margin-right: 4% !important;} .txtMenuTitle {padding-top: 3% !important;}}
+
+   @media only screen and (max-width:689px) {
+     .cMenuCard .txtMenuTitle {letter-spacing: 0!important; font-size: 19px !important;}
+     .txtMenuTitle {padding-top: 10px !important;}
+     .cMenuCard {padding-bottom: 25px !important;}
+     .imgMenuCard {width: 100%; margin:0 0 20px 0 !important; border-radius: 5px 5px 0 0;}
+     .txtMenuCard {width: 100%; padding-left: 25px !important; padding-right: 20px !important;}
+   }
+   @media only screen and (max-width:480px) {.cMenuContainer div.tabbed ul.wpb_tabs_nav li {min-width: 140px !important; font-size: 14px !important;}}
+
+   /* Ingredients -  Create your own */
+     .cMenuTable {padding: 40px 0 45px !important; margin-left: 40px !important;}
+     .cMenuTable.cTableMen, .cMenuTable.cTableProteins, .cMenuTable.cTableCarbs {border-bottom: solid 1px #E8EEF3;}
+     .cMenuCol {margin: 0 !important; margin-top: 40px !important;}
+
+     .cMenuTable .txtMenuTitle {font-size: 18px !important; line-height: 10px !important;}
+     .cMenuTable .txtMenuMacros {padding-right: 4% !important;}
+     .cMenuTable .txtMenuCategory {margin-bottom: -30px !important;}
+     .txtMenuCategory.txtProteins {color:#4397FF !important; /* Light Blue */}  .txtMenuCategory.txtCarbs {color:#57388B !important; /* Purple */} .txtMenuCategory.txtVegs {color:#9CE111 !important; /* Green */}
+     .txtMenuTitleGrams {font-family: 'sailec', sans-serif !important; font-weight: 200 !important; font-style: normal; font-size: 12px !important;}
+     .imgMenuIngredients {width: 75px; float: left;}
+     .cFootNote p {display: inline-block; text-align: center;} .txtFootNote {font-size: 14px; font-weight: 400; color: rgba(57,50,64, 0.60) !important; position: relative; bottom: 5px;}
+     .cFootNote img.dietsymbol {margin-left: 20px !important;}
+
+     @media only screen and (min-width:1200px) and (max-width:1300px) {.cMenuTable .txtMenuTitleName {font-size:16px !important;letter-spacing: 0;}}
+     @media only screen and (min-width:1200px) {.cMenuTable img.imgMenuIngredients {margin: 20px 4% 22px 0 !important;}}
+     @media only screen and (max-width:1199px) {.cMenuTable img.imgMenuIngredients {margin: 12px 4% 0 0;}}
+
+   @media only screen and (max-width:1000px){.cMenuTable {margin-left: 0px !important;}}
+   @media only screen and (max-width:690px){
+     .cMenuContainer div.tabbed ul.wpb_tabs_nav {border-bottom: solid 1px #E8EEF3;}
+     .cMenuContainer div.tabbed ul.wpb_tabs_nav li a {padding: 18px 6% !important;}
+   }
+
+   .using-mobile-browser .cDietSymbolsFootNote {display: inline-block !important;}
+   .cDietSymbolsFootNote {display: none;}
+
+   /* HIDE HALAL */  a.dietsymbol.halal {display: none;}
+
+   img.size-20 {width: 20px !important; height: 20px !important;}
+
+   /* == Diet Symbols / Tooltips ==*/
+   .cMenuContainer [data-tooltip] {position: relative; z-index: 2; cursor: pointer;}
+   /* Position tooltip above the element */
+   .cMenuContainer [data-tooltip]:before {position: absolute; bottom: 130%; left: 50%; margin-bottom: 5px; padding: 7px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; background-color: #E2475A; color: #fff; content: attr(data-tooltip); text-align: center; font-size: 14px; line-height: 1.2; font-family: 'Roboto', sans-serif; font-weight: 300; letter-spacing: 1px !important; font-size: 14px;}
+   /* Hide the tooltip content by default */
+   .cMenuContainer [data-tooltip]:before, .cMenuContainer [data-tooltip]:after {visibility: hidden; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; pointer-events: none;}
+   /* Show tooltip content on hover */
+   .cMenuContainer [data-tooltip]:hover:before, .cMenuContainer [data-tooltip]:hover:after {visibility: visible; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1;}
+   /* Triangle hack to make tooltip look like a speech bubble */
+   .cMenuContainer [data-tooltip]:after {position: absolute; bottom: 130%; left: 50%; margin-left: -5px; width: 0; border-right: 5px solid transparent; border-left: 5px solid transparent; content: " "; font-size: 0; line-height: 0;}
+
+   /* Halal */
+   .cMenuContainer [data-tooltip].halal:before {width: 80px; margin-left: -40px; background-color: #E2475A !important; border-color: #E2475A !important;}
+   .cMenuContainer [data-tooltip].halal:after {border-top: 5px solid #E2475A;}
+
+   /* Gluten Free */
+   .cMenuContainer [data-tooltip].glutenfree:before {width: 120px; margin-left: -60px; background-color: #E2C06D !important; border-color: #E2C06D !important;}
+   .cMenuContainer [data-tooltip].glutenfree:after {border-top: 5px solid #E2C06D;}
+
+   /* Vegan */
+   .cMenuContainer [data-tooltip].vegan:before {width: 80px; margin-left: -40px; background-color: #7AAB17 !important; border-color: #7AAB17 !important;}
+   .cMenuContainer [data-tooltip].vegan:after {border-top: 5px solid #7AAB17;}
+
+   /* Vegetarian */
+   .cMenuContainer [data-tooltip].vegetarian:before {width: 120px; margin-left: -60px; background-color: #B0DD43 !important; border-color: #B0DD43 !important;}
+   .cMenuContainer [data-tooltip].vegetarian:after {border-top: 5px solid #B0DD43;}
+
+   .cMenuContainer .dietsymbol img {margin-bottom: 0 !important;}
+
+
+/* ======================================================
+                  5. Pricing
+  ====================================================== */
+
+     .cPricingTable {padding: 26px 0 20px !important; border-top: solid 1px #E8EEF3; margin:0 !important;}
+     .cPricingTable.last {border-bottom: solid 1px #E8EEF3;}
+     .cPricingTable:hover {background-color: #F2F6F8; transition: 0.2s all}
+     .txtPricingTableMeals h5, .txtPricingTableDays h5 {font-size: 14px !important; letter-spacing: 0.01em !important;}
+     .txtPricingTableDescription {font-size: 14px; letter-spacing: 0.5px;}
+     .txtPricingTablePrice {font-size: 18px;}
+     .cPricingTable, .cPricingTable h5 {line-height: 40px !important;}
+     .cPricingTable a.select-button {margin:0 !important;}
+
+   @media only screen and (max-width:1200px){.txtPricingTableDescription span.hide-mobile {display: none !important;}}
+   @media only screen and (min-width:601px) and (max-width:1000px){
+     .cPricingTable .cTable-col{margin: 0 auto !important;}
+     .cPricingTableMeals {margin-left: 2% !important;}
+     .cPricingTableMeals, .cPricingTableDays {width: 13% !important;}
+     .cPricingTablePrice {width: 15% !important;}
+     .cPricingTableSelectBtn {width: 25% !important;}
+   }
+   @media only screen and (max-width:600px){
+     .cPricingTable {text-align: center !important; padding: 32px 0 20px !important;}
+     .cPricingTableMeals, .cPricingTableDays {width: 50% !important;}
+     .cPricingTableMeals {text-align: right !important; right: 10px !important;}
+     .cPricingTableDays {text-align: left !important; left: 10px !important;}
+     .cPricingTableDescription, .cPricingTablePrice, .cPricingTableSelectBtn {width: 100% !important; text-align: center;}
+     .cPricingTable a.select-button {width: 60% !important; margin: 10px auto !important;}
+     .cPricingTable, .cPricingTable h5 {line-height: 10px !important;}
+   }
+
+/* ======================================================
+                6. Coming Soon
+   ====================================================== */
+
+    body.page-id-158 #page-header-wrap .container {max-width: 100% !important; padding: 0 !important;}
+    body.page-id-158 #page-header-wrap h1 {font-family: 'sailec', sans-serif !important; font-weight: 900 !important; font-style: normal; text-transform: uppercase; font-size: 8vw !important; letter-spacing: 1.6vw; position: absolute; top: 26vh !important; left: 0;right: 0;}
+    body.page-id-158 #page-header-wrap span.subheader {max-width: 80% !important; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 24px !important; line-height: 30px; display: block; margin: 0 auto; position: absolute; top: -30px; left: 0; right: 0; bottom: 0;}
+    .comingsoon_cta_bg .row-bg {background-size: 107%; background-position-x: 50% !important;}
+
+ @media only screen and (min-width:1001px) {.comingsoon_cta_bg .bodytext1 span {line-height: 45px !important;}}
+ @media only screen and (min-width:1201px) {body.page-id-158 #page-header-wrap h1 {top: 235px !important;}}
+ @media only screen and (min-width:1001px) and (max-width:1200px) {body.page-id-158 #page-header-wrap h1 {top: 245px !important;}}
+ @media only screen and (min-width:1001px) and (max-width:1100px) {
+   .comingsoon_cta_bg .bodytext1 span {font-size: 16px !important;}
+   .comingsoon_cta_bg .row-bg {background-size: 110%; background-position: 50% 140% !important;}
+ }
+ @media only screen and (max-width:1000px) {
+   body.page-id-158 #page-header-wrap h1 {visibility: hidden;font-size: 20vw !important;}
+   body.page-id-158 #page-header-wrap h1::before {content: 'SOON'; display: block !important; visibility: visible !important;}
+   .comingsoon_cta_bg .row-bg {background-image: none !important;}
+    body.page-id-158 #page-header-wrap span.subheader {font-size: 20px !important; top: -60px !important;}
+ }
+ @media only screen and (min-width:691px)and (max-width:1000px) {body.page-id-158 #page-header-wrap h1 {top: 130px !important;}}
+ @media only screen and (min-width:521px)and (max-width:690px) {body.page-id-158 #page-header-wrap h1 {top: 95px !important;}}
+ @media only screen and (min-width:480px)and (max-width:520px) {body.page-id-158 #page-header-wrap h1 {top: 105px !important;}}
+ @media only screen and (max-width:479px) {
+   body.page-id-158 #page-header-wrap h1 {top: 80px !important;}
+   body.page-id-158 #page-header-wrap span.subheader {top: -80px !important;}
+   .comingsoon_cta_bg {padding-top:60px !important; padding-bottom: 60px !important;}
+ }
+
+/* ======================================================
+                 7. Ambassadors Page
+   ====================================================== */
+
+   @media only screen and (min-width:1001px) {.cAmbassadorRedContainer {margin-top: -120px !important;}}
+   @media only screen and (max-width:1000px) {
+      div.ambassador_hero {padding-top: 200px !important;}
+      div.cAmbassadorRedContainer {margin-top: -200px !important;}
+      .cAmbassadorRedContainer .bodytext1 {padding: 0 8% !important;}
+    }
+
+      .ambassadors_form label, .ambassadors_form input, .ambassadors_form textarea {font-family: 'Roboto', sans-serif !important; color: white !important;}
+      .ambassadors_form label {font-weight: 500 !important; position: relative; bottom: -6px; font-size: 14px !important;} .ambassadors_form input {font-weight: 300 !important;}
+      .ambassadors_form span.ninja-forms-req-symbol {color: #FF6141 !important;}
+      .ambassadors_form #nf-field-48 {color: white !important; opacity: 0.8 !important;}
+      .ambassadors_form .nf-element::-webkit-input-placeholder {color: white !important; opacity: 0.8 !important;}
+      .ambassadors_form .nf-element::-moz-placeholder{color: white !important; opacity: 0.8 !important;}
+      .ambassadors_form .nf-element:-ms-input-placeholder{color: white !important; opacity: 0.8 !important;}
+      .ambassadors_form .nf-element:-moz-placeholder{color: white !important; opacity: 0.8 !important;}
+      .ambassadors_form input.nf-element, .ambassadors_form textarea.nf-element {border-radius: 5px !important;}
+      .ambassadors_form .nf-error-msg {color: #FF6141; font-size: 14px; text-align: right; letter-spacing: 0.5px;}
+      .ambassadors_form .nf-form-fields-required {color: white !important; text-align: right;}
+
+      .ambassadors_form input[type="button"], input#nf-field-36 {padding: 16px 15px !important; text-align: center !important; font-family: 'Roboto', sans-serif !important; font-weight: 700 !important; font-size: 16px !important; letter-spacing: 0.3px !important; -webkit-border-radius: 100px !important; border-radius: 100px !important; background-color: #FF6141 !important; width: 200px; margin-top: 0px;}
+      .ambassadors_form input#nf-field-36:hover {box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16)!important; -ms-transform: translateY(-3px); transform: translateY(-3px); -webkit-transform: translateY(-3px);}
+      .ambassadors_form .nf-error-wrap.nf-error {text-align: right; position: relative; top: 0px !important; right: 0px;}
+      .ambassadors_form .nf-error-required-error, .ambassadors_form .nf-error-afnf-error {display: inline-block;}
+      .ambassadors_form .nf-error-msg.nf-error-field-errors {z-index: -10; position: relative; top: -100px; right: 10px;}
+
+/* ======================================================
+             8. Macro Calculator
+   ====================================================== */
+
+      .fooderyfit-macro-calculator {margin-top: -180px !important;}
+
+
+/* ======================================================
+              9. What are Macros
+   ====================================================== */
+
+      body.page-id-509 #page-header-wrap .inner-wrap {max-width: 750px !important;margin: auto;}
+      img.macro-infographic-img {max-width: 80% !important;}
+
+      @media only screen and (min-width:1400px) { img.macro-infographic-img {max-width: 60% !important;}}
