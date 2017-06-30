@@ -316,7 +316,37 @@
 										</div>
 									</div>
 
-								</div> 
+								</div>
+
+								{%for data in meal_info%}
+
+									<div class="wpb_wrapper">
+										<div class="img-with-aniamtion-wrap " data-max-width="100%"><div class="inner"><img data-shadow="none" data-shadow-direction="middle" class="img-with-animation imgMenuCard animated-in" data-delay="0" height="600" width="560" data-animation="fade-in" src="https://fooderyfit.com/wp-content/uploads/2017/05/3bean-chaat.jpg" srcset="https://fooderyfit.com/wp-content/uploads/2017/05/3bean-chaat.jpg 560w, https://fooderyfit.com/wp-content/uploads/2017/05/3bean-chaat-280x300.jpg 280w" sizes="100vw" alt="" style="opacity: 1;"></div></div>
+										<div class="wpb_text_column wpb_content_element  txtMenuTitle black txtMenuCard">
+											<div class="wpb_wrapper">
+												<p>{{data.name}} <a class="dietsymbol glutenfree" data-tooltip="Gluten Free"><img class="alignnone size-full wp-image-473" src="https://fooderyfit.com/wp-content/uploads/2017/05/Symbol-Gluten-Free.svg" alt=""></a> <a class="dietsymbol vegetarian" data-tooltip="Vegetarian"><img class="alignnone size-20 wp-image-473" src="https://fooderyfit.com/wp-content/uploads/2017/06/Symbol-Vegetarian.svg" width="20px" height="20px"></a> <a class="dietsymbol vegan" data-tooltip="Vegan"><img class="alignnone size-20 wp-image-473" src="https://fooderyfit.com/wp-content/uploads/2017/05/Symbol-Vegan.svg" alt="" width="20px" height="20px"></a></p>
+
+											</div>
+										</div>
+
+										<div class="wpb_text_column wpb_content_element  txtMenuCategory txtVegs txtMenuCard">
+											<div class="wpb_wrapper">
+												<p>{{data.meal_preference}}</p>
+
+											</div>
+										</div>
+
+										<div class="wpb_text_column wpb_content_element  txtMenuMacros black60 txtMenuCard">
+											<div class="wpb_wrapper">
+												<p class="p1"><span class="s1">Fat {{data.fat}}g, Carbs {{data.carb}}g, Protein {{data.protein}}g</span></p>
+
+											</div>
+										</div>
+
+									</div>
+
+								{% endfor %}
+
 							</div>
 						</div> 
 
@@ -339,7 +369,8 @@
 				</div> 
 				<div id="tab-create-your-own" class="wpb_tab ui-tabs-panel wpb_ui-tabs-hide clearfix" style="visibility: hidden; position: absolute; opacity: 0; left: -9999px; display: none;">
 
-					<div id="fws_5955f562f2192" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section   cMenuTable cTableProteins " style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   " style=""></div> </div><div class="col span_12  left">
+					<div id="fws_5955f562f2192" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section   cMenuTable cTableProteins " style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   " style=""></div> </div>
+					<div class="col span_12  left">
 					<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding instance-9 no-left-margin" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
 						<div class="vc_column-inner">
 							<div class="wpb_wrapper">
