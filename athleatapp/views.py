@@ -9,8 +9,9 @@ import xmlrpclib
 
 def doLogin(request):
 
-	uid = getUserId(request)
-	print uid
+	if request.method == 'POST':
+		uid = getUserId(request)
+		print uid
 	return render(request,'login.html',{})
 
 def Index(request):
