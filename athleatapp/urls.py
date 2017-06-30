@@ -3,5 +3,6 @@ from views import *
 
 urlpatterns = [
     url(r'^$', Index),
-    url(r'^meal-build/', mealBuilder),
+    url(r'^login/', doLogin),
+    url(r'^meal-builder/', mealBuilder),
 ]

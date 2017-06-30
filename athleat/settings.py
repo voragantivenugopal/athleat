@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'athleatmeal',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'USER': 'venugopal',
+        'PASSWORD': 'venugopal',
         'HOST': 'localhost',
         'PORT': '',
 
@@ -132,5 +132,11 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/'),
 )
 STATIC_ROOT = ''
+
+XMLRPC_URL = 'http://localhost:8069'
+DB_NAME = 'athleat'
+USERNAME = 'admin'
+PASSWORD = 'admin'
+
 
 
