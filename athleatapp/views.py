@@ -22,6 +22,10 @@ def mealBuilder(request):
 
 	return render(request,'meal-builder.html',{})
 
+def displayMenu(request):
+
+	return render(request,'menu.html',{})
+
 def getUserId(request):
 
 	sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')
