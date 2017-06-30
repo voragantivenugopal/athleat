@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+import xmlrpclib
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'athleatmeal',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'USER': 'venugopal',
+        'PASSWORD': 'venugopal',
         'HOST': 'localhost',
         'PORT': '',
 
@@ -137,6 +137,8 @@ XMLRPC_URL = 'http://192.168.2.36:8069'
 DB_NAME = 'athleat'
 USERNAME = 'admin'
 PASSWORD = 'admin'
+sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')
+sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 
 
 

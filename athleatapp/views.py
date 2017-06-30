@@ -10,11 +10,23 @@ import json
 from django.utils.safestring import mark_safe
 # Create your views here.
 
+
+def getUserId(request):
+	sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')
+	uid = sock_common.login(DB_NAME, USERNAME, PASSWORD)
+	return uid
+
 def doLogin(request):
 
 	if request.method == 'POST':
-		uid = getUserId(request)
-		print uid
+		username = request.POST['username']
+		password = request.POST['password']
+		uid = sock_common.login(DB_NAME, username, password)
+		if uid:
+			return HttpResponseRedirect('/menu')
+		else:
+			return render(request, 'login.html', {'error': 'Username or Password is wrong !'})
+
 	return render(request,'login.html',{})
 
 def Index(request):
@@ -31,22 +43,17 @@ def displayMenu(request):
 	sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 	meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [])
 	meal_data = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', meal_ids)
-	# meal_data = simplejson.dumps(meal_data)
-	# content['meal_data'] = mark_safe(json.dumps(meal_data))
-
-
-	# for temp in meal_data:
-	# 	content.append({
-	# 		'name': temp['name'],
-
-	# 	})
-	print meal_data
-	# print content
 	return render(request, 'menu.html', {'meal_info': meal_data})
 
-def getUserId(request):
-	sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')
-	uid = sock_common.login(DB_NAME, USERNAME, PASSWORD)
+def userSignup(request):
 
-	return uid
+	if request.method == 'POST':
+		username = request.POST['email']
+		password = request.POST['password']
+		try:
+			uid = getUserId(request)
+			user_id = sock.execute(DB_NAME, uid, PASSWORD, 'res.users', 'create', {'login': username, 'new_password': password ,'name': username})
+		except Exception as e:
+			return render(request, 'login.html', {'error': 'Email already exists! If you forgot your password, please reset it !'})
+	return HttpResponseRedirect('/menu')
 
