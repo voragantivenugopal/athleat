@@ -15,14 +15,16 @@
 
 				<div class="u-columns col2-set" id="customer_login">
 
+						<p style="color: #FFFFFF; text-align: center;"> {{error}} </p>
+
 					<div class="u-column1 col-1">
 
 
 						<div class="fooderyfit-login-container">
 							<h2>Welcome back</h2>
 
-							<form class="woocomerce-form woocommerce-form-login login" method="post">
-
+							<form class="woocomerce-form woocommerce-form-login login" method="post" action="/login/">
+								{% csrf_token %}
 
 								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
 									<!--<label for="username">Username or email address <span class="required">*</span></label>-->
@@ -35,8 +37,7 @@
 
 
 								<p class="form-row fooderyfit-login-submit">
-									<input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="b398728edd" />
-									<input type="hidden" name="_wp_http_referer" value="/my-account/" />	<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+									<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
 									<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Remember me</span>
 									</label>
 									<input type="submit" class="woocommerce-Button button fooderyfit-login-button" name="login" value="Login" />
@@ -45,7 +46,7 @@
 							</form>
 						</div>
 						<p class="woocommerce-LostPassword lost_password">
-						<a href="https://fooderyfit.com/my-account/lost-password/">Lost your password?</a>
+						<a href="/">Lost your password?</a>
 						</p>
 
 
@@ -56,28 +57,30 @@
 					<div class="fooderyfit-register-container">
 						<h2>First time?</h2>
 
-						<form method="post" class="register">
+						<form method="post" class="register" action="/register/">
 
-
+							{% csrf_token %}
 
 							<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
-								<!--<label for="reg_email">Email address <span class="required">*</span></label>-->
-								<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" placeholder="Email address" id="reg_email" value="" />
+								<label for="reg_email">Email address <span class="required">*</span></label>
+								<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" placeholder="Email address" id="reg_email" value="" required/>
 							</p>
 
 
 							<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
-								<!--<label for="reg_password">Password <span class="required">*</span></label>-->
-								<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" placeholder="Password" id="reg_password" />
+								<label for="reg_password">Password <span class="required">*</span></label>
+								<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" placeholder="Password" id="reg_password" required />
 							</p>
 
 
 							<!-- Spam Trap -->
 							<div style="left: -999em; position: absolute;"><label for="trap">Anti-spam</label><input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off" /></div>
 
-							<p class="form-row form-row-wide create-account"><input class="input-checkbox" id="mailchimp_woocommerce_newsletter" type="checkbox" name="mailchimp_woocommerce_newsletter" value="1" checked="checked"><label for="mailchimp_woocommerce_newsletter" class="checkbox">Subscribe</label></p><div class="clear"></div>
+							<!-- <p class="form-row form-row-wide create-account"><input class="input-checkbox" id="mailchimp_woocommerce_newsletter" type="checkbox" name="mailchimp_woocommerce_newsletter" value="1" checked="checked"><label for="mailchimp_woocommerce_newsletter" class="checkbox">Subscribe</label></p> -->
+							<div class="clear"></div>
 							<p class="woocomerce-FormRow form-row fooderyfit-register-submit">
-								<input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="08de692ae8" /><input type="hidden" name="_wp_http_referer" value="/my-account/" />					<input type="submit" class="woocommerce-Button button fooderyfit-register-button" name="register" value="Register" />
+
+								<input type="submit" class="woocommerce-Button button fooderyfit-register-button" name="register" value="Register" />
 							</p>
 
 
