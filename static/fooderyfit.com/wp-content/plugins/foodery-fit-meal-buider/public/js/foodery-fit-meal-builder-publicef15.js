@@ -2254,9 +2254,9 @@ function calculateTotalMeals(){
 
 	curr_total_price = Math.round(curr_week_price * parseInt(curr_weeks) *100)/100;
     if(isNaN(curr_total_price)){
-        $('.txtStatsPriceTotal').html( '' );
+            $('.txtStatsPriceTotal').html( '' );
     }else{
-        $('.txtStatsPriceTotal').html( '&pound;'+curr_total_price.toFixed(2) );
+        $('.txtStatsPriceTotal').html( 'AED'+curr_total_price.toFixed(2) );
     }
 
 
