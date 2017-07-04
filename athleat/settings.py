@@ -78,11 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'athleatmeal',
-<<<<<<< HEAD
         'USER': 'root',
-=======
-        'USER': 'postgres',
->>>>>>> 8fed71a2db591e2b4338fa23cbf16c0cb21f68f3
         'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '',
