@@ -1,22 +1,4 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Gist
- @josnakp
- Sign out
- Watch 1
-  Star 0
-  Fork 0 voragantivenugopal/athleat
- Code  Issues 0  Pull requests 0  Projects 0  Wiki Insights 
-Branch: master Find file Copy pathathleat/static/templates/index.html
-3c0105f  2 hours ago
- Prashanth 'StartAPlanErrorFixing'
-1 contributor
-RawBlameHistory    
-618 lines (505 sloc)  122 KB
+
 <!doctype html>  <!-- header footer-->
 {% load static %}
 
@@ -50,101 +32,102 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel='stylesheet' id='affwp-forms-css'  href='https://fooderyfit.com/wp-content/plugins/affiliate-wp/assets/css/forms.min.css?ver=2.0.10.1' type='text/css' media='all' />
-<link rel='stylesheet' id='foodery-fit-macro-calculator_boot-css'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ver=4.8' type='text/css' media='all' />
-<link rel='stylesheet' id='foodery-fit-macro-calculator_ui-css'  href='https://fooderyfit.com/wp-content/plugins/foodery-fit-macro-calculator/public/css/jquery-ui.css?ver=1.0.0' type='text/css' media='all' />
-<link rel='stylesheet' id='foodery-fit-macro-calculator-css'  href='https://fooderyfit.com/wp-content/plugins/foodery-fit-macro-calculator/public/css/foodery-fit-macro-calculator-public.css?ver=1.0.0' type='text/css' media='all' />
-<link rel='stylesheet' id='foodery-fit-meal-builder_boot-css'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ver=4.8' type='text/css' media='all' />
-<link rel='stylesheet' id='foodery-fit-meal-builder_magnificpopup-css'  href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css?ver=4.8' type='text/css' media='all' />
-<link rel='stylesheet' id='foodery-fit-meal-builder_tipsy-css'  href='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/css/tippy.css?ver=4.8' type='text/css' media='all' />
-<link rel='stylesheet' id='foodery-fit-meal-builder-css'  href='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/css/foodery-fit-meal-builder-public.css?ver=1.0.0' type='text/css' media='all' />
-<link rel='stylesheet' id='woofcicons-css'  href='https://fooderyfit.com/wp-content/plugins/woo-floating-cart-lite/public/assets/css/woofcicons.css?ver=1.0.6.9' type='text/css' media='all' />
-<link rel='stylesheet' id='woo-floating-cart-css'  href='https://fooderyfit.com/wp-content/plugins/woo-floating-cart-lite/public/assets/css/woo-floating-cart.css?ver=1.0.6.9' type='text/css' media='all' />
-<link rel='stylesheet' id='woocommerce-layout-css'  href='//fooderyfit.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=3.1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='//fooderyfit.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.1.0' type='text/css' media='only screen and (max-width: 768px)' />
-<link rel='stylesheet' id='woocommerce-general-css'  href='//fooderyfit.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='font-awesome-css'  href='https://fooderyfit.com/wp-content/themes/salient/css/font-awesome.min.css?ver=4.6.3' type='text/css' media='all' />
-<link rel='stylesheet' id='parent-style-css'  href='https://fooderyfit.com/wp-content/themes/salient/style.css?ver=4.8' type='text/css' media='all' />
-<link rel='stylesheet' id='rgs-css'  href='https://fooderyfit.com/wp-content/themes/salient/css/rgs.css?ver=8.0' type='text/css' media='all' />
-<link rel='stylesheet' id='main-styles-css'  href='https://fooderyfit.com/wp-content/themes/salient-child/style.css?ver=8.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='affwp-forms-css'  href='{% static "/wp-content/plugins/affiliate-wp/assets/css/forms.min.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='foodery-fit-macro-calculator_boot-css'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='foodery-fit-macro-calculator_ui-css'  href='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/css/jquery-ui.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='foodery-fit-macro-calculator-css'  href='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/css/foodery-fit-macro-calculator-public.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='foodery-fit-meal-builder_boot-css'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='foodery-fit-meal-builder_magnificpopup-css'  href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='foodery-fit-meal-builder_tipsy-css'  href='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/css/tippy.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='foodery-fit-meal-builder-css'  href='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/css/foodery-fit-meal-builder-public.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='woofcicons-css'  href='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/css/woofcicons.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='woo-floating-cart-css'  href='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/css/woo-floating-cart.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='{% static "/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='{% static "/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css" %}' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='{% static "/wp-content/plugins/woocommerce/assets/css/woocommerce.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='{% static "/wp-content/themes/salient/css/font-awesome.min.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='{% static "/wp-content/themes/salient/style.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='rgs-css'  href='{% static "/wp-content/themes/salient/css/rgs.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='main-styles-css'  href='{% static "/wp-content/themes/salient-child/style.css" %}' type='text/css' media='all' />
 <style id='main-styles-inline-css' type='text/css'>
 html:not(.page-trans-loaded) { background-color: #ffffff; }
 </style>
-<link rel='stylesheet' id='magnific-css'  href='https://fooderyfit.com/wp-content/themes/salient/css/magnific.css?ver=6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-css'  href='{% static "/wp-content/themes/salient/css/magnific.css" %}' type='text/css' media='all' />
 <!--[if lt IE 9]>
 <link rel='stylesheet' id='nectar-ie8-css'  href='https://fooderyfit.com/wp-content/themes/salient/css/ie8.css?ver=4.8' type='text/css' media='all' />
 <![endif]-->
-<link rel='stylesheet' id='responsive-css'  href='https://fooderyfit.com/wp-content/themes/salient/css/responsive.css?ver=8.0.1' type='text/css' media='all' />
-<link rel='stylesheet' id='woocommerce-css'  href='https://fooderyfit.com/wp-content/themes/salient/css/woocommerce.css?ver=8.0.1' type='text/css' media='all' />
-<link rel='stylesheet' id='skin-ascend-css'  href='https://fooderyfit.com/wp-content/themes/salient/css/ascend.css?ver=8.0' type='text/css' media='all' />
-<link rel='stylesheet' id='mc4wp-form-themes-css'  href='https://fooderyfit.com/wp-content/plugins/mailchimp-for-wp/assets/css/form-themes.min.css?ver=4.1.5' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-css'  href='{% static "/wp-content/themes/salient/css/responsive.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-css'  href='{% static "/wp-content/themes/salient/css/woocommerce.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='skin-ascend-css'  href='{% static "/wp-content/themes/salient/css/ascend.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='mc4wp-form-themes-css'  href='{% static "/wp-content/plugins/mailchimp-for-wp/assets/css/form-themes.min.css" %}' type='text/css' media='all' />
 <link rel='stylesheet' id='redux-google-fonts-salient_redux-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C900%2C700%2C400%2C100%7CRoboto+Condensed%3A300&#038;ver=1497877513' type='text/css' media='all' />
-<link rel='stylesheet' id='child-style-css'  href='https://fooderyfit.com/wp-content/themes/salient-child/style.css?ver=4.8' type='text/css' media='all' />
-<link rel='stylesheet' id='nectarslider-child-css'  href='https://fooderyfit.com/wp-content/themes/salient-child/css/nectar-slider.css?ver=4.8' type='text/css' media='all' />
-<link rel='stylesheet' id='ascend-child-css'  href='https://fooderyfit.com/wp-content/themes/salient-child/css/ascend.css?ver=4.8' type='text/css' media='all' />
-<script type='text/javascript' src='https://fooderyfit.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-macro-calculator/public/js/foodery-fit-macro-calculator-public.js?ver=1.0.0'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-macro-calculator/public/js/wNumb.js?ver=1.0.0'></script>
-<script type='text/javascript' src='//code.jquery.com/ui/1.12.0/jquery-ui.min.js?ver=1.0.0'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-macro-calculator/public/js/jquery.ui.touch-punch.min.js?ver=1.0.0'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/js/page.js?ver=1.0.0'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/js/js.cookie.js?ver=4.8'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/js/moment.min.js?ver=4.8'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/js/tippy.min.js?ver=4.8'></script>
-<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js?ver=4.8'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/js/jquery.sticky.js?ver=4.8'></script>
-<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js?ver=4.8'></script>
-<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js?ver=4.8'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/js/foodery-fit-meal-builder-config.js?ver=4.8'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public/js/foodery-fit-meal-builder-public.js?ver=4.8'></script>
+<link rel='stylesheet' id='child-style-css'  href='{% static "/wp-content/themes/salient-child/style.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='nectarslider-child-css'  href='{% static "/wp-content/themes/salient-child/css/nectar-slider.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='ascend-child-css'  href='{% static "/wp-content/themes/salient-child/css/ascend.css" %}' type='text/css' media='all' />
+<script type='text/javascript' src='{% static "/wp-includes/js/jquery/jquery.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-includes/js/jquery/jquery-migrate.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/js/foodery-fit-macro-calculator-public.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/js/wNumb.js" %}'></script>
+<script type='text/javascript' src='{% static "/code.jquery.com/ui/1.12.0/jquery-ui.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/js/jquery.ui.touch-punch.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/page.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/js.cookie.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/moment.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/tippy.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/jquery.sticky.js" %}'></script>
+<script type='text/javascript' src='{% static "/cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js" %}'></script>
+<script type='text/javascript' src='{% static "/cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/foodery-fit-meal-builder-config.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/foodery-fit-meal-builder-public.js" %}'></script>
+
 <script type='text/javascript'>
 /* <![CDATA[ */
 var mailchimp_public_data = {"site_url":"https:\/\/fooderyfit.com","ajax_url":"https:\/\/fooderyfit.com\/wp-admin\/admin-ajax.php"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/mailchimp-for-woocommerce/public/js/mailchimp-woocommerce-public.min.js?ver=2.0.0'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/mailchimp-for-woocommerce/public/js/mailchimp-woocommerce-public.min.js" %}'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/meal-builder\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/fooderyfit.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='//fooderyfit.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=4.8'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js" %}'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var affwp_scripts = {"ajaxurl":"https:\/\/fooderyfit.com\/wp-admin\/admin-ajax.php"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='//fooderyfit.com/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js" %}'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/meal-builder\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments_7bd351027e54fb7649ae4ebd1da7de4d"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='//fooderyfit.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=4.8'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/modernizr.custom-min.js?ver=1.0.6.9'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/jquery.touch-min.js?ver=1.0.6.9'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/js.cookie-min.js?ver=1.0.6.9'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/modernizr.custom-min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/jquery.touch-min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/js.cookie-min.js" %}'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var WOOFC = {"ajaxurl":"https:\/\/fooderyfit.com\/wp-admin\/admin-ajax.php","litemode":"1","lang":{"min_qty_required":"Min quantity required","max_stock_reached":"Stock limit reached"}};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/woo-floating-cart-lite/public/assets/js/woo-floating-cart-min.js?ver=1.0.6.9'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/js/woo-floating-cart-min.js" %}'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var affwp_debug_vars = {"integrations":{"ninja-forms":"Ninja Forms","paypal":"PayPal Buttons","woocommerce":"WooCommerce"},"version":"2.0.10.1","currency":"GBP"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/affiliate-wp/assets/js/tracking.min.js?ver=2.0.10.1'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/js_composer_salient/assets/js/vendors/woocommerce-add-to-cart.js?ver=5.0.1'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/affiliate-wp/assets/js/tracking.min.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/js_composer_salient/assets/js/vendors/woocommerce-add-to-cart.js" %}'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var pys_events = [{"type":"init","name":"1239397566189356","params":[]},{"type":"track","name":"PageView","params":{"domain":"fooderyfit.com"},"delay":0},{"type":"trackCustom","name":"GeneralEvent","params":{"post_type":"page","content_name":"Meal Builder","post_id":66,"domain":"fooderyfit.com"},"delay":0}];
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/pixelyoursite/js/public.js?ver=5.0.5.2'></script>
-<script type='text/javascript' src='https://fooderyfit.com/wp-content/themes/salient/js/modernizr.js?ver=2.6.2'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/pixelyoursite/js/public.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/themes/salient/js/modernizr.js" %}'></script>
 <script>
 window.wc_ga_pro = {};
 window.wc_ga_pro.available_gateways = {"paypal":"PayPal","sagepayform":"Credit Card via SagePay"};
@@ -173,8 +156,8 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fooderyfit.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fooderyfit.com/wp-includes/wlwmanifest.xml" /> 
 <link rel='shortlink' href='https://fooderyfit.com/?p=66' />
-<link rel="alternate" type="application/json+oembed" href="https://fooderyfit.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffooderyfit.com%2Fmeal-builder%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://fooderyfit.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffooderyfit.com%2Fmeal-builder%2F&#038;format=xml" />
+<link rel="alternate" type="application/json+oembed" href='{% static "/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffooderyfit.com%2Fmeal-builder%2F" %}' />
+<link rel="alternate" type="text/xml+oembed" href='{% static "/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffooderyfit.com%2Fmeal-builder%2F&#038;format=xml" %}' />
 <script type="text/javascript">
 	           var ajaxurl = "https://fooderyfit.com/wp-admin/admin-ajax.php";
 	         </script><!--START BING-->
@@ -182,11 +165,11 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 <!--END BING-->
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="https://fooderyfit.com/wp-content/themes/salient-child/css/pages.css">
-<link rel="stylesheet" type="text/css" href="https://fooderyfit.com/wp-content/themes/salient-child/css/fonts.css">
-<link rel="stylesheet" type="text/css" href="https://fooderyfit.com/wp-content/themes/salient-child/css/woocommerce.css">
-<link rel="stylesheet" type="text/css" href="https://fooderyfit.com/wp-content/themes/salient-child/css/blog.css">
-<link rel="stylesheet" type="text/css" href="https://fooderyfit.com/wp-content/themes/salient-child/css/misc.css">
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/pages.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/fonts.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/woocommerce.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/blog.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/misc.css" %}'>
 
 
 <style type="text/css" id="et-bloom-custom-css">
