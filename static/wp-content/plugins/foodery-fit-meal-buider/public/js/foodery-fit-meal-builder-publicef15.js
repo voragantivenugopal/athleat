@@ -2256,7 +2256,7 @@ function calculateTotalMeals(){
     if(isNaN(curr_total_price)){
         $('.txtStatsPriceTotal').html( '' );
     }else{
-        $('.txtStatsPriceTotal').html( '&pound;'+curr_total_price.toFixed(2) );
+        $('.txtStatsPriceTotal').html( 'AED'+curr_total_price.toFixed(2) );
     }
 
 
