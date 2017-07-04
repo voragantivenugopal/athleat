@@ -1,0 +1,585 @@
+<!doctype html>  <!-- header footer-->
+{% load static %}
+
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+
+	<!-- Meta Tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+
+	<!--Shortcut icon-->
+	<link rel="shortcut icon" href='{% static "wp-content/uploads/2017/05/favicon.png" %}' />
+
+	<title>More than a diet plan, it&#039;s a lifestyle - healthy eating plans | Athleat</title>
+
+	<meta name="description" content="More than a diet, it’s a lifestyle. At Athleat, we aim to cook up authentic, flavour-packed foods of the world with all the macros you need."/>
+	<link rel="canonical" href="index.html"/>	
+
+	<link rel='dns-prefetch' href='http://code.jquery.com/' />
+	<link rel='dns-prefetch' href='http://maxcdn.bootstrapcdn.com/' />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel='dns-prefetch' href='http://s.w.org/' />
+	<link rel="alternate" type="application/rss+xml" title="Athleat &raquo; Feed" href="../feed/index.html" />
+	<link rel="alternate" type="application/rss+xml" title="Athleat &raquo; Comments Feed" href="/" />
+	<script type="text/javascript">
+	window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/fooderyfit.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+	!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+	</script>
+	
+	<link rel='stylesheet' id='affwp-forms-css'  href='{% static "/wp-content/plugins/affiliate-wp/assets/css/forms.min6471.css" %}' type='text/css' media='all' />
+
+	<link rel='stylesheet' id='foodery-fit-macro-calculator_boot-css'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' type='text/css' media='all' />
+
+	<link rel='stylesheet' id='foodery-fit-macro-calculator_ui-css'  href='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/css/jquery-ui8a54.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='foodery-fit-macro-calculator-css'  href='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/css/foodery-fit-macro-calculator-public8a54.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='woofcicons-css'  href='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/css/woofcicons132e.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='woo-floating-cart-css'  href='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/css/woo-floating-cart132e.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='woocommerce-layout-css'  href='{% static "/wp-content/plugins/woocommerce/assets/css/woocommerce-layout6173.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='{% static "/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen6173.css" %}' type='text/css' media='only screen and (max-width: 768px)' />
+	<link rel='stylesheet' id='woocommerce-general-css'  href='{% static "/wp-content/plugins/woocommerce/assets/css/woocommerce6173.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='font-awesome-css'  href='{% static "/wp-content/themes/salient/css/font-awesome.min4698.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='parent-style-css'  href='{% static "/wp-content/themes/salient/styleef15.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='rgs-css'  href='{% static "/wp-content/themes/salient/css/rgsbd20.css" %}' type='text/css' media='all' />
+	<link rel='stylesheet' id='main-styles-css'  href='{% static "/wp-content/themes/salient-child/stylefd24.css" %}' type='text/css' media='all' />
+	<style id='main-styles-inline-css' type='text/css'>
+	html:not(.page-trans-loaded) { background-color: #ffffff; }
+	</style>
+	<link rel='stylesheet' id='magnific-css'  href='{% static "/wp-content/themes/salient/css/magnificae48.css" %}' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='nectar-ie8-css'  href='https://fooderyfit.com/wp-content/themes/salient/css/ie8.css?ver=4.8' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='responsive-css'  href='{% static "/wp-content/themes/salient/css/responsivefd24.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-css'  href='{% static "/wp-content/themes/salient/css/woocommercefd24.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='skin-ascend-css'  href='{% static "/wp-content/themes/salient/css/ascendbd20.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='mc4wp-form-themes-css'  href='{% static "/wp-content/plugins/mailchimp-for-wp/assets/css/form-themes.mineda1.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='{% static "/wp-content/plugins/js_composer_salient/assets/css/js_composer.min972f.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-salient_redux-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C900%2C700%2C400%2C100%7CRoboto+Condensed%3A300&amp;ver=1497877513' type='text/css' media='all' />
+<link rel='stylesheet' id='child-style-css'  href='{% static "/wp-content/themes/salient-child/styleef15.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='nectarslider-child-css'  href='{% static "/wp-content/themes/salient-child/css/nectar-slideref15.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='ascend-child-css'  href='{% static "/wp-content/themes/salient-child/css/ascendef15.css" %}' type='text/css' media='all' />
+
+
+<script type='text/javascript' src='{% static "/wp-includes/js/jquery/jqueryb8ff.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-includes/js/jquery/jquery-migrate.min330a.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/js/foodery-fit-macro-calculator-public8a54.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/js/wNumb8a54.js" %}'></script>
+<script type='text/javascript' src='{% static "/code.jquery.com/ui/1.12.0/jquery-ui.min8a54.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-macro-calculator/public/js/jquery.ui.touch-punch.min8a54.js" %}'></script>
+
+<script type='text/javascript' src='{% static "/wp-content/plugins/mailchimp-for-woocommerce/public/js/mailchimp-woocommerce-public.min001e.js" %}'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/about\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/fooderyfit.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.minef15.js" %}'></script>
+
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/about\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments"};
+/* ]]> */
+</script>
+
+<script type='text/javascript' src='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/modernizr.custom-min132e.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/jquery.touch-min132e.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/vendors/js.cookie-min132e.js" %}'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WOOFC = {"ajaxurl":"https:\/\/fooderyfit.com\/wp-admin\/admin-ajax.php","litemode":"1","lang":{"min_qty_required":"Min quantity required","max_stock_reached":"Stock limit reached"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/woo-floating-cart-lite/public/assets/js/woo-floating-cart-min132e.js" %}'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var affwp_debug_vars = {"integrations":{"ninja-forms":"Ninja Forms","paypal":"PayPal Buttons","woocommerce":"WooCommerce"},"version":"2.0.10","currency":"GBP"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/affiliate-wp/assets/js/tracking.min6471.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/js_composer_salient/assets/js/vendors/woocommerce-add-to-cart972f.js" %}'></script>
+
+<script type='text/javascript' src='{% static "/wp-content/plugins/pixelyoursite/js/public17e7.js" %}'></script>
+<script type='text/javascript' src='{% static "/wp-content/themes/salient/js/modernizr61da.js" %}'></script>
+<script>
+window.wc_ga_pro = {};
+
+window.wc_ga_pro.available_gateways = {"paypal":"PayPal","sagepayform":"Credit Card via SagePay"};
+
+// interpolate json by replacing placeholders with variables
+window.wc_ga_pro.interpolate_json = function( object, variables ) {
+
+	if ( ! variables ) {
+		return object;
+	}
+
+	var j = JSON.stringify( object );
+
+	for ( var k in variables ) {
+		j = j.split( '{$' + k + '}' ).join( variables[ k ] );
+	}
+
+	return JSON.parse( j );
+}
+
+// return the title for a payment gateway
+window.wc_ga_pro.get_payment_method_title = function( payment_method ) {
+	return window.wc_ga_pro.available_gateways[ payment_method ] || payment_method;
+}
+
+// check if an email is valid
+window.wc_ga_pro.is_valid_email = function( email ) {
+	return /[^\s@]+@[^\s@]+\.[^\s@]+/.test( email );
+}
+</script>
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/pages.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/fonts.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/woocommerce.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/blog.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/misc.css" %}'>
+<link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/custom-style.css" %}'>
+<meta name="referrer" content="always"/>
+
+<script type="text/javascript">
+var AFFWP = AFFWP || {};
+AFFWP.referral_var = 'ref';
+AFFWP.expiration = 30;
+AFFWP.debug = 0;
+
+AFFWP.referral_credit_last = 1;
+</script>
+
+
+</head>
+
+<body class="page-template-default page page-id-109 et_bloom ascend chrome wpb-js-composer js-comp-ver-5.0.1 vc_responsive" data-footer-reveal="false" data-header-format="default" data-header-breakpoint="1000" data-footer-reveal-shadow="none" data-dropdown-style="minimal" data-cae="easeOutCubic" data-megamenu-width="full-width" data-cad="750" data-aie="none" data-ls="magnific" data-apte="standard" data-hhun="1" data-fancy-form-rcs="default" data-form-style="default" data-form-submit="default" data-is="minimal" data-button-style="slightly_rounded_shadow" data-header-inherit-rc="false" data-header-search="false" data-animated-anchors="true" data-ajax-transitions="true" data-full-width-header="false" data-slide-out-widget-area="true" data-slide-out-widget-area-style="slide-out-from-right" data-user-set-ocm="off" data-loading-animation="none" data-bg-header="false" data-ext-responsive="true" data-header-resize="0" data-header-color="light" data-transparent-header="false" data-cart="true" data-smooth-scrolling="0" data-permanent-transparent="false" data-responsive="1" >
+
+
+	<div id="header-space" data-header-mobile-fixed='1'></div> 
+	<div id="header-outer" data-has-menu="true"  data-using-pr-menu="false" data-mobile-fixed="1" data-ptnm="false" data-lhe="animated_underline" data-user-set-bg="#ffffff" data-format="default" data-permanent-transparent="false" data-megamenu-rt="0" data-remove-fixed="0" data-cart="true" data-transparency-option="0" data-box-shadow="none" data-shrink-num="30" data-full-width="false" data-using-secondary="0" data-using-logo="1" data-logo-height="26" data-m-logo-height="20" data-padding="30" data-header-resize="0">
+
+		
+		<header id="top">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col span_3">
+
+						<a id="logo" href="/" >
+
+							<img class="stnd default-logo dark-version" alt="Athleat" src="http://athleat.ae/wp-content/uploads/2017/02/Athleat-Logo.jpg" srcset="http://athleat.ae/wp-content/uploads/2017/02/Athleat-Logo.jpg 2x" /> 
+
+						</a>
+
+					</div><!--/span_3-->
+
+					<div class="col span_9 col_last">
+
+
+						<!--mobile cart link-->
+						<a id="mobile-cart-link" href="../cart/index.html"><i class="icon-salient-cart"></i></a>
+						<div class="slide-out-widget-area-toggle mobile-icon slide-out-from-right" data-icon-animation="simple-transform">
+							<div> <a href="#sidewidgetarea" class="closed"> <span> <i class="lines-button x2"> <i class="lines"></i> </i> </span> </a> 
+							</div> 
+						</div>
+
+
+						<nav>
+
+							<ul class="buttons" data-user-set-ocm="off">								
+								
+								<li class="slide-out-widget-area-toggle" data-icon-animation="simple-transform">
+									<div> <a href="#sidewidgetarea" class="closed"> <span> <i class="lines-button x2"> <i class="lines"></i> </i> </span> </a> </div> 
+								</li>
+							</ul>
+
+							<ul class="sf-menu">	
+								<li id="menu-item-455" class="NavLinks menu-item menu-item-type-post_type menu-item-object-page menu-item-455"><a href="/menu">Menu</a></li>
+								<!-- <li id="menu-item-467" class="NavLinks menu-item menu-item-type-post_type menu-item-object-page menu-item-467"><a href="../pricing/index.html">Pricing</a></li>
+								<li id="menu-item-453" class="NavLinks menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-109 current_page_item menu-item-453"><a href="index.html">About us</a></li>
+								<li id="menu-item-502" class="NavLinks menu-item menu-item-type-post_type menu-item-object-page menu-item-502"><a href="../blog/index.html">Blog</a></li> -->
+								<li id="menu-item-456" class="btnNavStartPlan menu-item menu-item-type-custom menu-item-object-custom button_solid_color menu-item-456"><a href="/meal-builder">Start plan</a></li>
+								<li class="NavLogin"><a rel="nofollow" href="/login">Log in</a></li>						
+							</ul>
+
+						</nav>
+
+					</div><!--/span_9-->
+
+				</div><!--/row-->
+
+			</div><!--/container-->
+
+		</header>
+
+
+		<div class="cart-outer" data-user-set-ocm="off" data-cart-style="slide_in">
+			<div class="cart-menu-wrap">
+				<div class="cart-menu">
+					<a class="cart-contents" href="../cart/index.html"><div class="cart-icon-wrap"><i class="icon-salient-cart"></i> <div class="cart-wrap"><span>0 </span></div> </div></a>
+				</div>
+			</div>
+
+			<div class="cart-notification">
+				<span class="item-name"></span> was successfully added to your cart.			
+			</div>
+
+		</div>
+
+		<div class="ns-loading-cover"></div>		
+
+	</div><!--/header-outer-->
+
+	{% block content %}
+	
+	{% endblock %}
+
+	<div id="footer-outer" data-midnight="light" data-cols="5" data-disable-copyright="false" data-using-bg-img="false" data-bg-img-overlay="0.8" data-full-width="false" data-using-widget-area="true" >
+
+
+
+		<div id="footer-widgets" data-cols="5">
+
+			<div class="container" id="footer_container">
+
+				<div class="row">
+
+					<div class="footer_custom footer-col footer-col1">
+						<div class="col span_3" id="one">
+							<!-- Footer widget area 1 -->
+							<div id="text-2" class="widget widget_text">			
+								<div class="textwidget"><div class="footer_headline ambassador">
+									<!-- <span>Become an Ambassador </span>
+									<a href="../ambassador-programme/index.html" class="button_round_solid bg-blue text-white nectar-button button-250" id="ambassador_button">Join the family</a> -->
+								</div></div>
+							</div>										
+						</div>
+					</div>
+
+					<div class="footer_custom footer-col footer-col2">
+						<!-- Footer row 1 -->
+						<div class="footer_custom footer_row row-one">
+							<div class="col span_3" id="two">
+								<!-- Footer widget area 2 -->
+								<div id="nav_menu-2" class="widget widget_nav_menu"><h4>ATHLEAT</h4><div class="menu-footer-foodery-fit-container"><ul id="menu-footer-foodery-fit" class="menu"><li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-109 current_page_item menu-item-111"><a href="index.html">About</a></li>
+									<li id="menu-item-267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-267"><a href="../menu/index.html">Menu</a></li>
+									<li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"><a href="../pricing/index.html">Pricing</a></li>
+									<!-- <li id="menu-item-504" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-504"><a href="../blog/index.html">Blog</a></li>
+									<li id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="../ambassador-programme/index.html">Ambassador Programme</a></li>
+									<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="../macro-calculator/index.html">Macro Calculator</a></li> -->
+									<li class="NavLogin"><a rel="nofollow" href="../my-account/index.html?redirect_to=index.php">Log in</a></li></ul></div></div>
+								</div><!--/col-->
+
+
+
+								<div class="col span_3" id="three">
+									<!-- Footer widget area 3 -->
+									<!-- <div id="nav_menu-3" class="widget widget_nav_menu"><h4>SHOP</h4><div class="menu-footer-shop-container"><ul id="menu-footer-shop" class="menu"><li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="../meal-builder/index.html">Order</a></li> -->
+										<!-- <li id="menu-item-233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-233"><a href="../my-account/index.html">My Account</a></li>
+										<li id="menu-item-122" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122"><a href="../meal-builder/index.html">Custom Plans</a></li>
+										<li id="menu-item-268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268"><a href="../coming-soon/index.html">Accessories</a></li>
+										<li id="menu-item-116" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a href="../coming-soon/index.html">Supplements</a></li>
+										<li id="menu-item-117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-117"><a href="../coming-soon/index.html">Fit Shakes</a></li>
+										<li class="NavLogin"><a rel="nofollow" href="../my-account/index.html?redirect_to=index.php">Log in</a></li> --></ul></div></div>
+									</div><!--/span_3-->
+
+									<div class="col span_3" id="four">
+										<!-- Footer widget area 4 -->
+										<!-- <div id="nav_menu-4" class="widget widget_nav_menu"><h4>SUPPORT</h4><div class="menu-footer-support-container"><ul id="menu-footer-support" class="menu"> --><!-- <li id="menu-item-121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121"><a href="../contact/index.html">Contact</a></li>
+											<li id="menu-item-542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-542"><a href="../faq/index.html">FAQ</a></li>
+											<li id="menu-item-118" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-118"><a href="../coming-soon/index.html">Help Center</a></li>
+											<li id="menu-item-503" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-503"><a href="../terms-conditions/index.html">Terms &#038; Conditions</a></li>
+											<li class="NavLogin"><a rel="nofollow" href="../my-account/index.html?redirect_to=index.php">Log in</a></li> --></ul></div></div>
+										</div><!--/span_3-->
+									</div>
+
+									<!-- Footer row 2-->
+									<div class="footer_custom footer_row row-two">
+										<div class="col span_3" id="five">
+											<!-- Footer widget area5 -->
+											<div id="text-6" class="widget widget_text"><h4>FOLLOW US</h4>			<div class="textwidget"><ul id="social">
+												<li><a target="_blank" href="https://www.facebook.com/fooderyfit"><i class="fa fa-facebook"></i> </a></li> 												 
+												<li><a target="_blank" href="https://twitter.com/fooderyfit"><i class="fa fa-twitter"></i> </a></li> 
+												<li><a target="_blank" href="https://uk.pinterest.com/fooderyfit/"><i class="fa fa-pinterest"></i> </a></li> 												 
+												<li><a target="_blank" href="https://www.instagram.com/fooderyfit/"><i class="fa fa-instagram"></i> </a></li>
+											</ul></div>
+										</div>									
+									</div><!--/col-->
+										<div class="col span_3" id="six">
+											<!-- Footer widget area5 -->
+											<!-- <div id="mc4wp_form_widget-2" class="widget widget_mc4wp_form_widget"><h4>NEWSLETTER</h4> -->
+											<script type="text/javascript">
+											//(function() {
+											// 	if (!window.mc4wp) {
+											// 		window.mc4wp = {
+											// 			listeners: [],
+											// 			forms    : {
+											// 				on: function (event, callback) {
+											// 					window.mc4wp.listeners.push({
+											// 						event   : event,
+											// 						callback: callback
+											// 					});
+											// 				}
+											// 			}
+											// 		}
+											// 	}
+											// })();
+										</script><!-- MailChimp for WordPress v4.1.4 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+											<!-- <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-97 mc4wp-ajax" method="post" data-id="97" data-name="Newsletter Footer" >
+												<div class="mc4wp-form-fields">
+													<div class="footer_newsletter_wrap">
+														<div class="footer_newsletter_col1">
+															<input type="email" name="EMAIL" placeholder="Your email address" required />
+														</div>
+														<div class="footer_newsletter_col2">
+															<input type="submit" value="&#xf105;" style="background-color: transparent !important;" class="minimal_arrow"/>
+														</div>
+													</div>
+													<div style="display: none;"><input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" />
+													</div><input type="hidden" name="_mc4wp_timestamp" value="1498642924" /><input type="hidden" name="_mc4wp_form_id" value="97" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" />
+												</div><div class="mc4wp-response"></div>
+											</form> --><!-- / MailChimp for WordPress Plugin --></div>									
+										</div><!--/col-->
+									</div>
+
+								</div>
+
+							</div><!--/row-->
+
+						</div><!--/container-->
+
+					</div><!--/footer-widgets-->
+
+
+
+						<div class="row" id="copyright">
+
+							<div class="container">
+
+								<div class="col span_12">
+									<p><div class="cPaymentCards"> <img class="alignnone size-medium wp-image-816" src="../wp-content/uploads/2017/05/Sage-Inverted.png" alt="Sage" width="128" height="80" data-pin-nopin="true"> <img class="alignnone size-medium wp-image-816" src="../wp-content/uploads/2017/05/PayPal-Inverted.png" alt="PayPal" width="128" height="80" data-pin-nopin="true"> <img class="alignnone size-medium wp-image-816" src="../wp-content/uploads/2017/05/Visa-Inverted.png" alt="Visa" width="128" height="80" data-pin-nopin="true"> <img class="alignnone size-medium wp-image-816" src="../wp-content/uploads/2017/05/Visa-Electron-Inverted.png" alt="Visa Electron" width="128" height="80" data-pin-nopin="true"> <img class="alignnone size-medium wp-image-816" src="../wp-content/uploads/2017/05/MasterCard-Inverted.png" alt="MasterCard" width="128" height="80" data-pin-nopin="true"> <img class="alignnone size-medium wp-image-816" src="../wp-content/uploads/2017/05/Maestro-Inverted.png" alt="Maestro" width="128" height="80" data-pin-nopin="true"></div><div class="copyright_wrap">©2017 BO9 All rights reserved | <a href="../terms-conditions/index.html">Terms & Conditions</a></div> </p>
+
+								</div><!--/span_5-->
+
+								<div class="col span_7 col_last">
+									<ul id="social">
+									</ul>
+								</div><!--/span_7-->
+
+
+							</div><!--/container-->
+
+						</div><!--/row-->
+
+
+					</div><!--/footer-outer-->
+
+					<script type="text/javascript">
+					jQuery(document).ready(function($) {
+
+						$('form').on('submit', function(e) {
+
+							var action = $(this).prop( 'action' );
+
+							if( 'undefined' == action || -1 == action.indexOf( 'paypal.com/cgi-bin/webscr' ) ) {
+								return;
+							}
+
+							e.preventDefault();
+
+							var $form = $(this);
+							var ipn_url = "../indexdcd8.html?affwp-listener=paypal";
+
+							$.ajax({
+								type: "POST",
+								data: {
+									action: 'affwp_maybe_insert_paypal_referral'
+								},
+								url: 'https://fooderyfit.com/wp-admin/admin-ajax.php',
+								success: function (response) {
+
+									$form.append( '<input type="hidden" name="custom" value="' + response.data.ref + '"/>' );
+									$form.append( '<input type="hidden" name="notify_url" value="' + ipn_url + '"/>' );
+
+									$form.get(0).submit();
+
+								}
+
+							}).fail(function (response) {
+
+								if ( window.console && window.console.log ) {
+									console.log( response );
+								}
+
+							});
+
+						});
+					});
+					</script>
+
+					<script type="text/javascript">
+					/* <![CDATA[ */
+					var pys_edd_ajax_events = [];
+					/* ]]> */
+					</script>
+
+					<script type="text/javascript">(function() {function addEventListener(element,event,handler) {
+						if(element.addEventListener) {
+							element.addEventListener(event,handler, false);
+						} else if(element.attachEvent){
+							element.attachEvent('on'+event,handler);
+						}
+					}function maybePrefixUrlField() {
+						if(this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+							this.value = "http://" + this.value;
+						}
+					}
+
+					var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+					if( urlFields && urlFields.length > 0 ) {
+						for( var j=0; j < urlFields.length; j++ ) {
+							addEventListener(urlFields[j],'blur',maybePrefixUrlField);
+						}
+					}/* test if browser supports date fields */
+					var testInput = document.createElement('input');
+					testInput.setAttribute('type', 'date');
+					if( testInput.type !== 'date') {
+
+						/* add placeholder & pattern to all date fields */
+						var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+						for(var i=0; i<dateFields.length; i++) {
+							if(!dateFields[i].placeholder) {
+								dateFields[i].placeholder = 'YYYY-MM-DD';
+							}
+							if(!dateFields[i].pattern) {
+								dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+							}
+						}
+					}
+
+				})();</script><link rel='stylesheet' id='et-gf-roboto-css'  href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese' type='text/css' media='all' />
+				<link rel='stylesheet' id='et-gf-open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' type='text/css' media='all' />
+				<link rel='stylesheet' id='et_bloom-css-css'  href='{% static "/wp-content/plugins/bloom/css/style9030.css" %}' type='text/css' media='all' />
+				<script type='text/javascript' src='{% static "/wp-includes/js/jquery/ui/effect.mine899.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js" %}'></script>
+				<script type='text/javascript'>
+				/* <![CDATA[ */
+				var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/about\/?wc-ajax=%%endpoint%%"};
+				/* ]]> */
+				</script>
+				<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6173.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/themes/salient-child/assets/js/user_is_logged_out8a54.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/themes/salient-child/assets/js/change_urls_script4bf4.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/themes/salient/js/magnificf0a0.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/themes/salient/js/superfishb493.js" %}'></script>
+				<script type='text/javascript'>
+				/* <![CDATA[ */
+				var nectarLove = {"ajaxurl":"https:\/\/fooderyfit.com\/wp-admin\/admin-ajax.php","postID":"109","rooturl":"https:\/\/fooderyfit.com","pluginPages":["https:\/\/fooderyfit.com\/shop\/","https:\/\/fooderyfit.com\/shop\/?sidebar=true"],"disqusComments":"false","loveNonce":"75e056e876","mapApiKey":""};
+				/* ]]> */
+				</script>
+				<script type='text/javascript' src='{% static "/wp-content/themes/salient/js/initfd24.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/themes/salient/js/touchswipe.min5152.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-includes/js/wp-embed.minef15.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/plugins/js_composer_salient/assets/js/dist/js_composer_front.min972f.js" %}'></script>
+				<script type='text/javascript'>
+				/* <![CDATA[ */
+				var mc4wp_forms_config = [];
+				/* ]]> */
+				</script>
+				
+				<script type='text/javascript'>
+				/* <![CDATA[ */
+				var mc4wp_ajax_vars = {"loading_character":"\u2022","ajax_url":"https:\/\/fooderyfit.com\/wp-admin\/admin-ajax.php?action=mc4wp-form","error_text":"Oops. Something went wrong. Please try again later."};
+				/* ]]> */
+				</script>
+				
+				<script type='text/javascript' src='{% static "/wp-content/plugins/bloom/js/jquery.uniform.min9030.js" %}'></script>
+				<script type='text/javascript'>
+				/* <![CDATA[ */
+				var bloomSettings = {"ajaxurl":"https:\/\/fooderyfit.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/fooderyfit.com\/about\/","stats_nonce":"51722e279b","subscribe_nonce":"7328d25017","is_user_logged_in":"not_logged"};
+				/* ]]> */
+				</script>
+				<script type='text/javascript' src='{% static "/wp-content/plugins/bloom/js/custom9030.js" %}'></script>
+				<script type='text/javascript' src='{% static "/wp-content/plugins/bloom/js/idle-timer.min9030.js" %}'></script>
+<!--[if lte IE 9]>
+<script type='text/javascript' src='https://fooderyfit.com/wp-content/plugins/mailchimp-for-wp/assets/js/third-party/placeholders.min.js?ver=4.1.4'></script>
+<![endif]-->
+<!-- WooCommerce JavaScript -->
+<script type="text/javascript">
+jQuery(function($) { 
+
+	jQuery( function( $ ) {
+		var ppec_mark_fields      = '#woocommerce_ppec_paypal_title, #woocommerce_ppec_paypal_description';
+		var ppec_live_fields      = '#woocommerce_ppec_paypal_api_username, #woocommerce_ppec_paypal_api_password, #woocommerce_ppec_paypal_api_signature, #woocommerce_ppec_paypal_api_certificate, #woocommerce_ppec_paypal_api_subject';
+		var ppec_sandbox_fields   = '#woocommerce_ppec_paypal_sandbox_api_username, #woocommerce_ppec_paypal_sandbox_api_password, #woocommerce_ppec_paypal_sandbox_api_signature, #woocommerce_ppec_paypal_sandbox_api_certificate, #woocommerce_ppec_paypal_sandbox_api_subject';
+
+		var enable_toggle         = $( 'a.ppec-toggle-settings' ).length > 0;
+		var enable_sandbox_toggle = $( 'a.ppec-toggle-sandbox-settings' ).length > 0;
+
+		$( '#woocommerce_ppec_paypal_environment' ).change(function(){
+			$( ppec_sandbox_fields + ',' + ppec_live_fields ).closest( 'tr' ).hide();
+
+			if ( 'live' === $( this ).val() ) {
+				$( '#woocommerce_ppec_paypal_api_credentials, #woocommerce_ppec_paypal_api_credentials + p' ).show();
+				$( '#woocommerce_ppec_paypal_sandbox_api_credentials, #woocommerce_ppec_paypal_sandbox_api_credentials + p' ).hide();
+
+				if ( ! enable_toggle ) {
+					$( ppec_live_fields ).closest( 'tr' ).show();
+				}
+			} else {
+				$( '#woocommerce_ppec_paypal_api_credentials, #woocommerce_ppec_paypal_api_credentials + p' ).hide();
+				$( '#woocommerce_ppec_paypal_sandbox_api_credentials, #woocommerce_ppec_paypal_sandbox_api_credentials + p' ).show();
+
+				if ( ! enable_sandbox_toggle ) {
+					$( ppec_sandbox_fields ).closest( 'tr' ).show();
+				}
+			}
+		}).change();
+
+		$( '#woocommerce_ppec_paypal_mark_enabled' ).change(function(){
+			if ( $( this ).is( ':checked' ) ) {
+				$( ppec_mark_fields ).closest( 'tr' ).show();
+			} else {
+				$( ppec_mark_fields ).closest( 'tr' ).hide();
+			}
+		}).change();
+
+		$( '#woocommerce_ppec_paypal_paymentaction' ).change(function(){
+			if ( 'sale' === $( this ).val() ) {
+				$( '#woocommerce_ppec_paypal_instant_payments' ).closest( 'tr' ).show();
+			} else {
+				$( '#woocommerce_ppec_paypal_instant_payments' ).closest( 'tr' ).hide();
+			}
+		}).change();
+
+		if ( enable_toggle ) {
+			$( document ).on( 'click', '.ppec-toggle-settings', function( e ) {
+				$( ppec_live_fields ).closest( 'tr' ).toggle( 'fast' );
+				e.preventDefault();
+			} );
+		}
+		if ( enable_sandbox_toggle ) {
+			$( document ).on( 'click', '.ppec-toggle-sandbox-settings', function( e ) {
+				$( ppec_sandbox_fields ).closest( 'tr' ).toggle( 'fast' );
+				e.preventDefault();
+			} );
+		}
+	});
+
+ga( 'send', 'pageview' );
+
+});
+</script>
+
+</body>
+</html>
