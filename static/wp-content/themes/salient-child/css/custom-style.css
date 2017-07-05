@@ -21,3 +21,13 @@ img.wp-smiley,
 	.wpb_tab{
 		margin-top: 50px !important; 
 	}
+	.imgMenuCard{
+		width:auto !important;
+		max-width:250px;
+		max-height:250px;
+	}
+	.wpb_content_element{
+		width:100%;
+		margin: auto;
+		padding: 0 50px;
+	}
