@@ -133,8 +133,8 @@ STATICFILES_DIRS = (
 )
 STATIC_ROOT = ''
 
-XMLRPC_URL = 'http://192.168.2.34:8069'
-DB_NAME = 'athleat'
+XMLRPC_URL = 'http://192.168.2.55:8069'
+DB_NAME = 'athlee'
 USERNAME = 'admin'
 PASSWORD = 'admin'
 sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')

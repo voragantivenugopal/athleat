@@ -1,0 +1,273 @@
+<!doctype html> <!--meal builder content-->
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div class="container-wrap" style="opacity: 1;">
+	
+	<div class="container main-content" style="max-width: 100%; padding: 0px;">
+		
+		<div class="row">
+			
+			<span class="et_bloom_bottom_trigger"></span>	
+			<div class="cMainContainer">
+
+
+				<div id="sticky-wrapper" class="sticky-wrapper" style="height: 160px;">
+					<div class="container-meal-builder mainContainer_ sticky_header" style="z-index: 999999 !important; width: 1870px; margin:0 auto;">
+						<div class="row">
+							<div class="container-fluid headerMealBuilderBreadcrumbs " style="padding:0px 0px;">
+								<div class="container_foodery_fit_meal_builder_nav ">
+									<div class="row ">
+
+										<div class="cFooderyFitTimeline" style="position:relative; width:100%; height:140px; ">
+
+											<div class="foodery_fit_meal_timeline_base_line" style="position:absolute; top:70px; left:0; width:100%; height:1px; background-color:#d9e4dc;"></div>
+											<div class="foodery_fit_meal_timeline_blue_line" style="position:absolute; top:69px; left:0; width:0; height:3px; background-color:#4b5eeb;"></div>
+
+											<div class="foodery_fit_meal_timeline_ball1 tooltip_foodery_fit_start hand" style="position: absolute; top: 59px; width: 22px; height: 22px; border: 1px solid rgb(217, 228, 220); border-radius: 11px; background-color: rgb(255, 255, 255); left: -11px;" data-tooltipped="" aria-describedby="tippy-tooltip-21" data-original-title="html"></div>
+											<div class="foodery_fit_meal_timeline_ball1_on foodery_fit_meal_timeline_ball_on tooltip_foodery_fit_start hand" style="left: -11px; opacity: 1;" data-tooltipped="" aria-describedby="tippy-tooltip-22" data-original-title="html"><div><div style="position:absolute; top:-6px; left:3px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-bola.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball1_ok foodery_fit_meal_timeline_ball_ok tooltip_foodery_fit_start hand" style="left: -11px;" data-tooltipped="" aria-describedby="tippy-tooltip-23" data-original-title="html"><div><div style="position:absolute; top:-5px; left:2px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-ok.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball1_text foodery_fit_meal_timeline_ball_text" style="left: -50px;">Start</div>
+
+											<div class="foodery_fit_meal_timeline_ball2 tooltip_foodery_fit_gender hand" style="position: absolute; top: 59px; width: 22px; height: 22px; border: 1px solid rgb(217, 228, 220); border-radius: 11px; background-color: rgb(255, 255, 255); left: 210px;" data-tooltipped="" aria-describedby="tippy-tooltip-24" data-original-title="html"></div>
+											<div class="foodery_fit_meal_timeline_ball2_on foodery_fit_meal_timeline_ball_on tooltip_foodery_fit_gender hand" style="left: 210px; opacity: 0;" data-tooltipped="" aria-describedby="tippy-tooltip-25" data-original-title="html"><div><div style="position:absolute; top:-6px; left:3px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-bola.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball2_ok foodery_fit_meal_timeline_ball_ok tooltip_foodery_fit_gender hand" style="left: 210px;" data-tooltipped="" aria-describedby="tippy-tooltip-26" data-original-title="html"><div><div style="position:absolute; top:-5px; left:2px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-ok.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball2_text foodery_fit_meal_timeline_ball_text txtDebugGender" style="left: 171px;">Gender</div>
+
+											<div class="foodery_fit_meal_timeline_ball3 tooltip_foodery_fit_days hand" style="position: absolute; top: 59px; width: 22px; height: 22px; border: 1px solid rgb(217, 228, 220); border-radius: 11px; background-color: rgb(255, 255, 255); left: 431px;" data-tooltipped="" aria-describedby="tippy-tooltip-27" data-original-title="html"></div>
+											<div class="foodery_fit_meal_timeline_ball3_on foodery_fit_meal_timeline_ball_on tooltip_foodery_fit_days hand" style="left: 431px; opacity: 0;" data-tooltipped="" aria-describedby="tippy-tooltip-28" data-original-title="html"><div><div style="position:absolute; top:-6px; left:3px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-bola.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball3_ok foodery_fit_meal_timeline_ball_ok tooltip_foodery_fit_days hand" style="left: 431px;" data-tooltipped="" aria-describedby="tippy-tooltip-29" data-original-title="html"><div><div style="position:absolute; top:-5px; left:2px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-ok.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball3_text foodery_fit_meal_timeline_ball_text   " style="left: 392px;"><span class="txtDebugNumDays"></span> Days</div>
+
+											<div class="foodery_fit_meal_timeline_ball4 tooltip_foodery_fit_meals hand" style="position: absolute; top: 59px; width: 22px; height: 22px; border: 1px solid rgb(217, 228, 220); border-radius: 11px; background-color: rgb(255, 255, 255); left: 652px;" data-tooltipped="" aria-describedby="tippy-tooltip-30" data-original-title="html"></div>
+											<div class="foodery_fit_meal_timeline_ball4_on foodery_fit_meal_timeline_ball_on tooltip_foodery_fit_meals hand" style="left: 652px; opacity: 0;" data-tooltipped="" aria-describedby="tippy-tooltip-31" data-original-title="html"><div><div style="position:absolute; top:-6px; left:3px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-bola.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball4_ok foodery_fit_meal_timeline_ball_ok tooltip_foodery_fit_meals hand" style="left: 652px;" data-tooltipped="" aria-describedby="tippy-tooltip-32" data-original-title="html"><div><div style="position:absolute; top:-5px; left:2px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-ok.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball4_text foodery_fit_meal_timeline_ball_text  " style="left: 613px;"><span class="txtDebugNumMeals"></span> Meals</div>
+
+											<div class="foodery_fit_meal_timeline_ball5 tooltip_foodery_fit_weeks hand" style="position: absolute; top: 59px; width: 22px; height: 22px; border: 1px solid rgb(217, 228, 220); border-radius: 11px; background-color: rgb(255, 255, 255); left: 873px;" data-tooltipped="" aria-describedby="tippy-tooltip-33" data-original-title="html"></div>
+											<div class="foodery_fit_meal_timeline_ball5_on foodery_fit_meal_timeline_ball_on tooltip_foodery_fit_weeks hand" style="left: 873px; opacity: 0;" data-tooltipped="" aria-describedby="tippy-tooltip-34" data-original-title="html"><div><div style="position:absolute; top:-6px; left:3px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-bola.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball5_ok foodery_fit_meal_timeline_ball_ok tooltip_foodery_fit_weeks hand" style="left: 873px;" data-tooltipped="" aria-describedby="tippy-tooltip-35" data-original-title="html"><div><div style="position:absolute; top:-5px; left:2px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-ok.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball5_text foodery_fit_meal_timeline_ball_text " style="left: 834px;"><span class="txtDebugNumWeeks">N</span> Weeks</div>
+
+											<div class="foodery_fit_meal_timeline_ball6 tooltip_foodery_fit_datestart hand" style="position: absolute; top: 59px; width: 22px; height: 22px; border: 1px solid rgb(217, 228, 220); border-radius: 11px; background-color: rgb(255, 255, 255); left: 1094px;" data-tooltipped="" aria-describedby="tippy-tooltip-36" data-original-title="html"></div>
+											<div class="foodery_fit_meal_timeline_ball6_on foodery_fit_meal_timeline_ball_on tooltip_foodery_fit_datestart hand" style="left: 1094px; opacity: 0;" data-tooltipped="" aria-describedby="tippy-tooltip-37" data-original-title="html"><div><div style="position:absolute; top:-6px; left:3px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-bola.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball6_ok foodery_fit_meal_timeline_ball_ok tooltip_foodery_fit_datestart hand" style="left: 1094px;" data-tooltipped="" aria-describedby="tippy-tooltip-38" data-original-title="html"><div><div style="position:absolute; top:-5px; left:2px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-ok.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball6_text foodery_fit_meal_timeline_ball_text txtDebugDateStart " style="left: 1055px;"></div>
+
+											<div class="foodery_fit_meal_timeline_ball7 tooltip_foodery_fit_customize hand" style="position: absolute; top: 59px; width: 22px; height: 22px; border: 1px solid rgb(217, 228, 220); border-radius: 11px; background-color: rgb(255, 255, 255); left: 1315px;" data-tooltipped="" aria-describedby="tippy-tooltip-39" data-original-title="html"></div>
+											<div class="foodery_fit_meal_timeline_ball7_on foodery_fit_meal_timeline_ball_on tooltip_foodery_fit_customize hand" style="left: 1315px; opacity: 0;" data-tooltipped="" aria-describedby="tippy-tooltip-40" data-original-title="html"><div><div style="position:absolute; top:-6px; left:3px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-bola.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball7_ok foodery_fit_meal_timeline_ball_ok tooltip_foodery_fit_customize hand" style="left: 1315px;" data-tooltipped="" aria-describedby="tippy-tooltip-41" data-original-title="html"><div><div style="position:absolute; top:-5px; left:2px;"><img src="https://fooderyfit.com/wp-content/plugins/foodery-fit-meal-buider/public//img/timeline-ok.png"></div></div></div>
+											<div class="foodery_fit_meal_timeline_ball7_text foodery_fit_meal_timeline_ball_text txtDebugCustomize " style="left: 1276px;">0%</div>
+
+
+										</div>
+
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>  <!--sticky wrapper-->
+
+				<div class="container">
+					<div class="row">
+
+						<div id="colEsq" class="col-md-9 matchHeight1" style="padding:20px 50px;">
+
+							<div class="container" style="height:20px;"></div>
+
+							<div id="cChooseFlow" class="cScreen container text-center" style="display: block;">
+								<div style="padding-bottom:30px;">Let's achieve your goals together!</div>
+								<div><span id="btnStart1" class="btn btn-default button_round_solid bg-blue button-200">Start Here</span></div>
+								<div style="padding-top:30px;"><span class="btnClearChoices hand">Clear all choices</span></div>
+								<div></div>
+							</div>
+
+							<div id="cChooseGender" class="cScreen container hid text-center" style="display: none;">
+								<h5>Gender</h5>
+								<div id="cBtnsGender"></div>
+							</div>
+
+							<div id="cChooseDays" class="cScreen container hid text-center" style="display: none;">
+								<h5>How many days per week?</h5>
+								<div id="cBtnsNumDays"></div>
+							</div>
+
+							<div id="cChooseMeals" class="cScreen container hid text-center" style="display: none;">
+								<h5>Number of meals per day?</h5>
+								<div id="cBtnsNumMeals"></div>
+							</div>
+
+							<div id="cChooseWeeks" class="cScreen container hid text-center" style="display: none;">
+								<h5>For how many weeks?</h5>
+								<div id="cBtnsNumWeeks"></div>
+							</div>
+
+							<div id="cChooseCalendarStarting" class="cScreen container hid text-center" style="display: none;">
+								<h5>Starting when?</h5>
+								<div class="row">
+
+									<div class="col-sm-6 col-md-6  text-center month">
+										<div class="txtMonth1Title txtMonthTitle"></div>
+										<hr>
+										<div style="">
+											<div class="cMonth1Days"></div>
+											<div style="clear:both;"></div>
+										</div>
+										<hr>
+									</div>
+
+									<div class="col-sm-6 col-md-6 text-center month">
+										<div class="txtMonth2Title txtMonthTitle"></div>
+										<hr>
+										<div style="">
+											<div class="cMonth2Days"></div>
+											<div style="clear:both;"></div>
+										</div>
+
+										<hr>
+									</div>
+
+								</div>
+							</div>
+
+
+							<div id="cCustomizeMeals" class="cScreen container hid text-center" style="display: none;">
+								<h5>Select your meals</h5>
+								<div id="cCustomizer" class="text-left"></div>
+							</div>
+
+						</div>
+
+						<div id="colDir" class="col-md-3 matchHeight1" style="padding:85px 40px 0 10px; ">
+							<div id="sticky_stats-sticky-wrapper" class="sticky-wrapper" style="height: 348px;">
+								<div id="sticky_stats" style="">
+									<div class="sticky_stats_area1">
+										<div style="float:left; padding-left:25px; font-size:13px; font-weight:700;">YOUR MEAL STATS</div>
+										<!-- <div style="float:right; padding-right:25px; font-size:11px;">on / off</div> -->
+										<div style="clear:both;"></div>
+									</div>
+							            <!-- <div class="sticky_stats_area2">
+							              <div style="height:18px; line-height: 18px;">
+							                <div class="round8px" style="display:inline-block; font-size:12px; width:8px; height:8px; background-color:orange;"></div>
+							                <div style="display:inline-block; padding-left:10px; font-size:12px; color:#979797;">Meal X</div>
+							              </div>
+							              <div style="height:18px; line-height: 18px;">
+							                <div class="round8px" style="display:inline-block; font-size:12px; width:8px; height:8px; background-color:red;"></div>
+							                <div style="display:inline-block; padding-left:10px; font-size:12px; color:#979797;">Meal X2</div>
+							              </div>
+							              <div style="height:18px; line-height: 18px;">
+							                <div class="round8px" style="display:inline-block; font-size:12px; width:8px; height:8px; background-color:blue;"></div>
+							                <div style="display:inline-block; padding-left:10px; font-size:12px; color:#979797;">Meal X3</div>
+							              </div>
+							              <div style="height:18px; line-height: 18px;">
+							                <div class="round8px" style="display:inline-block; font-size:12px; width:8px; height:8px; background-color:violet;"></div>
+							                <div style="display:inline-block; padding-left:10px; font-size:12px; color:#979797;">Meal X4</div>
+							              </div>
+							          </div> -->
+
+							          <div class="sticky_stats_area3">
+							          	<table style="">
+							          		<tbody><tr>
+							          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Price per meal</td>
+							          			<td style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">£<span class="txtStatsPricePerMeal">0</span></td>
+							          		</tr>
+							          		<tr>
+							          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily calories (avg)</td>
+							          			<td class="txtDebugDailyCals" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 kCal</td>
+							          		</tr>
+							          		<tr>
+							          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily protein (avg)</td>
+							          			<td class="txtDebugDailyProtein" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+							          		</tr>
+							          		<tr>
+							          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily fat (avg)</td>
+							          			<td class="txtDebugDailyFat" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+							          		</tr>
+							          		<tr>
+							          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily carbs (avg)</td>
+							          			<td class="txtDebugDailyCarbs" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+							          		</tr>
+							          	</tbody></table>
+							              <!-- <div style="">
+							                <div class="" style="display:inline-block; font-size:12px; width:8px; height:8px; background-color:orange;"></div>
+							                <div style="display:inline-block; padding-left:10px; font-size:12px; ">Meal X</div>
+							            </div> -->
+							        </div>
+							        <div class="sticky_stats_area4">
+							        	<div style="font-size:40px; font-weight: 700; text-align: center;"><span class="txtStatsPriceTotal"></span></div>
+							        	<div style="font-size:12px; padding-top:5px; text-align: center;">Free delivery included</div>
+							        </div>
+							        <div class="sticky_stats_area5 btnContinueToCheckout">
+							        	Continue to checkout
+							        </div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="container hid cScreen " style="display: none;">
+					<div>Meals per day</div>
+					<div>Weeks</div>
+					<div></div>
+				</div>
+
+				<div id="tooltip_foodery_fit_start" style="display:none;">
+					Start
+				</div>
+
+				<div id="tooltip_foodery_fit_gender" style="display:none;">
+					Gender
+				</div>
+
+				<div id="tooltip_foodery_fit_meals" style="display:none;">
+					Meals per day
+				</div>
+
+				<div id="tooltip_foodery_fit_days" style="display:none;">
+					Days per week
+				</div>
+
+				<div id="tooltip_foodery_fit_weeks" style="display:none;">
+					Weeks
+				</div>
+
+				<div id="tooltip_foodery_fit_datestart" style="display:none;">
+					Starting date
+				</div>
+
+				<div id="tooltip_foodery_fit_customize" style="display:none;">
+					Choose your meals
+				</div>
+
+				<div id="tooltipcopypasteweek" style="display:none;">
+					<a href="javascript:;" class="btnTooltipCopyWeek" style="color:#ffffff;">copy week</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:;" class="btnTooltipPasteWeek" style="color:#ffffff;">paste week</a>
+				</div>
+
+				<div id="tooltipcopypasteday" style="display:none;">
+					<a href="javascript:;" class="btnTooltipCopyDay" style="color:#ffffff;">copy day</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:;" class="btnTooltipPasteDay" style="color:#ffffff;">paste day</a>
+				</div>
+
+			</div><!--/cmainContainer-->
+
+		</div><!--/row-->
+
+	</div><!--/container-->
+
+</div> <!--/container wrap-->
+
+
+<div class="tippy-popper html-template" role="tooltip" aria-hidden="false" id="tippy-tooltip-0" tabindex="0" style="visibility: visible; position: absolute; transform: translate3d(43px, 130px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="top">
+	<div class="tippy-tooltip tippy-tooltip--regular foodery-theme enter" data-animation="shift" data-template-id="#tooltip_foodery_fit_start" style="transition-duration: 375ms;">
+		<div class="arrow-regular" x-arrow="" style="left: 28.5px;"></div>
+		<div class="tippy-tooltip-content">
+			Start
+		</div>
+	</div>
+</div>
+
+{% endblock %}
