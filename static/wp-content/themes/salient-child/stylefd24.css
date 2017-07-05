@@ -52,10 +52,10 @@ a.nectar-button.medium.see-through-2.select-button {border-radius: 100px !import
                     Header (nav)
    ====================================================== */
   /* Free delivery bar */
-  div#header-outer::before {content: '\f0d1'; font-family: 'Fontawesome'; font-size: 12px; color: #B5B5B5 ; position: absolute !important; left: 0; right: 180px; top: 0; text-align: center; background-color: transparent; z-index: 15 !important;}
+/*  div#header-outer::before {content: '\f0d1'; font-family: 'Fontawesome'; font-size: 12px; color: #B5B5B5 ; position: absolute !important; left: 0; right: 180px; top: 0; text-align: center; background-color: transparent; z-index: 15 !important;}
   .using-mobile-browser  div#header-outer::before  {right: 200px !important;}
   div#header-outer::after {content: 'Free Nationwide Delivery'; position: absolute; top: 0; width: 100vw !important; font-family: 'Sailec', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; text-align: center; font-weight: 600; background-color: #E8EEF3 ; color: #a9a7a7 ; padding: 1px 0 0 20px !important;}
-	header#top {margin-top: 25px;}
+	header#top {margin-top: 25px;}*/
 
   /* New Nav with Start Plan Button */
   .NavLinks a, .NavLogin a  {font-family: 'Sailec', sans-serif !important; font-weight: 600 !important; letter-spacing: 0.3px;}
