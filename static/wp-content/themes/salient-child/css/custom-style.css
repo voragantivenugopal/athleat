@@ -31,3 +31,10 @@ img.wp-smiley,
 		margin: auto;
 		padding: 0 50px;
 	}
+	.row, div.clear {
+    padding-bottom: 90px;
+	}
+	.fooderyfit-register-container h2 {
+		margin-bottom: 0px !important;
+		padding: 40px 10% 24px;
+	}
