@@ -2505,6 +2505,8 @@ function clearEverything(){
 // ---------------------------------------------------------------------------
 $(document).on('click','.btnContinueToCheckout',function(){
 
+    var ajaxurl = '/post-values/'
+
     if(curr_gender==undefined){
         alert('Please select your gender');
         go('gender');
@@ -2556,7 +2558,7 @@ $(document).on('click','.btnContinueToCheckout',function(){
 			// console.log(serialized);
 
 			varsSave = {
-				'action': 'foodery_fit_meal_builder_add_to_cart',
+				// 'action': 'foodery_fit_meal_builder_add_to_cart',
 				'gender': curr_gender,
 				'daysperweek': curr_days,
 				'mealsperday': curr_meals,
@@ -2564,21 +2566,30 @@ $(document).on('click','.btnContinueToCheckout',function(){
 				'startingdate': moment(curr_start_date, 'YYYY/MM/DD HH:mm:ss').format('YYYY-MM-DD HH:mm:ss'),
 				'listmeals': serializedList,
 				'totalprice': curr_total_price,
-				'totalmeals': curr_total_meals
-			};
+				'totalmeals': curr_total_meals,
 
-	        $.ajax({
-	              url: ajaxurl,
-	              contentType: 'application/json',
-	              data: JSON.stringify(varsSave),
-	              type: 'POST'
+            };
+
+            $.ajax({
+                  url: ajaxurl,
+                  contentType: 'application/json',
+                  data: JSON.stringify(varsSave),
+                  type: 'POST',
+                  success: postSuccess,
 	        });
 
-			$.post(ajaxurl,varsSave,function(data){
-				// console.log('vars',vars);
-	            clearEverything();
-				window.location = "../checkout/index.html";
-			},'json');
+function postSuccess(data,textStatus,jqXHR)
+{
+    alert('Sit back and let us take care of the rest. We will be getting in touch with you very soon.');
+  window.location = "/menu";
+  
+}
+
+			// $.post(ajaxurl,varsSave,function(data){
+			// 	// console.log('vars',vars);
+	  //           clearEverything();
+			// 	// window.location = "../checkout/index.html";
+			// },'json');
 
 
 		}
