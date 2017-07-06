@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^meal-builder/', mealBuilder),
     url(r'^menu/', displayMenu),
     url(r'^register/', userSignup),
+    url(r'^reset-password/', resetPassword),
 ]
