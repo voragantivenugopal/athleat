@@ -42,12 +42,12 @@
 											<li><a data-toggle="tab" href="#tab-1495184129-1-84" class="active-tab">Gourmet Recipes</a></li><li><a data-toggle="tab" href="#tab-1495184129-2-31">Create your own</a></li>
 										</ul>
 
-										<div class="tab-content">
-											<div id="tab-gourmet-recipes" class="wpb_tab ui-tabs-panel wpb_ui-tabs-hide clearfix" style="visibility: visible; position: relative; opacity: 1; left: 0px; display: block;">
+										<!-- <div class="tab-content"> -->
+											<div id="tab-gourmet-recipes" class="wpb_tab ui-tabs-panel wpb_ui-tabs-hide clearfix" style="visibility: visible; position: relative; opacity: 1; left: 0px; display: block; margin:0px auto;">
 												<table border ="0">
 
 													{%for data in meal_info%}<tr> 
-													<div id="fws_5955f562f0d58" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row  vc_row-o-equal-height vc_row-flex standard_section   cMenuCardWrap " style="padding-top: 0px; padding-bottom: 20px; ">
+													<div id="fws_5955f562f0d58" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row  vc_row-o-equal-height vc_row-flex standard_section   cMenuCardWrap " style="padding-top: 0px; width:500px; margin:auto; padding-bottom: 20px; ">
 														<div class="row-bg-wrap"> <div class="row-bg " style=""></div> </div>
 														<!-- <div class="col span_12  left"> --><!--vc_col-sm-6 vc_col-lg-6-->
 														<div class="row">
@@ -57,7 +57,7 @@
 
 																		<div class="img-with-aniamtion-wrap " data-max-width="100%"><div class="inner"> 
 																			{% if data.image %}
-																			<img src="data:image/png;base64, {{data.image}}" data-shadow="none" data-shadow-direction="middle" class="img-with-animation imgMenuCard animated-in" data-delay="0" height="300" width="350" data-animation="fade-in" sizes="100vw" alt="" style="opacity: 1;">
+																			<img src="data:image/png;base64, {{data.image}}" data-shadow="none" data-shadow-direction="middle" class="img-with-animation imgMenuCard animated-in" data-delay="0" height="200" width="200" data-animation="fade-in" sizes="100vw" alt="" style="opacity: 1;">
 																			{% else %}
 																			<img src='{% static "/wp-content/uploads/2017/06/No_Image_Available.png" %}' data-shadow="none" data-shadow-direction="middle" class="img-with-animation imgMenuCard animated-in" data-delay="0" height="300" width="350" data-animation="fade-in" sizes="100vw" alt="" style="opacity: 1;"> 
 																			{% endif %}
@@ -112,9 +112,9 @@
 												</table>
 											</div> <!--tab-gourmet-recipes -->
 
-											<div id="tab-create-your-own" class="wpb_tab ui-tabs-panel wpb_ui-tabs-hide clearfix" style="visibility: hidden; position: absolute; opacity: 0; left: -9999px; display: none;">
+											<div id="tab-create-your-own" class="wpb_tab ui-tabs-panel wpb_ui-tabs-hide clearfix" style="visibility: hidden; position: absolute; opacity: 0; left: -9999px; display: none; width:50%; margin:0px auto;">
 
-												<div id="fws_5955f562f2192" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section   cMenuTable cTableProteins " style="padding-top: 0px; padding-bottom: 0px; ">
+												<div id="fws_5955f562f2192" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section   cMenuTable cTableProteins " style="padding-top: 0px; width:500px; margin:auto; padding-bottom: 0px; ">
 													<div class="row-bg-wrap"> <div class="row-bg" style=""></div> </div>
 													<div class="col span_12  left">
 														<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding instance-9 no-left-margin" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
@@ -287,10 +287,10 @@
 														</div> 
 													</div>
 												</div>
-												<div id="fws_5955f56303d94" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section   cMenuTable cTableCarbs " style="padding-top: 0px; padding-bottom: 0px; ">
+												<div id="fws_5955f56303d94" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section   cMenuTable cTableCarbs " style="padding-top: 0px; width:500px; margin:auto; padding-bottom: 0px; ">
 													<div class="row-bg-wrap"> <div class="row-bg " style=""></div> </div>
 													<div class="col span_12  left">
-														<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding instance-17 no-left-margin" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
+														<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding instance-17 no-left-margin" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0" style="margin-top:30px;">
 															<div class="vc_column-inner">
 																<div class="wpb_wrapper">
 
@@ -482,10 +482,10 @@
 														</div> 
 													</div>
 												</div>
-												<div id="fws_5955f56309888" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section   cMenuTable cTableVegs " style="padding-top: 0px; padding-bottom: 0px; ">
+												<div id="fws_5955f56309888" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section   cMenuTable cTableVegs " style="padding-top: 0px; width:500px; margin:auto; padding-bottom: 0px; ">
 													<div class="row-bg-wrap"> <div class="row-bg " style=""></div> </div>
 													<div class="col span_12  left">
-														<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding instance-26 no-left-margin" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
+														<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding instance-26 no-left-margin" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0" style="margin-top:30px;">
 															<div class="vc_column-inner">
 																<div class="wpb_wrapper">
 
@@ -591,7 +591,7 @@
 												</div>
 											</div> <!-- tab-create-your-own -->
 											
-										</div> <!--tab-content-->
+										<!-- </div> --> <!--tab-content-->
 
 									</div><!-- wpb_wrapper  tabbed-->
 
@@ -599,7 +599,7 @@
 
 							</div> <!-- wpb_wrapper-->
 
-							<div id="fws_5955f5630cb96" data-midnight="dark" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section  cDietSymbolsFootNote " style="padding-top: 0px; padding-bottom: 0px; ">
+							<!-- <div id="fws_5955f5630cb96" data-midnight="dark" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section  cDietSymbolsFootNote " style="padding-top: 0px; padding-bottom: 0px; ">
 								<div class="row-bg-wrap instance-1"><div class="inner-wrap"> <div class="row-bg    " style="" data-color_overlay="" data-color_overlay_2="" data-gradient_direction="" data-overlay_strength="0.3" data-enable_gradient="false"></div></div> </div>
 								<div class="col span_12 dark center">
 									<div class="vc_col-sm-12 cFootNote wpb_column column_container vc_column_container col centered-text force-tablet-text-align-center force-phone-text-align-center no-extra-padding instance-31 no-left-margin" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
@@ -621,7 +621,7 @@
 										</div>
 									</div> 
 								</div>
-							</div>
+							</div> -->
 							<span class="et_bloom_bottom_trigger"></span>
 						</div><!-- vc_column-inner  -->
 					</div> 

@@ -78,7 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'athleatmeal',
-        'USER': 'postgres',
+        'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '',
@@ -89,7 +89,6 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -133,8 +132,8 @@ STATICFILES_DIRS = (
 )
 STATIC_ROOT = ''
 
-XMLRPC_URL = 'http://192.168.2.55:8069'
-DB_NAME = 'athlee'
+XMLRPC_URL = 'http://192.168.2.46:8069'
+DB_NAME = 'athleat'
 USERNAME = 'admin'
 PASSWORD = 'admin'
 sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')
