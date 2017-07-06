@@ -23,11 +23,20 @@ img.wp-smiley,
 	}
 	.imgMenuCard{
 		width:auto !important;
-		max-width:250px;
-		max-height:250px;
+		max-width:100px;
+		max-height:100px;
+		position: relative;
+		top:5px;
 	}
 	.wpb_content_element{
 		width:100%;
 		margin: auto;
 		padding: 0 50px;
+	}
+	.row, div.clear {
+    padding-bottom: 90px;
+	}
+	.fooderyfit-register-container h2 {
+		margin-bottom: 0px !important;
+		padding: 40px 10% 24px;
 	}
