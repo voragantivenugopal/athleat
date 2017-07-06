@@ -37,6 +37,11 @@ def mealBuilder(request):
 
 	return render(request,'meal-builder.html',{})
 
+
+def resetPassword(request):
+
+	return render(request,'resetpassword.html',{})
+
 def displayMenu(request):
 	content = []
 	uid = getUserId(request)
