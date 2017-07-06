@@ -40,3 +40,47 @@ img.wp-smiley,
 		margin-bottom: 0px !important;
 		padding: 40px 10% 24px;
 	}
+	.footer-copyright{
+		width:100%;
+		position: absolute;
+		bottom:0;
+		margin: auto;
+		left:0;
+		right:0;
+	}
+	#footer-outer .row {
+		padding:0px;
+		margin: auto;
+	}
+	#copyright1{
+		width:100%;
+		position: relative;
+		left:auto;
+		right: auto;
+	}
+	.bottom-bar-wrapper {
+    background: #191919 !important;
+    position: relative;
+	}
+	.bottom-bar-wrapper .bottom-bar-inner {
+    padding-top: 13px;
+    padding-bottom: 13px;
+	}
+	.sidebar-bottom-left {
+    text-align: left;
+    font-family: 'Roboto Condensed', sans-serif; 
+    color: #878787;
+    font-size: 30px;
+    line-height: 42px;
+	}
+	.textwidget h3{
+		font-weight: medium !important;
+	}
+	.bottom-bar-wrapper .sidebar aside {
+    margin-bottom: 0;
+	}.sidebar-bottom-left .textwidget {
+    line-height: 42px;
+	}
+	#footer-outer .widget {
+     margin-bottom: 0px; 
+}
