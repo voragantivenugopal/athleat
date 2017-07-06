@@ -23,8 +23,8 @@ img.wp-smiley,
 	}
 	.imgMenuCard{
 		width:auto !important;
-		max-width:250px;
-		max-height:250px;
+		max-width:100px;
+		max-height:100px;
 	}
 	.wpb_content_element{
 		width:100%;
