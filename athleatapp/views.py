@@ -8,6 +8,7 @@ import xmlrpclib
 import simplejson
 import json
 from django.utils.safestring import mark_safe
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
@@ -64,5 +65,35 @@ def userSignup(request):
 			user_id = sock.execute(DB_NAME, uid, PASSWORD, 'res.users', 'create', {'login': username, 'new_password': password ,'name': username})
 		except Exception as e:
 			return render(request, 'login.html', {'error': 'Email already exists! If you forgot your password, please reset it !'})
+	return HttpResponseRedirect('/menu')
+
+@csrf_exempt
+def getValues(request):
+	
+	if request.method == 'POST':
+
+		# mealsPerday = request.POST['mealsperday']
+
+		uid = getUserId(request)
+		sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
+		meal_item_ids = sock.execute(DB_NAME, uid, PASSWORD,'recipies.meal', 'search',[('carb_type', '=', 'customize')])
+		meal_items = sock.execute(DB_NAME, uid, PASSWORD,'recipies.meal', 'read', meal_item_ids, ['quantity', 'protein', 'fat','carb', 'calories','price'])
+		customers = sock.execute(DB_NAME, uid, PASSWORD,'meal.plans', 'search',[('meal_plan_type', '=', 'customize')])
+
+		for i in meal_items:
+			item_id = i['id']#fetching item id from meal items page
+
+			i.update({'item':item_id,'meals_type':'regular'})#updating active meal record fields
+			
+			if meal_items.index(i)<3:
+				for x in xrange(len(customers)):
+
+					sock.execute(DB_NAME, uid, PASSWORD, 'meal.plans', 'write', customers[x], {
+					    'meal_plan': [(0, 0, i)],
+					    'meals_per_day' : '4',
+					})
+			else:
+				pass
+
 	return HttpResponseRedirect('/menu')
 
