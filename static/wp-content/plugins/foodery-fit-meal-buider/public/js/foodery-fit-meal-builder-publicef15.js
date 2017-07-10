@@ -2256,7 +2256,7 @@ function calculateTotalMeals(){
     if(isNaN(curr_total_price)){
         $('.txtStatsPriceTotal').html( '' );
     }else{
-        $('.txtStatsPriceTotal').html( 'AED'+curr_total_price.toFixed(2) );
+        $('.txtStatsPriceTotal').html( 'AED'+00.toFixed(2) );
     }
 
 
@@ -2580,8 +2580,13 @@ $(document).on('click','.btnContinueToCheckout',function(){
 
 function postSuccess(data,textStatus,jqXHR)
 {
-    alert('Sit back and let us take care of the rest. We will be getting in touch with you very soon.');
-  window.location = "/menu";
+    // alert('Sit back and let us take care of the rest. We will be getting in touch with you very soon.');
+      swal(
+      'Good job!',
+      'Sit back and let us take care of the rest. We will be getting in touch with you very soon.',
+      'success'
+    )
+  // window.location = "/menu";
   
 }
 
