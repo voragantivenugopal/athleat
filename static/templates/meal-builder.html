@@ -2,6 +2,16 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
+<script>
+    // var meal_info = {{meal_info}};
+    var meal_info = '{{ meal_info|escapejs }}';
+    // console.log(meal_info);
+
+</script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/foodery-fit-meal-builder-publicef15.js" %}'></script>
+
+
+
 <div class="container-wrap" style="opacity: 1;">
 	
 	<div class="container main-content" style="max-width: 100%; padding: 0px;">
@@ -272,6 +282,8 @@
 </div><!--/container-->
 
 </div>
+
+
 
 
 {% endblock %}
