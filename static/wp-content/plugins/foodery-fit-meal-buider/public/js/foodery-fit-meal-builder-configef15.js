@@ -16,7 +16,6 @@ var delivery_cut_off = 2; // de 2,0 a 2,999
 
 
 
-
 var bank_holidays = [
     {'year':2017, 'month':05, 'day':29, 'title':'Spring bank holiday'},
     {'year':2017, 'month':08, 'day':28, 'title':'Summer bank holiday'},

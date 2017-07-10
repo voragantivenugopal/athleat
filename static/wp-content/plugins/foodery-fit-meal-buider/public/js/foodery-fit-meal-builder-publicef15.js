@@ -4,7 +4,7 @@
 // possibilidade de alterar datas - tipo pausas para férias
 // customizar meals
 
-
+console.log(meal_info);
 var currHash = '';
 var h = '';
 var auto_jump = true;
@@ -146,7 +146,6 @@ var listDayStats = {};
 var copyMeal = {};
 var copyDay = [];
 var copyWeek = [];
-
 
 $(window).on('hashchange', function()
 {
