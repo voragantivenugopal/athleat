@@ -37,7 +37,17 @@ def Index(request):
 
 def mealBuilder(request):
 
-	return render(request,'meal-builder.html',{})
+	content = []
+	uid = getUserId(request)
+	sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
+	meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [('carb_type','!=','customize')])
+	meal_data = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', meal_ids)
+
+	# Customized items
+	custom_meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [('carb_type','=','customize')])
+	custom_meal_data = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', custom_meal_ids)
+
+	return render(request,'meal-builder.html',{'meal_info': meal_data,'custom_meal_data': custom_meal_data})
 
 
 def resetPassword(request):
