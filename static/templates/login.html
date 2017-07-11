@@ -249,7 +249,7 @@ var confirmpassword = $("#reg_confpassword").val();
 var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
 var filter1 = /^[0-9-+]+$/;
 
-if ((!(email == "" || phone == "" || password =="" || confirmpassword=="") ) && ((filter.test(email)) && (filter1.test(phone))) && (phone.length==10) && (password.length>=6) && (confirmpassword.length>=6) && (confirmpassword== password)){
+if ((!(email == "" || phone == "" || password =="" || confirmpassword=="") ) && ((filter.test(email)) && (filter1.test(phone))) && (phone.length<13) && (password.length>=6) && (confirmpassword.length>=6) && (confirmpassword== password)){
 
 // To Enable Submit Button
 $("#submit").removeAttr('disabled');
