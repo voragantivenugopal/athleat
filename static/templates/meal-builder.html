@@ -2,6 +2,16 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
+<script>
+    // var meal_info = {{meal_info}};
+    var meal_info = '{{ meal_info|escapejs }}';
+    // console.log(meal_info);
+
+</script>
+<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/foodery-fit-meal-builder-publicef15.js" %}'></script>
+
+
+
 <div class="container-wrap" style="opacity: 1;">
 	
 	<div class="container main-content" style="max-width: 100%; padding: 0px;">
@@ -89,20 +99,26 @@
 
 						<div id="cChooseDays" class="cScreen container hid text-center" style="display: none;">
 							<h5>How many days per week?</h5>
-							<div id="cBtnsNumDays"></div>
+							<div id="cBtnsNumDays1"> 
+								<span href="javascript:;" class="btn btn-default btnDaysPerWeek " data-num="5">5</span>
+							</div>
 						</div>
 
 						<div id="cChooseMeals" class="cScreen container hid text-center" style="display: none;">
-							<h5>Number of meals per day?</h5>
-							<div id="cBtnsNumMeals"></div>
+							<h5>Number of meals per day?</h5> 
+							<div id="cBtnsNumMeals1"> 
+								<span href="javascript:;" class="btn btn-default btnMealNumber " data-num="2">2</span>
+								<span href="javascript:;" class="btn btn-default btnMealNumber " data-num="3">3</span>
+								<span href="javascript:;" class="btn btn-default btnMealNumber " data-num="4">4</span>
+							</div>
 						</div>
 
 						<div id="cChooseWeeks" class="cScreen container hid text-center" style="display: none;">
 							<h5>For how many weeks?</h5>
 							<div id="cBtnsNumWeeks1"> 
-								<span href="javascript:;" class="btn btn-default btnWeekNumber " data-num="1">1</span>
+								<!-- <span href="javascript:;" class="btn btn-default btnWeekNumber " data-num="1">1</span>
 								<span href="javascript:;" class="btn btn-default btnWeekNumber " data-num="2">2</span>
-								<span href="javascript:;" class="btn btn-default btnWeekNumber " data-num="3">3</span>
+								<span href="javascript:;" class="btn btn-default btnWeekNumber " data-num="3">3</span> -->
 								<span href="javascript:;" class="btn btn-default btnWeekNumber " data-num="4">4</span>
 							</div>
 						</div>
@@ -198,7 +214,7 @@
             </div> -->
         </div>
         <div class="sticky_stats_area4">
-        	<div style="font-size:40px; font-weight: 700; text-align: center;"><span class="txtStatsPriceTotal"></span></div>
+        	<!-- <div style="font-size:40px; font-weight: 700; text-align: center;"><span class="txtStatsPriceTotal"></span></div> -->
         	<div style="font-size:12px; padding-top:5px; text-align: center;">Free delivery included</div>
         </div>
         
@@ -266,6 +282,8 @@
 </div><!--/container-->
 
 </div>
+
+
 
 
 {% endblock %}
