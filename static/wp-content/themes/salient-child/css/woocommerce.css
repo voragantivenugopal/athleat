@@ -184,6 +184,7 @@
    .fooderyfit-login-container input[type=checkbox] {vertical-align: middle; margin: -1px 0 0;}
    .woocommerce form .form-row.fooderyfit-login-submit, .woocommerce form .form-row.fooderyfit-register-submit { margin: 0;}
    .form-row.fooderyfit-register-submit { padding-top: 50px !important;}
+   .woocommerce form .form-row.fooderyfit-login-submit{padding-bottom: 90px;}
    body[data-button-style*="slightly_rounded"].ascend .container-wrap input[type="submit"].fooderyfit-login-button, body[data-button-style*="slightly_rounded"].ascend .container-wrap input[type="submit"].fooderyfit-register-button {width: 100%; border-top-left-radius: 0 !important; border-top-right-radius: 0 !important; height: 70px; font-family: Roboto; font-size: 16px !important; font-weight: bold !important; letter-spacing: 1px; text-align: center; color: #ffffff !important; position: absolute; bottom: -3px; left: 0;}
    body[data-button-style*="slightly_rounded"].ascend .container-wrap input[type="submit"].fooderyfit-login-button {background-color: #4397ff !important;}
    body[data-button-style*="slightly_rounded"].ascend .container-wrap input[type="submit"].fooderyfit-register-button {background-color: #ff6141 !important;}
