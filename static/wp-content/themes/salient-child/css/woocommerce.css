@@ -197,7 +197,14 @@
    .woocommerce-password-strength.good {background-color: #ffbc2f; color: white; font-weight: 300; font-size: 14px; margin-top: 4px; margin-bottom: 80px;}
    .woocommerce-password-strength.strong {background-color: rgb(5, 225, 119); color: white; font-weight: 300; font-size: 14px; margin-top: 4px; margin-bottom: 80px;}
    .woocommerce-password-hint {font-size: 14px; line-height: 22px; color: rgba(0, 0, 0, 0.7); margin-bottom: 80px;}
-
+   .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text.numr{
+    padding:15px !important;
+   }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
    @media screen and (min-width: 480px) and (max-width: 999px) {
    	.fooderyfit-login-container, .fooderyfit-register-container {min-height: 390px;}
    }
