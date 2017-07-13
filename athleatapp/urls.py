@@ -4,6 +4,7 @@ from views import *
 urlpatterns = [
     url(r'^$', Index),
     url(r'^login/', doLogin),
+    url(r'^logout/', doLogout),
     url(r'^meal-builder/', mealBuilder),
     url(r'^menu/', displayMenu),
     url(r'^register/', userSignup),
@@ -12,4 +13,5 @@ urlpatterns = [
 
     # Customer URLs
     url(r'^dashboard/', dashboard),
+    url(r'^my-plan/', myPlan),
 ]
