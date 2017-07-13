@@ -39,11 +39,7 @@
 									<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
 									<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Remember me</span>
 									</label>
-<<<<<<< HEAD
-									<input type="submit" class="woocommerce-Button button fooderyfit-login-button" id="login" name="login" value="Login" disabled="disabled"/>
-=======
-									<input type="submit" class="woocommerce-Button button fooderyfit-login-button" id="login-submit" name="login" value="Login" />
->>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
+									<input type="submit" class="woocommerce-Button button fooderyfit-login-button" id="login" name="login" value="Login" />
 								</p>
 
 							</form>
@@ -56,15 +52,8 @@
 					</div>
 
 					<div class="u-column2 col-2">
-
-<<<<<<< HEAD
 						<div class="fooderyfit-register-container">
 							<h2>First time?</h2>
-
-							<form method="post" class="register" action="/register/">
-
-								{% csrf_token %}
-=======
 						<form method="post" class="register" id="registerform" action="/register/">
 
 							{% csrf_token %}
@@ -90,25 +79,6 @@
         <option value="2">Female</option>
        
       </select> 
-                             
-
->>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
-
-								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
-									<label for="reg_email">Email address <span class="required">*</span></label>
-									<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" placeholder="Email address" id="reg_email" value="" required/>
-								</p>
-								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
-									<label for="reg_phone">Mobile number <span class="required">*</span></label>
-									<input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" placeholder="Mobile number" id="reg_phone" value="" required/>
-								</p>
-
-<<<<<<< HEAD
-=======
-
-								<!-- <label for="reg_gender">Gender<span class="required">*</span></label>
-								<input type="text" class="woocommerce-Input woocommerce-Input input-text" name="gender" placeholder="Name" id="reg_gender" value="" required/> -->
-							 </p>
  
 							<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
 								<label for="reg_password">Password <span class="required">*</span></label>
@@ -118,29 +88,9 @@
 								<label for="reg_confpassword">Confirm Password <span class="required">*</span></label>
 								<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="confirmpassword" placeholder="Confirm password" id="reg_confpassword"/>
 							</p>
->>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
-
-								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
-									<label for="reg_password">Password <span class="required">*</span></label>
-									<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" placeholder="Password" id="reg_password" required />
-								</p>
-								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
-									<label for="reg_confpassword">Password <span class="required">*</span></label>
-									<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="confirm password" placeholder="Confirm password" id="reg_confpassword" required />
-								</p>
-
-
-								<!-- Spam Trap -->
-								<div style="left: -999em; position: absolute;"><label for="trap">Anti-spam</label><input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off" /></div>
-
-<<<<<<< HEAD
 								<!-- <p class="form-row form-row-wide create-account"><input class="input-checkbox" id="mailchimp_woocommerce_newsletter" type="checkbox" name="mailchimp_woocommerce_newsletter" value="1" checked="checked"><label for="mailchimp_woocommerce_newsletter" class="checkbox">Subscribe</label></p> -->
 								<div class="clear"></div>
 								<p class="woocomerce-FormRow form-row fooderyfit-register-submit">
-=======
-								<input type="submit" id="submit" class="woocommerce-Button button fooderyfit-register-button" name="register" value="Register" />
-							</p>
->>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
 
 									<input type="submit" class="woocommerce-Button button fooderyfit-register-button" id="registr" name="register" value="Register" disabled="disabled"/>
 								</p>
@@ -160,7 +110,6 @@
 
 </div><!--/container-wrap-->
 
-<<<<<<< HEAD
 <script>
 
 	$('#username, #password').bind('keyup', function() {
@@ -210,8 +159,6 @@
 	    });
 	})()
 </script>
-
-=======
 
 <script>
 $(document).ready(function () {
@@ -387,5 +334,4 @@ $("#submit").css({
 });
 });
 </script>
->>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
 {% endblock %}

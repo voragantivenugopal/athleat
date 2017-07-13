@@ -1,0 +1,44 @@
+<!doctype html> <!--menu content-->
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-wrap" style="opacity: 1; background-color:#f2f6f8">
+	
+	<div class="container main-content">
+		
+		<div class="row">
+			
+			<div class="woocommerce">
+				<nav class="woocommerce-MyAccount-navigation col-md-3" >
+					<ul>
+						<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
+							<a href="/dashboard">Dashboard</a>
+						</li>
+						<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+							<a href="/my-plan">My Plan</a>
+						</li>
+
+
+						<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+							<a href="/edit-account">Account details</a>
+						</li>
+						<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
+							<a href="/logout">Logout</a>
+						</li>
+					</ul>
+				</nav>
+
+				{% block child %}
+
+				{% endblock child%}
+
+			</div>
+			<span class="et_bloom_bottom_trigger"></span>
+		</div><!--/row-->
+		
+	</div><!--/container-->
+	
+</div>
+{% endblock %}
