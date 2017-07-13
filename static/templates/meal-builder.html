@@ -278,60 +278,116 @@
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-      	<div>
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div>
 
-      	  <!-- Nav tabs -->
-      	  <ul class="nav nav-tabs nav-head" role="tablist">
-      	    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">GOURMET RECIPES</a></li>
-      	    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">CREATE YOUR OWN</a></li>
-      	  </ul>
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs nav-head" role="tablist">
+						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">GOURMET RECIPES</a></li>
+						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">CREATE YOUR OWN</a></li>
+					</ul>
 
-      	  <!-- Tab panes -->
-      	  <div class="tab-content">
-      	    <div role="tabpanel" class="tab-pane active" id="home">
-      	    	<div class="row">
-      	    		        <div class="col-sm-6 modal-left">
-	      	    		            <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
-	      	    		              {% for data in meal_info %}<li class=""><a href="#{{data.id}}" data-toggle="tab">
-	      	    					{{data.name}}<br>
-	      	    					</a></li>{% endfor %}
-	      	    		            </ul>
-      	    		        </div>
-      	    		        <div class="col-sm-6 model-right">
-      	    		            <div class="tab-content">
-      	    		            		<div role="tabpanel" class="tab-pane fade in active" >
-		      	    		                <p>{{data.id}}</p>
-		      	    		                <p>Fat : {{data.fat}}</p>
-			      	    					<p>Carb :{{data.carb}}</p>
-			      	    					<p>Protein :{{data.protein}}</p>
-		      	    		                </div>
-		      	    		               {% for data in meal_info %}  
-      	    		               <div role="tabpanel" class="tab-pane fade in" id="{{data.id}}">
-	      	    		                <p>{{data.id}}</p>
-	      	    		                <p>Fat : {{data.fat}}</p>
-	      	    						<p>Carb :{{data.carb}}</p>
-	      	    						<p>Protein :{{data.protein}}</p>
-      	    		                </div>{% endfor %}
-      	    		            </div>
-      	    		        </div>
-      	    	</div>
-      	    	
-      	    </div>
-      	    <div role="tabpanel" class="tab-pane" id="profile">...</div>
-      	  </div>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home">
+							<div class="container row">
+								<div class="col-sm-6 modal-left">
+									<ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
+										{% for data in meal_info %}<li class=""><a href="#{{data.id}}" data-toggle="tab">
+										{{data.name}}<br>
+									</a></li>{% endfor %}
+								</ul>
+							</div>
+							<div class="col-sm-6 model-right">
+								<div class="col-md-4">
+								<strong style="color: #ff7250">NUTRITION</strong>
+								</div>
 
-      	</div>
-        
-              </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add Meal</button>
-      </div>
-    </div>
-  </div>
+								<div class="col-md-8">
+
+									<div class="tab-content">
+
+										<div role="tabpanel" class="tab-pane fade in active" >
+											<span>Fat : {{data.fat}}</span><br>
+											<span>Carb :{{data.carb}}</span><br>
+											<span>Protein :{{data.protein}}</span><br>
+										</div>
+										{% for data in meal_info %}  
+										<div role="tabpanel" class="tab-pane fade in" id="{{data.id}}">
+											<span>Fat : {{data.fat}}</span><br>
+											<span>Carb :{{data.carb}}</span><br>
+											<span>Protein :{{data.protein}}</span><br>
+										</div>{% endfor %}
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div role="tabpanel" class="tab-pane" id="profile">
+						<div role="tabpanel" class="tab-pane active" id="home">
+							<div class="container row">
+								<div class="col-sm-6 modal-left2">
+									<div class="col-md-4">
+									<strong style="color: #4da1ff">PROTEIN</strong>
+									</div>
+
+									<div class="col-md-8">
+										<ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
+											{% for data in custom_meal_data %}<li class=""><a href="#{{data.id}}" data-toggle="tab">
+											{{data.name}}<br>
+										</a></li>{% endfor %}
+										</ul>	
+										
+									</div>
+									
+								</div>
+							<div class="col-sm-6 model-right2 modal-left2">
+								
+								<div class="tab-content">
+
+									<div role="tabpanel" class="tab-pane fade in active" >
+										<span>Fat : </span><br>
+										<span>Carb :</span><br>
+										<span>Protein :</span><br>
+									</div>
+									{% for data in custom_meal_data %}  
+									<div role="tabpanel" class="tab-pane fade in" id="{{data.id}}">
+										<form>
+										  <div class="form-group form-inline">
+										    <label for=""><strong  style="color: #4da1ff">Fat</strong></label>
+										    <input type="text" class="form-control" id="" placeholder="20 g">
+										  </div>
+										  <div class="form-group form-inline">
+										    <label for=""><strong style="color: #4da1ff">Carb</strong></label>
+										    <input type="text" class="form-control" id="" placeholder="20.00 g">
+										  </div>
+										  <div class="form-group form-inline">
+										    <label for=""><strong style="color: #4da1ff">Protein</strong> </label>
+										    <input type="text" class="form-control" id="" placeholder="25.05 g">
+										  </div>
+									</div>{% endfor %}
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Add Meal</button>
+		</div>
+	</div>
+</div>
 </div>
 </div><!--/row-->
 
