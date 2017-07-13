@@ -14,4 +14,5 @@ urlpatterns = [
     # Customer URLs
     url(r'^dashboard/', dashboard),
     url(r'^my-plan/', myPlan),
+    url(r'^my-account/', myAccount),
 ]

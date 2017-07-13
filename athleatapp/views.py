@@ -145,7 +145,10 @@ def getValues(request):
 	return HttpResponseRedirect('/menu')
 
 # User Current Plan
-
 def myPlan(request):
 	return render(request,'my-plan.html',{})
+
+ # User Account
+def myAccount(request):
+	return render(request,'my-account.html',{})
 
