@@ -15,10 +15,9 @@
 
 				<div class="u-columns col2-set" id="customer_login">
 
-						<p style="color: #FFFFFF; text-align: center;"> {{error}} </p>
+					<p style="color: #FFFFFF; text-align: center;"> {{error}} </p>
 
 					<div class="u-column1 col-1">
-
 
 						<div class="fooderyfit-login-container">
 							<h2>Welcome back</h2>
@@ -40,7 +39,11 @@
 									<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
 									<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Remember me</span>
 									</label>
+<<<<<<< HEAD
+									<input type="submit" class="woocommerce-Button button fooderyfit-login-button" id="login" name="login" value="Login" disabled="disabled"/>
+=======
 									<input type="submit" class="woocommerce-Button button fooderyfit-login-button" id="login-submit" name="login" value="Login" />
+>>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
 								</p>
 
 							</form>
@@ -52,11 +55,16 @@
 
 					</div>
 
-				<div class="u-column2 col-2">
+					<div class="u-column2 col-2">
 
-					<div class="fooderyfit-register-container">
-						<h2>First time?</h2>
+<<<<<<< HEAD
+						<div class="fooderyfit-register-container">
+							<h2>First time?</h2>
 
+							<form method="post" class="register" action="/register/">
+
+								{% csrf_token %}
+=======
 						<form method="post" class="register" id="registerform" action="/register/">
 
 							{% csrf_token %}
@@ -84,8 +92,19 @@
       </select> 
                              
 
+>>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
 
+								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
+									<label for="reg_email">Email address <span class="required">*</span></label>
+									<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" placeholder="Email address" id="reg_email" value="" required/>
+								</p>
+								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
+									<label for="reg_phone">Mobile number <span class="required">*</span></label>
+									<input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" placeholder="Mobile number" id="reg_phone" value="" required/>
+								</p>
 
+<<<<<<< HEAD
+=======
 
 								<!-- <label for="reg_gender">Gender<span class="required">*</span></label>
 								<input type="text" class="woocommerce-Input woocommerce-Input input-text" name="gender" placeholder="Name" id="reg_gender" value="" required/> -->
@@ -99,34 +118,100 @@
 								<label for="reg_confpassword">Confirm Password <span class="required">*</span></label>
 								<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="confirmpassword" placeholder="Confirm password" id="reg_confpassword"/>
 							</p>
+>>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
+
+								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
+									<label for="reg_password">Password <span class="required">*</span></label>
+									<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" placeholder="Password" id="reg_password" required />
+								</p>
+								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
+									<label for="reg_confpassword">Password <span class="required">*</span></label>
+									<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="confirm password" placeholder="Confirm password" id="reg_confpassword" required />
+								</p>
 
 
-							<!-- Spam Trap -->
-							<div style="left: -999em; position: absolute;"><label for="trap">Anti-spam</label><input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off" /></div>
+								<!-- Spam Trap -->
+								<div style="left: -999em; position: absolute;"><label for="trap">Anti-spam</label><input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off" /></div>
 
-							<!-- <p class="form-row form-row-wide create-account"><input class="input-checkbox" id="mailchimp_woocommerce_newsletter" type="checkbox" name="mailchimp_woocommerce_newsletter" value="1" checked="checked"><label for="mailchimp_woocommerce_newsletter" class="checkbox">Subscribe</label></p> -->
-							<div class="clear"></div>
-							<p class="woocomerce-FormRow form-row fooderyfit-register-submit">
-
+<<<<<<< HEAD
+								<!-- <p class="form-row form-row-wide create-account"><input class="input-checkbox" id="mailchimp_woocommerce_newsletter" type="checkbox" name="mailchimp_woocommerce_newsletter" value="1" checked="checked"><label for="mailchimp_woocommerce_newsletter" class="checkbox">Subscribe</label></p> -->
+								<div class="clear"></div>
+								<p class="woocomerce-FormRow form-row fooderyfit-register-submit">
+=======
 								<input type="submit" id="submit" class="woocommerce-Button button fooderyfit-register-button" name="register" value="Register" />
 							</p>
+>>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
 
+									<input type="submit" class="woocommerce-Button button fooderyfit-register-button" id="registr" name="register" value="Register" disabled="disabled"/>
+								</p>
 
-						</form>
+							</form>
+						</div>
 					</div>
+
 				</div>
+				<div class="fooderyfit-login-background"></div>
 
 			</div>
-			<div class="fooderyfit-login-background"></div>
+			<span class="et_bloom_bottom_trigger"></span>
+		</div><!--/row-->
 
-		</div>
-		<span class="et_bloom_bottom_trigger"></span>
-	</div><!--/row-->
-
-</div><!--/container-->
+	</div><!--/container-->
 
 </div><!--/container-wrap-->
 
+<<<<<<< HEAD
+<script>
+
+	$('#username, #password').bind('keyup', function() {
+    if(allFilled()) $('#login').removeAttr('disabled');
+	});
+
+	function allFilled() {
+	    var filled = true;
+	    $('body input').each(function() {
+	        if($(this).val() == '') filled = false;
+	    });
+	    return filled;
+	}
+
+	$('#reg_email, #reg_phone, #reg_password, #reg_confpassword, ').bind('keyup', function() {
+	    if(allFilled1()) $('#registr').removeAttr('disabled');
+		});
+		
+		function allFilled1() {
+	    var filled = true;
+	    $('body input').each(function() {
+	        if($(this).val() == '') filled = false;
+	    });
+	    return filled;
+	}
+	// code for submit btn to be disabled untill all fields are filled
+
+	(function() {
+	    $('form > input').keyup(function() {
+
+	        var empty = false;
+	        $('form > input[required]').each(function() {
+	            if ($(this).val() == '') {
+	                empty = true;
+	            }
+	        });
+
+	        if (empty) {
+	            $('#login').attr('disabled', 'disabled');
+	            $('#register').attr('disabled', 'disabled');
+	           
+	        } else {
+	            $('#login').removeAttr('disabled');
+	            $('#register').removeAttr('disabled');
+
+	        }
+	    });
+	})()
+</script>
+
+=======
 
 <script>
 $(document).ready(function () {
@@ -302,4 +387,5 @@ $("#submit").css({
 });
 });
 </script>
+>>>>>>> 86400b2db89bfff57c5afa5ec12ea9a9d62da971
 {% endblock %}
