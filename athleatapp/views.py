@@ -36,14 +36,15 @@ def doLogin(request):
 		password = request.POST['password']
 		
 		uid = sock_common.login(DB_NAME, username, password)
-
-		request.session['user_id'] = uid
-		UID = getUserId(request)
-		sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
-		user_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'read', uid,[])
-		customer_data = sock.execute(DB_NAME, uid, password, 'res.partner', 'read', user_data['partner_id'][0],[])
 		if uid:
-			# return HttpResponseRedirect('/dashboard')
+			request.session['user_id'] = uid
+			request.session['password'] = password
+			UID = getUserId(request)
+			sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
+			user_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'read', uid,[])
+			request.session['cid'] = user_data['partner_id'][0]
+			customer_data = sock.execute(DB_NAME, uid, password, 'res.partner', 'read', user_data['partner_id'][0],[])
+				# return HttpResponseRedirect('/dashboard')
 			return render(request,'dashboard.html',{'user_data': customer_data})
 		else:
 			return render(request, 'login.html', {'error': 'Username or Password is wrong !'})
@@ -149,8 +150,16 @@ def getValues(request):
 
 # User Current Plan
 def myPlan(request):
-
-	return render(request,'my-plan.html',{})
+	uid = request.session['user_id']
+	cid = request.session['cid']
+	password = request.session['password']
+	plan_id = sock.execute(DB_NAME, uid, password,'meal.plans', 'search', [('customer','=', cid),('state','=','active')])[0]
+	plan_data = sock.execute(DB_NAME, uid, password,'meal.plans', 'read', plan_id, [])
+	
+	if plan_data['meal_plan']:
+		items_data = sock.execute(DB_NAME, uid, password,'meal.meal', 'read', plan_data['meal_plan'], [])
+		print items_data
+	return render(request,'my-plan.html',{'items_data': items_data})
 
  # User Account
 def myAccount(request):
@@ -173,13 +182,16 @@ def myAccount(request):
 			user_vals['cnf_pwd'] = cnf_pwd
 		else:
 			return render(request,'my-account.html',{'user_data': customer_data, 'msg': 'Passwords do not match'})
-		
-		uid = request.session['user_id']
-		UID = getUserId(request)
-		sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'write', [uid], {'login': email, 'new_password': cnf_pwd ,'name': name})
+		try:
+			uid = request.session['user_id']
+			UID = getUserId(request)
+			sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'write', [uid], {'login': email, 'new_password': cnf_pwd ,'name': name})
 
-		customer_data = getLoggedUserData(request)
-		return render(request,'my-account.html',{'user_data': customer_data})
+			customer_data = getLoggedUserData(request)
+			return render(request,'my-account.html',{'user_data': customer_data})
+		except Exception as e:
+			return render(request,'my-account.html',{'user_data': customer_data, 'msg': 'Email %s already exists !' %email})
+
 		
 	return render(request,'my-account.html',{'user_data': customer_data})
 
