@@ -6,7 +6,36 @@
 {% block child %}
 <div class="woocommerce-MyAccount-content col-md-9">
 
+	<div class="row">
+		<div class="meal-plan-box col-md-6" style="">
+			<div class="row">
+				<div class="col-md-6">
+					 <p style="padding-bottom:10px;">How many days per week :</p>
+				</div>
+				<div class="col-md-5 col-md-offset-1" style="margin-left:-10px;">
+					<p style="padding-bottom:10px;">5</p>
+				</div>
+				<div class="col-md-6">
+					 <p style="padding-bottom:10px;">No of meals per day :</p>
+				</div>
+				<div class="col-md-5 col-md-offset-1" style="margin-left:-10px;">
+					<p style="padding-bottom:10px;">4</p>
+				</div>
+			</div>
+		</div>
+		<div class="meal-plan-box col-md-6" style="">
+			<div class="row">
+				<div class="col-md-5">
+					 <p style="padding-bottom:10px;">Meal Plan Type :</p>
+				</div>
+				<div class="col-md-5 col-md-offset-2" style="margin-left:-10px;">
+					<p style="padding-bottom:10px;">Low Carb</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
+<div classs="myplan-table">
 	<table border="1">
 		<thead>
 			<tr>
@@ -37,6 +66,6 @@
 		{% endfor %}
 		</tbody>
 	</table>
-
+	</div>
 </div>
 {% endblock child%}
