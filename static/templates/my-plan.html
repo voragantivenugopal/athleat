@@ -22,17 +22,19 @@
 			</tr>
 		</thead>
 		<tbody>
+		{% for data in items_data %}
 			<tr>
+				<td>{{data.item}}</td>
+				<td>{{data.meals_type}}</td>
 				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>{{data.quantity}}</td>
+				<td>{{data.calories}}</td>
+				<td>{{data.carb}}</td>
+				<td>{{data.protein}}</td>
+				<td>{{data.fat}}</td>
+				<td>{{data.price}}</td>
 			</tr>
+		{% endfor %}
 		</tbody>
 	</table>
 
