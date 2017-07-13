@@ -60,7 +60,7 @@ html:not(.page-trans-loaded) { background-color: #ffffff; }
 <script type='text/javascript' src='{% static "/cdnjs.cloudflare.com/jquery.matchHeight-min.js" %}'></script>
 <script type='text/javascript' src='{% static "/cdnjs.cloudflare.com/jquery.magnific-popup.min.js" %}'></script>
 <script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/foodery-fit-meal-builder-configef15.js" %}'></script>
-<script type='text/javascript' src='{% static "/wp-content/plugins/foodery-fit-meal-buider/public/js/foodery-fit-meal-builder-publicef15.js" %}'></script>
+
 
 <script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.minef15.js" %}'></script>
 <!-- <script type='text/javascript'>
@@ -91,6 +91,9 @@ var affwp_debug_vars = {"integrations":{"ninja-forms":"Ninja Forms","paypal":"Pa
 </script> -->
 <!-- <script type='text/javascript' src='{% static "/wp-content/plugins/affiliate-wp/assets/js/tracking.min6471.js" %}'></script> -->
 <script type='text/javascript' src='{% static "/wp-content/plugins/js_composer_salient/assets/js/vendors/woocommerce-add-to-cart972f.js" %}'></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.css" />
 <!-- <script type='text/javascript'>
 /* <![CDATA[ */
 var pys_events = [{"type":"init","name":"1239397566189356","params":[]},{"type":"track","name":"PageView","params":{"domain":"fooderyfit.com"},"delay":0},{"type":"trackCustom","name":"GeneralEvent","params":{"post_type":"page","content_name":"Meal Builder","post_id":66,"domain":"fooderyfit.com"},"delay":0}];
@@ -141,6 +144,12 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 <link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/blog.css" %}'>
 <link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/misc.css" %}'>
 
+
+
+
+
+
+
 <!-- <style type="text/css">iframe[name="google_conversion_frame"] {display: none;}</style><meta name="referrer" content="always"/>		<script type="text/javascript">
 		var AFFWP = AFFWP || {};
 		AFFWP.referral_var = 'ref';
@@ -151,6 +160,12 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 		</script> -->
 
 <link rel="stylesheet" type="text/css" href='{% static "/wp-content/themes/salient-child/css/custom-style.css" %}'>
+
+
+<!--srikanth-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--srikanth-->
+
 
 </head>
 
@@ -263,9 +278,9 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 							<div class="col span_3" id="two">
 								<!-- Footer widget area 2 -->
 								<div id="nav_menu-2" class="widget widget_nav_menu"><h4>ATHLEAT</h4>
-									<div class="menu-footer-foodery-fit-container"><ul id="menu-footer-foodery-fit" class="menu"><li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-109 current_page_item menu-item-111"><a href="index.html">About</a></li>
-									<li id="menu-item-267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-267"><a href="../menu/index.html">Menu</a></li>
-									<li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"><a href="../pricing/index.html">Pricing</a></li>
+									<div class="menu-footer-foodery-fit-container"><ul id="menu-footer-foodery-fit" class="menu"><li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-109 current_page_item menu-item-111"><a href="/">About</a></li>
+									<li id="menu-item-267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-267"><a href="/menu">Menu</a></li>
+									<!-- <li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"><a href="../pricing/index.html">Pricing</a></li> -->
 									<!-- <li id="menu-item-504" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-504"><a href="../blog/index.html">Blog</a></li>
 									<li id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="../ambassador-programme/index.html">Ambassador Programme</a></li>
 									<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="../macro-calculator/index.html">Macro Calculator</a></li> -->
@@ -408,6 +423,8 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 				<script type='text/javascript' src='{% static "/wp-includes/js/jquery/ui/effect.mine899.js" %}'></script>
 				<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js" %}'></script>
 				<script type='text/javascript' src='{% static "/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js" %}'></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 				<script type='text/javascript'>
 				/* <![CDATA[ */
 				var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/about\/?wc-ajax=%%endpoint%%"};
@@ -452,6 +469,15 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 <![endif]-->
 <!-- WooCommerce JavaScript -->
 <!--  -->
+
+
+
+<!--srikanth(jquery validation plugin-->
+<script type='text/javascript' src='{% static "/wp-content/plugins/bloom/js/jqueryvalidate.min.js" %}'></script>
+<!--srikanth-->
+
+
+
 
 </body>
 </html>

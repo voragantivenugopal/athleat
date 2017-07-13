@@ -177,12 +177,19 @@
    .fooderyfit-login-container .woocommerce-Input.woocommerce-Input--text.input-text::-webkit-input-placeholder, .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text::-webkit-input-placeholder {color: rgba(27, 29, 31, 0.4);}
    .fooderyfit-login-container .woocommerce-Input.woocommerce-Input--text.input-text::-moz-placeholder, {color: rgba(27, 29, 31, 0.4);}
    .fooderyfit-login-container .woocommerce-Input.woocommerce-Input--text.input-text:-ms-input-placeholder, .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text:-ms-input-placeholder {color: rgba(27, 29, 31, 0.4);}
+   .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text.sel{
+    box-shadow:none !important;padding: 12px !important;
+   }
+   
+
 
    .woocommerce form.login, .woocommerce form.register {padding: 0; margin: 0; border: none; border-radius: 0;}
    .fooderyfit-login-container .woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {padding: 0 10%;}
    .fooderyfit-login-container .woocommerce-form__label.woocommerce-form__label-for-checkbox.inline span {font-size: 12px; font-weight: 300; line-height: 2.17; letter-spacing: 0.4px; color: rgba(27, 29, 31, 0.4) !important}
    .fooderyfit-login-container input[type=checkbox] {vertical-align: middle; margin: -1px 0 0;}
-   .woocommerce form .form-row.fooderyfit-login-submit, .woocommerce form .form-row.fooderyfit-register-submit {padding: 0; margin: 0;}
+   .woocommerce form .form-row.fooderyfit-login-submit, .woocommerce form .form-row.fooderyfit-register-submit { margin: 0;}
+   .form-row.fooderyfit-register-submit { padding-top: 50px !important;}
+   .woocommerce form .form-row.fooderyfit-login-submit{padding-bottom: 90px;}
    body[data-button-style*="slightly_rounded"].ascend .container-wrap input[type="submit"].fooderyfit-login-button, body[data-button-style*="slightly_rounded"].ascend .container-wrap input[type="submit"].fooderyfit-register-button {width: 100%; border-top-left-radius: 0 !important; border-top-right-radius: 0 !important; height: 70px; font-family: Roboto; font-size: 16px !important; font-weight: bold !important; letter-spacing: 1px; text-align: center; color: #ffffff !important; position: absolute; bottom: -3px; left: 0;}
    body[data-button-style*="slightly_rounded"].ascend .container-wrap input[type="submit"].fooderyfit-login-button {background-color: #4397ff !important;}
    body[data-button-style*="slightly_rounded"].ascend .container-wrap input[type="submit"].fooderyfit-register-button {background-color: #ff6141 !important;}
@@ -195,7 +202,14 @@
    .woocommerce-password-strength.good {background-color: #ffbc2f; color: white; font-weight: 300; font-size: 14px; margin-top: 4px; margin-bottom: 80px;}
    .woocommerce-password-strength.strong {background-color: rgb(5, 225, 119); color: white; font-weight: 300; font-size: 14px; margin-top: 4px; margin-bottom: 80px;}
    .woocommerce-password-hint {font-size: 14px; line-height: 22px; color: rgba(0, 0, 0, 0.7); margin-bottom: 80px;}
-
+   .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text.numr{
+    padding:15px !important;
+   }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
    @media screen and (min-width: 480px) and (max-width: 999px) {
    	.fooderyfit-login-container, .fooderyfit-register-container {min-height: 390px;}
    }
