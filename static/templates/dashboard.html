@@ -1,0 +1,52 @@
+<!doctype html> <!--menu content-->
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-wrap" style="opacity: 1; background-color:#f2f6f8">
+	
+	<div class="container main-content">
+		
+		<div class="row">
+			
+			<div class="woocommerce">
+				<nav class="woocommerce-MyAccount-navigation col-md-3" >
+					<ul>
+						<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+							<a href="https://fooderyfit.com/my-account/">Dashboard</a>
+						</li>
+								<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+							<a href="https://fooderyfit.com/my-account/orders/">Orders</a>
+						</li>
+								<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
+							<a href="https://fooderyfit.com/my-account/downloads/">Downloads</a>
+						</li>
+								<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
+							<a href="https://fooderyfit.com/my-account/edit-address/">Addresses</a>
+						</li>
+								<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+							<a href="https://fooderyfit.com/my-account/edit-account/">Account details</a>
+						</li>
+								<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
+							<a href="https://fooderyfit.com/my-account/customer-logout/">Logout</a>
+						</li>
+					</ul>
+				</nav>
+
+
+				<div class="woocommerce-MyAccount-content col-md-9">
+	
+					<p>Hello <strong>venugopal</strong> (not <strong>venugopal</strong>? <a href="https://fooderyfit.com/my-account/customer-logout/?_wpnonce=0f355a2734">Log out</a>)</p>
+
+					<p>From your account dashboard you can view your <a href="https://fooderyfit.com/my-account/orders/">recent orders</a>, manage your <a href="https://fooderyfit.com/my-account/edit-address/">shipping and billing addresses</a> and <a href="https://fooderyfit.com/my-account/edit-account/">edit your password and account details</a>.</p>
+
+				</div>
+			</div>
+			<span class="et_bloom_bottom_trigger"></span>
+		</div><!--/row-->
+		
+	</div><!--/container-->
+	
+</div>
+
+	{% endblock %}

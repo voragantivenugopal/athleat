@@ -99,3 +99,37 @@ img.wp-smiley,
     padding-bottom: 40px;
 }
 
+.modal-backdrop.in{display: none;}
+.modal-dialog{
+	margin: 8% auto;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+	border: 0px;
+}
+.main-content ul,	 .main-content ol{
+	margin-left: 0px !important;
+	margin-bottom: 0px;
+}
+.modal-body{
+	padding: 0px;
+}
+.modal-body .nav-head > li > a{
+	padding: 20px 40px;
+}
+.modal-body .nav-head{
+	padding-left: 30px;
+}
+.nav-head > li.active > a, .nav-head > li.active > a:focus, .nav-head > li.active > a:hover{
+	border-bottom: 3px solid #4b5eeb;
+}
+.modal-body .well{
+	padding: 0px;
+}
+.modal-left{
+	padding: 30px 40px;
+	border-right: 2px solid #e8eef3;
+}
+.model-right{
+	padding: 30px 40px;
+	background: #f4f7f9;
+}
