@@ -59,24 +59,21 @@
 <!--For enabling submit button-->
 <script>
 $(document).ready(function() {
-
+	$("#edit_accSubmit").attr('disabled', 'disabled');
 	$("#edit_accSubmit").css({
 		"cursor": "default",
 	});
 
-	$("#edit_accSubmit").attr('disabled', 'disabled');
-
-	$("form").keyup(function() {
-		// To Disable Submit Button
-		// $("#submit").attr('disabled', 'disabled');
+	
+	$("form > input").keyup(function() {
 		// Validating Fields
 		var fullname  = $("#account_first_name").val();
 		var email = $("#account_email").val();
-		var password = $("#password_1").val();
-		var confirmpassword = $("#password_2").val();
+		var passw1 = $("#password_1").val();
+		var passw2 = $("#password_2").val();
 		var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
 		
-		if ((!(email == "" || fullname == "" || phone == "" || password =="" || confirmpassword=="")) && ((filter.test(email)) && (password.length>=6) && (confirmpassword.length>=6) && (confirmpassword == password)){
+		if ((!(email == "" || fullname == "" || phone == "" || passw1 =="" || passw2=="")) && ((filter.test(email)) && (password.length>=6) && (confirmpassword.length>=6) && (passw2 == passw1)){
 
 			// To Enable Submit Button
 			$("#edit_accSubmit").removeAttr('disabled');
@@ -112,12 +109,13 @@ $(document).ready(function () {
 			"account_email":{
 				required:true,			 
 			},
-
+			"password_current":{
+				required:true,
+			},
 			"password_1":{
 				required:true,
-				minlength:6
+				minlength:6,
 			},
-
 			"password_2": {
 				required: true,
 				minlength:6,
@@ -129,8 +127,10 @@ $(document).ready(function () {
 
 			"account_email":{
 				required: "Enter your username or email id"
-
 			},
+			"password_current"{
+				required: "Enter your current password",
+			}
 			"password_1": {
 				required: "Enter your password",
 				minlength:"Password must be atleast 6 characters long",
