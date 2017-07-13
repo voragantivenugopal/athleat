@@ -1,7 +1,7 @@
 
+
 <!doctype html>
 {% extends 'customer-index.html' %}
-
 {% load static %}
 {% block child %}
 <div class="woocommerce-MyAccount-content col-md-9">
@@ -9,6 +9,5 @@
 	<p>Hello <strong>{{user_data.name}}</strong> (not <strong>{{user_data.name}}</strong>? <a href="/logout">Log out</a>)</p>
 
 	<p>From your account dashboard you can view your <a href="/my-orders">Active Plans</a> and <a href="/edit-account">edit your password and account details</a>.</p>
-
 </div>
 {% endblock child%}
