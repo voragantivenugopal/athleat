@@ -25,7 +25,7 @@ def doLogin(request):
 		password = request.POST['password']
 		uid = sock_common.login(DB_NAME, username, password)
 		if uid:
-			return HttpResponseRedirect('/menu')
+			return HttpResponseRedirect('/dashboard')
 		else:
 			return render(request, 'login.html', {'error': 'Username or Password is wrong !'})
 
