@@ -1,4 +1,3 @@
-
 <!doctype html>
 {% extends 'customer-index.html' %}
 
@@ -10,13 +9,13 @@
 		<div class="meal-plan-box col-md-6" style="">
 			<div class="row">
 				<div class="col-md-6">
-					 <p style="padding-bottom:10px;">How many days per week :</p>
+					<p style="padding-bottom:10px;">How many days per week :</p>
 				</div>
 				<div class="col-md-5 col-md-offset-1" style="margin-left:-10px;">
 					<p style="padding-bottom:10px;">5</p>
 				</div>
 				<div class="col-md-6">
-					 <p style="padding-bottom:10px;">No of meals per day :</p>
+					<p style="padding-bottom:10px;">No of meals per day :</p>
 				</div>
 				<div class="col-md-5 col-md-offset-1" style="margin-left:-10px;">
 					<p style="padding-bottom:10px;">4</p>
@@ -26,7 +25,7 @@
 		<div class="meal-plan-box col-md-6" style="">
 			<div class="row">
 				<div class="col-md-5">
-					 <p style="padding-bottom:10px;">Meal Plan Type :</p>
+					<p style="padding-bottom:10px;">Meal Plan Type :</p>
 				</div>
 				<div class="col-md-5 col-md-offset-2" style="margin-left:-10px;">
 					<p style="padding-bottom:10px;">Low Carb</p>
@@ -35,37 +34,37 @@
 		</div>
 	</div>
 
-<div classs="myplan-table">
-	<table border="1">
-		<thead>
-			<tr>
-				<th> Item </th>
-				<th> Meals Type </th>
-				<th> Addons </th>
-				<th> Grams </th>
-				<th> Calories </th>
-				<th> Carb</th>
-				<th> Protein </th>
-				<th> Fat </th>
-				<th> Price </th>
-			</tr>
-		</thead>
-		<tbody>
-		{% for data in items_data %}
-			<tr>
-				<td>{{data.item}}</td>
-				<td>{{data.meals_type}}</td>
-				<td></td>
-				<td>{{data.quantity}}</td>
-				<td>{{data.calories}}</td>
-				<td>{{data.carb}}</td>
-				<td>{{data.protein}}</td>
-				<td>{{data.fat}}</td>
-				<td>{{data.price}}</td>
-			</tr>
-		{% endfor %}
-		</tbody>
-	</table>
+	<div classs="myplan-table">
+		<table border="1">
+			<thead>
+				<tr>
+					<th> Item </th>
+					<th> Meals Type </th>
+					<th> Addons </th>
+					<th> Grams </th>
+					<th> Calories </th>
+					<th> Carb</th>
+					<th> Protein </th>
+					<th> Fat </th>
+					<th> Price </th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for data in items_data %}
+				<tr>
+					<td>{{data.item}}</td>
+					<td>{{data.meals_type}}</td>
+					<td></td>
+					<td>{{data.quantity}}</td>
+					<td>{{data.calories}}</td>
+					<td>{{data.carb}}</td>
+					<td>{{data.protein}}</td>
+					<td>{{data.fat}}</td>
+					<td>{{data.price}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 	</div>
 </div>
 {% endblock child%}
