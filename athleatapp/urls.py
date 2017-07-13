@@ -9,5 +9,7 @@ urlpatterns = [
     url(r'^register/', userSignup),
     url(r'^reset-password/', resetPassword),
     url(r'^post-values/', getValues),
+
+    # Customer URLs
     url(r'^dashboard/', dashboard),
 ]
