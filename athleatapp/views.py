@@ -18,18 +18,43 @@ def getUserId(request):
 	uid = sock_common.login(DB_NAME, USERNAME, PASSWORD)
 	return uid
 
+def getLoggedUserData(request):
+
+	uid = request.session['user_id']
+	if uid:
+		sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
+		UID = getUserId(request)
+		user_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'read', uid,[])
+		customer_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.partner', 'read', user_data['partner_id'][0],[])
+		return customer_data
+
 def doLogin(request):
 
 	if request.method == 'POST':
-		username = request.POST['username']
+		username = request.POST['email']
 		password = request.POST['password']
+		
 		uid = sock_common.login(DB_NAME, username, password)
+
+		request.session['user_id'] = uid
+		UID = getUserId(request)
+		sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
+		user_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'read', uid,[])
+		customer_data = sock.execute(DB_NAME, uid, password, 'res.partner', 'read', user_data['partner_id'][0],[])
 		if uid:
-			return HttpResponseRedirect('/menu')
+			# return HttpResponseRedirect('/dashboard')
+			return render(request,'dashboard.html',{'user_data': customer_data})
 		else:
 			return render(request, 'login.html', {'error': 'Username or Password is wrong !'})
 
 	return render(request,'login.html',{})
+
+
+def doLogout(request):
+	for sesskey in request.session.keys():
+		del request.session[sesskey]
+
+	return HttpResponseRedirect('/login')
 
 def Index(request):
 
@@ -51,8 +76,11 @@ def mealBuilder(request):
 
 
 def resetPassword(request):
-
 	return render(request,'resetpassword.html',{})
+
+def dashboard(request):
+	customer_data = getLoggedUserData(request)
+	return render(request,'dashboard.html',{'user_data': customer_data})
 
 def displayMenu(request):
 	content = []
@@ -115,4 +143,9 @@ def getValues(request):
 					})
 
 	return HttpResponseRedirect('/menu')
+
+# User Current Plan
+
+def myPlan(request):
+	return render(request,'my-plan.html',{})
 
