@@ -23,7 +23,7 @@
 							<h2>Welcome back</h2>
 
 							<form class="woocomerce-form woocommerce-form-login login" id="loginform" method="post" action="/login/">
-								
+								{% csrf_token %}
 
 								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
 									<!--<label for="username">Username or email address <span class="required">*</span></label>-->
@@ -58,7 +58,7 @@
 						<div class="fooderyfit-register-container">
 							<h2>First time?</h2>
 						<form method="post" class="register" id="registerform" action="/register/">
-
+						{% csrf_token %}
 							
 							<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
 								<label for="reg_name">Name<span class="required">*</span></label>

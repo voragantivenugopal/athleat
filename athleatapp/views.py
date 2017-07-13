@@ -26,6 +26,7 @@ def getLoggedUserData(request):
 		UID = getUserId(request)
 		user_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'read', uid,[])
 		customer_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.partner', 'read', user_data['partner_id'][0],[])
+		customer_data.update({'email': user_data['login']})
 		return customer_data
 
 def doLogin(request):
@@ -100,14 +101,16 @@ def userSignup(request):
 		username = request.POST['email']
 		password = request.POST['password']
 		phone = request.POST['phone']
+		name = request.POST['regname']
 		try:
 			uid = getUserId(request)
-			user_id = sock.execute(DB_NAME, uid, PASSWORD, 'res.users', 'create', {'login': username, 'new_password': password ,'name': username})
+			user_id = sock.execute(DB_NAME, uid, PASSWORD, 'res.users', 'create', {'login': username, 'new_password': password ,'name': name})
 			user_data = sock.execute(DB_NAME, uid, PASSWORD, 'res.users', 'read', user_id, ['partner_id'])
 			user_update = sock.execute(DB_NAME, uid, PASSWORD, 'res.partner', 'write', user_data['partner_id'][0], {'active2': True, 'contact_no': str(phone), 'customer': True})
 
 			return render(request, 'login.html', {'error': 'Thank You for choosing us !'})
 		except Exception as e:
+			print e
 			return render(request, 'login.html', {'error': 'Email already exists! If you forgot your password, please reset it !'})
 	return HttpResponseRedirect('/menu')
 
@@ -146,9 +149,37 @@ def getValues(request):
 
 # User Current Plan
 def myPlan(request):
+
 	return render(request,'my-plan.html',{})
 
  # User Account
 def myAccount(request):
-	return render(request,'my-account.html',{})
+
+	customer_data = getLoggedUserData(request)
+	if request.method == 'POST':
+		user_vals = {}
+		name = request.POST['fullname']
+		if name:
+			user_vals['name'] = name
+		email = request.POST['account_email']
+		if email:
+			user_vals['email'] = email
+
+		curr_pwd = request.POST['password_current']
+		new_pwd = request.POST['password_1']
+
+		cnf_pwd = request.POST['password_2']
+		if cnf_pwd == new_pwd:
+			user_vals['cnf_pwd'] = cnf_pwd
+		else:
+			return render(request,'my-account.html',{'user_data': customer_data, 'msg': 'Passwords do not match'})
+		
+		uid = request.session['user_id']
+		UID = getUserId(request)
+		sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'write', [uid], {'login': email, 'new_password': cnf_pwd ,'name': name})
+
+		customer_data = getLoggedUserData(request)
+		return render(request,'my-account.html',{'user_data': customer_data})
+		
+	return render(request,'my-account.html',{'user_data': customer_data})
 
