@@ -133,3 +133,58 @@ img.wp-smiley,
 	padding: 30px 40px;
 	background: #f4f7f9;
 }
+
+.modal-left .nav-pills > li.active > a,.modal-left .nav-pills > li.active > a:focus,.modal-left .nav-pills > li.active > a:hover ,
+.modal-left .nav > li > a:focus, .nav > li > a:hover{
+    color: #676767;
+    background-color: #f4f7f9;
+}
+.modal-left .well{
+	background-color: #fff;
+	border: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.modal-left a {
+    color: #676767;
+}
+.modal-left .nav-tabs > li > a{
+	border: 0px;
+}
+.modal-left2{
+	padding: 30px 40px;
+	border-right: 2px solid #e8eef3;
+}
+.model-right2{
+	padding: 30px 40px;
+}
+
+.modal-left2 .nav-pills > li.active > a,.modal-left2 .nav-pills > li.active > a:focus,.modal-left2 .nav-pills > li.active > a:hover ,
+.modal-left2 .nav > li > a:focus, .nav > li > a:hover{
+    color: #676767;
+    background-color: #f4f7f9;
+}
+.modal-left2 .well{
+	background-color: #fff;
+	border: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.modal-left2 a {
+    color: #676767;
+}
+.modal-left2 .nav-tabs > li > a{
+	border: 0px;
+    color: #323c47;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 12px;
+}
+.modal-left2 .nav > li > a {
+    padding: 4px 5px;
+}
+.modal-left2 label{
+	min-width: 90px;
+}
