@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^register/', userSignup),
     url(r'^reset-password/', resetPassword),
     url(r'^post-values/', getValues),
+    url(r'^dashboard/', dashboard),
 ]

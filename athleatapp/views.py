@@ -54,6 +54,10 @@ def resetPassword(request):
 
 	return render(request,'resetpassword.html',{})
 
+def dashboard(request):
+
+	return render(request,'dashboard.html',{})
+
 def displayMenu(request):
 	content = []
 	uid = getUserId(request)
