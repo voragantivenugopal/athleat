@@ -153,12 +153,14 @@ def myPlan(request):
 	uid = request.session['user_id']
 	cid = request.session['cid']
 	password = request.session['password']
-	plan_id = sock.execute(DB_NAME, uid, password,'meal.plans', 'search', [('customer','=', cid),('state','=','active')])[0]
-	plan_data = sock.execute(DB_NAME, uid, password,'meal.plans', 'read', plan_id, [])
+	plan_id = sock.execute(DB_NAME, uid, password,'meal.plans', 'search', [('customer','=', cid),('state','=','active')])
+	if plan_id:
+		plan_id = plan_id[0	]
+		plan_data = sock.execute(DB_NAME, uid, password,'meal.plans', 'read', plan_id, [])
 	
-	if plan_data['meal_plan']:
-		items_data = sock.execute(DB_NAME, uid, password,'meal.meal', 'read', plan_data['meal_plan'], [])
-		print items_data
+		if plan_data['meal_plan']:
+			items_data = sock.execute(DB_NAME, uid, password,'meal.meal', 'read', plan_data['meal_plan'], [])
+			print items_data
 	return render(request,'my-plan.html',{'items_data': items_data})
 
  # User Account
