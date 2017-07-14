@@ -4,7 +4,6 @@
 // possibilidade de alterar datas - tipo pausas para férias
 // customizar meals
 
-console.log(meal_info);
 var currHash = '';
 var h = '';
 var auto_jump = true;
@@ -1399,10 +1398,21 @@ function doPasteWeek(week){
 
 
 
-$(document).on('click','.btnCustomizerMeal',function(){
-    console.log('----');
+$(document).on('click','.btnCustomizerMeal',function(e){
+      console.log("$(this): ", $(this));
+
     $('#myModal').modal('show');
-    console.log(meal_info);
+         var data_week = $(this).attr('data-week');
+         var data_day = $(this).attr('data-day');
+         var data_date = $(this).attr('data-date');
+         var info = $(this).('.btnCustomizerMealDesc').text();
+         // var meal_item = $(this).
+
+        $(document).on('click','#modal-add-meal-btn',function(){
+        var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
+            $('#myModal').modal('hide');
+            $('.btnCustomizerMealDesc').text(meal_item);
+    });
 
 });
 

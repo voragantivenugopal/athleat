@@ -24,7 +24,7 @@
 
 							<form class="woocomerce-form woocommerce-form-login login" id="loginform" method="post" action="/login/">
 								
-
+							{% csrf_token %}
 								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
 									<!--<label for="username">Username or email address <span class="required">*</span></label>-->
 									<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" placeholder="Email" id="email" value="" />
