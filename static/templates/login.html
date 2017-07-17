@@ -23,7 +23,9 @@
 							<h2>Welcome back</h2>
 
 							<form class="woocomerce-form woocommerce-form-login login" id="loginform" method="post" action="/login/">
+
 								
+							{% csrf_token %}
 
 								<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
 									<!--<label for="username">Username or email address <span class="required">*</span></label>-->
@@ -58,7 +60,7 @@
 						<div class="fooderyfit-register-container">
 							<h2>First time?</h2>
 						<form method="post" class="register" id="registerform" action="/register/">
-
+						{% csrf_token %}
 							
 							<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide fooderyfit-form-input">
 								<label for="reg_name">Name<span class="required">*</span></label>
@@ -118,70 +120,73 @@
 $(document).ready(function () {
     $("#loginform").validate({
 
-rules: {
+		rules: {
 
-"email":{
-  required:true,
- 
-},
+			"email":{
+			  required:true,
+			 
+				},
 
-"password":{
-  required:true,
-  minlength:6
-},
-},
+			"password":{
+			  required:true,
+			  minlength:6
+				},
+		},
 
-messages:{
+		messages:{
 
-"email":{
-        required: "Enter your username or email id"
-       
-        },
-"password": {
-        required: "Enter your password",
-        minlength: "Entered password is below 6 characters"
-    },
-}
+			"email":{
+			    required: "Enter your username or email id"
+			       
+			    },
+			"password": {
+			    required: "Enter your password",
+			    minlength: "Entered password is below 6 characters"
+				},
+		}
+	});
 });
-});
+
 </script>
+
 <script>
 $(document).ready(function() {
-  $("#login-submit").css({
- "cursor": "default",
-// $("#submit").attr('disabled', 'disabled');
- });
-$("#login-submit").attr('disabled', 'disabled');
-$("form").keyup(function() {
-// To Disable Submit Button
-// $("#submit").attr('disabled', 'disabled');
-// Validating Fields
-var email = $("#email").val();
-var password = $("#password").val();
-var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+	  $("#login-submit").css({
+		 "cursor": "default",
+	// $("#submit").attr('disabled', 'disabled');
+	 	});
+	$("#login-submit").attr('disabled', 'disabled');
+	$("form").keyup(function() {
+		// To Disable Submit Button
+		// $("#submit").attr('disabled', 'disabled');
+		// Validating Fields
+		var email = $("#email").val();
+		var password = $("#password").val();
+		var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
 
-if (!(email == "" ||  password =="" ) && (password.length>=6) && (filter.test(email))){
-// To Enable Submit Button
-    $("#login-submit").removeAttr('disabled');
-    $("#login-submit").css({
-    "cursor": "pointer",
-    // "box-shadow": "1px 0px 6px #333"
-                      });
- }
-else{
-    $("#login-submit").attr('disabled', 'disabled');
-    $("#login-submit").css({
-       "cursor": "default",
-                          });
-    }
-});
-// On Click Of Submit Button
-$("#login-submit").click(function() {
-$("#login-submit").css({
-// "cursor": "default",
-"box-shadow": "none"
-                     });
-                               });
+			if (!(email == "" ||  password =="" ) && (password.length>=6) && (filter.test(email))){
+			// To Enable Submit Button
+			    $("#login-submit").removeAttr('disabled');
+			    $("#login-submit").css({
+			    "cursor": "pointer",
+			    // "box-shadow": "1px 0px 6px #333"
+			                      });
+			 }
+			else{
+			    $("#login-submit").attr('disabled', 'disabled');
+			    $("#login-submit").css({
+			       "cursor": "default",
+			                          });
+			}
+	});
+
+	// On Click Of Submit Button
+	$("#login-submit").click(function() {
+		$("#login-submit").css({
+		// "cursor": "default",
+		"box-shadow": "none"
+	     });
+    });
 });
 </script>
 
@@ -189,6 +194,7 @@ $("#login-submit").css({
 $(document).ready(function () {
     $("#registerform").validate({
 
+<<<<<<< HEAD
 rules: {
 	"phone":{
   required:true,
@@ -222,11 +228,48 @@ messages:{
     },
 }
 });
+=======
+	rules: {
+		"phone":{
+	  		required:true,
+	  		minlength:10	 
+			},
+		"gender":{required:true,},
+		"password": {
+	        required: true,
+	        minlength:6
+	        },
+		"confirmpassword": {
+	        required: true,
+	        minlength:6
+	        },
+		"confirmpassword": {
+	        required: true,
+	        equalTo: "#reg_password"
+	       },
+	   	},
+
+    messages:{
+        "phone":{      
+	        minlength: "Please enter a valid mobile number",
+	        maxlength: "Please enter a valid mobile number",
+	        },
+		"password":{
+	    	minlength:"Password must be atleast 6 characters long",
+			},        
+		"confirmpassword": {
+        	equalTo: "Passwords do not match!.."
+    		},
+		}
+	});
+>>>>>>> 8c32ba353a1c12e368897f003a51e6bfff1364e6
 });
+
 </script>
 <!--For enabling submit button-->
 <script>
 $(document).ready(function() {
+<<<<<<< HEAD
   $("#submit").css({
  "cursor": "default",
 // $("#submit").attr('disabled', 'disabled');
@@ -278,6 +321,48 @@ $("#submit").css({
 "box-shadow": "none"
 });
 });
+=======
+	  $("#submit").css({
+		 "cursor": "default",
+		// $("#submit").attr('disabled', 'disabled');
+		 });
+	 // To Disable Submit Button
+	$("#submit").attr('disabled', 'disabled');
+	$("form").keyup(function() {
+
+		// Validating Fields
+		var name  = $("#reg_name").val();
+		var email = $("#reg_email").val();
+		var phone = $("#reg_phone").val();
+		var gender=$("#reg_gender option:selected").val();
+		var password = $("#reg_password").val();
+		var confirmpassword = $("#reg_confpassword").val();
+		var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+		var filter1 = /^[0-9-+]+$/;
+
+			if ((!(email == "" || name == "" || phone == "" || password =="" || confirmpassword=="")) && ((filter.test(email)) && (filter1.test(phone)))  && ((phone.length>9) && (phone.length<13)) && (password.length>=6) && (confirmpassword.length>=6) && (confirmpassword == password)){
+
+				// To Enable Submit Button
+				$("#submit").removeAttr('disabled');
+				$("#submit").css({
+				"cursor": "pointer",
+				});
+	 		}
+			else{
+				 $("#submit").attr('disabled', 'disabled');
+				 $("#submit").css({
+				"cursor": "default",
+				});
+			 }
+	});
+	// On Click Of Submit Button
+	$("#submit").click(function() {
+		$("#submit").css({
+		// "cursor": "default",
+		"box-shadow": "none"
+		});
+	});
+>>>>>>> 8c32ba353a1c12e368897f003a51e6bfff1364e6
 });
 </script>
 {% endblock %}
