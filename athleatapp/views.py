@@ -43,7 +43,7 @@ def doLogin(request):
 			sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 			user_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.users', 'read', uid,[])
 			request.session['cid'] = user_data['partner_id'][0]
-			customer_data = sock.execute(DB_NAME, uid, password, 'res.partner', 'read', user_data['partner_id'][0],[])
+			customer_data = sock.execute(DB_NAME, UID, PASSWORD, 'res.partner', 'read', user_data['partner_id'][0],[])
 				# return HttpResponseRedirect('/dashboard')
 			return render(request,'dashboard.html',{'user_data': customer_data})
 		else:
@@ -156,14 +156,15 @@ def myPlan(request):
 	uid = request.session['user_id']
 	cid = request.session['cid']
 	password = request.session['password']
-	plan_id = sock.execute(DB_NAME, uid, password,'meal.plans', 'search', [('customer','=', cid),('state','=','active')])
+	UID = getUserId(request)
+	plan_id = sock.execute(DB_NAME, UID, PASSWORD,'meal.plans', 'search', [('customer','=', cid),('state','=','active')])
+	items_data = None
 	if plan_id:
 		plan_id = plan_id[0	]
-		plan_data = sock.execute(DB_NAME, uid, password,'meal.plans', 'read', plan_id, [])
+		plan_data = sock.execute(DB_NAME, UID, PASSWORD,'meal.plans', 'read', plan_id)
 	
 		if plan_data['meal_plan']:
 			items_data = sock.execute(DB_NAME, uid, password,'meal.meal', 'read', plan_data['meal_plan'], [])
-			print items_data
 	return render(request,'my-plan.html',{'items_data': items_data})
 
  # User Account
