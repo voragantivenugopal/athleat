@@ -80,6 +80,9 @@ def mealBuilder(request):
 def resetPassword(request):
 	return render(request,'resetpassword.html',{})
 
+def register(request):
+	return render(request,'register.html',{})
+
 def dashboard(request):
 	customer_data = getLoggedUserData(request)
 	return render(request,'dashboard.html',{'user_data': customer_data})
