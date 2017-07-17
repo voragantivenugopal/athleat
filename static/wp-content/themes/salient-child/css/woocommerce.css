@@ -179,7 +179,7 @@
    .fooderyfit-login-container .woocommerce-Input.woocommerce-Input--text.input-text::-moz-placeholder, {color: rgba(27, 29, 31, 0.4);}
    .fooderyfit-login-container .woocommerce-Input.woocommerce-Input--text.input-text:-ms-input-placeholder, .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text:-ms-input-placeholder {color: rgba(27, 29, 31, 0.4);}
    .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text.sel{
-    box-shadow:none !important;padding: 12px !important;
+    box-shadow:none !important;padding: 12px !important;color:#b1aaaa;
    }
    
 
