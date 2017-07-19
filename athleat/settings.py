@@ -134,7 +134,8 @@ STATIC_ROOT = ''
 
 
 # XMLRPC CONNECTION SETTINGS
-XMLRPC_URL = 'http://192.168.2.32:8069'
+
+XMLRPC_URL = 'http://192.168.2.27:8069'
 DB_NAME = 'athleat'
 USERNAME = 'admin'
 PASSWORD = 'admin'

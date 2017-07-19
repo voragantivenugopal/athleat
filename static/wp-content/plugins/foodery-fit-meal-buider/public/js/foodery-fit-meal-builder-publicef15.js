@@ -10,6 +10,7 @@ var auto_jump = true;
 var auto_jump_customize = false;
 
 var curr_go = "";
+var curr_choose_plan = "";
 var curr_gender = "";
 var curr_days = 0;
 var curr_meals = 0;
@@ -119,6 +120,7 @@ var customizerCurrentTab = 'originals';
 var tippyWeek;
 var tippyDay;
 var tippyNavStart;
+var tippyNavChooseYourMealPlan
 var tippyNavGender;
 var tippyNavDays;
 var tippyNavMeals;
@@ -127,6 +129,7 @@ var tippyNavDateStart;
 var tippyNavCustomize;
 
 var popperNavStart;
+var popperNavChooseYourMealPlan
 var popperNavGender;
 var popperNavDays;
 var popperNavMeals;
@@ -169,6 +172,9 @@ function processHash()
 		case 'start':
 			start();
 			break;
+        case 'chooseYourMealPlan':
+            chooseYourMealPlan();
+            break;
 		case 'gender':
 			gender();
 			break;
@@ -370,11 +376,22 @@ function setFromHash(w,d,m){
 
 
 function getCookieInfo(){
+    curr_choose_plan = Cookies.get('curr_choose_plan');
 	curr_gender = Cookies.get('curr_gender');
 	curr_days = Cookies.get('curr_days');
 	curr_meals = Cookies.get('curr_meals');
 	curr_weeks = Cookies.get('curr_weeks');
 	// curr_start_date = Cookies.get('curr_start_date');
+
+    if(curr_choose_plan!=undefined){
+        if(curr_choose_plan=="Athleat/Fat loss"){
+            $('.txtDebugChoosePlan').html(" Athleat/Fat loss");
+        }else if(curr_choose_plan=="Customized"){
+            $('.txtDebugChoosePlan').html("Customized");
+        }else{
+            $('.txtDebugChoosePlan').html("Choose your meal plan?");
+        }
+    }
 
 	if(curr_gender!=undefined){
 		if(curr_gender=="m"){
@@ -413,6 +430,7 @@ function getCookieInfo(){
 };
 
 function clearCookies(){
+    Cookies.remove('curr_choose_plan');
 	Cookies.remove('curr_gender');
 	Cookies.remove('curr_days');
 	Cookies.remove('curr_meals');
@@ -421,6 +439,7 @@ function clearCookies(){
 }
 
 function setActives(){
+    $('.btnChoosePlan[data-choose-plan="'+curr_choose_plan+'"]').addClass('btn-success');
 	$('.btnGender[data-gender="'+curr_gender+'"]').addClass('btn-success');
 	$('.btnDaysPerWeek[data-num="'+curr_days+'"]').addClass('btn-success');
 	$('.btnMealNumber[data-num="'+curr_meals+'"]').addClass('btn-success');
@@ -432,6 +451,9 @@ function clearActiveTooltip(){
 
     popperNavStart = tippyNavStart.getPopperElement(document.querySelector('.tooltip_foodery_fit_start'));
     tippyNavStart.hide(popperNavStart);
+
+    popperNavChooseYourMealPlan = tippyNavChooseYourMealPlan.getPopperElement(document.querySelector('.tooltip_foodery_fit_choose_your_meal_plan'));
+    tippyNavChooseYourMealPlan.hide(popperNavChooseYourMealPlan);
 
     popperNavGender = tippyNavGender.getPopperElement(document.querySelector('.tooltip_foodery_fit_gender'));
     tippyNavGender.hide(popperNavGender);
@@ -460,6 +482,15 @@ function setActiveTooltip(slug){
         tippyNavStart = new Tippy('.tooltip_foodery_fit_start',{
             interactive:true,
             html: '#tooltip_foodery_fit_start',
+            arrow: true,
+            position: 'top',
+            theme: 'foodery',
+            hideOnClick: false,
+        });
+
+        tippyNavChooseYourMealPlan = new Tippy('.tooltip_foodery_fit_choose_your_meal_plan',{
+            interactive:true,
+            html: '#tooltip_foodery_fit_choose_your_meal_plan',
             arrow: true,
             position: 'top',
             theme: 'foodery',
@@ -527,6 +558,10 @@ function setActiveTooltip(slug){
                 popperNavStart = tippyNavStart.getPopperElement(document.querySelector('.tooltip_foodery_fit_start'));
                 tippyNavStart.show(popperNavStart);
                 break;
+            case "chooseyourmealplan":
+                popperNavGender = tippyNavGender.getPopperElement(document.querySelector('.tooltip_foodery_fit_gender'));
+                tippyNavGender.show(popperNavGender);
+                break;
             case "gender":
                 popperNavGender = tippyNavGender.getPopperElement(document.querySelector('.tooltip_foodery_fit_gender'));
                 tippyNavGender.show(popperNavGender);
@@ -584,6 +619,10 @@ function start(){
 
 
 function do_auto_jump_customize(){
+    if(curr_choose_plan==''){
+        go('chooseYourMealPlan');
+        return;
+    }
 	if(curr_gender==''){
 		go('gender');
 		return;
@@ -608,11 +647,48 @@ function do_auto_jump_customize(){
 	go('customize');
 }
 
-
 $(document).on('click','#btnStart1',function(e){
-	// console.log('#btnStart1');
-	go('gender');
+    // console.log('#btnStart1');
+    go('chooseYourMealPlan');
 });
+
+function chooseYourMealPlan(){
+    $('.cScreen').hide();
+    $('#cChoosePlan').fadeIn();
+
+    setActiveTooltip("choose your plan");
+
+    var str = '';
+    str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Athleat/Fat loss"?' btn-success ':'')+'" data-choose-plan="Athleat/Fat loss">Athleat/Fat loss</span>';
+    str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Customized"?' btn-success ':'')+'" data-choose-plan="Customized">Customized</span>';
+    $('#cBtnsChoosePlan').html(str);
+
+    TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
+    TweenMax.to('.foodery_fit_meal_timeline_ball2_on',0.3,{delay:0.0, alpha:1});
+}
+
+$(document).on('click','.btnChoosePlan',function(e){
+    curr_choose_plan = $(this).data('chooseyourmealplan');
+    Cookies.set('curr_choose_plan', curr_choose_plan);
+    $('.txtDebugChoosePlan').html(curr_choose_plan);
+
+    $('.btnChoosePlan').removeClass('btn-success');
+    $(this).addClass('btn-success');
+
+    calculateTotalMeals();
+
+    if(auto_jump==true){
+        if(auto_jump_customize){
+            do_auto_jump_customize();
+        }else{
+            go('gender');
+        }
+    }
+});
+// $(document).on('click','#btnStart1',function(e){
+// 	// console.log('#btnStart1');
+// 	go('gender');
+// });
 
 function gender(){
 	$('.cScreen').hide();
@@ -626,13 +702,13 @@ function gender(){
 	$('#cBtnsGender').html(str);
 
 	TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
-	TweenMax.to('.foodery_fit_meal_timeline_ball2_on',0.3,{delay:0.0, alpha:1});
+	TweenMax.to('.foodery_fit_meal_timeline_ball3_on',0.3,{delay:0.0, alpha:1});
 }
 
 $(document).on('click','.btnGender',function(e){
 	curr_gender = $(this).data('gender');
 	Cookies.set('curr_gender', curr_gender);
-	$('.txtDebugGender').html(curr_gender);
+	// $('.txtDebugGender').html(curr_gender);
 
 	$('.btnGender').removeClass('btn-success');
 	$(this).addClass('btn-success');
@@ -665,9 +741,9 @@ function weekdays(){
 	TweenMax.to('.foodery_fit_meal_timeline_ok_on',0.3,{delay:0.0, alpha:0});
 	
     if(curr_days==''){
-        TweenMax.to('.foodery_fit_meal_timeline_ball3_on',0.3,{delay:0.0, alpha:1});
+        TweenMax.to('.foodery_fit_meal_timeline_ball4_on',0.3,{delay:0.0, alpha:1});
     }else{
-        TweenMax.to('.foodery_fit_meal_timeline_ok3_on',0.3,{delay:0.0, alpha:1});
+        TweenMax.to('.foodery_fit_meal_timeline_ok4_on',0.3,{delay:0.0, alpha:1});
     }
     
 }
@@ -708,7 +784,7 @@ function meals(){
 	}
 
 	TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
-	TweenMax.to('.foodery_fit_meal_timeline_ball4_on',0.3,{delay:0.0, alpha:1});
+	TweenMax.to('.foodery_fit_meal_timeline_ball5_on',0.3,{delay:0.0, alpha:1});
 }
 
 $(document).on('click','.btnMealNumber',function(e){
@@ -753,7 +829,7 @@ function weeks(){
 	$('#cChooseWeeks').fadeIn();
 
 	TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
-	TweenMax.to('.foodery_fit_meal_timeline_ball5_on',0.3,{delay:0.0, alpha:1});
+	TweenMax.to('.foodery_fit_meal_timeline_ball6_on',0.3,{delay:0.0, alpha:1});
 }
 
 
@@ -799,7 +875,7 @@ function datestart(){
     setActiveTooltip("datestart");
 
 	TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
-	TweenMax.to('.foodery_fit_meal_timeline_ball6_on',0.3,{delay:0.0, alpha:1});
+	TweenMax.to('.foodery_fit_meal_timeline_ball7_on',0.3,{delay:0.0, alpha:1});
 
 	renderStartingDate();
 }
@@ -1080,7 +1156,7 @@ function customizeMeals(){
 	$('#cCustomizeMeals').fadeIn();
 
 	TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
-	TweenMax.to('.foodery_fit_meal_timeline_ball7_on',0.3,{delay:0.0, alpha:1});
+	TweenMax.to('.foodery_fit_meal_timeline_ball8_on',0.3,{delay:0.0, alpha:1});
 
 	renderCustomizeMeals();
 	calculateTotalMeals();
@@ -1399,13 +1475,13 @@ function doPasteWeek(week){
 
 
 $(document).on('click','.btnCustomizerMeal',function(e){
-      console.log("$(this): ", $(this));
+      // console.log("$(this): ", $(this));
 
     $('#myModal').modal('show');
          var data_week = $(this).attr('data-week');
          var data_day = $(this).attr('data-day');
          var data_date = $(this).attr('data-date');
-         var info = $(this).('.btnCustomizerMealDesc').text();
+         var info = $(this)('.btnCustomizerMealDesc').text();
          // var meal_item = $(this).
 
         $(document).on('click','#modal-add-meal-btn',function(){
@@ -1975,6 +2051,18 @@ function calculateTotalMeals(){
 
 	listDayStats = {};
 
+    if(curr_choose_plan!=undefined){
+        if(curr_choose_plan=="Athleat/Fat loss"){
+            $('.txtDebugChoosePlan').html("Athleat/Fat loss");
+        }else if(curr_choose_plan=="Customized") {
+            $('.txtDebugChoosePlan').html("Customized");
+        }else{
+            $('.txtDebugChoosePlan').html("Choose your meal plan?");
+        }
+        }else{
+            $('.txtDebugChoosePlan').html("Choose your meal plan?");
+        }
+
 	if(curr_gender!=undefined){
 		if(curr_gender=="m"){
 			$('.txtDebugGender').html("Male");
@@ -1983,9 +2071,10 @@ function calculateTotalMeals(){
 		}else{
 			$('.txtDebugGender').html("Gender");
 		}
-	}else{
-        $('.txtDebugGender').html("Gender");
-    }
+    	}else{
+            $('.txtDebugGender').html("Gender");
+        }    
+
 	if(curr_days!=undefined){
 		$('.txtDebugNumDays').html(curr_days);
 	}
@@ -2254,6 +2343,7 @@ function clearEverything(){
 
     clearCookies();
 
+    curr_choose_plan = ''
     curr_gender = 'g';
     curr_days = '0';
     curr_meals = '0';
@@ -2273,6 +2363,12 @@ function clearEverything(){
 $(document).on('click','.btnContinueToCheckout',function(){
 
     var ajaxurl = '/post-values/'
+
+    if(curr_choose_plan==undefined){
+        alert('Please select Choose your meal plan');
+        go('chooseYourMealPlan');
+        return;
+    }
 
     if(curr_gender==undefined){
         alert('Please select your gender');
@@ -2326,6 +2422,7 @@ $(document).on('click','.btnContinueToCheckout',function(){
 
 			varsSave = {
 				// 'action': 'foodery_fit_meal_builder_add_to_cart',
+                'chooseyourmealplan': curr_choose_plan,
 				'gender': curr_gender,
 				'daysperweek': curr_days,
 				'mealsperday': curr_meals,
@@ -2386,13 +2483,14 @@ function postSuccess(data,textStatus,jqXHR)
 	var x5;
 	var x6;
 	var x7;
+    var x8;
 	var posRandom;
 
 	var timerRenderTimelineBlueLine;
 	timerRenderTimelineBlueLine = setInterval(function(){
 
 		wwTimeline = $('.foodery_fit_meal_timeline_base_line').width() - margin;
-		one_sixth = Math.floor(wwTimeline/6);
+		one_sixth = Math.floor(wwTimeline/7);
 
 		x1 = Math.floor(margin/2 + 0 - wwTimelineBall1/2);
 		x2 = Math.floor(margin/2 + (1 * one_sixth) - wwTimelineBall1/2);
@@ -2401,6 +2499,7 @@ function postSuccess(data,textStatus,jqXHR)
 		x5 = Math.floor(margin/2 + (4 * one_sixth) - wwTimelineBall1/2);
 		x6 = Math.floor(margin/2 + (5 * one_sixth) - wwTimelineBall1/2);
 		x7 = Math.floor(margin/2 + (6 * one_sixth) - wwTimelineBall1/2);
+        x8 = Math.floor(margin/2 + (7 * one_sixth) - wwTimelineBall1/2);
 
 		$('.foodery_fit_meal_timeline_ball1').css({'left':x1+'px'});
 		$('.foodery_fit_meal_timeline_ball2').css({'left':x2+'px'});
@@ -2409,6 +2508,7 @@ function postSuccess(data,textStatus,jqXHR)
 		$('.foodery_fit_meal_timeline_ball5').css({'left':x5+'px'});
 		$('.foodery_fit_meal_timeline_ball6').css({'left':x6+'px'});
 		$('.foodery_fit_meal_timeline_ball7').css({'left':x7+'px'});
+        $('.foodery_fit_meal_timeline_ball8').css({'left':x8+'px'});
 
 		$('.foodery_fit_meal_timeline_ball1_on').css({'left':x1+'px'});
 		$('.foodery_fit_meal_timeline_ball2_on').css({'left':x2+'px'});
@@ -2417,6 +2517,7 @@ function postSuccess(data,textStatus,jqXHR)
 		$('.foodery_fit_meal_timeline_ball5_on').css({'left':x5+'px'});
 		$('.foodery_fit_meal_timeline_ball6_on').css({'left':x6+'px'});
 		$('.foodery_fit_meal_timeline_ball7_on').css({'left':x7+'px'});
+        $('.foodery_fit_meal_timeline_ball8_on').css({'left':x8+'px'});
 
 		$('.foodery_fit_meal_timeline_ball1_ok').css({'left':x1+'px'});
 		$('.foodery_fit_meal_timeline_ball2_ok').css({'left':x2+'px'});
@@ -2425,6 +2526,7 @@ function postSuccess(data,textStatus,jqXHR)
 		$('.foodery_fit_meal_timeline_ball5_ok').css({'left':x5+'px'});
 		$('.foodery_fit_meal_timeline_ball6_ok').css({'left':x6+'px'});
 		$('.foodery_fit_meal_timeline_ball7_ok').css({'left':x7+'px'});
+        $('.foodery_fit_meal_timeline_ball8_ok').css({'left':x8+'px'});
 
 		$('.foodery_fit_meal_timeline_ball1_text').css({'left':(x1-39)+'px'});
 		$('.foodery_fit_meal_timeline_ball2_text').css({'left':(x2-39)+'px'});
@@ -2433,50 +2535,57 @@ function postSuccess(data,textStatus,jqXHR)
 		$('.foodery_fit_meal_timeline_ball5_text').css({'left':(x5-39)+'px'});
 		$('.foodery_fit_meal_timeline_ball6_text').css({'left':(x6-39)+'px'});
 		$('.foodery_fit_meal_timeline_ball7_text').css({'left':(x7-39)+'px'});
+        $('.foodery_fit_meal_timeline_ball8_text').css({'left':(x8-39)+'px'});
 
 	},500);
 
 	$(document).on('click','.tooltip_foodery_fit_start',function(){
-		go('start');
-		x = x1;
+        go('start');
+        x = x1;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_gender',function(){
-		go('gender');
-		x = x2;
+    $(document).on('click','.tooltip_foodery_fit_choose_your_meal_plan',function(){
+        go('chooseYourMealPlan');
+        x = x2;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_days',function(){
-		go('weekdays');
-		x = x3;
+    $(document).on('click','.tooltip_foodery_fit_gender',function(){
+        go('gender');
+        x = x3;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_meals',function(){
-		go('meals');
-		x = x4;
+    $(document).on('click','.tooltip_foodery_fit_days',function(){
+        go('weekdays');
+        x = x4;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_weeks',function(){
-		go('weeks');
-		x = x5;
+    $(document).on('click','.tooltip_foodery_fit_meals',function(){
+        go('meals');
+        x = x5;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_datestart',function(){
-		go('datestart');
-		x = x6;
+    $(document).on('click','.tooltip_foodery_fit_weeks',function(){
+        go('weeks');
+        x = x6;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_customize',function(){
-		go('customize');
-		x = x7;
+    $(document).on('click','.tooltip_foodery_fit_datestart',function(){
+        go('datestart');
+        x = x7;
 
-	});
+    });
+
+    $(document).on('click','.tooltip_foodery_fit_customize',function(){
+        go('customize');
+        x = x8;
+
+    });
 
 
 	function completeAnimBlueLine(){
