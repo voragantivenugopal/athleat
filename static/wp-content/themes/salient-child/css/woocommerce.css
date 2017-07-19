@@ -169,7 +169,8 @@
       ====================================================== */
    .woocommerce div#customer_login {margin-top: 140px; min-height: 620px;}
    .fooderyfit-login-background {width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: pink; z-index: -2; background-image: url('../../../uploads/2017/06/login_bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: middle;}
-   .fooderyfit-login-container, .fooderyfit-register-container {background-color: #fff; border-radius: 5px; max-width: 450px; margin: auto; min-height: 420px; position: relative;}
+   .fooderyfit-login-container {background-color: #fff; border-radius: 5px; max-width: 450px; margin: auto; min-height: 420px; position: relative;}
+   .fooderyfit-register-container {background-color: #fff; border-radius: 5px; max-width: 800px; margin: auto; min-height: 600px; position: relative;}
    .fooderyfit-login-container h2, .fooderyfit-register-container h2 {padding:40px 10% 26px; font-size: 24px !important; font-weight: 300 !important; letter-spacing: 0.4px; text-align: center; color: #8d8d8d;}
    .woocommerce form .form-row.fooderyfit-form-input {padding: 15px 10%; margin: 0;}
    .fooderyfit-login-container .woocommerce-Input.woocommerce-Input--text.input-text, .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text {max-height: 50px; font-size: 14px !important; letter-spacing: 0.4px; border: solid 1px #e8eef3 !important; border-radius: 4px;}
@@ -178,7 +179,7 @@
    .fooderyfit-login-container .woocommerce-Input.woocommerce-Input--text.input-text::-moz-placeholder, {color: rgba(27, 29, 31, 0.4);}
    .fooderyfit-login-container .woocommerce-Input.woocommerce-Input--text.input-text:-ms-input-placeholder, .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text:-ms-input-placeholder {color: rgba(27, 29, 31, 0.4);}
    .fooderyfit-register-container .woocommerce-Input.woocommerce-Input--text.input-text.sel{
-    box-shadow:none !important;padding: 12px !important;
+    box-shadow:none !important;padding: 12px !important;color:#b1aaaa;
    }
    
 
