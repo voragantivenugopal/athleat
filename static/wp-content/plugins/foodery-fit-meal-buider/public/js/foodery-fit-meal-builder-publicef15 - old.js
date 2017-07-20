@@ -1,9 +1,7 @@
 
 (function( $ ) {
-
 // possibilidade de alterar datas - tipo pausas para férias
 // customizar meals
-
 
 var currHash = '';
 var h = '';
@@ -11,8 +9,8 @@ var auto_jump = true;
 var auto_jump_customize = false;
 
 var curr_go = "";
-var curr_gender = "";
 var curr_choose_plan = "";
+var curr_gender = "";
 var curr_days = 0;
 var curr_meals = 0;
 var curr_weeks = 0;
@@ -149,7 +147,6 @@ var listDayStats = {};
 var copyMeal = {};
 var copyDay = [];
 var copyWeek = [];
-
 
 $(window).on('hashchange', function()
 {
@@ -328,8 +325,8 @@ $(document).ready(function(){
 
 	// $('.matchHeight1').matchHeight();
 
-	$(".sticky_header").sticky({topSpacing:0});
-	$("#sticky_stats").sticky({topSpacing:180});
+	// $(".sticky_header").sticky({topSpacing:0});
+	// $("#sticky_stats").sticky({topSpacing:180});
 
     // $("#sticky_stats").stick_in_parent({
     //   offset_top:220,
@@ -386,7 +383,7 @@ function getCookieInfo(){
 	// curr_start_date = Cookies.get('curr_start_date');
 
     if(curr_choose_plan!=undefined){
-        if(curr_choose_plan=="Athleat/Fat loss"){
+        if(curr_choose_plan=="Athleat"){
             $('.txtDebugChoosePlan').html(" Athleat/Fat loss");
         }else if(curr_choose_plan=="Customized"){
             $('.txtDebugChoosePlan').html("Customized");
@@ -404,7 +401,6 @@ function getCookieInfo(){
             $('.txtDebugGender').html("Gender");
         }
 	}
-    
 	if(curr_days!=undefined){
 		$('.txtDebugNumDays').html(curr_days);
 	}
@@ -626,7 +622,6 @@ function do_auto_jump_customize(){
         go('chooseYourMealPlan');
         return;
     }
-
 	if(curr_gender==''){
 		go('gender');
 		return;
@@ -651,48 +646,64 @@ function do_auto_jump_customize(){
 	go('customize');
 }
 
-
-
-
 $(document).on('click','#btnStart1',function(e){
     // console.log('#btnStart1');
     go('chooseYourMealPlan');
 });
-
 function chooseYourMealPlan(){
     $('.cScreen').hide();
     $('#cChoosePlan').fadeIn();
-
-    setActiveTooltip("choose your plan");
-
-    var str = '';
-    str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Athleat/Fat loss"?' btn-success ':'')+'" data-choose-plan="Athleat/Fat loss">Athleat/Fat loss</span>';
-    str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Customized"?' btn-success ':'')+'" data-choose-plan="Customized">Customized</span>';
-    $('#cBtnsChoosePlan').html(str);
-
-    TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
-    TweenMax.to('.foodery_fit_meal_timeline_ball2_on',0.3,{delay:0.0, alpha:1});
-}
-
-$(document).on('click','.btnChoosePlan',function(e){
-    curr_choose_plan = $(this).data('chooseyourmealplan');
+$(document).on('click','.btnChooseYourMealPlan',function(e){
+    // console.log('#btnStart1');
+    go('gender');
+    var curr_choose_plan = $(this).attr('data-chooseyourmealplan');
+    console.log('kkkk.',curr_choose_plan);
     Cookies.set('curr_choose_plan', curr_choose_plan);
+
     $('.txtDebugChoosePlan').html(curr_choose_plan);
+     TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
+    TweenMax.to('.foodery_fit_meal_timeline_ball2_on',0.3,{delay:0.0, alpha:1});
 
-    $('.btnChoosePlan').removeClass('btn-success');
-    $(this).addClass('btn-success');
 
-    calculateTotalMeals();
-
-    if(auto_jump==true){
-        if(auto_jump_customize){
-            do_auto_jump_customize();
-        }else{
-            go('gender');
-        }
-    }
 });
+}
+// function chooseYourMealPlan(){
+//     $('.cScreen').hide();
+//     $('#cChoosePlan').fadeIn();
 
+//     setActiveTooltip("choose your plan");
+
+//     // var str = '';
+//     // str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Athleat/Fat loss"?' btn-success ':'')+'" data-choose-plan="Athleat/Fat loss">Athleat/Fat loss</span>';
+//     // str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Customized"?' btn-success ':'')+'" data-choose-plan="Customized">Customized</span>';
+//     // $('#cBtnsChoosePlan').html(str);
+
+//     TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
+//     TweenMax.to('.foodery_fit_meal_timeline_ball2_on',0.3,{delay:0.0, alpha:1});
+// }
+
+// $(document).on('click','.btnChoosePlan',function(e){
+//     curr_choose_plan = $(this).data('chooseyourmealplan');
+//     Cookies.set('curr_choose_plan', curr_choose_plan);
+//     $('.txtDebugChoosePlan').html(curr_choose_plan);
+
+//     $('.btnChoosePlan').removeClass('btn-success');
+//     $(this).addClass('btn-success');
+
+//     calculateTotalMeals();
+
+//     if(auto_jump==true){
+//         if(auto_jump_customize){
+//             do_auto_jump_customize();
+//         }else{
+//             go('gender');
+//         }
+//     }
+// });
+// $(document).on('click','#btnStart1',function(e){
+// 	// console.log('#btnStart1');
+// 	go('gender');
+// });
 
 function gender(){
 	$('.cScreen').hide();
@@ -712,7 +723,7 @@ function gender(){
 $(document).on('click','.btnGender',function(e){
 	curr_gender = $(this).data('gender');
 	Cookies.set('curr_gender', curr_gender);
-	$('.txtDebugGender').html(curr_gender);
+	// $('.txtDebugGender').html(curr_gender);
 
 	$('.btnGender').removeClass('btn-success');
 	$(this).addClass('btn-success');
@@ -1478,253 +1489,22 @@ function doPasteWeek(week){
 
 
 
-$(document).on('click','.btnCustomizerMeal',function(){
+$(document).on('click','.btnCustomizerMeal',function(e){
+      // console.log("$(this): ", $(this));
 
-	var week = $(this).data('week');
-	var day = $(this).data('day');
-	var meal = $(this).data('meal');
-	var type = $(this).data('type');
-	var slug = $(this).data('slug');
+    $('#myModal').modal('show');
+         var data_week = $(this).attr('data-week');
+         var data_day = $(this).attr('data-day');
+         var data_date = $(this).attr('data-date');
+         // var info = $(this)('.btnCustomizerMealDesc').text();
+         // var meal_item = $(this).
 
-	curr_week = week;
-	curr_day = day;
-	curr_meal = meal;
+        $(document).on('click','#modal-add-meal-btn',function(){
+        var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
+            $('#myModal').modal('hide');
+            $('.btnCustomizerMealDesc').text(meal_item);
+    });
 
-	// console.log('btnCustomizerMeal:',slug);
-
-	str = '';
-	str = '<div class="white-popup" >';
-		// tabs
-		str += '<div class="cCustomizerHeader">';
-			str += '<div class="btnCustomizerTab hand btnCustomizerTabOriginals" style="float:left; background-color:#fff; border-bottom: 3px solid rgb(75, 94, 235);">Gourmet recipes</div>';
-			str += '<div class="btnCustomizerTab hand btnCustomizerTabCreate" style="float:left; background-color:#fff;">Create your own</div>';
-			str += '<div class="clear" style="height:0; line-height:0px; padding-bottom:0;"></div>';
-		str += '</div>';
-
-		// originals
-		str += '<div class="cCustomizerOriginals" style="display:block; ">';
-			// str += '<div><h3>The Originals</h3></div>';
-			str += '<div class="cCustomizerOriginalsMealsRow">';
-				str += '<div class="cCustomizerOriginalsMealsCol ColMeals">';
-					$(list_base_meals).each(function(i,item){
-						str += '<div><a href="javascript:;" class="btnCustomizerOriginalsMealItem" data-week="'+week+'" data-day="'+day+'" data-meal="'+meal+'" data-type="originals" data-title="'+item["title"]+'" data-slug="'+item["slug"]+'">'+item["title"]+'</a></div>';
-					});
-				str += '</div>';
-				str += '<div class="cCustomizerOriginalsMealsCol ColNutritionFacts">';
-					str += '<div class="imgCustomizerInfoItem"></div>';
-
-					str += '<div class="txtNutritionFacts">Nutrition</div>';
-
-					str += '<table class="nutritionTable">';
-
-						// str += '<tr>';
-						// 	str += '<td>Energy (KJ)</td>';
-						// 	str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_energy_kj">-</span></td>';
-						// str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Energy (KCal)</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_energy_kcal">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Fat</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_fat">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Saturates</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_saturates">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Carbs</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_carbs">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Sugar</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_sugar">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Protein</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_protein">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Salt</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_salt">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Portion</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_portion">-</span></td>';
-						str += '</tr>';
-
-						// str += '<tr>';
-						// 	str += '<td>Notes</td>';
-						// 	str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_notes">-</span></td>';
-						// str += '</tr>';
-
-					str += '</table>';
-
-				str += '</div>';
-				str += '<div class="clear" style="height:0; line-height:0px; padding-bottom:0;"></div>';
-			str += '</div>';
-			str += '<div class="cCustomizerFooter cFooterOriginals">';
-				str += '<div style="float:left;"><span class="txtCustomizerOriginalsStatus" style="display:none;"">Choose one meal</span></div>';
-				str += '<div  class="cCustomizerCreateAddmeal"><span class="btn btnCustomizerAddmeal btn-default bg-blue text-white btnCustomizerOriginalsOk">Add meal</span></div>';
-				str += '<div style="display:none;" class="cCheckAllWeeks" ><input type="checkbox" class="inputCheckAllWeeks" value="1" >&nbsp;&nbsp;<span class="txtCheckAllWeeks">Repeat for all weeks</span></div>';
-				str += '<div class="cCustomizerCreateBack"><span class="btnCustomizerOriginalsBack btnCustomizerBack hand">Back</span></div>';
-				str += '<div class="clear" style="height:0; line-height:0px; padding-bottom:0;"></div>';
-			str += '</div>';
-		str += '</div>';
-
-
-
-        // custom - create .........................
-
-		str += '<div class="cCustomizerCreate" style="display:none; ">';
-			// str += '<div><h3><span style="font-size:12px;">or, </span>Create your meal</h3></div>';
-			str += '<div style="width:100%;">';
-				str += '<div class="cCustomizerCreateCol cProtein">';
-					str += '<div><h5>Protein</h5></div>';
-					$(list_proteins).each(function(i,item){
-						str += '<div class="cProteinItem" data-color="'+item['dot_color']+'" data-slug="'+item['slug']+'" style=""><!--<div class="icon_custom_'+item['slug']+'"></div> --><a href="javascript:;" class="btnProteinItem" data-color="'+item['dot_color']+'" data-slug="'+item['slug']+'">'+item["title"]+'</a></div>';
-					});
-				str += '</div>';
-				str += '<div class="cCustomizerCreateCol cCarbs">';
-					str += '<div><h5>Carbs</h5></div>';
-					$(list_carbs).each(function(i,item){
-						str += '<div class="cCarbsItem" data-color="'+item['dot_color']+'" data-slug="'+item['slug']+'"><!--<div class="icon_custom_'+item['slug']+'"></div> --><a href="javascript:;" class="btnCarbsItem" data-color="'+item['dot_color']+'" data-slug="'+item['slug']+'">'+item["title"]+'</a></div>';
-					});
-				str += '</div>';
-				str += '<div class="cCustomizerCreateCol cVegs">';
-					str += '<div><h5>Veg</h5></div>';
-					$(list_vegs).each(function(i,item){
-						str += '<div class="cVegsItem" data-color="'+item['dot_color']+'" data-slug="'+item['slug']+'"><!--<div class="icon_custom_'+item['slug']+'"></div> --><a href="javascript:;" class="btnVegsItem" data-color="'+item['dot_color']+'" data-slug="'+item['slug']+'">'+item["title"]+'</a></div>';
-					});
-				str += '</div>';
-				str += '<div class="cCustomizerCreateCol cNutritionFacts">';
-					// str += '<div class="imgCustomizerInfoItem_" style="width:100%; height:100px; background-color:#ddd; color:#fff;">';
-					// 	str += '<div class="cBgImageProtein" style="float:left; width:33.3333%; height:100%;">P</div>';
-					// 	str += '<div class="cBgImageCarbs" style="float:left; width:33.3333%; height:100%; background-color:#ccc;">C</div>';
-					// 	str += '<div class="cBgImageVegs" style="float:left; width:33.3333%; height:100%;">V</div>';
-					// 	str += '<div class="clear" style="height:0; line-height:0px; padding-bottom:0;"></div>';
-					// str += '</div>';
-
-					str += '<div class="txtNutritionFacts">Nutrition</div>';
-
-					str += '<table class="nutritionTable">';
-
-						// str += '<tr>';
-						// 	str += '<td>Energy (KJ)</td>';
-						// 	str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_energy_kj">-</span></td>';
-						// str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Energy (KCal)</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_energy_kcal">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Fat</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_fat">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Saturates</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_saturates">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Carbs</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_carbs">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Sugar</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_sugar">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Protein</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_protein">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Salt</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_salt">-</span></td>';
-						str += '</tr>';
-
-						str += '<tr>';
-							str += '<td>Portion</td>';
-							str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_portion">-</span></td>';
-						str += '</tr>';
-
-						// str += '<tr>';
-						// 	str += '<td>Notes</td>';
-						// 	str += '<td><span class="txt_nutrition_facts_value txt_nutrition_facts_notes">-</span></td>';
-						// str += '</tr>';
-
-					str += '</table>';
-				str += '</div>';
-				str += '<div class="clear" style="height:0; line-height:0px; padding-bottom:0;"></div>';
-			str += '</div>';
-			str += '<div class="cCustomizerFooter cFooterCreate">';
-				str += '<div style="float:left;"><span class="txtCustomizerCreateStatus" style="display:none;">Select Ingredients</span></div>';
-				str += '<div class="cCustomizerCreateAddmeal"><span class="btn btn-default btnCustomizerCreateOk btnCustomizerAddmeal bg-blue text-white">Add meal</span></div>';
-				str += '<div style="display:none;" class="cCheckAllWeeks" ><input type="checkbox" class="inputCheckAllWeeks" value="1" >&nbsp;&nbsp;<span class="txtCheckAllWeeks">Repeat for all weeks</span></div>';
-				str += '<div class="cCustomizerCreateBack"><span class="btnCustomizerCreateBack btnCustomizerBack hand">Back</span></div>';
-				str += '<div class="clear" style="height:0; line-height:0px; padding-bottom:0;"></div>';
-			str += '</div>';
-		str += '</div>';
-	str += '</div>';
-
-	var slugs = slug.split('|');
-
-	$.magnificPopup.open({
-		items: {
-	      	src: str,
-	      	type: 'inline',
-	      	//focus: '#username',
-			modal: true
-		},
-		callbacks: {
-		    open: function() {
-
-		    	// console.log('popup open:',slug);
-
-		    	if(slug.indexOf('|')>=0){
-		    		// custom
-		    		$('.btnCustomizerTabCreate').trigger('click');
-
-		    		$('.btnProteinItem[data-slug="'+slugs[0]+'"]').trigger('click');
-		    		$('.btnCarbsItem[data-slug="'+slugs[1]+'"]').trigger('click');
-		    		$('.btnVegsItem[data-slug="'+slugs[2]+'"]').trigger('click');
-
-		    	}else{
-		    		// original
-		    		$('.btnCustomizerOriginalsMealItem[data-slug="'+slug+'"]').trigger('click');
-		    	}
-
-		    	if(mem_allWeek==true){}
-
-
-		    	// same height .......
-		    	// var topHeight=0;
-		    	// var hhOriginals = $('.cCustomizerOriginals').height();
-		    	// var hhCreate = $('.cCustomizerCreate').height();
-		    	// if(hhOriginals>topHeight)topHeight=hhOriginals;
-		    	// if(hhCreate>topHeight)topHeight=hhCreate;
-		    	// $('.cCustomizerOriginals').height(topHeight);
-		    	// $('.cCustomizerCreate').height(topHeight);
-
-		      // setTimeout(function(){$('.inputIncomingStockNewValue').select();},100);
-		    },
-		}
-	});
 });
 
 
@@ -2287,7 +2067,7 @@ function calculateTotalMeals(){
 	listDayStats = {};
 
     if(curr_choose_plan!=undefined){
-        if(curr_choose_plan=="Athleat/Fat loss"){
+        if(curr_choose_plan=="Athleat"){
             $('.txtDebugChoosePlan').html("Athleat/Fat loss");
         }else if(curr_choose_plan=="Customized") {
             $('.txtDebugChoosePlan').html("Customized");
@@ -2298,18 +2078,18 @@ function calculateTotalMeals(){
             $('.txtDebugChoosePlan').html("Choose your meal plan?");
         }
 
-    if(curr_gender!=undefined){
-    if(curr_gender=="m"){
-        $('.txtDebugGender').html("Male");
-    }else if(curr_gender=="f") {
-        $('.txtDebugGender').html("Female");
-    }else{
-        $('.txtDebugGender').html("Gender");
-    }
-    }else{
-        $('.txtDebugGender').html("Gender");
-    }
-	
+	if(curr_gender!=undefined){
+		if(curr_gender=="m"){
+			$('.txtDebugGender').html("Male");
+		}else if(curr_gender=="f") {
+			$('.txtDebugGender').html("Female");
+		}else{
+			$('.txtDebugGender').html("Gender");
+		}
+    	}else{
+            $('.txtDebugGender').html("Gender");
+        }    
+
 	if(curr_days!=undefined){
 		$('.txtDebugNumDays').html(curr_days);
 	}
@@ -2345,9 +2125,9 @@ function calculateTotalMeals(){
 
 	curr_total_price = Math.round(curr_week_price * parseInt(curr_weeks) *100)/100;
     if(isNaN(curr_total_price)){
-            $('.txtStatsPriceTotal').html( '' );
+        $('.txtStatsPriceTotal').html( '' );
     }else{
-        $('.txtStatsPriceTotal').html( 'AED'+curr_total_price.toFixed(2) );
+        $('.txtStatsPriceTotal').html( 'AED'+00.toFixed(2) );
     }
 
 
@@ -2577,6 +2357,7 @@ function clearEverything(){
     customizerList = [];
 
     clearCookies();
+
     curr_choose_plan = ''
     curr_gender = 'g';
     curr_days = '0';
@@ -2596,11 +2377,14 @@ function clearEverything(){
 // ---------------------------------------------------------------------------
 $(document).on('click','.btnContinueToCheckout',function(){
 
+    var ajaxurl = '/post-values/'
+
     if(curr_choose_plan==undefined){
         alert('Please select Choose your meal plan');
         go('chooseYourMealPlan');
         return;
     }
+
     if(curr_gender==undefined){
         alert('Please select your gender');
         go('gender');
@@ -2652,7 +2436,7 @@ $(document).on('click','.btnContinueToCheckout',function(){
 			// console.log(serialized);
 
 			varsSave = {
-				'action': 'foodery_fit_meal_builder_add_to_cart',
+				// 'action': 'foodery_fit_meal_builder_add_to_cart',
                 'chooseyourmealplan': curr_choose_plan,
 				'gender': curr_gender,
 				'daysperweek': curr_days,
@@ -2661,21 +2445,35 @@ $(document).on('click','.btnContinueToCheckout',function(){
 				'startingdate': moment(curr_start_date, 'YYYY/MM/DD HH:mm:ss').format('YYYY-MM-DD HH:mm:ss'),
 				'listmeals': serializedList,
 				'totalprice': curr_total_price,
-				'totalmeals': curr_total_meals
-			};
+				'totalmeals': curr_total_meals,
 
-	        $.ajax({
-	              url: ajaxurl,
-	              contentType: 'application/json',
-	              data: JSON.stringify(varsSave),
-	              type: 'POST'
+            };
+
+            $.ajax({
+                  url: ajaxurl,
+                  contentType: 'application/json',
+                  data: JSON.stringify(varsSave),
+                  type: 'POST',
+                  success: postSuccess,
 	        });
 
-			$.post(ajaxurl,varsSave,function(data){
-				// console.log('vars',vars);
-	            clearEverything();
-				window.location = "../checkout/index.html";
-			},'json');
+function postSuccess(data,textStatus,jqXHR)
+{
+    // alert('Sit back and let us take care of the rest. We will be getting in touch with you very soon.');
+      swal(
+      'Good job!',
+      'Sit back and let us take care of the rest. We will be getting in touch with you very soon.',
+      'success'
+    )
+  // window.location = "/menu";
+  
+}
+
+			// $.post(ajaxurl,varsSave,function(data){
+			// 	// console.log('vars',vars);
+	  //           clearEverything();
+			// 	// window.location = "../checkout/index.html";
+			// },'json');
 
 
 		}
@@ -2716,7 +2514,7 @@ $(document).on('click','.btnContinueToCheckout',function(){
 		x5 = Math.floor(margin/2 + (4 * one_sixth) - wwTimelineBall1/2);
 		x6 = Math.floor(margin/2 + (5 * one_sixth) - wwTimelineBall1/2);
 		x7 = Math.floor(margin/2 + (6 * one_sixth) - wwTimelineBall1/2);
-        x7 = Math.floor(margin/2 + (7 * one_sixth) - wwTimelineBall1/2);
+        x8 = Math.floor(margin/2 + (7 * one_sixth) - wwTimelineBall1/2);
 
 		$('.foodery_fit_meal_timeline_ball1').css({'left':x1+'px'});
 		$('.foodery_fit_meal_timeline_ball2').css({'left':x2+'px'});
@@ -2757,10 +2555,10 @@ $(document).on('click','.btnContinueToCheckout',function(){
 	},500);
 
 	$(document).on('click','.tooltip_foodery_fit_start',function(){
-		go('start');
-		x = x1;
+        go('start');
+        x = x1;
 
-	});
+    });
 
     $(document).on('click','.tooltip_foodery_fit_choose_your_meal_plan',function(){
         go('chooseYourMealPlan');
@@ -2768,41 +2566,41 @@ $(document).on('click','.btnContinueToCheckout',function(){
 
     });
 
-	$(document).on('click','.tooltip_foodery_fit_gender',function(){
-		go('gender');
-		x = x3;
+    $(document).on('click','.tooltip_foodery_fit_gender',function(){
+        go('gender');
+        x = x3;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_days',function(){
-		go('weekdays');
-		x = x4;
+    $(document).on('click','.tooltip_foodery_fit_days',function(){
+        go('weekdays');
+        x = x4;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_meals',function(){
-		go('meals');
-		x = x5;
+    $(document).on('click','.tooltip_foodery_fit_meals',function(){
+        go('meals');
+        x = x5;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_weeks',function(){
-		go('weeks');
-		x = x6;
+    $(document).on('click','.tooltip_foodery_fit_weeks',function(){
+        go('weeks');
+        x = x6;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_datestart',function(){
-		go('datestart');
-		x = x7;
+    $(document).on('click','.tooltip_foodery_fit_datestart',function(){
+        go('datestart');
+        x = x7;
 
-	});
+    });
 
-	$(document).on('click','.tooltip_foodery_fit_customize',function(){
-		go('customize');
-		x = x8;
+    $(document).on('click','.tooltip_foodery_fit_customize',function(){
+        go('customize');
+        x = x8;
 
-	});
+    });
 
 
 	function completeAnimBlueLine(){
