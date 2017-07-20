@@ -13,21 +13,29 @@ $(document).on('click','#mChooseMealPlanBtn',function(e){
     console.log('start here button');
     $('#tab2').removeClass('active');
     $('#tab3').addClass('active');
+    $('[data-target="#step2"]').removeClass('active');
+    $('[data-target="#step3"]').addClass('active');
 });
 $(document).on('click','#mGenderBtn',function(e){
     console.log('start here button');
     $('#tab3').removeClass('active');
     $('#tab4').addClass('active');
+    $('[data-target="#step3"]').removeClass('active');
+    $('[data-target="#step4"]').addClass('active');
 });
 $(document).on('click','#mHowManyWeeksBtn',function(e){
     console.log('start here button');
     $('#tab4').removeClass('active');
     $('#tab5').addClass('active');
+    $('[data-target="#step4"]').removeClass('active');
+    $('[data-target="#step5"]').addClass('active');
 });
 $(document).on('click','#mMealsPerDayBtn',function(e){
     console.log('start here button');
     $('#tab5').removeClass('active');
     $('#tab6').addClass('active');
+    $('[data-target="#step5"]').removeClass('active');
+    $('[data-target="#step6"]').addClass('active');
 });
 
 })( jQuery );
