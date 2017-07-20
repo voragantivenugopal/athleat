@@ -384,7 +384,7 @@ function getCookieInfo(){
 	// curr_start_date = Cookies.get('curr_start_date');
 
     if(curr_choose_plan!=undefined){
-        if(curr_choose_plan=="Athleat/Fat loss"){
+        if(curr_choose_plan=="Athleat"){
             $('.txtDebugChoosePlan').html(" Athleat/Fat loss");
         }else if(curr_choose_plan=="Customized"){
             $('.txtDebugChoosePlan').html("Customized");
@@ -651,40 +651,56 @@ $(document).on('click','#btnStart1',function(e){
     // console.log('#btnStart1');
     go('chooseYourMealPlan');
 });
-
 function chooseYourMealPlan(){
     $('.cScreen').hide();
     $('#cChoosePlan').fadeIn();
-
-    setActiveTooltip("choose your plan");
-
-    var str = '';
-    str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Athleat/Fat loss"?' btn-success ':'')+'" data-choose-plan="Athleat/Fat loss">Athleat/Fat loss</span>';
-    str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Customized"?' btn-success ':'')+'" data-choose-plan="Customized">Customized</span>';
-    $('#cBtnsChoosePlan').html(str);
-
-    TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
-    TweenMax.to('.foodery_fit_meal_timeline_ball2_on',0.3,{delay:0.0, alpha:1});
-}
-
-$(document).on('click','.btnChoosePlan',function(e){
-    curr_choose_plan = $(this).data('chooseyourmealplan');
+$(document).on('click','.btnChooseYourMealPlan',function(e){
+    // console.log('#btnStart1');
+    go('gender');
+    var curr_choose_plan = $(this).attr('data-chooseyourmealplan');
+    console.log('kkkk.',curr_choose_plan);
     Cookies.set('curr_choose_plan', curr_choose_plan);
+
     $('.txtDebugChoosePlan').html(curr_choose_plan);
+     TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
+    TweenMax.to('.foodery_fit_meal_timeline_ball2_on',0.3,{delay:0.0, alpha:1});
 
-    $('.btnChoosePlan').removeClass('btn-success');
-    $(this).addClass('btn-success');
 
-    calculateTotalMeals();
-
-    if(auto_jump==true){
-        if(auto_jump_customize){
-            do_auto_jump_customize();
-        }else{
-            go('gender');
-        }
-    }
 });
+}
+// function chooseYourMealPlan(){
+//     $('.cScreen').hide();
+//     $('#cChoosePlan').fadeIn();
+
+//     setActiveTooltip("choose your plan");
+
+//     // var str = '';
+//     // str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Athleat/Fat loss"?' btn-success ':'')+'" data-choose-plan="Athleat/Fat loss">Athleat/Fat loss</span>';
+//     // str += '<span href="javascript:;" class="btn btn-default btnChoosePlan '+(curr_choose_plan=="Customized"?' btn-success ':'')+'" data-choose-plan="Customized">Customized</span>';
+//     // $('#cBtnsChoosePlan').html(str);
+
+//     TweenMax.to('.foodery_fit_meal_timeline_ball_on',0.3,{delay:0.0, alpha:0});
+//     TweenMax.to('.foodery_fit_meal_timeline_ball2_on',0.3,{delay:0.0, alpha:1});
+// }
+
+// $(document).on('click','.btnChoosePlan',function(e){
+//     curr_choose_plan = $(this).data('chooseyourmealplan');
+//     Cookies.set('curr_choose_plan', curr_choose_plan);
+//     $('.txtDebugChoosePlan').html(curr_choose_plan);
+
+//     $('.btnChoosePlan').removeClass('btn-success');
+//     $(this).addClass('btn-success');
+
+//     calculateTotalMeals();
+
+//     if(auto_jump==true){
+//         if(auto_jump_customize){
+//             do_auto_jump_customize();
+//         }else{
+//             go('gender');
+//         }
+//     }
+// });
 // $(document).on('click','#btnStart1',function(e){
 // 	// console.log('#btnStart1');
 // 	go('gender');
@@ -1481,7 +1497,7 @@ $(document).on('click','.btnCustomizerMeal',function(e){
          var data_week = $(this).attr('data-week');
          var data_day = $(this).attr('data-day');
          var data_date = $(this).attr('data-date');
-         var info = $(this)('.btnCustomizerMealDesc').text();
+         // var info = $(this)('.btnCustomizerMealDesc').text();
          // var meal_item = $(this).
 
         $(document).on('click','#modal-add-meal-btn',function(){
@@ -2052,7 +2068,7 @@ function calculateTotalMeals(){
 	listDayStats = {};
 
     if(curr_choose_plan!=undefined){
-        if(curr_choose_plan=="Athleat/Fat loss"){
+        if(curr_choose_plan=="Athleat"){
             $('.txtDebugChoosePlan').html("Athleat/Fat loss");
         }else if(curr_choose_plan=="Customized") {
             $('.txtDebugChoosePlan').html("Customized");
