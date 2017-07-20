@@ -188,3 +188,9 @@ img.wp-smiley,
 .modal-left2 label{
 	min-width: 90px;
 }
+.tab-pane{
+	margin: auto;
+	/*display: table !important;*/
+	text-align: center;
+	padding: 80px 0px;
+}
