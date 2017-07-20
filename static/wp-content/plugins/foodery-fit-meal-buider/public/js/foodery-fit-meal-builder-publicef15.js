@@ -22,10 +22,10 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     $('[data-target="#step3"]').addClass('active');
     var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
     console.log('m_curr_choose_plan',m_curr_choose_plan);
-    if(m_curr_choose_plan='Athleat'){
+    if(m_curr_choose_plan==='Athleat'){
         $('#mPlanTitle').text('Athleat/Fat Loss');
     }
-    else if(m_curr_choose_plan='Customized'){
+    else if(m_curr_choose_plan==='Customized'){
         $('#mPlanTitle').text('Customized');
     }
     else{
@@ -40,6 +40,15 @@ $(document).on('click','.mGenderBtn',function(e){
     $('[data-target="#step4"]').addClass('active');
     var m_curr_gender = $(this).attr('data-mGender');
     console.log('m_curr_gender',m_curr_gender);
+    if(m_curr_gender==='Male'){
+        $('#mGenderTitle').text('Male');
+    }
+    else if(m_curr_gender==='Female'){
+        $('#mGenderTitle').text('Female');
+    }
+    else{
+        $('#mGenderTitle').text('Gender');   
+    }
 });
 $(document).on('click','.mHowManyWeeksBtn',function(e){
     $('#tab4').removeClass('active');
@@ -48,6 +57,18 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     $('[data-target="#step5"]').addClass('active');
     var m_curr_how_many_weeks = $(this).attr('data-mHowManyWeeks');
     console.log('m_curr_how_many_weeks',m_curr_how_many_weeks);
+    if(m_curr_how_many_weeks==='4'){
+        $('#mWeeksTitle').text('4');
+    }
+    else if(m_curr_how_many_weeks==='8'){
+        $('#mWeeksTitle').text('8');
+    }
+    else if(m_curr_how_many_weeks==='12'){
+        $('#mWeeksTitle').text('12');
+    }
+    else{
+        $('#mWeeksTitle').text('How Many Weeks');   
+    }
 });
 
 $(document).on('click','.mMealsPerDayBtn',function(e){
@@ -57,6 +78,18 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     $('[data-target="#step6"]').addClass('active');
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
     console.log('m_curr_meals_per_day',m_curr_meals_per_day);
+    if(m_curr_meals_per_day==='2'){
+        $('#mMealsperDayTitle').text('2');
+    }
+    else if(m_curr_meals_per_day==='3'){
+        $('#mMealsperDayTitle').text('3');
+    }
+    else if(m_curr_meals_per_day==='4'){
+        $('#mMealsperDayTitle').text('4');
+    }
+    else{
+        $('#mMealsperDayTitle').text('How Many Weeks');   
+    }
 });
 
 })( jQuery );
