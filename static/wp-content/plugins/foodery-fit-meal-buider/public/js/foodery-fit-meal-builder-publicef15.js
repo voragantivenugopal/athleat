@@ -2,6 +2,9 @@
 (function( $ ) {
 
 var m_curr_choose_plan = '';
+var m_curr_gender = '';
+var m_curr_how_many_weeks = '';
+var m_curr_meals_per_day = '';
 // Start Button 
 $(document).on('click','#mStartBtn',function(e){
     console.log('start here button');
@@ -19,23 +22,29 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     console.log('m_curr_choose_plan',m_curr_choose_plan);
 
 });
-$(document).on('click','#mGenderBtn',function(e){
+$(document).on('click','.mGenderBtn',function(e){
     $('#tab3').removeClass('active');
     $('#tab4').addClass('active');
     $('[data-target="#step3"]').removeClass('active');
     $('[data-target="#step4"]').addClass('active');
+    var m_curr_gender = $(this).attr('data-mGender');
+    console.log('m_curr_gender',m_curr_gender);
 });
-$(document).on('click','#mHowManyWeeksBtn',function(e){
+$(document).on('click','.mHowManyWeeksBtn',function(e){
     $('#tab4').removeClass('active');
     $('#tab5').addClass('active');
     $('[data-target="#step4"]').removeClass('active');
     $('[data-target="#step5"]').addClass('active');
+    var m_curr_how_many_weeks = $(this).attr('data-mHowManyWeeks');
+    console.log('m_curr_how_many_weeks',m_curr_how_many_weeks);
 });
-$(document).on('click','#mMealsPerDayBtn',function(e){
+$(document).on('click','.mMealsPerDayBtn',function(e){
     $('#tab5').removeClass('active');
     $('#tab6').addClass('active');
     $('[data-target="#step5"]').removeClass('active');
     $('[data-target="#step6"]').addClass('active');
+    var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
+    console.log('m_curr_meals_per_day',m_curr_meals_per_day);
 });
 
 })( jQuery );
