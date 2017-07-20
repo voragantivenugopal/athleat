@@ -19,10 +19,10 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     $('[data-target="#step3"]').addClass('active');
     var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
     console.log('m_curr_choose_plan',m_curr_choose_plan);
-    if(m_curr_choose_plan='Athleat'){
+    if(m_curr_choose_plan==='Athleat'){
         $('#mPlanTitle').text('Athleat/Fat Loss');
     }
-    else if(m_curr_choose_plan='Customized'){
+    else if(m_curr_choose_plan==='Customized'){
         $('#mPlanTitle').text('Customized');
     }
     else{
