@@ -34,25 +34,25 @@
 			                                            <a href="#tab1" data-toggle="tab" class="active"> <span class="step">1</span> <span class="title">Start</span> </a>
 			                                        </li>
 			                                        <li data-target="#step2" class="">
-			                                            <a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Choose Your Meal Plan</span> </a>
+			                                            <a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span id="mPlanTitle" class="title">Choose Your Meal Plan</span> </a>
 			                                        </li>
 			                                        <li data-target="#step3" class="">
-			                                            <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Gender</span> </a>
+			                                            <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span id="mGenderTitle" class="title">Gender</span> </a>
 			                                        </li>
 			                                        <li data-target="#step4">
-			                                            <a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">How Many Weeks</span> </a>
+			                                            <a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span id="mWeeksTitle" class="title">How Many Weeks</span> </a>
 			                                        </li>
 			                                        <li data-target="#step5">
-			                                            <a href="#tab5" data-toggle="tab"> <span class="step">5</span> <span class="title">How Many Meals Per Day</span> </a>
+			                                            <a href="#tab5" data-toggle="tab"> <span class="step">5</span> <span id="mMealsperDayTitle" class="title">How Many Meals Per Day</span> </a>
 			                                        </li>
 			                                        <li data-target="#step6">
-			                                            <a href="#tab6" data-toggle="tab"> <span class="step">6</span> <span class="title">Dislikes and Allergies</span> </a>
+			                                            <a href="#tab6" data-toggle="tab"> <span class="step">6</span> <span id="mDislikesTitle" class="title">Dislikes and Allergies</span> </a>
 			                                        </li>
 			                                         <li data-target="#step7">
-			                                            <a href="#tab7" data-toggle="tab"> <span class="step">7</span> <span class="title">Any Addons?</span> </a>
+			                                            <a href="#tab7" data-toggle="tab"> <span class="step">7</span> <span id="mAddonsTitle" class="title">Any Addons?</span> </a>
 			                                        </li>
 			                                        <li data-target="#step8">
-			                                            <a href="#tab8" data-toggle="tab"> <span class="step">8</span> <span class="title">Any Addons?</span> </a>
+			                                            <a href="#tab8" data-toggle="tab"> <span class="step">8</span> <span class="title">Pay</span> </a>
 			                                        </li>
 			                                    </ul>
 			                                    <div class="clearfix"></div>
@@ -97,9 +97,40 @@
 			                                    </div>
 			                                    <div class="tab-pane" id="tab6">
 			                                        <h5>Dislikes and Allergies</h5> 
+			                                        <div class="row">
+			                                        	{% for data in meal_info %}
+			                                        	<div class="col-md-4">
+			                                        		<div class="checkbox checkbox-primary">
+			                                        		    <input id="checkbox2" class="styled" type="checkbox">
+			                                        		    <label for="checkbox2">
+			                                        		        {{data.name}}
+			                                        		    </label>
+			                                        		</div>
+			                                        	</div>
+			                                        	{% endfor %}
+			                                        </div>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab7">
-			                                    
+			                                        <h5>Select Addons</h5> 
+			                                    	<!-- <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
+										{% for data in meal_info %}<li class=""><a href="#{{data.id}}" data-toggle="tab">
+										{{data.name}}<br>
+									</a></li>{% endfor %}
+								</ul> -->
+													<div class="row">
+														{% for data in meal_info %}
+														<div class="col-md-4">
+															<div class="checkbox checkbox-primary">
+															    <input id="checkbox2" class="styled" type="checkbox">
+															    <label for="checkbox2">
+															        {{data.name}}
+															    </label>
+															</div>
+														</div>
+														{% endfor %}
+													</div>
+
+			                                    	
 			                                    </div>
 			                                    <div class="tab-pane" id="tab8">
 			                                        
