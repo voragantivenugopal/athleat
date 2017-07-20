@@ -14,6 +14,7 @@ $(document).on('click','#mStartBtn',function(e){
     $('#tab2').addClass('active');
     $('[data-target="#step1"]').removeClass('active');
     $('[data-target="#step2"]').addClass('active');
+
 });
 $(document).on('click','.mChooseMealPlanBtn',function(e){
     $('#tab2').removeClass('active');
@@ -31,9 +32,11 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     else{
         $('#mPlanTitle').text('Choose Your Meal Plan');   
     }
+    
 });
 
 $(document).on('click','.mGenderBtn',function(e){
+    console.log('m_curr_choose_plan',m_curr_choose_plan);
     $('#tab3').removeClass('active');
     $('#tab4').addClass('active');
     $('[data-target="#step3"]').removeClass('active');
@@ -58,13 +61,13 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     var m_curr_how_many_weeks = $(this).attr('data-mHowManyWeeks');
     console.log('m_curr_how_many_weeks',m_curr_how_many_weeks);
     if(m_curr_how_many_weeks==='4'){
-        $('#mWeeksTitle').text('4');
+        $('#mWeeksTitle').text('4 Weeks');
     }
     else if(m_curr_how_many_weeks==='8'){
-        $('#mWeeksTitle').text('8');
+        $('#mWeeksTitle').text('8 Weeks');
     }
     else if(m_curr_how_many_weeks==='12'){
-        $('#mWeeksTitle').text('12');
+        $('#mWeeksTitle').text('12 Weeks');
     }
     else{
         $('#mWeeksTitle').text('How Many Weeks');   
@@ -79,13 +82,13 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
     console.log('m_curr_meals_per_day',m_curr_meals_per_day);
     if(m_curr_meals_per_day==='2'){
-        $('#mMealsperDayTitle').text('2');
+        $('#mMealsperDayTitle').text('2 Meals Per Day');
     }
     else if(m_curr_meals_per_day==='3'){
-        $('#mMealsperDayTitle').text('3');
+        $('#mMealsperDayTitle').text('3 Meals Per Day');
     }
     else if(m_curr_meals_per_day==='4'){
-        $('#mMealsperDayTitle').text('4');
+        $('#mMealsperDayTitle').text('4 Meals Per Day');
     }
     else{
         $('#mMealsperDayTitle').text('How Many Weeks');   
