@@ -107,8 +107,8 @@
 			                                        	{% for data in meal_info %}
 			                                        	<div class="col-md-4">
 			                                        		<div class="checkbox checkbox-primary">
-			                                        		    <input id="dislikes" class="styled dislikes" type="checkbox" value="{{data.id}}">
-			                                        		    <label for="dislikes">
+			                                        		    <input id="{{data.id}}" class="styled dislikes" type="checkbox" value="{{data.id}}">
+			                                        		    <label for="{{data.id}}">
 			                                        		        {{data.name}}
 			                                        		    </label>
 			                                        		</div>
@@ -134,20 +134,27 @@
 			                                    	
 			                                    </div>
 			                                    <div class="tab-pane" id="tab6-1">
-			                                        <h5>Number of meals per day?</h5> 
-													<div id="mMealsPerDayBtn"> 
-														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='2'>2</span>
-														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='3'>3</span>
-														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='4'>4</span>
+			                                        <h5>Choose Your Meal</h5> 
+													<div id="cCustomizer" class="text-left">
+														<div class="customizerSpacer1"></div>
+														<div class="cWeekHeader">
+														<div class="btnWeekCopyPaste hand tippyWeek cWeekTitle" data-week="1">
+														<h3 style="line-height:50px !important;">Week 1</h3></div>
+														<div class="cWeekDate">Aug 2nd</div><div class="clear"></div>
+														</div>
+														<div class="cCustomizerWeek" data-week="1">
+
+														<div class="cCustomizerDay " data-week="1" data-day="1" data-date="" style="">
+														<div class="text-center btnDayCopyPaste hand tippyDay" title="tooltip" data-week="1" data-day="1" style="padding: 0px 0 0 0;"><h4>DAY 1</h4></div><div class="cCustomizerDayMeals" data-week="1" data-day="1" data-date="" style=""><div class=""><div class="hand"><div class="btnCustomizerMeal" data-week="1" data-day="1" data-meal="1" data-type="" data-slug="" style="position:relative;"><div class="btnCustomizerMealTitle">Meal 1</div><div class="btnCustomizerMealDesc" style="color:red;">choose your meal</div><div class="btnCustomizerMealDescBg "></div></div></div><div class="hand"><div class="btnCustomizerMeal" data-week="1" data-day="1" data-meal="2" data-type="" data-slug="" style="position:relative;"><div class="btnCustomizerMealTitle">Meal 2</div>
+														<div class="btnCustomizerMealDesc" style="color:red;">choose your meal</div><div class="btnCustomizerMealDescBg "></div></div></div></div></div><div class="cCustomizerDayNutrition hand" data-week="1" data-day="1" data-date="" style=""><div class="txtDayKCals" data-week="1"></div><div class="cDailyExtraValues" data-week="1"><div class="txtDayProtein"></div><div class="txtDayCarbs"></div><div class="txtDayFat"></div></div></div></div>
+
+														</div>
 													</div>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab7-1">
-			                                        <h5>Number of meals per day?</h5> 
-													<div id="mMealsPerDayBtn"> 
-														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='2'>2</span>
-														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='3'>3</span>
-														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='4'>4</span>
-													</div>
+			                                        <h5>Closest Starting Date</h5> <br>
+			                                        <h3>30-07-2017</h3><br>
+													<span id="" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab8">
 			                                        <div>

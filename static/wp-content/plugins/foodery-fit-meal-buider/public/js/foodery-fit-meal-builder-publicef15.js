@@ -30,8 +30,16 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     if(m_curr_choose_plan === 'Athleat'){
         $('#mPlanTitle').text('Athleat/Fat Loss');
         $(this).addClass('btn-success');
+        $('[data-target="#step6-1"]').hide();
+        $('[data-target="#step7-1"]').hide();
+        $('[data-target="#step6"]').show();
+        $('[data-target="#step7"]').show();
     }
     else if(m_curr_choose_plan === 'Customized'){
+        $('[data-target="#step6-1"]').show();
+        $('[data-target="#step7-1"]').show();
+        $('[data-target="#step6"]').hide();
+        $('[data-target="#step7"]').hide();
         $('#mPlanTitle').text('Customized');
         $(this).addClass('btn-success');
     }
@@ -120,7 +128,6 @@ function getCookieInfo(){
     m_curr_gender = Cookies.get('m_curr_gender');
     m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
     m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
-   
 };
 
 $(document).on('click','.btnClearChoices',function(){
@@ -153,7 +160,7 @@ function clearCookies(){
 
 }
 
-$(document).on('click','#dislikes',function(){
+$(document).on('click','.dislikes',function(){
     dislikesSelection();
 });
 
