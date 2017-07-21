@@ -44,13 +44,18 @@ $(document).on('click','.mGenderBtn',function(e){
     $('#tab4').addClass('active');
     $('[data-target="#step3"]').removeClass('active');
     $('[data-target="#step4"]').addClass('active');
+    $('.mGenderBtn').removeClass('btn-success');
+    
     var m_curr_gender = $(this).attr('data-mGender');
     Cookies.set('m_curr_gender', m_curr_gender);
     if(m_curr_gender === 'Male'){
         $('#mGenderTitle').text('Male');
+         $(this).addClass('btn-success');
+
     }
     else if(m_curr_gender === 'Female'){
         $('#mGenderTitle').text('Female');
+         $(this).addClass('btn-success');
     }
     else{
         $('#mGenderTitle').text('Gender');   
