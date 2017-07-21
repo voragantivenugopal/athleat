@@ -185,4 +185,8 @@ var selected_addons_value = []; // initialize empty array
     console.log('Addons',selected_addons_value);
 }
 
+$(document).on('click','#mSubmitBtn',function(e){
+    console.log('Submit functionality');
+});
+
 })( jQuery );
