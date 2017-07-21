@@ -101,8 +101,8 @@
 			                                        	{% for data in meal_info %}
 			                                        	<div class="col-md-4">
 			                                        		<div class="checkbox checkbox-primary">
-			                                        		    <input id="checkbox2" class="styled" type="checkbox" value="{{data.id}}">
-			                                        		    <label for="checkbox2">
+			                                        		    <input id="dislikes" class="styled dislikes" type="checkbox" value="{{data.id}}">
+			                                        		    <label for="dislikes">
 			                                        		        {{data.name}}
 			                                        		    </label>
 			                                        		</div>
@@ -121,8 +121,8 @@
 														{% for data in addons_data %}
 														<div class="col-md-4">
 															<div class="checkbox checkbox-primary">
-															    <input id="checkbox3" class="styled" type="checkbox">
-															    <label for="checkbox3">
+															    <input id="addons" class="styled addons" type="checkbox" value="{{data.id}}">
+															    <label for="addons">
 															        {{data.name}}
 															    </label>
 															</div>
@@ -133,7 +133,9 @@
 			                                    	
 			                                    </div>
 			                                    <div class="tab-pane" id="tab8">
-			                                        
+			                                        <div>
+			                                       <span id="mSubmitBtn" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Submit</span>
+			                                       </div>
 			                                    </div>
 			                                    
 
