@@ -24,9 +24,7 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     $('[data-target="#step3"]').addClass('active');
     $('.mChooseMealPlanBtn').removeClass('btn-success');
     var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
-    console.log('m_curr_choose_plan',m_curr_choose_plan);
     Cookies.set('m_curr_choose_plan', m_curr_choose_plan);
-    console.log(Cookies,'####Cookies',m_curr_choose_plan)
     if(m_curr_choose_plan === 'Athleat'){
         $('#mPlanTitle').text('Athleat/Fat Loss');
         $(this).addClass('btn-success');
@@ -42,13 +40,12 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
 });
 
 $(document).on('click','.mGenderBtn',function(e){
-    console.log('m_curr_choose_plan',m_curr_choose_plan);
     $('#tab3').removeClass('active');
     $('#tab4').addClass('active');
     $('[data-target="#step3"]').removeClass('active');
     $('[data-target="#step4"]').addClass('active');
     var m_curr_gender = $(this).attr('data-mGender');
-    console.log('m_curr_gender',m_curr_gender);
+    Cookies.set('m_curr_gender', m_curr_gender);
     if(m_curr_gender === 'Male'){
         $('#mGenderTitle').text('Male');
     }
@@ -66,7 +63,7 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     $('[data-target="#step4"]').removeClass('active');
     $('[data-target="#step5"]').addClass('active');
     var m_curr_how_many_weeks = $(this).attr('data-mHowManyWeeks');
-    console.log('m_curr_how_many_weeks',m_curr_how_many_weeks);    
+    Cookies.set('m_curr_how_many_weeks', m_curr_how_many_weeks);    
     if(m_curr_how_many_weeks === '4'){
         $('#mWeeksTitle').text('4');
     }
@@ -87,7 +84,7 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     $('[data-target="#step5"]').removeClass('active');
     $('[data-target="#step6"]').addClass('active');
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
-    console.log('m_curr_meals_per_day',m_curr_meals_per_day);
+    Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
     if(m_curr_meals_per_day === '2'){
         $('#mMealsperDayTitle').text('2');
     }
@@ -107,18 +104,10 @@ getCookieInfo();
 
 function getCookieInfo(){
     m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
-    console.log(m_curr_choose_plan,'m_curr_choose_plan--getCookieInfo')
-    if(m_curr_choose_plan!=undefined){
-        if(m_curr_choose_plan === 'Athleat'){
-        $('#mPlanTitle').text('Athleat/Fat Loss');
-	    }
-	    else if(m_curr_choose_plan === 'Customized'){
-	        $('#mPlanTitle').text('Customized');
-	    }
-	    else{
-	        $('#mPlanTitle').text('Choose Your Meal Plan');   
-	    }
-	    }
+    m_curr_gender = Cookies.get('m_curr_gender');
+    m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
+    m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
+   
 };
 
 $(document).on('click','.btnClearChoices',function(){
@@ -133,21 +122,23 @@ function clearEverything(){
     m_curr_choose_plan ='Choose Your Meal Plan';
 }
 function clearCookies(){
-	console.log(m_curr_choose_plan,'m_curr_choose_plan--BeforeclearCookies')
 	Cookies.remove('m_curr_choose_plan');
-	// m_curr_choose_plan ='Choose Your Meal Plan';
-    $('#mPlanTitle').text(m_curr_choose_plan);   
-	console.log(m_curr_choose_plan,'m_curr_choose_plan--AfterclearCookies111')	
+	Cookies.remove('m_curr_gender');
+	Cookies.remove('m_curr_how_many_weeks');
+	Cookies.remove('m_curr_meals_per_day');
+	 if(m_curr_choose_plan === undefined){
+	 	$('#mPlanTitle').text('Choose Your Meal Plan');
+	}
+	if(m_curr_gender === undefined){
+	 	$('#mGenderTitle').text('Gender');
+	}
+	if(m_curr_how_many_weeks === undefined){
+	 	$('#mWeeksTitle').text('How Many Weeks');
+	}
+	if(m_curr_meals_per_day === undefined){
+	 	$('#mMealsperDayTitle').text('How Many Meals Per Day');
+	}
+
 }
 
-if(m_curr_choose_plan==='Athleat'){
-    console.log('tettttt');
-        $('#mPlanTitle').text('Athleat/Fat Loss');
-    }
-    else if(m_curr_choose_plan==='Customized'){
-        $('#mPlanTitle').text('Customized');
-    }
-    else{
-        $('#mPlanTitle').text('Choose Your Meal Plan');   
-    }
 })( jQuery );
