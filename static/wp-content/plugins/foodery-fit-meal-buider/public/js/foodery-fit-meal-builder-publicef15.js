@@ -17,6 +17,7 @@ $(document).on('click','#mStartBtn',function(e){
     $('[data-target="#step2"]').addClass('active');
 
 });
+
 $(document).on('click','.mChooseMealPlanBtn',function(e){
     $('#tab2').removeClass('active');
     $('#tab3').addClass('active');
@@ -71,12 +72,15 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     Cookies.set('m_curr_how_many_weeks', m_curr_how_many_weeks);    
     if(m_curr_how_many_weeks === '4'){
         $('#mWeeksTitle').text('4');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_how_many_weeks === '8'){
         $('#mWeeksTitle').text('8');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_how_many_weeks === '12'){
         $('#mWeeksTitle').text('12');
+        $(this).addClass('btn-success');
     }
     else{
         $('#mWeeksTitle').text('How Many Weeks');   
@@ -92,12 +96,15 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
     if(m_curr_meals_per_day === '2'){
         $('#mMealsperDayTitle').text('2');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_meals_per_day === '3'){
         $('#mMealsperDayTitle').text('3');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_meals_per_day === '4'){
         $('#mMealsperDayTitle').text('4');
+        $(this).addClass('btn-success');
     }
     else{
         $('#mMealsperDayTitle').text('How Many Weeks');   
@@ -133,15 +140,19 @@ function clearCookies(){
 	Cookies.remove('m_curr_meals_per_day');
 	 if(m_curr_choose_plan === undefined){
 	 	$('#mPlanTitle').text('Choose Your Meal Plan');
+	 	$('.mChooseMealPlanBtn').removeClass('btn-success');
 	}
 	if(m_curr_gender === undefined){
 	 	$('#mGenderTitle').text('Gender');
+	 	$('.mGenderBtn').removeClass('btn-success');
 	}
 	if(m_curr_how_many_weeks === undefined){
 	 	$('#mWeeksTitle').text('How Many Weeks');
+	 	$('.mHowManyWeeksBtn').removeClass('btn-success');
 	}
 	if(m_curr_meals_per_day === undefined){
 	 	$('#mMealsperDayTitle').text('How Many Meals Per Day');
+	 	$('.mMealsPerDayBtn').removeClass('btn-success');
 	}
 
 }
