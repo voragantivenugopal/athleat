@@ -122,8 +122,8 @@
 														{% for data in addons_data %}
 														<div class="col-md-4">
 															<div class="checkbox checkbox-primary">
-															    <input id="addons" class="styled addons" type="checkbox" value="{{data.id}}">
-															    <label for="addons">
+															    <input id="{{data.id}}" class="styled addons" type="checkbox" value="{{data.id}}">
+															    <label for="{{data.id}}">
 															        {{data.name}}
 															    </label>
 															</div>
