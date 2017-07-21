@@ -190,15 +190,33 @@ var m_selected_addons_value = []; // initialize empty array
 }
 
 $(document).on('click','#mSubmitBtn',function(e){
-    var obj = [];
-    obj.push(
-            {'Meal Plan':m_curr_choose_plan,
+    // var obj = [];
+   var obj = {'Meal Plan':m_curr_choose_plan,
             'Gender':m_curr_gender,
             'Weeks':m_curr_how_many_weeks,
             'Meals Per Day':m_curr_meals_per_day,
             'Dislikes':m_selected_dislikes_value,
             'Addons':m_selected_addons_value}
+    console.log(obj);
+    $.ajax({
+                  url: '/post-values/',
+                  contentType: 'application/json',
+                  data: JSON.stringify(obj),
+                  type: 'POST',
+                  success: postSuccess,
+            });
+
+    function postSuccess(data,textStatus,jqXHR)
+    {
+        // alert('Sit back and let us take care of the rest. We will be getting in touch with you very soon.');
+          swal(
+          'Good job!',
+          'Sit back and let us take care of the rest. We will be getting in touch with you very soon.',
+          'success'
         )
-});
+      // window.location = "/menu";
+      
+    }
+    });
 
 })( jQuery );

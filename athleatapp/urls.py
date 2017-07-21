@@ -6,7 +6,6 @@ urlpatterns = [
     url(r'^login/', doLogin),
     url(r'^logout/', doLogout),
     url(r'^meal-builder/', mealBuilder),
-    # url(r'^meal-plan/', mealPlan),
     url(r'^menu/', displayMenu),
     url(r'^register/', userSignup),
     url(r'^reset-password/', resetPassword),
