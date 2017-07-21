@@ -68,6 +68,7 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     $('#tab5').addClass('active');
     $('[data-target="#step4"]').removeClass('active');
     $('[data-target="#step5"]').addClass('active');
+    $('.mHowManyWeeksBtn').removeClass('btn-success');
     var m_curr_how_many_weeks = $(this).attr('data-mHowManyWeeks');
     Cookies.set('m_curr_how_many_weeks', m_curr_how_many_weeks);    
     if(m_curr_how_many_weeks === '4'){
@@ -92,6 +93,7 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     $('#tab6').addClass('active');
     $('[data-target="#step5"]').removeClass('active');
     $('[data-target="#step6"]').addClass('active');
+    $('.mMealsPerDayBtn').removeClass('btn-success');
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
     Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
     if(m_curr_meals_per_day === '2'){
