@@ -99,39 +99,49 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
 
 
 
-// getCookieInfo();
+getCookieInfo();
 
-// function getCookieInfo(){
-//     m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
-//     console.log(m_curr_choose_plan,'00000000')
-//     if(m_curr_choose_plan!=undefined){
-//         if(m_curr_choose_plan==='Athleat'){
-//         $('#mPlanTitle').text('Athleat/Fat Loss');
-// 	    }
-// 	    else if(m_curr_choose_plan==='Customized'){
-// 	        $('#mPlanTitle').text('Customized');
-// 	    }
-// 	    else{
-// 	        $('#mPlanTitle').text('Choose Your Meal Plan');   
-// 	    }
-// 	    }
-// };
+function getCookieInfo(){
+    m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
+    console.log(m_curr_choose_plan,'00000000')
+    if(m_curr_choose_plan!=undefined){
+        if(m_curr_choose_plan==='Athleat'){
+        $('#mPlanTitle').text('Athleat/Fat Loss');
+	    }
+	    else if(m_curr_choose_plan==='Customized'){
+	        $('#mPlanTitle').text('Customized');
+	    }
+	    else{
+	        $('#mPlanTitle').text('Choose Your Meal Plan');   
+	    }
+	    }
+};
 
-// $(document).on('click','.btnClearChoices',function(){
-//     clearEverything();
-// });
+$(document).on('click','.btnClearChoices',function(){
+    clearEverything();
+});
 
 
-// function clearEverything(){
-// 	var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
+function clearEverything(){
+	var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
     
-//     clearCookies();    
-//     m_curr_choose_plan ='';
-//     console.log('##############11',m_curr_choose_plan)
-// }
-// function clearCookies(){
-// 	var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
-// 	console.log('m_curr_choose_plan',m_curr_choose_plan);	
-// 	Cookies.remove('m_curr_choose_plan');
-// }
+    clearCookies();    
+    m_curr_choose_plan ='';
+    console.log('##############11',m_curr_choose_plan)
+}
+function clearCookies(){
+	Cookies.remove('m_curr_choose_plan');
+    var m_curr_choose_plan = 'Choose Your Meal Plan';
+    // console.log('m_curr_choose_plan',m_curr_choose_plan);    
+}
+if(m_curr_choose_plan==='Athleat'){
+    console.log('tettttt');
+        $('#mPlanTitle').text('Athleat/Fat Loss');
+    }
+    else if(m_curr_choose_plan==='Customized'){
+        $('#mPlanTitle').text('Customized');
+    }
+    else{
+        $('#mPlanTitle').text('Choose Your Meal Plan');   
+    }
 })( jQuery );
