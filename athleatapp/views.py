@@ -78,7 +78,10 @@ def mealBuilder(request):
 	custom_meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [('carb_type','=','customize')])
 	custom_meal_data = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', custom_meal_ids)
 
-	return render(request,'meal-builder.html',{'meal_info': meal_data,'custom_meal_data': custom_meal_data})
+	addon_ids = sock.execute(DB_NAME, uid, PASSWORD, 'addons.conf', 'search', [])
+	addons_data = sock.execute(DB_NAME, uid, PASSWORD, 'addons.conf', 'read', addon_ids,[])
+
+	return render(request,'meal-builder.html',{'meal_info': meal_data,'custom_meal_data': custom_meal_data,'addons_data': addons_data})
 
 
 def resetPassword(request):
