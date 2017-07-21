@@ -22,15 +22,18 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     $('#tab3').addClass('active');
     $('[data-target="#step2"]').removeClass('active');
     $('[data-target="#step3"]').addClass('active');
+    $('.mChooseMealPlanBtn').removeClass('btn-success');
     var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
     console.log('m_curr_choose_plan',m_curr_choose_plan);
     Cookies.set('m_curr_choose_plan', m_curr_choose_plan);
     console.log(Cookies,'####Cookies',m_curr_choose_plan)
     if(m_curr_choose_plan === 'Athleat'){
         $('#mPlanTitle').text('Athleat/Fat Loss');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_choose_plan === 'Customized'){
         $('#mPlanTitle').text('Customized');
+        $(this).addClass('btn-success');
     }
     else{
         $('#mPlanTitle').text('Choose Your Meal Plan');   
@@ -132,7 +135,8 @@ function clearEverything(){
 function clearCookies(){
 	console.log(m_curr_choose_plan,'m_curr_choose_plan--BeforeclearCookies')
 	Cookies.remove('m_curr_choose_plan');
-	m_curr_choose_plan ='Choose Your Meal Plan';
+	// m_curr_choose_plan ='Choose Your Meal Plan';
+    $('#mPlanTitle').text(m_curr_choose_plan);   
 	console.log(m_curr_choose_plan,'m_curr_choose_plan--AfterclearCookies111')	
 }
 
