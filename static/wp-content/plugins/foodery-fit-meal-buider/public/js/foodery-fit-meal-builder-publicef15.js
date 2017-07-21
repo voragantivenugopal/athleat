@@ -178,7 +178,16 @@ var selected_addons_value = []; // initialize empty array
 }
 
 $(document).on('click','#mSubmitBtn',function(e){
-    console.log('Submit functionality');
+    var obj = [];
+    obj.push(
+            {'Meal Plan':m_curr_choose_plan},
+            {'Gender':m_curr_gender},
+            {'Weeks':m_curr_how_many_weeks},
+            {'Meals Per Day':m_curr_meals_per_day}
+            // {'Dislikes':selected_dislikes_value}
+        )
+    // console.log('selected_dislikes_value',selected_dislikes_value)
+    console.log('Submit functionality',obj);
 });
 
 })( jQuery );
