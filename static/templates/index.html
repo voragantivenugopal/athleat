@@ -218,8 +218,8 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 								<li id="menu-item-453" class="NavLinks menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-109 current_page_item menu-item-453"><a href="index.html">About us</a></li>
 								<li id="menu-item-502" class="NavLinks menu-item menu-item-type-post_type menu-item-object-page menu-item-502"><a href="../blog/index.html">Blog</a></li> -->
 								<li id="menu-item-456" class="btnNavStartPlan menu-item menu-item-type-custom menu-item-object-custom button_solid_color menu-item-456"><a href="/meal-builder">Start plan</a></li>
-								{% if not request.session.user_id %}<li class="NavLogin"><a rel="nofollow" href="/login">Log in</a></li>
-                                <li class="NavLogin"><a rel="nofollow" href="/user-register">Sign up</a></li>
+								<!-- <li class="NavLogin"><a rel="nofollow" href="/login">Log in</a></li> -->
+                                {% if not request.session.user_id %}<li class="NavLogin"><a rel="nofollow" href="/user-register">Sign up</a></li>
 								{% else %}
 
 								<li class="NavLogin"><a rel="nofollow" href="/logout">Logout</a></li>
@@ -288,10 +288,6 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 								<div id="nav_menu-2" class="widget widget_nav_menu"><h4>ATHLEAT</h4>
 									<div class="menu-footer-foodery-fit-container"><ul id="menu-footer-foodery-fit" class="menu"><li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-109 current_page_item menu-item-111"><a href="/">About</a></li>
 									<li id="menu-item-267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-267"><a href="/menu">Menu</a></li>
-									<!-- <li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"><a href="../pricing/index.html">Pricing</a></li> -->
-									<!-- <li id="menu-item-504" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-504"><a href="../blog/index.html">Blog</a></li>
-									<li id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="../ambassador-programme/index.html">Ambassador Programme</a></li>
-									<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="../macro-calculator/index.html">Macro Calculator</a></li> -->
 									<li class="NavLogin"><a rel="nofollow" href="../my-account/index.html?redirect_to=index.php">Log in</a></li></ul></div>
 								</div>
 							</div><!--/col-->
