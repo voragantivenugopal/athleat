@@ -7,6 +7,7 @@ var m_curr_how_many_weeks = '';
 var m_curr_meals_per_day = '';
 var p_curr_choose_plan = '';
 var m_curr_dis_likes = '';
+var m_dislikes = [];
 
 // Start Button 
 $(document).on('click','#mStartBtn',function(e){
@@ -97,20 +98,28 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
     Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
     if(m_curr_meals_per_day === '2'){
-        $('#mMealsperDayTitle').text('2');
+        $('#mMealsperDayTitle').text('2 Meals Per Day');
         $(this).addClass('btn-success');
     }
     else if(m_curr_meals_per_day === '3'){
-        $('#mMealsperDayTitle').text('3');
+        $('#mMealsperDayTitle').text('3 Meals Per Day');
         $(this).addClass('btn-success');
     }
     else if(m_curr_meals_per_day === '4'){
-        $('#mMealsperDayTitle').text('4');
+        $('#mMealsperDayTitle').text('4 Meals Per Day');
         $(this).addClass('btn-success');
     }
     else{
-        $('#mMealsperDayTitle').text('How Many Weeks');   
+        $('#mMealsperDayTitle').text('How Many Meals Per Day?');   
     }
+});
+$(document).on('click','.mDislikes',function(e){
+    // var m_dislikes = [];
+    console.log('dislikes',m_dislikes);
+
+    var xxx=$(this).attr('id');
+    m_dislikes.push(xxx);
+    console.log('aa',xxx);
 });
 
 
