@@ -123,16 +123,9 @@ function getCookieInfo(){
 };
 
 $(document).on('click','.btnClearChoices',function(){
-    clearEverything();
+    clearCookies();
 });
 
-
-function clearEverything(){
-	var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
-    
-    clearCookies();    
-    m_curr_choose_plan ='Choose Your Meal Plan';
-}
 function clearCookies(){
 	Cookies.remove('m_curr_choose_plan');
 	Cookies.remove('m_curr_gender');
