@@ -56,6 +56,7 @@ $(document).on('click','.mGenderBtn',function(e){
         $('#mGenderTitle').text('Gender');   
     }
 });
+
 $(document).on('click','.mHowManyWeeksBtn',function(e){
     $('#tab4').removeClass('active');
     $('#tab5').addClass('active');
