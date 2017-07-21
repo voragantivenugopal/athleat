@@ -116,11 +116,13 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
 getCookieInfo();
 
 function getCookieInfo(){
+	// console.log(m_selected_dislikes_value,'before')
     m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
     m_curr_gender = Cookies.get('m_curr_gender');
     m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
     m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
-   
+    m_selected_dislikes_value = Cookies.get('m_selected_dislikes_value');
+    m_selected_addons_value = Cookies.get('m_selected_addons_value');
 };
 
 $(document).on('click','.btnClearChoices',function(){
@@ -133,6 +135,8 @@ function clearCookies(){
     Cookies.remove('m_curr_gender');
     Cookies.remove('m_curr_how_many_weeks');
     Cookies.remove('m_curr_meals_per_day');
+    Cookies.remove('m_selected_dislikes_value');
+    Cookies.remove('m_selected_addons_value');
      if(m_curr_choose_plan ==undefined){
         console.log('hello');
 	 	$('#mPlanTitle').text('Choose Your Meal Plan');
@@ -158,11 +162,11 @@ $(document).on('click','#dislikes',function(){
 });
 
 function dislikesSelection(){
-var selected_dislikes_value = []; // initialize empty array 
+var m_selected_dislikes_value = []; // initialize empty array 
     $(".dislikes:checked").each(function(){
-        selected_dislikes_value.push($(this).val());
+        m_selected_dislikes_value.push($(this).val());
+        Cookies.set('m_selected_dislikes_value', m_selected_dislikes_value);
     });
-    console.log('Dislikes',selected_dislikes_value);
 }
 
 $(document).on('click','#addons',function(){
@@ -170,24 +174,23 @@ $(document).on('click','#addons',function(){
 });
 
 function addonsSelection(){
-var selected_addons_value = []; // initialize empty array 
+var m_selected_addons_value = []; // initialize empty array 
     $(".addons:checked").each(function(){
-        selected_addons_value.push($(this).val());
+        m_selected_addons_value.push($(this).val());
+        Cookies.set('m_selected_addons_value', m_selected_addons_value);
     });
-    console.log('Addons',selected_addons_value);
 }
 
 $(document).on('click','#mSubmitBtn',function(e){
     var obj = [];
     obj.push(
-            {'Meal Plan':m_curr_choose_plan},
-            {'Gender':m_curr_gender},
-            {'Weeks':m_curr_how_many_weeks},
-            {'Meals Per Day':m_curr_meals_per_day}
-            // {'Dislikes':selected_dislikes_value}
+            {'Meal Plan':m_curr_choose_plan,
+            'Gender':m_curr_gender,
+            'Weeks':m_curr_how_many_weeks,
+            'Meals Per Day':m_curr_meals_per_day,
+            'Dislikes':m_selected_dislikes_value,
+            'Addons':m_selected_addons_value}
         )
-    // console.log('selected_dislikes_value',selected_dislikes_value)
-    console.log('Submit functionality',obj);
 });
 
 })( jQuery );
