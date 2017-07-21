@@ -161,4 +161,16 @@ function clearCookies(){
 
 }
 
+$(document).on('click','#checkbox2',function(){
+    updateSelection();
+});
+
+function updateSelection(){
+var selected_value = []; // initialize empty array 
+    $(".styled:checked").each(function(){
+        selected_value.push($(this).val());
+    });
+    console.log('Dislikes',selected_value);
+}
+
 })( jQuery );
