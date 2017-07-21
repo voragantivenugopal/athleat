@@ -152,16 +152,28 @@ function clearCookies(){
 
 }
 
-$(document).on('click','#checkbox2',function(){
-    updateSelection();
+$(document).on('click','#dislikes',function(){
+    dislikesSelection();
 });
 
-function updateSelection(){
-var selected_value = []; // initialize empty array 
-    $(".styled:checked").each(function(){
-        selected_value.push($(this).val());
+function dislikesSelection(){
+var selected_dislikes_value = []; // initialize empty array 
+    $(".dislikes:checked").each(function(){
+        selected_dislikes_value.push($(this).val());
     });
-    console.log('Dislikes',selected_value);
+    console.log('Dislikes',selected_dislikes_value);
+}
+
+$(document).on('click','#addons',function(){
+    addonsSelection();
+});
+
+function addonsSelection(){
+var selected_addons_value = []; // initialize empty array 
+    $(".addons:checked").each(function(){
+        selected_addons_value.push($(this).val());
+    });
+    console.log('Addons',selected_addons_value);
 }
 
 })( jQuery );
