@@ -113,16 +113,6 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
         $('#mMealsperDayTitle').text('How Many Meals Per Day?');   
     }
 });
-$(document).on('click','.mDislikes',function(e){
-    // var m_dislikes = [];
-    console.log('dislikes',m_dislikes);
-
-    var xxx=$(this).attr('id');
-    m_dislikes.push(xxx);
-    console.log('aa',xxx);
-});
-
-
 getCookieInfo();
 
 function getCookieInfo(){
@@ -138,11 +128,13 @@ $(document).on('click','.btnClearChoices',function(){
 });
 
 function clearCookies(){
-	Cookies.remove('m_curr_choose_plan');
-	Cookies.remove('m_curr_gender');
-	Cookies.remove('m_curr_how_many_weeks');
-	Cookies.remove('m_curr_meals_per_day');
-	 if(m_curr_choose_plan === undefined){
+    console.log('hello');
+    Cookies.remove('m_curr_choose_plan');
+    Cookies.remove('m_curr_gender');
+    Cookies.remove('m_curr_how_many_weeks');
+    Cookies.remove('m_curr_meals_per_day');
+     if(m_curr_choose_plan ==undefined){
+        console.log('hello');
 	 	$('#mPlanTitle').text('Choose Your Meal Plan');
 	 	$('.mChooseMealPlanBtn').removeClass('btn-success');
 	}
@@ -150,11 +142,11 @@ function clearCookies(){
 	 	$('#mGenderTitle').text('Gender');
 	 	$('.mGenderBtn').removeClass('btn-success');
 	}
-	if(m_curr_how_many_weeks === undefined){
+	if(m_curr_how_many_weeks == undefined){
 	 	$('#mWeeksTitle').text('How Many Weeks');
 	 	$('.mHowManyWeeksBtn').removeClass('btn-success');
 	}
-	if(m_curr_meals_per_day === undefined){
+	if(m_curr_meals_per_day == undefined){
 	 	$('#mMealsperDayTitle').text('How Many Meals Per Day');
 	 	$('.mMealsPerDayBtn').removeClass('btn-success');
 	}
