@@ -60,11 +60,8 @@ def doLogout(request):
 
 def Index(request):
 
-	return render(request,'meal-plan.html',{})
+	return render(request,'index.html',{})
 
-# def mealPlan(request):
-
-# 	return render(request,'meal-plan.html',{})
 
 def mealBuilder(request):
 
