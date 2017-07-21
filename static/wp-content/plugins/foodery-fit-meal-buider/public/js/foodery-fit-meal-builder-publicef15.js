@@ -45,7 +45,7 @@ $(document).on('click','.mGenderBtn',function(e){
     $('[data-target="#step3"]').removeClass('active');
     $('[data-target="#step4"]').addClass('active');
     $('.mGenderBtn').removeClass('btn-success');
-    
+
     var m_curr_gender = $(this).attr('data-mGender');
     Cookies.set('m_curr_gender', m_curr_gender);
     if(m_curr_gender === 'Male'){
@@ -70,13 +70,13 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     var m_curr_how_many_weeks = $(this).attr('data-mHowManyWeeks');
     Cookies.set('m_curr_how_many_weeks', m_curr_how_many_weeks);    
     if(m_curr_how_many_weeks === '4'){
-        $('#mWeeksTitle').text('4');
+        $('#mWeeksTitle').text('4 Weeks');
     }
     else if(m_curr_how_many_weeks === '8'){
-        $('#mWeeksTitle').text('8');
+        $('#mWeeksTitle').text('8 Weeks');
     }
     else if(m_curr_how_many_weeks === '12'){
-        $('#mWeeksTitle').text('12');
+        $('#mWeeksTitle').text('12 Weeks');
     }
     else{
         $('#mWeeksTitle').text('How Many Weeks');   
@@ -91,13 +91,13 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
     Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
     if(m_curr_meals_per_day === '2'){
-        $('#mMealsperDayTitle').text('2');
+        $('#mMealsperDayTitle').text('2 Meals Per Day');
     }
     else if(m_curr_meals_per_day === '3'){
-        $('#mMealsperDayTitle').text('3');
+        $('#mMealsperDayTitle').text('3 Meals Per Day');
     }
     else if(m_curr_meals_per_day === '4'){
-        $('#mMealsperDayTitle').text('4');
+        $('#mMealsperDayTitle').text('4 Meals Per Day');
     }
     else{
         $('#mMealsperDayTitle').text('How Many Weeks');   
