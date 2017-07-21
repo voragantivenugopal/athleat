@@ -8,7 +8,15 @@ var m_curr_meals_per_day = '';
 var p_curr_choose_plan = '';
 var m_curr_dis_likes = '';
 var m_dislikes = [];
-
+function getCookieInfo(){
+	// console.log(m_selected_dislikes_value,'before')
+    m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
+    m_curr_gender = Cookies.get('m_curr_gender');
+    m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
+    m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
+    m_selected_dislikes_value = Cookies.get('m_selected_dislikes_value');
+    m_selected_addons_value = Cookies.get('m_selected_addons_value');
+};
 // Start Button 
 $(document).on('click','#mStartBtn',function(e){
     console.log('start here button');
@@ -46,7 +54,6 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     else{
         $('#mPlanTitle').text('Choose Your Meal Plan');   
     }
-    
 });
 
 $(document).on('click','.mGenderBtn',function(e){
@@ -55,7 +62,6 @@ $(document).on('click','.mGenderBtn',function(e){
     $('[data-target="#step3"]').removeClass('active');
     $('[data-target="#step4"]').addClass('active');
     $('.mGenderBtn').removeClass('btn-success');
-
     var m_curr_gender = $(this).attr('data-mGender');
     Cookies.set('m_curr_gender', m_curr_gender);
     if(m_curr_gender === 'Male'){
@@ -71,6 +77,8 @@ $(document).on('click','.mGenderBtn',function(e){
         $('#mGenderTitle').text('Gender');   
     }
 });
+getCookieInfo();
+
 
 $(document).on('click','.mHowManyWeeksBtn',function(e){
     $('#tab4').removeClass('active');
@@ -97,11 +105,20 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     }
 });
 
+getCookieInfo();
+
 $(document).on('click','.mMealsPerDayBtn',function(e){
     $('#tab5').removeClass('active');
-    $('#tab6').addClass('active');
     $('[data-target="#step5"]').removeClass('active');
-    $('[data-target="#step6"]').addClass('active');
+	getCookieInfo();
+    if(m_curr_choose_plan === 'Athleat'){    
+	    $('[data-target="#step6"]').addClass('active');
+	    $('#tab6').addClass('active');
+    }
+    else if(m_curr_choose_plan === 'Customized'){
+       	$('[data-target="#step6-1"]').addClass('active');
+    	$('#tab6-1').addClass('active');
+    }
     $('.mMealsPerDayBtn').removeClass('btn-success');
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
     Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
@@ -121,17 +138,7 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
         $('#mMealsperDayTitle').text('How Many Meals Per Day?');   
     }
 });
-getCookieInfo();
 
-function getCookieInfo(){
-	// console.log(m_selected_dislikes_value,'before')
-    m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
-    m_curr_gender = Cookies.get('m_curr_gender');
-    m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
-    m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
-    m_selected_dislikes_value = Cookies.get('m_selected_dislikes_value');
-    m_selected_addons_value = Cookies.get('m_selected_addons_value');
-};
 
 $(document).on('click','.btnClearChoices',function(){
     clearCookies();
