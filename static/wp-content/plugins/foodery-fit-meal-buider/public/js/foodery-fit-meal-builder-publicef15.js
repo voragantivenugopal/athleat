@@ -140,15 +140,19 @@ function clearCookies(){
 	Cookies.remove('m_curr_meals_per_day');
 	 if(m_curr_choose_plan === undefined){
 	 	$('#mPlanTitle').text('Choose Your Meal Plan');
+	 	$('.mChooseMealPlanBtn').removeClass('btn-success');
 	}
 	if(m_curr_gender === undefined){
 	 	$('#mGenderTitle').text('Gender');
+	 	$('.mGenderBtn').removeClass('btn-success');
 	}
 	if(m_curr_how_many_weeks === undefined){
 	 	$('#mWeeksTitle').text('How Many Weeks');
+	 	$('.mHowManyWeeksBtn').removeClass('btn-success');
 	}
 	if(m_curr_meals_per_day === undefined){
 	 	$('#mMealsperDayTitle').text('How Many Meals Per Day');
+	 	$('.mMealsPerDayBtn').removeClass('btn-success');
 	}
 
 }
