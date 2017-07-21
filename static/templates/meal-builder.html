@@ -51,6 +51,12 @@
 			                                         <li data-target="#step7">
 			                                            <a href="#tab7" data-toggle="tab"> <span class="step">7</span> <span id="mAddonsTitle" class="title">Any Addons?</span> </a>
 			                                        </li>
+			                                        <li data-target="#step6-1" style="display: none;">
+			                                            <a href="#tab6-1" data-toggle="tab"> <span class="step">6</span> <span id="mChooseMealTitle" class="title">Choose Your Meal</span> </a>
+			                                        </li>
+			                                         <li data-target="#step7-1" style="display: none;">
+			                                            <a href="#tab7-1" data-toggle="tab"> <span class="step">7</span> <span id="mClosetDateTitle" class="title">Closest Starting Date</span> </a>
+			                                        </li>
 			                                        <li data-target="#step8">
 			                                            <a href="#tab8" data-toggle="tab"> <span class="step">8</span> <span class="title">Submit</span> </a>
 			                                        </li>
@@ -112,12 +118,7 @@
 			                                    </div>
 			                                    <div class="tab-pane" id="tab7">
 			                                        <h5>Select Addons</h5> 
-			                                    	<!-- <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
-										{% for data in meal_info %}<li class=""><a href="#{{data.id}}" data-toggle="tab">
-										{{data.name}}<br>
-									</a></li>{% endfor %}
-								</ul> -->
-													<div class="row">
+			                                    	<div class="row">
 														{% for data in addons_data %}
 														<div class="col-md-4">
 															<div class="checkbox checkbox-primary">
@@ -131,6 +132,22 @@
 													</div>
 
 			                                    	
+			                                    </div>
+			                                    <div class="tab-pane" id="tab6-1">
+			                                        <h5>Number of meals per day?</h5> 
+													<div id="mMealsPerDayBtn"> 
+														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='2'>2</span>
+														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='3'>3</span>
+														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='4'>4</span>
+													</div>
+			                                    </div>
+			                                    <div class="tab-pane" id="tab7-1">
+			                                        <h5>Number of meals per day?</h5> 
+													<div id="mMealsPerDayBtn"> 
+														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='2'>2</span>
+														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='3'>3</span>
+														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='4'>4</span>
+													</div>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab8">
 			                                        <div>
