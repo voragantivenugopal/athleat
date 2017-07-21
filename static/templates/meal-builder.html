@@ -52,7 +52,7 @@
 			                                            <a href="#tab7" data-toggle="tab"> <span class="step">7</span> <span id="mAddonsTitle" class="title">Any Addons?</span> </a>
 			                                        </li>
 			                                        <li data-target="#step8">
-			                                            <a href="#tab8" data-toggle="tab"> <span class="step">8</span> <span class="title">Pay</span> </a>
+			                                            <a href="#tab8" data-toggle="tab"> <span class="step">8</span> <span class="title">Submit</span> </a>
 			                                        </li>
 			                                    </ul>
 			                                    <div class="clearfix"></div>
@@ -63,7 +63,7 @@
 			                                       <div>
 			                                       <span id="mStartBtn" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Start Here</span>
 			                                       </div>
-			                                       <div style="padding-top:30px;"><span class="btnClearChoices">Clear all choices</span></div>
+			                                       <div style="padding-top:30px;"><span class="btnClearChoices" style="cursor: pointer;">Clear all choices</span></div>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab2">
 			                                        <h5>Choose your meal plan?</h5>
@@ -100,8 +100,8 @@
 			                                        <div class="row">
 			                                        	{% for data in meal_info %}
 			                                        	<div class="col-md-4">
-			                                        		<div class="checkbox checkbox-primary">
-			                                        		    <input id="checkbox2" class="styled" type="checkbox">
+			                                        		<div class="checkbox checkbox-primary" id="{{data.id}}">
+			                                        		    <input id="checkbox2" class="styled" type="checkbox" >
 			                                        		    <label for="checkbox2">
 			                                        		        {{data.name}}
 			                                        		    </label>
