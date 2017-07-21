@@ -129,6 +129,7 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
         var mDays = 5;
         var tr = [];
         for (var i = 0; i < mWeeks; i++) {
+            
             var row = $('<tr></tr>').attr({ class: ["class1", "class2", "class3"].join(' ') }).appendTo(mytable);
             for (var j = 0; j < mDays; j++) {
                 $('<td></td>').text("text1").appendTo(row); 
