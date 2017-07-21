@@ -137,6 +137,26 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     else{
         $('#mMealsperDayTitle').text('How Many Meals Per Day?');   
     }
+    mCreateChooseMealPlan();
+    function mCreateChooseMealPlan(){
+         console.log('----')
+        mytable = $('<table></table>').attr({ id: "basicTable" });
+        var mWeeks = new Number(m_curr_how_many_weeks);
+        var mMealsPerDay = new Number(m_curr_meals_per_day);
+        var mDays = 5;
+        var tr = [];
+        for (var i = 0; i < mWeeks; i++) {
+            
+            var row = $('<tr></tr>').attr({ class: ["class1", "class2", "class3"].join(' ') }).appendTo(mytable);
+            for (var j = 0; j < mDays; j++) {
+                $('<td></td>').text("text1").appendTo(row); 
+            }
+                     
+        }
+        console.log("TTTTT:"+mytable.html());
+        mytable.appendTo("#mChooseMealPlanData");          
+      
+    }
 });
 
 
