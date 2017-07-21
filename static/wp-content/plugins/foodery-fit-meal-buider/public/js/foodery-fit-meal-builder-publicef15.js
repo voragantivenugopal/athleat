@@ -7,6 +7,7 @@ var m_curr_how_many_weeks = '';
 var m_curr_meals_per_day = '';
 var p_curr_choose_plan = '';
 var m_curr_dis_likes = '';
+var m_dislikes = [];
 
 // Start Button 
 $(document).on('click','#mStartBtn',function(e){
@@ -17,20 +18,22 @@ $(document).on('click','#mStartBtn',function(e){
     $('[data-target="#step2"]').addClass('active');
 
 });
+
 $(document).on('click','.mChooseMealPlanBtn',function(e){
     $('#tab2').removeClass('active');
     $('#tab3').addClass('active');
     $('[data-target="#step2"]').removeClass('active');
     $('[data-target="#step3"]').addClass('active');
+    $('.mChooseMealPlanBtn').removeClass('btn-success');
     var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
-    console.log('m_curr_choose_plan',m_curr_choose_plan);
     Cookies.set('m_curr_choose_plan', m_curr_choose_plan);
-    console.log(Cookies,'####Cookies',m_curr_choose_plan)
     if(m_curr_choose_plan === 'Athleat'){
         $('#mPlanTitle').text('Athleat/Fat Loss');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_choose_plan === 'Customized'){
         $('#mPlanTitle').text('Customized');
+        $(this).addClass('btn-success');
     }
     else{
         $('#mPlanTitle').text('Choose Your Meal Plan');   
@@ -39,18 +42,22 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
 });
 
 $(document).on('click','.mGenderBtn',function(e){
-    console.log('m_curr_choose_plan',m_curr_choose_plan);
     $('#tab3').removeClass('active');
     $('#tab4').addClass('active');
     $('[data-target="#step3"]').removeClass('active');
     $('[data-target="#step4"]').addClass('active');
+    $('.mGenderBtn').removeClass('btn-success');
+
     var m_curr_gender = $(this).attr('data-mGender');
-    console.log('m_curr_gender',m_curr_gender);
+    Cookies.set('m_curr_gender', m_curr_gender);
     if(m_curr_gender === 'Male'){
         $('#mGenderTitle').text('Male');
+         $(this).addClass('btn-success');
+
     }
     else if(m_curr_gender === 'Female'){
         $('#mGenderTitle').text('Female');
+         $(this).addClass('btn-success');
     }
     else{
         $('#mGenderTitle').text('Gender');   
@@ -62,16 +69,20 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     $('#tab5').addClass('active');
     $('[data-target="#step4"]').removeClass('active');
     $('[data-target="#step5"]').addClass('active');
+    $('.mHowManyWeeksBtn').removeClass('btn-success');
     var m_curr_how_many_weeks = $(this).attr('data-mHowManyWeeks');
-    console.log('m_curr_how_many_weeks',m_curr_how_many_weeks);    
+    Cookies.set('m_curr_how_many_weeks', m_curr_how_many_weeks);    
     if(m_curr_how_many_weeks === '4'){
-        $('#mWeeksTitle').text('4');
+        $('#mWeeksTitle').text('4 Weeks');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_how_many_weeks === '8'){
-        $('#mWeeksTitle').text('8');
+        $('#mWeeksTitle').text('8 Weeks');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_how_many_weeks === '12'){
-        $('#mWeeksTitle').text('12');
+        $('#mWeeksTitle').text('12 Weeks');
+        $(this).addClass('btn-success');
     }
     else{
         $('#mWeeksTitle').text('How Many Weeks');   
@@ -83,67 +94,103 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     $('#tab6').addClass('active');
     $('[data-target="#step5"]').removeClass('active');
     $('[data-target="#step6"]').addClass('active');
+    $('.mMealsPerDayBtn').removeClass('btn-success');
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
-    console.log('m_curr_meals_per_day',m_curr_meals_per_day);
+    Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
     if(m_curr_meals_per_day === '2'){
-        $('#mMealsperDayTitle').text('2');
+        $('#mMealsperDayTitle').text('2 Meals Per Day');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_meals_per_day === '3'){
-        $('#mMealsperDayTitle').text('3');
+        $('#mMealsperDayTitle').text('3 Meals Per Day');
+        $(this).addClass('btn-success');
     }
     else if(m_curr_meals_per_day === '4'){
-        $('#mMealsperDayTitle').text('4');
+        $('#mMealsperDayTitle').text('4 Meals Per Day');
+        $(this).addClass('btn-success');
     }
     else{
-        $('#mMealsperDayTitle').text('How Many Weeks');   
+        $('#mMealsperDayTitle').text('How Many Meals Per Day?');   
     }
 });
-
-
 getCookieInfo();
 
 function getCookieInfo(){
+	// console.log(m_selected_dislikes_value,'before')
     m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
-    console.log(m_curr_choose_plan,'m_curr_choose_plan--getCookieInfo')
-    if(m_curr_choose_plan!=undefined){
-        if(m_curr_choose_plan === 'Athleat'){
-        $('#mPlanTitle').text('Athleat/Fat Loss');
-	    }
-	    else if(m_curr_choose_plan === 'Customized'){
-	        $('#mPlanTitle').text('Customized');
-	    }
-	    else{
-	        $('#mPlanTitle').text('Choose Your Meal Plan');   
-	    }
-	    }
+    m_curr_gender = Cookies.get('m_curr_gender');
+    m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
+    m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
+    m_selected_dislikes_value = Cookies.get('m_selected_dislikes_value');
+    m_selected_addons_value = Cookies.get('m_selected_addons_value');
 };
 
 $(document).on('click','.btnClearChoices',function(){
-    clearEverything();
+    clearCookies();
 });
 
-
-function clearEverything(){
-	var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
-    
-    clearCookies();    
-    m_curr_choose_plan ='Choose Your Meal Plan';
-}
 function clearCookies(){
-	console.log(m_curr_choose_plan,'m_curr_choose_plan--BeforeclearCookies')
-	Cookies.remove('m_curr_choose_plan');
-	m_curr_choose_plan ='Choose Your Meal Plan';
-	console.log(m_curr_choose_plan,'m_curr_choose_plan--AfterclearCookies111')	
+    console.log('hello');
+    Cookies.remove('m_curr_choose_plan');
+    Cookies.remove('m_curr_gender');
+    Cookies.remove('m_curr_how_many_weeks');
+    Cookies.remove('m_curr_meals_per_day');
+    Cookies.remove('m_selected_dislikes_value');
+    Cookies.remove('m_selected_addons_value');
+     if(m_curr_choose_plan ==undefined){
+        console.log('hello');
+	 	$('#mPlanTitle').text('Choose Your Meal Plan');
+	 	$('.mChooseMealPlanBtn').removeClass('btn-success');
+	}
+	if(m_curr_gender === undefined){
+	 	$('#mGenderTitle').text('Gender');
+	 	$('.mGenderBtn').removeClass('btn-success');
+	}
+	if(m_curr_how_many_weeks == undefined){
+	 	$('#mWeeksTitle').text('How Many Weeks');
+	 	$('.mHowManyWeeksBtn').removeClass('btn-success');
+	}
+	if(m_curr_meals_per_day == undefined){
+	 	$('#mMealsperDayTitle').text('How Many Meals Per Day');
+	 	$('.mMealsPerDayBtn').removeClass('btn-success');
+	}
+
 }
 
-if(m_curr_choose_plan==='Athleat'){
-    console.log('tettttt');
-        $('#mPlanTitle').text('Athleat/Fat Loss');
-    }
-    else if(m_curr_choose_plan==='Customized'){
-        $('#mPlanTitle').text('Customized');
-    }
-    else{
-        $('#mPlanTitle').text('Choose Your Meal Plan');   
-    }
+$(document).on('click','#dislikes',function(){
+    dislikesSelection();
+});
+
+function dislikesSelection(){
+var m_selected_dislikes_value = []; // initialize empty array 
+    $(".dislikes:checked").each(function(){
+        m_selected_dislikes_value.push($(this).val());
+        Cookies.set('m_selected_dislikes_value', m_selected_dislikes_value);
+    });
+}
+
+$(document).on('click','#addons',function(){
+    addonsSelection();
+});
+
+function addonsSelection(){
+var m_selected_addons_value = []; // initialize empty array 
+    $(".addons:checked").each(function(){
+        m_selected_addons_value.push($(this).val());
+        Cookies.set('m_selected_addons_value', m_selected_addons_value);
+    });
+}
+
+$(document).on('click','#mSubmitBtn',function(e){
+    var obj = [];
+    obj.push(
+            {'Meal Plan':m_curr_choose_plan,
+            'Gender':m_curr_gender,
+            'Weeks':m_curr_how_many_weeks,
+            'Meals Per Day':m_curr_meals_per_day,
+            'Dislikes':m_selected_dislikes_value,
+            'Addons':m_selected_addons_value}
+        )
+});
+
 })( jQuery );
