@@ -78,13 +78,13 @@ def mealBuilder(request):
 	uid = getUserId(request)
 	sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 	meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
-							('carb_type', '!=', 'customize')])
+							('carb_type', '=', 'customize'),('customize_category','=','gourmet')])
 	meal_data = sock.execute(DB_NAME, uid, PASSWORD,
 							 'recipies.meal', 'read', meal_ids)
 
 	# Customized items
 	custom_meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
-								   ('carb_type', '=', 'customize')])
+								   ('carb_type', '=', 'customize'),('customize_category','=','own')])
 	custom_meal_data = sock.execute(
 		DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', custom_meal_ids)
 
