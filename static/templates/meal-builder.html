@@ -314,7 +314,7 @@
 							<div class="container row">
 								<div class="col-sm-6 modal-left">
 									<ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
-										{% for data in custom_meal_data %}<li class=""><a href="#{{data.id}}" data-toggle="tab">
+										{% for data in custom_meal_data %}<li class=""><a href="#m{{data.id}}" id="{{data.id}}" data-toggle="tab">
 										{{data.name}}<br>
 									</a></li>{% endfor %}
 								</ul>
@@ -334,7 +334,7 @@
 											<span>Protein :{{data.protein}}</span><br>
 										</div>
 										{% for data in custom_meal_data %}  
-										<div role="tabpanel" class="tab-pane fade in" id="{{data.id}}">
+										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
 											<span>Fat : {{data.fat}}</span><br>
 											<span>Carb :{{data.carb}}</span><br>
 											<span>Protein :{{data.protein}}</span><br>

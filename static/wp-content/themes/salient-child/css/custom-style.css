@@ -195,7 +195,7 @@ img.wp-smiley,
 }
 .wizard-bottom{
 	padding: 80px 0px;
-	
+
 }
 .tab-pane .row{
 	/*margin: auto;*/
@@ -485,4 +485,7 @@ input[type="radio"] .styled:checked + label::after {
 
 .tab-content .container{
 	padding: 0px;
+}
+.bootstrapWizard  li a{
+	pointer-events: none;
 }
