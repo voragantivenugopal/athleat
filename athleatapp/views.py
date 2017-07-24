@@ -78,13 +78,13 @@ def mealBuilder(request):
 	uid = getUserId(request)
 	sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 	meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
-							('carb_type', '!=', 'customize')])
+							('carb_type', '=', 'customize'),('customize_category','=','gourmet')])
 	meal_data = sock.execute(DB_NAME, uid, PASSWORD,
 							 'recipies.meal', 'read', meal_ids)
 
 	# Customized items
 	custom_meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
-								   ('carb_type', '=', 'customize')])
+								   ('carb_type', '=', 'customize'),('customize_category','=','own')])
 	custom_meal_data = sock.execute(
 		DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', custom_meal_ids)
 
@@ -176,7 +176,7 @@ def getValues(request):
 		meal_plan = []
 
 		customer_id = request.session['partner_id']
-		# customers = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, {'disliked_meal_ids': [[6, 0, dislikes]]})
+		update = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, {'disliked_meals_ids': [[6, 0, dislikes]]})
 
 		# for x in customers:
 		# for i in meal_items:
