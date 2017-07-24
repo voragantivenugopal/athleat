@@ -192,7 +192,10 @@ img.wp-smiley,
 	margin: auto;
 	/*display: table !important;*/
 	text-align: center;
+}
+.wizard-bottom{
 	padding: 80px 0px;
+	
 }
 .tab-pane .row{
 	/*margin: auto;*/
@@ -479,3 +482,7 @@ input[type="radio"] .styled:checked + label::before {
 input[type="checkbox"] .styled:checked + label::after,
 input[type="radio"] .styled:checked + label::after {
   color: #fff; }
+
+.tab-content .container{
+	padding: 0px;
+}
