@@ -226,23 +226,35 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     }
 });
 
+var data_week = 0;
+var data_day = 0;
+var data_meal = 0;
 $(document).on('click','.btnCustomizerMeal',function(e){
+data_week = $(this).attr('data-week');
+ data_day = $(this).attr('data-day');
+data_meal = $(this).attr('data-meal');
       // console.log("$(this): ", $(this));
 
     $('#myModal').modal('show');
-         var data_week = $(this).attr('data-week');
-         var data_day = $(this).attr('data-day');
-         var data_date = $(this).attr('data-date');
+        
          // var info = $(this)('.btnCustomizerMealDesc').text();
          // var meal_item = $(this).
-
-        $(document).on('click','#modal-add-meal-btn',function(){
-        var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
-            $('#myModal').modal('hide');
-            $('.btnCustomizerMealDesc').text(meal_item);
-    });
+         // console.log('week',data_week)
+         // console.log('day',data_day)
+         // console.log('meal',data_meal)
 
 });
+$(document).on('click','#modal-add-meal-btn',function(e){
+            console.log('week',data_week)
+         console.log('day',data_day)
+         console.log('meal',data_meal)
+        var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
+            $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
+            $('#myModal').modal('hide');
+            // var xxx = $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').text(meal_item);
+            // console.log(xxx,'xxxx')
+            // $('.btnCustomizerMealDesc').text(meal_item);
+    });
 
 
 $(document).on('click','.btnClearChoices',function(){
