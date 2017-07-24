@@ -116,6 +116,7 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
 getCookieInfo();
 
 $(document).on('click','.mMealsPerDayBtn',function(e){
+    $('#mChooseMealPlanData').html('');
     $('#tab5').removeClass('active');
     $('[data-target="#step5"]').removeClass('active');
 	getCookieInfo();
@@ -148,21 +149,78 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     mCreateChooseMealPlan();
     function mCreateChooseMealPlan(){
          console.log('----')
-        mytable = $('<table></table>').attr({ id: "basicTable" });
-        var mWeeks = new Number(m_curr_how_many_weeks);
-        var mMealsPerDay = new Number(m_curr_meals_per_day);
-        var mDays = 5;
-        var tr = [];
-        for (var i = 0; i < mWeeks; i++) {
+        // mytable = $('<table></table>').attr({ id: "basicTable" });
+        // var mWeeks = new Number(m_curr_how_many_weeks);
+        // var mMealsPerDay = new Number(m_curr_meals_per_day);
+        // var mDays = 5;
+        // var tr = [];
+        // for (var i = 0; i < mWeeks; i++) {
             
-            var row = $('<tr></tr>').attr({ class: ["class1", "class2", "class3"].join(' ') }).appendTo(mytable);
-            for (var j = 0; j < mDays; j++) {
-                $('<td></td>').text("text1").appendTo(row); 
-            }
+        //     var row = $('<tr></tr>').attr({ class: ["class1", "class2", "class3"].join(' ') }).appendTo(mytable);
+        //     for (var j = 0; j < mDays; j++) {
+        //         $('<td></td>').text("text1").appendTo(row); 
+        //     }
                      
+        // }
+        // console.log("TTTTT:"+mytable.html());
+        // mytable.appendTo("#mChooseMealPlanData");        
+        // $('#mChooseMealPlanData').html('');
+
+        for(var i=1; i<=m_curr_how_many_weeks; i++){
+            str = '';
+            str += '<div class="customizerSpacer1"></div>';
+            str += '<div class="cWeekHeader">';
+                str += '<div class="btnWeekCopyPaste hand tippyWeek cWeekTitle" data-week="'+i+'"><h3 style="line-height:50px !important;">Week '+i+'</h3></div>';
+                // str += '<div class="" style="float:left; background-color:#ddd; height:50px; padding:8px 20px 0 0px; line-height:50px;"><img src="https://cdn3.iconfinder.com/data/icons/stroke/53/Copy-512.png" style="width:24px;"></div>';
+                // str += '<div class="cWeekDate">'+ moment(Date.parse(curr_start_date)).add(i-1, 'week').format('MMM Do') +'</div>';
+
+                str += '<div class="clear"></div>';
+            str += '</div>';
+            str += '<div class="cCustomizerWeek" data-week="'+i+'"></div>';
+            $('#mChooseMealPlanData').append(str);
         }
-        console.log("TTTTT:"+mytable.html());
-        mytable.appendTo("#mChooseMealPlanData");          
+
+        $('.cCustomizerWeek').each(function(i,item){
+
+            str = '<div class="">';
+            for(var d=1; d<=5; d++){
+                var dayNumber = d;
+                var weekNumber = i+1;
+
+                str += '<div class="cCustomizerDay " data-week="'+weekNumber+'" data-day="'+dayNumber+'" data-date="" style="">';
+                    str += '<div class="text-center btnDayCopyPaste hand tippyDay" title="tooltip" data-week="'+weekNumber+'" data-day="'+dayNumber+'" style="padding: 0px 0 0 0;"><h4>DAY '+dayNumber+'</h4></div>';
+                    str += '<div class="cCustomizerDayMeals" data-week="'+weekNumber+'" data-day="'+dayNumber+'" data-date="" style=""></div>';
+                    str += '<div class="cCustomizerDayNutrition hand" data-week="'+weekNumber+'" data-day="'+dayNumber+'" data-date="" style=""><div class="txtDayKCals" data-week="'+weekNumber+'"></div><div class="cDailyExtraValues" data-week="'+weekNumber+'"><div class="txtDayProtein"></div><div class="txtDayCarbs"></div><div class="txtDayFat"></div></div></div>';
+                str += '</div>';
+            }
+            // str += '<div class="clear"></div>';
+            str += '</div>';
+            $('.cCustomizerWeek[data-week="'+(i+1)+'"]').html(str);
+        });  
+
+        $('.cCustomizerDayMeals').each(function(i,item){
+            var temp = item;
+            var weekNum = $(item).data('week');
+            var dayNum = $(item).data('day');
+
+            str = '<div class="">';
+                for(var m=1; m<=m_curr_meals_per_day; m++){
+                    str += '<div class="hand">';
+
+                        str += '<div class="btnCustomizerMeal" data-week="'+weekNum+'" data-day="'+dayNum+'" data-meal="'+m+'" data-type="" data-slug="" style="position:relative;">';
+                            str += '<div class="btnCustomizerMealTitle">Meal '+m+'</div>';
+                            str += '<div class="btnCustomizerMealDesc" style="color:red;">choose your meal</div>';
+                            // str += '<div class="btnCustomizerMealDesc"></div>';
+                            str += '<div class="btnCustomizerMealDescBg "></div>';
+                        str += '</div>';
+
+                    str += '</div>';
+                }
+
+            str += '</div>';
+
+            $(temp).html(str);
+        });
       
     }
 });
