@@ -131,9 +131,11 @@ def userSignup(request):
 def getValues(request):
 
 	body = eval(request.body)
-	dislikes = eval(body['Dislikes'])
-	dislikes = map(int, dislikes)
-	addons = eval(body['Addons'])
+	if 'Dislikes' in body:
+		dislikes = eval(body['Dislikes'])
+		dislikes = map(int, dislikes)
+	if 'Addons' in body:
+		addons = eval(body['Addons'])
 	if request.method == 'POST':
 
 		uid = getUserId(request)
@@ -144,7 +146,7 @@ def getValues(request):
 		meal_plan = []
 
 		customer_id = request.session['partner_id']
-		customers = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, {'disliked_meal_ids': [[6, 0, dislikes]]})
+		# customers = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, {'disliked_meal_ids': [[6, 0, dislikes]]})
 		
 		# for x in customers:
 			# for i in meal_items:
