@@ -176,7 +176,7 @@ def getValues(request):
 		meal_plan = []
 
 		customer_id = request.session['partner_id']
-		# customers = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, {'disliked_meal_ids': [[6, 0, dislikes]]})
+		update = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, {'disliked_meals_ids': [[6, 0, dislikes]]})
 
 		# for x in customers:
 		# for i in meal_items:
