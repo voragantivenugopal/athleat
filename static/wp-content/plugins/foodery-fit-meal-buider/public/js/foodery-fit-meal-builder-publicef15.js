@@ -77,6 +77,14 @@ $(document).on('click','.mGenderBtn',function(e){
         $('#mGenderTitle').text('Gender');   
     }
 });
+
+$(document).on('click','#mCloneStartDateNext',function(e){
+    $('#tab7-1').removeClass('active');
+    $('#tab8').addClass('active');
+    $('[data-target="#step7-1"]').removeClass('active');
+    $('[data-target="#step8"]').addClass('active');
+});
+
 getCookieInfo();
 
 
