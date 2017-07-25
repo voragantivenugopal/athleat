@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'athleatmeal',
-        'USER': 'venugopal',
-        'PASSWORD': 'venugopal',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '',
 
@@ -134,10 +134,10 @@ STATIC_ROOT = ''
 
 
 # XMLRPC CONNECTION SETTINGS
-XMLRPC_URL = 'http://128.199.220.254:8069'
-DB_NAME = 'Athleat'
+XMLRPC_URL = 'http://192.168.2.37:8069'
+DB_NAME = 'athleat'
 USERNAME = 'admin'
-PASSWORD = 'athleatadmin'
+PASSWORD = 'admin'
 sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')
 sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 
