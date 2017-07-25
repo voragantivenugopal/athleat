@@ -63,7 +63,7 @@ def doLogout(request):
 	for sesskey in request.session.keys():
 		del request.session[sesskey]
 
-	return HttpResponseRedirect('/login')
+	return HttpResponseRedirect('/')
 
 
 def Index(request):
@@ -133,14 +133,17 @@ def userSignup(request):
 		phone = request.POST['phone']
 		name = request.POST['regname']
 		gender = request.POST['sel1']
+		email = request.POST['email']
+		meal_pref = request.POST['meal-pref']
 		try:
 			uid = getUserId(request)
 			user_id = sock.execute(DB_NAME, uid, PASSWORD, 'res.users', 'create', {
 								   'login': username, 'new_password': password, 'name': name})
 			user_data = sock.execute(
 				DB_NAME, uid, PASSWORD, 'res.users', 'read', user_id, ['partner_id'])
-			user_update = sock.execute(DB_NAME, uid, PASSWORD, 'res.partner', 'write', user_data[
-									   'partner_id'][0], {'contact_no': str(phone), 'customer': True, 'gender': str(gender)})
+			date_of_join = datetime.now().date().strftime('%Y-%m-%d')
+			customer_update = sock.execute(DB_NAME, uid, PASSWORD, 'res.partner', 'write', user_data[
+									   'partner_id'][0], {'contact_no': str(phone), 'customer': True, 'gender': str(gender), 'email': str(email),'meal_type':str(meal_pref),'date_of_join': date_of_join})
 			request.session['user_id'] = user_id
 			request.session['password'] = password
 			request.session['partner_id'] = user_data['partner_id'][0]
