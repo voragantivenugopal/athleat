@@ -10,14 +10,14 @@ var m_curr_dis_likes = '';
 var m_dislikes = [];
 getCookieInfo();
 function getCookieInfo(){
-	console.log(m_curr_gender,'beforegetCookieInfo',m_curr_meals_per_day)
+	console.log(m_curr_gender,'before--getCookieInfo',m_curr_meals_per_day)
     m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
     m_curr_gender = Cookies.get('m_curr_gender');
     m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
     m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
     m_selected_dislikes_value = Cookies.get('m_selected_dislikes_value');
     m_selected_addons_value = Cookies.get('m_selected_addons_value');
-    console.log(m_curr_gender,'AgetCookieInfo',m_curr_meals_per_day)
+    console.log(m_curr_gender,'After--getCookieInfo',m_curr_meals_per_day)
 };
 
 $(document).on('click','.btnClearChoices',function(){
@@ -73,6 +73,7 @@ $(document).on('click','.mGenderBtn',function(e){
     $('[data-target="#step4"]').addClass('active');
     $('.mGenderBtn').removeClass('btn-success');
     var m_curr_gender = $(this).attr('data-mGender');
+    console.log(m_curr_gender,'Before set to Cookie11111111m_curr_gender')
     Cookies.set('m_curr_gender', m_curr_gender);
     if(m_curr_gender === 'Male'){
         $('#mGenderTitle').text('Male');
@@ -159,8 +160,9 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
        	$('[data-target="#step6-1"]').addClass('active');
     	$('#tab6-1').addClass('active');
     }
-    $('.mMealsPerDayBtn').removeClass('btn-success');
+    $('.mMealsPerDayBtn').removeClass('btn-success');    
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
+    console.log(m_curr_meals_per_day,'Before set to Cookie11111111')
     Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
     if(m_curr_meals_per_day === '2'){
         $('#mMealsperDayTitle').text('2 Meals Per Day');
@@ -304,7 +306,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
     });
 
 function clearCookies(){
-	console.log(m_curr_gender,'before11getCookieInfo',m_curr_meals_per_day)
+	console.log(m_curr_gender,'before--clearCookies',m_curr_meals_per_day)
     // console.log('hello',m_curr_choose_plan);
     Cookies.remove('m_curr_choose_plan',null);
     console.log('1hello',m_curr_choose_plan);
@@ -331,7 +333,7 @@ function clearCookies(){
 	 	$('.mMealsPerDayBtn').removeClass('btn-success');
 	}
 
-	console.log(m_curr_gender,'aFTER11getCookieInfo',m_curr_meals_per_day)
+	console.log(m_curr_gender,'after--clearCookies',m_curr_meals_per_day)
 
 }
 
@@ -359,10 +361,13 @@ var m_selected_addons_value = []; // initialize empty array
     });
 }
 
-$(document).on('click','#tab7-1',function(){
-    var date = new Date();
-    var newdate = date.getDay()
-    console.log(newdate,'@@@@@@2')
+$(document).on('click','#tab6-1',function(){
+    // var day = moment().isoWeekday("Saturday");
+    // var datesat = moment(day).format('DD-MM-YYYY');
+    var date = moment().endOf('week');
+    var datesaturday = moment(date).format('DD-MM-YYYY');
+    console.log(datesaturday,'nearestSaturdayDateOnly');
+    $('#mNearestSaturdayDate').text(datesaturday);
 });
 
 $(document).on('click','#mSubmitBtn',function(e){
