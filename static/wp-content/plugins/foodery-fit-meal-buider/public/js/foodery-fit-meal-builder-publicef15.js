@@ -62,6 +62,8 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     else{
         $('#mPlanTitle').text('Choose Your Meal Plan');   
     }
+    $('.bootstrapWizard  li:lt(3) a').css('pointer-events','all');
+
 });
 
 $(document).on('click','.mGenderBtn',function(e){
@@ -85,6 +87,8 @@ $(document).on('click','.mGenderBtn',function(e){
     else{
         $('#mGenderTitle').text('Gender');   
     }
+    $('.bootstrapWizard  li:lt(4) a').css('pointer-events','all');
+
 });
 
 $(document).on('click','#mCloneStartDateNext',function(e){
@@ -138,6 +142,8 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     else{
         $('#mWeeksTitle').text('How Many Weeks');   
     }
+    $('.bootstrapWizard  li:lt(5) a').css('pointer-events','all');
+
 });
 
 
@@ -251,6 +257,8 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
 
       
     }
+    $('.bootstrapWizard  li:lt(10) a').css('pointer-events','all');
+
 });
 
 var data_week = 0;
@@ -274,6 +282,7 @@ data_meal = $(this).attr('data-meal');
 });
             var obj2 ={};
             var meal_list = []
+            var week1_obj = {};
 
 $(document).on('click','#modal-add-meal-btn',function(e){
 
@@ -286,13 +295,11 @@ $(document).on('click','#modal-add-meal-btn',function(e){
         console.log('meaaa',meal_item_id);
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
             $('#myModal').modal('hide');
-            // var xxx = $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').text(meal_item);
-            // console.log(xxx,'xxxx')
-            // $('.btnCustomizerMealDesc').text(meal_item);
+            obj2 = {'Week':data_week,'Day':data_day,'Meal':data_meal,'Meal ID':meal_item_id};
 
-            // obbbj.push(data_week);
-            // var obj2 ={};
-            obj2 = {'Week':data_week,'Day':data_day,'Meal':data_meal,'Meal ID':meal_item_id}
+            // if(data_week == 1){
+            //     week1_obj = {'Week1':{}}
+            // }
             console.log(obj2)
             meal_list.push(obj2)
             console.log(meal_list)
