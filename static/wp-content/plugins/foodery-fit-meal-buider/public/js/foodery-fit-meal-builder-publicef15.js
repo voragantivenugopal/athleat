@@ -16,6 +16,8 @@ function getCookieInfo(){
     m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
     m_selected_dislikes_value = Cookies.get('m_selected_dislikes_value');
     m_selected_addons_value = Cookies.get('m_selected_addons_value');
+    m_closest_date = Cookies.get('m_closest_date');
+    meal_data = Cookies.get('meal_data');
 };
 
 $(document).on('click','.btnClearChoices',function(){
@@ -310,7 +312,8 @@ $(document).on('click','#modal-add-meal-btn',function(e){
                 meal_data[week] = day_data
                 meal_ids.push(meal_item_id);
             }
-            console.log('meal_data',meal_data)
+            console.log('meal_data',meal_data);
+            Cookies.set('meal_data', meal_data);
            
     });
 
@@ -347,9 +350,10 @@ $(document).on('click','#tab6-1',function(){
     var datesaturday = moment(date).format('DD-MM-YYYY');
     console.log(datesaturday,'nearestSaturdayDateOnly');
     $('#mNearestSaturdayDate').text(datesaturday);
+    Cookies.set('m_closest_date', m_closest_date);
 });
 
-    var obj = [];
+var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
     getCookieInfo();
 
