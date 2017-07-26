@@ -37,10 +37,29 @@ $(document).on('click','#mStartBtn',function(e){
 $(document).on('click','.mChooseMealPlanBtn-A',function(e){
     $('#mChooseMealPlanBtn-A').show();
         $(this).addClass('btn-success');
-});
-$(document).on('click','.mChooseMealPlanBtn-H',function(e){
-    $('#mChooseMealPlanBtn-A').show();
+    $('.mChooseMealPlanBtn').removeClass('btn-success');
+
+        m_curr_choose_plan = $(this).attr('data-mChoosePlan');
+    Cookies.set('m_curr_choose_plan', m_curr_choose_plan);
+    if(m_curr_choose_plan === 'Athleat'){
+        $('#mPlanTitle').text('Athleat/Fat Loss');
         $(this).addClass('btn-success');
+        $('[data-target="#step6-1"]').hide();
+        $('[data-target="#step7-1"]').hide();
+        $('[data-target="#step6"]').show();
+        $('[data-target="#step7"]').show();
+    }
+    else if(m_curr_choose_plan === 'Customized'){
+        $('[data-target="#step6-1"]').show();
+        $('[data-target="#step7-1"]').show();
+        $('[data-target="#step6"]').hide();
+        $('[data-target="#step7"]').hide();
+        $('#mPlanTitle').text('Customized');
+        $(this).addClass('btn-success');
+    }
+    else{
+        $('#mPlanTitle').text('Choose Your Meal Plan');   
+    }
 });
 
 $(document).on('click','.mChooseMealPlanBtn-L',function(e){
@@ -49,12 +68,14 @@ $(document).on('click','.mChooseMealPlanBtn-L',function(e){
     $('#tab4').addClass('active');
     $('[data-target="#step2"]').removeClass('active');
     // $('[data-target="#step3"]').addClass('active');
+    $('.mChooseMealPlanBtn-H').removeClass('btn-success');
+
     $('[data-target="#step4"]').addClass('active');
     $('.mChooseMealPlanBtn').removeClass('btn-success');
-    var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
+    m_curr_choose_plan = $(this).attr('data-mChoosePlan');
     Cookies.set('m_curr_choose_plan', m_curr_choose_plan);
-    if(m_curr_choose_plan === 'Athleat'){
-        $('#mPlanTitle').text('Athleat/Fat Loss');
+    if(m_curr_choose_plan === 'Athleat-l'){
+        $('#mPlanTitle').text('Athleat Low Carb');
         $(this).addClass('btn-success');
         $('[data-target="#step6-1"]').hide();
         $('[data-target="#step7-1"]').hide();
@@ -75,7 +96,6 @@ $(document).on('click','.mChooseMealPlanBtn-L',function(e){
     $('.bootstrapWizard  li:lt(3) a').css('pointer-events','all');
 
 });
-
 $(document).on('click','.mChooseMealPlanBtn-H',function(e){
     $('#tab2').removeClass('active');
     // $('#tab3').addClass('active');
@@ -83,11 +103,12 @@ $(document).on('click','.mChooseMealPlanBtn-H',function(e){
     $('[data-target="#step2"]').removeClass('active');
     // $('[data-target="#step3"]').addClass('active');
     $('[data-target="#step4"]').addClass('active');
-    $('.mChooseMealPlanBtn').removeClass('btn-success');
-    var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
+    $('.mChooseMealPlanBtn-L').removeClass('btn-success');
+     m_curr_choose_plan = $(this).attr('data-mChoosePlan');
     Cookies.set('m_curr_choose_plan', m_curr_choose_plan);
-    if(m_curr_choose_plan === 'Athleat'){
-        $('#mPlanTitle').text('Athleat/Fat Loss');
+
+    if(m_curr_choose_plan === 'Athleat-h'){
+        $('#mPlanTitle').text('Athleat High Carb');
         $(this).addClass('btn-success');
         $('[data-target="#step6-1"]').hide();
         $('[data-target="#step7-1"]').hide();
@@ -108,16 +129,21 @@ $(document).on('click','.mChooseMealPlanBtn-H',function(e){
     $('.bootstrapWizard  li:lt(3) a').css('pointer-events','all');
 
 });
-
 $(document).on('click','.mChooseMealPlanBtn',function(e){
     $('#tab2').removeClass('active');
     // $('#tab3').addClass('active');
+    $('#mChooseMealPlanBtn-A').hide();
+    $('.mChooseMealPlanBtn-A').removeClass('btn-success');
+
     $('#tab4').addClass('active');
     $('[data-target="#step2"]').removeClass('active');
     // $('[data-target="#step3"]').addClass('active');
     $('[data-target="#step4"]').addClass('active');
     $('.mChooseMealPlanBtn').removeClass('btn-success');
-    var m_curr_choose_plan = $(this).attr('data-mChoosePlan');
+    $('.mChooseMealPlanBtn-L').removeClass('btn-success');
+    $('.mChooseMealPlanBtn-H').removeClass('btn-success');
+    $('.mChooseMealPlanBtn-A').removeClass('btn-success');
+    m_curr_choose_plan = $(this).attr('data-mChoosePlan');
     Cookies.set('m_curr_choose_plan', m_curr_choose_plan);
     if(m_curr_choose_plan === 'Athleat'){
         $('#mPlanTitle').text('Athleat/Fat Loss');
@@ -165,7 +191,12 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
 //     $('.bootstrapWizard  li:lt(4) a').css('pointer-events','all');
 
 // });
-
+$(document).on('click','#mMealsWeeksNext',function(e){
+    $('#tab4').removeClass('active');
+    $('#tab5').addClass('active');
+    $('[data-target="#step4"]').removeClass('active');
+    $('[data-target="#step5"]').addClass('active');
+});
 $(document).on('click','#mMealsPerDayNext',function(e){
     $('#tab5').removeClass('active');
     $('#tab6').addClass('active');
@@ -231,8 +262,11 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
 $(document).on('click','.mMealsPerDayBtn',function(e){
     $('#mChooseMealPlanData').html('');
     // $('#tab5').removeClass('active');
+
     $('[data-target="#step5"]').removeClass('active');
 	getCookieInfo();
+    
+    $('.mAthleatPriceDesc').text()
     if(m_curr_choose_plan === 'Athleat'){    
 	    $('[data-target="#step6"]').addClass('active');
 	    $('#tab6').addClass('active');
