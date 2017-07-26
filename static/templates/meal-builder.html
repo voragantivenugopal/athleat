@@ -40,25 +40,25 @@
 			                                            <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span id="mGenderTitle" class="title">Gender</span> </a>
 			                                        </li> -->
 			                                        <li data-target="#step4">
-			                                            <a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span id="mWeeksTitle" class="title">How Many Weeks</span> </a>
+			                                            <a href="#tab4" data-toggle="tab"> <span class="step">3</span> <span id="mWeeksTitle" class="title">How Many Weeks</span> </a>
 			                                        </li>
 			                                        <li data-target="#step5">
-			                                            <a href="#tab5" data-toggle="tab"> <span class="step">5</span> <span id="mMealsperDayTitle" class="title">How Many Meals Per Day</span> </a>
+			                                            <a href="#tab5" data-toggle="tab"> <span class="step">4</span> <span id="mMealsperDayTitle" class="title">How Many Meals Per Day</span> </a>
 			                                        </li>
 			                                        <li data-target="#step6">
-			                                            <a href="#tab6" data-toggle="tab"> <span class="step">6</span> <span id="mDislikesTitle" class="title">Dislikes and Allergies</span> </a>
+			                                            <a href="#tab6" data-toggle="tab"> <span class="step">5</span> <span id="mDislikesTitle" class="title">Dislikes and Allergies</span> </a>
 			                                        </li>
 			                                         <li data-target="#step7">
-			                                            <a href="#tab7" data-toggle="tab"> <span class="step">7</span> <span id="mAddonsTitle" class="title">Any Addons?</span> </a>
+			                                            <a href="#tab7" data-toggle="tab"> <span class="step">6</span> <span id="mAddonsTitle" class="title">Any Addons?</span> </a>
 			                                        </li>
 			                                        <li data-target="#step6-1" style="display: none;">
-			                                            <a href="#tab6-1" data-toggle="tab"> <span class="step">6</span> <span id="mChooseMealTitle" class="title">Choose Your Meal</span> </a>
+			                                            <a href="#tab6-1" data-toggle="tab"> <span class="step">5</span> <span id="mChooseMealTitle" class="title">Choose Your Meal</span> </a>
 			                                        </li>
 			                                         <li data-target="#step7-1" style="display: none;">
-			                                            <a href="#tab7-1" data-toggle="tab"> <span class="step">7</span> <span id="mClosetDateTitle" class="title">Closest Starting Date</span> </a>
+			                                            <a href="#tab7-1" data-toggle="tab"> <span class="step">6</span> <span id="mClosetDateTitle" class="title">Closest Starting Date</span> </a>
 			                                        </li>
 			                                        <li data-target="#step8">
-			                                            <a href="#tab8" data-toggle="tab"> <span class="step">8</span> <span class="title">Submit</span> </a>
+			                                            <a href="#tab8" data-toggle="tab"> <span class="step">7</span> <span class="title">Submit</span> </a>
 			                                        </li>
 			                                    </ul>
 			                                    <div class="clearfix"></div>
@@ -74,9 +74,13 @@
 			                                    <div class="tab-pane" id="tab2">
 			                                        <h5>Choose your meal plan?</h5>
 			                                        <div id="mChooseMealPlanBtn">
-				                                        <span  class="btn btn-default mChooseMealPlanBtn" data-mChoosePlan='Athleat'>Athleat/Fat Loss</span>
+				                                        <span  class="btn btn-default mChooseMealPlanBtn-A" data-mChoosePlan='Athleat'>Athleat/Fat Loss</span>
 				                                        <span class="btn btn-default mChooseMealPlanBtn" data-mChoosePlan='Customized'>Customized</span>
-				                                    </div>	
+				                                    </div>
+				                                    <div id="mChooseMealPlanBtn-A" style="display: none;">
+				                                        <span  class="btn btn-default mChooseMealPlanBtn-L" data-mChoosePlan='Athleat'>Low Carb</span>
+				                                        <span class="btn btn-default mChooseMealPlanBtn-H" data-mChoosePlan='Customized'>High Carb</span>
+				                                    </div>		
 			                                    </div>
 			                                    <!-- <div class="tab-pane" id="tab3">
 			                                       	<h5>Gender</h5>
@@ -101,6 +105,7 @@
 														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='3'>3</span>
 														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='4'>4</span>
 													</div>
+													<div><h2>1000 AED</h2></div>
 													<span id="mMealsPerDayNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab6">
@@ -195,7 +200,7 @@
 	.bootstrapWizard li {
 	    display: block;
 	    float: left;
-	    width: 12.5%;
+	    width: 14.2%;
 	    text-align: center;
 	    padding-left: 0
 	}
