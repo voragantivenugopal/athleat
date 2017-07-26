@@ -282,7 +282,13 @@ data_meal = $(this).attr('data-meal');
             var week = '';
             var day = '';
             var day_data = {}
-
+            
+            var mealIds = [];
+            var dayvalue = [];
+            mealIds[week+day] =  [];
+            var dayssingledata= []
+            // var 'mealids'+week+day = [];
+            // dayssingledata = []; 
 $(document).on('click','#modal-add-meal-btn',function(e){
 
          //    console.log('week',data_week)
@@ -291,25 +297,41 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
         var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
         var meal_item_id = $('.modal-left #nav-tabs-wrapper .active a').attr('id');
-        console.log('meaaa',meal_item_id);
+        console.log('meal ID',meal_item_id);
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
             $('#myModal').modal('hide');
             obj2 = {'Week':data_week,'Day':data_day,'Meal':data_meal,'Meal ID':meal_item_id};
             
 
             week = 'Week'+data_week;
-            console.log(week)
             day = 'Day'+data_day;
 
-            day_data = {
-                day : meal_item_id
-            }
 
-            if(week == 'Week1'){
-                console.log('week 1');
-                meal_data[week] = day_data
-                meal_ids.push(meal_item_id);
-            }
+            dayssingledata = ['mealids'+data_week+data_day+data_meal]
+            console.log(dayssingledata) 
+            console.log(dayssingledata) 
+            dayssingledata.push(meal_item_id);
+            day_data[day] =  dayssingledata;
+            meal_data[week] = day_data;
+            dayssingledata.push(meal_item_id);
+            // Week1 Data
+            // if(week == 'Week1' && day == 'Day1'){
+            //      dayssingledata = 'mealids'+week+day
+            //      dayssingledata = JSON.parse("[" + dayssingledata + "]");
+
+            //     console.log('dayssingledata',dayssingledata);
+            //     dayssingledata.push(meal_item_id);
+            //     day_data[week+day] = mealidsw1d1;
+            //     meal_data[week] = day_data
+            // }
+            // if(week == 'Week1' && day == 'Day1'){
+            //     console.log('week 1 Day 1');
+            //     mealidsw1d1.push(meal_item_id);
+            //     day_data[week+day] = mealidsw1d1;
+            //     meal_data[week] = day_data
+            // }
+            
+
             console.log('meal_data',meal_data)
            
     });
