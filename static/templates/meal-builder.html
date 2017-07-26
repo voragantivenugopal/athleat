@@ -36,9 +36,9 @@
 			                                        <li data-target="#step2" class="">
 			                                            <a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span id="mPlanTitle" class="title">Choose Your Meal Plan</span> </a>
 			                                        </li>
-			                                        <li data-target="#step3" class="">
+			                                        <!-- <li data-target="#step3" class="">
 			                                            <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span id="mGenderTitle" class="title">Gender</span> </a>
-			                                        </li>
+			                                        </li> -->
 			                                        <li data-target="#step4">
 			                                            <a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span id="mWeeksTitle" class="title">How Many Weeks</span> </a>
 			                                        </li>
@@ -78,20 +78,21 @@
 				                                        <span class="btn btn-default mChooseMealPlanBtn" data-mChoosePlan='Customized'>Customized</span>
 				                                    </div>	
 			                                    </div>
-			                                    <div class="tab-pane" id="tab3">
+			                                    <!-- <div class="tab-pane" id="tab3">
 			                                       	<h5>Gender</h5>
 			                                       	<div id="mGenderBtn">
 				                                       	<span class="btn btn-default mGenderBtn" data-mGender='Male'>Male</span>
 														<span class="btn btn-default mGenderBtn" data-mGender='Female'>Female</span>
 													</div>
-			                                    </div>
+			                                    </div> -->
 			                                    <div class="tab-pane" id="tab4">
 			                                       <h5>For how many weeks?</h5>
 													<div id="mHowManyWeeksBtn"> 
 														<span class="btn btn-default mHowManyWeeksBtn" data-mHowManyWeeks='4'>4</span>
 														<span class="btn btn-default mHowManyWeeksBtn" data-mHowManyWeeks='8'>8</span>
 														<span class="btn btn-default mHowManyWeeksBtn" data-mHowManyWeeks='12'>12</span>
-													</div> 
+													</div>
+													<span id="mMealsWeeksNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab5">
 			                                        <h5>Number of meals per day?</h5> 
@@ -100,6 +101,7 @@
 														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='3'>3</span>
 														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='4'>4</span>
 													</div>
+													<span id="mMealsPerDayNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab6">
 			                                        <h5>Dislikes and Allergies</h5> 
