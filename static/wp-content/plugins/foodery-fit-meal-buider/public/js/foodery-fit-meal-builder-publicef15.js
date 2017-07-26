@@ -76,7 +76,7 @@ $(document).on('click','.mChooseMealPlanBtn-L',function(e){
 
 });
 
-$(document).on('click','.mChooseMealPlanBtn-L',function(e){
+$(document).on('click','.mChooseMealPlanBtn-H',function(e){
     $('#tab2').removeClass('active');
     // $('#tab3').addClass('active');
     $('#tab4').addClass('active');
