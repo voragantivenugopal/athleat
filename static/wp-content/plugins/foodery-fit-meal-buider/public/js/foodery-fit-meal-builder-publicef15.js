@@ -281,8 +281,12 @@ data_meal = $(this).attr('data-meal');
 
 });
             var obj2 ={};
-            var meal_list = []
+            var meal_data = {};
             var week1_obj = {};
+            var meal_ids = [];
+            var week = '';
+            var day = '';
+            var day_data = {}
 
 $(document).on('click','#modal-add-meal-btn',function(e){
 
@@ -296,13 +300,18 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
             $('#myModal').modal('hide');
             obj2 = {'Week':data_week,'Day':data_day,'Meal':data_meal,'Meal ID':meal_item_id};
+            
+            week = 'Week'+data_week;
+            console.log(week)
+            day = 'Day'+data_day;
 
-            // if(data_week == 1){
-            //     week1_obj = {'Week1':{}}
-            // }
-            console.log(obj2)
-            meal_list.push(obj2)
-            console.log(meal_list)
+            day_data = {
+                day : meal_item_id
+            }
+            meal_data[week] = day_data
+            // meal_ids.push(meal_item_id);
+            console.log('meal_data',meal_data)
+           
     });
 
 function clearCookies(){
