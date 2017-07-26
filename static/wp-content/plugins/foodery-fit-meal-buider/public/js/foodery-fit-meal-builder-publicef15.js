@@ -165,12 +165,7 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
 //     $('.bootstrapWizard  li:lt(4) a').css('pointer-events','all');
 
 // });
-$(document).on('click','#mMealsWeeksNext',function(e){
-    $('#tab4').removeClass('active');
-    $('#tab5').addClass('active');
-    $('[data-target="#step4"]').removeClass('active');
-    $('[data-target="#step5"]').addClass('active');
-});
+
 $(document).on('click','#mMealsPerDayNext',function(e){
     $('#tab5').removeClass('active');
     $('#tab6').addClass('active');
