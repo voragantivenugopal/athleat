@@ -91,7 +91,7 @@ $(document).on('click','.mGenderBtn',function(e){
 
 });
 
-$(document).on('click','#mCloneStartDateNext',function(e){
+$(document).on('click','#mClosestStartDateNext',function(e){
     $('#tab7-1').removeClass('active');
     $('#tab8').addClass('active');
     $('[data-target="#step7-1"]').removeClass('active');
