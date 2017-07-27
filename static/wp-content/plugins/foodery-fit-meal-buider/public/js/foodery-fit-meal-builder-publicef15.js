@@ -20,6 +20,11 @@ function getCookieInfo(){
     meal_data = Cookies.get('meal_data');
 };
 
+if (document.getElementById('dataFat') != null) {
+            str = document.getElementById("dataFat").value;
+            console.log(str,'1111111@@@@@@@@@')
+}
+
 $(document).on('click','.btnClearChoices',function(){
     clearCookies();
 });
@@ -310,8 +315,8 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
         // }
         // console.log("TTTTT:"+mytable.html());
         // mytable.appendTo("#mChooseMealPlanData");        
-        // $('#mChooseMealPlanData').html('');
-
+        // $('#mChooseMealPlanData').html('');        
+        
         for(var i=1; i<=m_curr_how_many_weeks; i++){
             str = '';
             str += '<div class="customizerSpacer1"></div>';
@@ -391,6 +396,10 @@ data_meal = $(this).attr('data-meal');
          // console.log('week',data_week)
          // console.log('day',data_day)
          // console.log('meal',data_meal)
+         if (document.getElementById('dataFat') != null) {
+            str = document.getElementById("dataFat").value;
+            console.log(str,'@@@@@@@@@33333333')
+        }
 
 });
             var obj2 ={};
@@ -496,7 +505,7 @@ var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
     getCookieInfo();
 
-   if(m_curr_choose_plan === 'Athleat'){ 
+   if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h'){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
             // 'Gender':m_curr_gender,
             'Weeks':m_curr_how_many_weeks,
