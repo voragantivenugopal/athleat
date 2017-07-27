@@ -418,6 +418,7 @@ data_meal = $(this).attr('data-meal');
             var mTotalFat = 0;
             var mTotalCarb = 0;
             var mTotalProtein = 0;
+            console.log(mTotalPrice,'!!!!!!!!11')
             // var 'mealids'+week+day = [];
             // dayssingledata = []; 
 $(document).on('click','#modal-add-meal-btn',function(e){
@@ -429,22 +430,22 @@ $(document).on('click','#modal-add-meal-btn',function(e){
         var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
         var meal_item_id = $('.modal-left #nav-tabs-wrapper .active a').attr('id');
         mSingleMealPrice = $('.model-right .active #dataPrice').text();
-        mTotalPrice = parseInt(mTotalPrice) + parseInt(mSingleMealPrice);
+        mTotalPrice = (parseFloat(mTotalPrice) || 0) + parseFloat(mSingleMealPrice);
         Cookies.set('mTotalPrice', mTotalPrice);
         $('.mtxtStatsPricePerMeal').text(mTotalPrice);
 
         mSingleMealFat = $('.model-right .active #dataFat').text();
-        mTotalFat = parseInt(mTotalFat) + parseInt(mSingleMealFat);
+        mTotalFat = (parseFloat(mTotalFat) || 0) + parseFloat(mSingleMealFat);
         Cookies.set('mTotalFat', mTotalFat);
         $('.mtxtDebugDailyFat').text(mTotalFat);
 
-        mSingleMealCarb = $('.model-right .active #dataPCarb').text();
-        mTotalCarb = parseInt(mTotalCarb) + parseInt(mSingleMealCarb);
+        mSingleMealCarb = $('.model-right .active #dataCarb').text();
+        mTotalCarb = (parseFloat(mTotalCarb) || 0) + parseFloat(mSingleMealCarb);
         Cookies.set('mTotalCarb', mTotalCarb);
         $('.mtxtDebugDailyCarbs').text(mTotalCarb);
 
         mSingleMealProtein = $('.model-right .active #dataProtein').text();
-        mTotalProtein = parseInt(mTotalProtein) + parseInt(mSingleMealProtein);
+        mTotalProtein = (parseFloat(mTotalProtein) || 0) + parseFloat(mSingleMealProtein);
         Cookies.set('mTotalProtein', mTotalProtein);
         $('.mtxtDebugDailyProtein').text(mTotalProtein);
 
@@ -523,7 +524,7 @@ $(document).on('click','#tab6-1',function(){
     var datesaturday = moment(date).format('DD-MM-YYYY');
     console.log(datesaturday,'nearestSaturdayDateOnly');
     $('#mNearestSaturdayDate').text(datesaturday);
-    Cookies.set('m_closest_date', m_closest_date);
+    Cookies.set('m_closest_date', datesaturday);
 });
 
 var obj = [];
