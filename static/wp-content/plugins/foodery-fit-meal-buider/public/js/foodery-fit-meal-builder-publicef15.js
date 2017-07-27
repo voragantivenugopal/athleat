@@ -236,6 +236,8 @@ $(document).on('click','#mChooseMealPlanNext',function(e){
 
 
 $(document).on('click','.mHowManyWeeksBtn',function(e){
+    $('.mAthleatPrice').hide();
+
     $('#tab4').removeClass('active');
     $('#tab5').addClass('active');
     $('[data-target="#step4"]').removeClass('active');
@@ -263,41 +265,54 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
 
 });
 
-
+var mAthleatFinalPrice = '';
 $(document).on('click','.mMealsPerDayBtn',function(e){
+    $('.mMealsPerDayBtn').removeClass('btn-success');
+    console.log('------')
     $('#mChooseMealPlanData').html('');
     // $('#tab5').removeClass('active');
+    $('.mAthleatPrice').show();
 
-    $('[data-target="#step5"]').removeClass('active');
+
+    // $('[data-target="#step5"]').removeClass('active');
     getCookieInfo();
     
-    $('.mAthleatPriceDesc').text()
-    if(m_curr_choose_plan === 'Athleat'){    
-        $('[data-target="#step6"]').addClass('active');
-        $('#tab6').addClass('active');
-    }
-    else if(m_curr_choose_plan === 'Customized'){
-        $('[data-target="#step6-1"]').addClass('active');
-        $('#tab6-1').addClass('active');
-    }
-    $('.mMealsPerDayBtn').removeClass('btn-success');    
+    // $('.mAthleatPriceDesc').text()
+    // if(m_curr_choose_plan === 'Athleat'){    
+    //     $('[data-target="#step6"]').addClass('active');
+    //     $('#tab6').addClass('active');
+    // }
+    // else if(m_curr_choose_plan === 'Customized'){
+    //     $('[data-target="#step6-1"]').addClass('active');
+    //     $('#tab6-1').addClass('active');
+    // }
+    // $('.mMealsPerDayBtn').removeClass('btn-success');    
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
     Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);
-    if(m_curr_meals_per_day === '2'){
+    getCookieInfo();
+    console.log('m_curr_meals_per_day',m_curr_meals_per_day);
+    if(m_curr_meals_per_day == '2'){
         $('#mMealsperDayTitle').text('2 Meals Per Day');
         $(this).addClass('btn-success');
+        mAthleatFinalPrice = 400*m_curr_how_many_weeks;
+        console.log('mFinalPrice',mAthleatFinalPrice)
     }
     else if(m_curr_meals_per_day === '3'){
+        mAthleatFinalPrice = 575*m_curr_how_many_weeks;
+        console.log('mFinalPrice',mAthleatFinalPrice)
         $('#mMealsperDayTitle').text('3 Meals Per Day');
         $(this).addClass('btn-success');
     }
     else if(m_curr_meals_per_day === '4'){
+        mAthleatFinalPrice = 700*m_curr_how_many_weeks;
+        console.log('mFinalPrice',mAthleatFinalPrice)
         $('#mMealsperDayTitle').text('4 Meals Per Day');
         $(this).addClass('btn-success');
     }
     else{
         $('#mMealsperDayTitle').text('How Many Meals Per Day?');   
     }
+    $('.mAthleatPriceDesc').text(mAthleatFinalPrice);
     mCreateChooseMealPlan();
     function mCreateChooseMealPlan(){
         // mytable = $('<table></table>').attr({ id: "basicTable" });
