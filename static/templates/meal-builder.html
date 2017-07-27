@@ -105,7 +105,7 @@
 														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='4'>4</span>
 													</div>
 													<div class="mAthleatPrice" style="display: none;">
-													<h2 class="mAthleatPriceDesc">1000 AED</h2>
+													<h2 id="mAthleatPrice" class="mAthleatPriceDesc">1000 AED</h2>
 													<span id="mMealsPerDayNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
 													</div>
 			                                    </div>
@@ -408,12 +408,14 @@
 											<span>Fat : {{data.fat}}</span><br>
 											<span>Carb :{{data.carb}}</span><br>
 											<span>Protein :{{data.protein}}</span><br>
+											<span>Price :{{data.price}}</span><br>
 										</div>
 										{% for data in custom_meal_data %}  
 										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
-											<span>Fat : {{data.fat}}</span><br>
-											<span>Carb :{{data.carb}}</span><br>
-											<span>Protein :{{data.protein}}</span><br>
+											<span id="dataFat" value="200">Fat : {{data.fat}}</span><br>
+											<span id="dataCarb">Carb :{{data.carb}}</span><br>
+											<span id="dataProtein">Protein :{{data.protein}}</span><br>
+											<span id="dataPrice">Price :{{data.price}}</span><br>
 										</div>{% endfor %}
 
 									</div>
