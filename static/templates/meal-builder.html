@@ -393,9 +393,9 @@
 										</div>
 										{% for data in custom_meal_data %}  
 										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
-											<span>Fat :</span> <span id="dataFat" value="200">{{data.fat}}</span><br>
-											<span id="dataCarb">Carb :{{data.carb}}</span><br>
-											<span id="dataProtein">Protein :{{data.protein}}</span><br>
+											<span>Fat :</span><span id="dataFat">{{data.fat}}</span><br>	
+											<span>Carb :</span><span id="dataCarb">{{data.carb}}</span><br>
+											<span>Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
 											<span>Price :</span><span id="dataPrice">{{data.price}}</span><br>
 										</div>{% endfor %}
 
