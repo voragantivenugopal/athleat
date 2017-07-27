@@ -179,23 +179,23 @@
 												          	<table style="">
 												          		<tbody><tr>
 												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Price per meal</td>
-												          			<td style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">AED <span class="txtStatsPricePerMeal"> 0</span></td>
+												          			<td style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">AED <span class="mtxtStatsPricePerMeal"> 0</span></td>
 												          		</tr>
-												          		<tr>
+												          		<!-- <tr>
 												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily calories (avg)</td>
 												          			<td class="txtDebugDailyCals" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 kCal</td>
-												          		</tr>
+												          		</tr> -->
 												          		<tr>
 												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily protein (avg)</td>
-												          			<td class="txtDebugDailyProtein" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+												          			<td class="mtxtDebugDailyProtein" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
 												          		</tr>
 												          		<tr>
 												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily fat (avg)</td>
-												          			<td class="txtDebugDailyFat" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+												          			<td class="mtxtDebugDailyFat" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
 												          		</tr>
 												          		<tr>
 												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily carbs (avg)</td>
-												          			<td class="txtDebugDailyCarbs" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+												          			<td class="mtxtDebugDailyCarbs" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
 												          		</tr>
 												          	</tbody></table>
 												              <!-- <div style="">
@@ -412,10 +412,10 @@
 										</div>
 										{% for data in custom_meal_data %}  
 										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
-											<span id="dataFat" value="200">Fat : {{data.fat}}</span><br>
+											<span>Fat :</span> <span id="dataFat" value="200">{{data.fat}}</span><br>
 											<span id="dataCarb">Carb :{{data.carb}}</span><br>
 											<span id="dataProtein">Protein :{{data.protein}}</span><br>
-											<span id="dataPrice">Price :{{data.price}}</span><br>
+											<span>Price :</span><span id="dataPrice">{{data.price}}</span><br>
 										</div>{% endfor %}
 
 									</div>
