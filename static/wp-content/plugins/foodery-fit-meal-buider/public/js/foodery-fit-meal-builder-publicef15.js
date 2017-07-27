@@ -495,8 +495,9 @@ $(document).on('click','#tab6-1',function(){
 var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
     getCookieInfo();
-
-   if(m_curr_choose_plan === 'Athleat'){ 
+    console.log('------')
+   if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h'){ 
+    console.log('----11111--')
             var obj = {'Meal Plan':m_curr_choose_plan,
             // 'Gender':m_curr_gender,
             'Weeks':m_curr_how_many_weeks,
