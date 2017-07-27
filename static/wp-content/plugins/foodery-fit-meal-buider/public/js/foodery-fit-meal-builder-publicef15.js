@@ -18,11 +18,12 @@ function getCookieInfo(){
     m_selected_addons_value = Cookies.get('m_selected_addons_value');
     m_closest_date = Cookies.get('m_closest_date');
     meal_data = Cookies.get('meal_data');
-    mTotalFat = Cookies.get('mTotalFat');
-    mTotalPrice = Cookies.get('mTotalPrice');
-    mTotalCarb = Cookies.get('mTotalCarb');
-    mTotalProtein = Cookies.get('mTotalProtein');
 };
+
+if (document.getElementById('dataFat') != null) {
+            str = document.getElementById("dataFat").value;
+            console.log(str,'1111111@@@@@@@@@')
+}
 
 $(document).on('click','.btnClearChoices',function(){
     clearCookies();
@@ -268,16 +269,16 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     // $('#tab5').removeClass('active');
 
     $('[data-target="#step5"]').removeClass('active');
-	getCookieInfo();
+    getCookieInfo();
     
     $('.mAthleatPriceDesc').text()
     if(m_curr_choose_plan === 'Athleat'){    
-	    $('[data-target="#step6"]').addClass('active');
-	    $('#tab6').addClass('active');
+        $('[data-target="#step6"]').addClass('active');
+        $('#tab6').addClass('active');
     }
     else if(m_curr_choose_plan === 'Customized'){
-       	$('[data-target="#step6-1"]').addClass('active');
-    	$('#tab6-1').addClass('active');
+        $('[data-target="#step6-1"]').addClass('active');
+        $('#tab6-1').addClass('active');
     }
     $('.mMealsPerDayBtn').removeClass('btn-success');    
     var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');
@@ -395,6 +396,10 @@ data_meal = $(this).attr('data-meal');
          // console.log('week',data_week)
          // console.log('day',data_day)
          // console.log('meal',data_meal)
+         if (document.getElementById('dataFat') != null) {
+            str = document.getElementById("dataFat").value;
+            console.log(str,'@@@@@@@@@33333333')
+        }
 
 });
             var obj2 ={};
@@ -410,15 +415,8 @@ data_meal = $(this).attr('data-meal');
             mealIds[week+day] =  [];
             var dayssingledata= [];
             var mSingleMealPrice = 0;
-            var mSingleMealFat = 0;
-            var mSingleMealCarb = 0;
-            var mSingleMealProtein = 0;
             // mtxtStatsPricePerMeal
             var mTotalPrice = 0;
-            var mTotalFat = 0;
-            var mTotalCarb = 0;
-            var mTotalProtein = 0;
-            console.log(mTotalPrice,'!!!!!!!!11')
             // var 'mealids'+week+day = [];
             // dayssingledata = []; 
 $(document).on('click','#modal-add-meal-btn',function(e){
@@ -426,29 +424,13 @@ $(document).on('click','#modal-add-meal-btn',function(e){
          //    console.log('week',data_week)
          // console.log('day',data_day)
          // console.log('meal',data_meal)
-         // Calculating fat,price values in table
+
         var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
         var meal_item_id = $('.modal-left #nav-tabs-wrapper .active a').attr('id');
         mSingleMealPrice = $('.model-right .active #dataPrice').text();
-        mTotalPrice = (parseFloat(mTotalPrice) || 0) + parseFloat(mSingleMealPrice);
-        Cookies.set('mTotalPrice', mTotalPrice);
+        mTotalPrice = parseInt(mTotalPrice) + parseInt(mSingleMealPrice);
+        console.log('total',mTotalPrice);
         $('.mtxtStatsPricePerMeal').text(mTotalPrice);
-
-        mSingleMealFat = $('.model-right .active #dataFat').text();
-        mTotalFat = (parseFloat(mTotalFat) || 0) + parseFloat(mSingleMealFat);
-        Cookies.set('mTotalFat', mTotalFat);
-        $('.mtxtDebugDailyFat').text(mTotalFat);
-
-        mSingleMealCarb = $('.model-right .active #dataCarb').text();
-        mTotalCarb = (parseFloat(mTotalCarb) || 0) + parseFloat(mSingleMealCarb);
-        Cookies.set('mTotalCarb', mTotalCarb);
-        $('.mtxtDebugDailyCarbs').text(mTotalCarb);
-
-        mSingleMealProtein = $('.model-right .active #dataProtein').text();
-        mTotalProtein = (parseFloat(mTotalProtein) || 0) + parseFloat(mSingleMealProtein);
-        Cookies.set('mTotalProtein', mTotalProtein);
-        $('.mtxtDebugDailyProtein').text(mTotalProtein);
-
         console.log('--',mSingleMealPrice)
         console.log('meal ID',meal_item_id);
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
@@ -524,7 +506,7 @@ $(document).on('click','#tab6-1',function(){
     var datesaturday = moment(date).format('DD-MM-YYYY');
     console.log(datesaturday,'nearestSaturdayDateOnly');
     $('#mNearestSaturdayDate').text(datesaturday);
-    Cookies.set('m_closest_date', datesaturday);
+    Cookies.set('m_closest_date', m_closest_date);
 });
 
 var obj = [];
@@ -556,13 +538,7 @@ $(document).on('click','#mSubmitBtn',function(){
                 'm_closest_date':m_closest_date,
                 'meal_data':meal_data}
             console.log(obj);
-
-                var obj2 = { 'protein':mTotalProtein,
-                'fat':mTotalFat,
-                'carb':mTotalCarb,
-                'price':mTotalPrice
-                }
-            console.log(obj2)
+            
             // $.ajax({
             //               url: '/post-values/',
             //               contentType: 'application/json',
@@ -592,13 +568,6 @@ function clearCookies(){
     Cookies.remove('m_curr_meals_per_day');
     Cookies.remove('m_selected_dislikes_value');
     Cookies.remove('m_selected_addons_value');
-    Cookies.remove('mTotalPrice');
-    Cookies.remove('mTotalFat');
-    Cookies.remove('mTotalProtein');
-    Cookies.remove('mTotalCarb');
-    Cookies.remove('m_closest_date');
-    Cookies.remove('meal_data');
-
     getCookieInfo();
 
      if(m_curr_choose_plan == undefined){
