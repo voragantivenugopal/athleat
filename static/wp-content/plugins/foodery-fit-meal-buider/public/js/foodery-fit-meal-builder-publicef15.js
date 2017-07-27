@@ -413,7 +413,10 @@ data_meal = $(this).attr('data-meal');
             var mealIds = [];
             var dayvalue = [];
             mealIds[week+day] =  [];
-            var dayssingledata= []
+            var dayssingledata= [];
+            var mSingleMealPrice = 0;
+            // mtxtStatsPricePerMeal
+            var mTotalPrice = 0;
             // var 'mealids'+week+day = [];
             // dayssingledata = []; 
 $(document).on('click','#modal-add-meal-btn',function(e){
@@ -424,6 +427,11 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
         var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
         var meal_item_id = $('.modal-left #nav-tabs-wrapper .active a').attr('id');
+        mSingleMealPrice = $('.model-right .active #dataPrice').text();
+        mTotalPrice = parseInt(mTotalPrice) + parseInt(mSingleMealPrice);
+        console.log('total',mTotalPrice);
+        $('.mtxtStatsPricePerMeal').text(mTotalPrice);
+        console.log('--',mSingleMealPrice)
         console.log('meal ID',meal_item_id);
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
             $('#myModal').modal('hide');
@@ -438,10 +446,10 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             dayssingledata = ['mealids'+data_week+data_day+data_meal]
             console.log(dayssingledata) 
             console.log(dayssingledata) 
-            dayssingledata.push(meal_item_id);
-            day_data[day] =  dayssingledata;
-            meal_data[week] = day_data;
-            dayssingledata.push(meal_item_id);
+            // dayssingledata.push(meal_item_id);
+            // day_data[day] =  dayssingledata;
+            // meal_data[week] = day_data;
+            // dayssingledata.push(meal_item_id);
             // Week1 Data
             // if(week == 'Week1' && day == 'Day1'){
             //      dayssingledata = 'mealids'+week+day
@@ -504,7 +512,6 @@ $(document).on('click','#tab6-1',function(){
 var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
     getCookieInfo();
-
    if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h'){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
             // 'Gender':m_curr_gender,
