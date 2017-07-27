@@ -430,9 +430,6 @@ $(document).on('click','#modal-add-meal-btn',function(e){
         var meal_item_id = $('.modal-left #nav-tabs-wrapper .active a').attr('id');
         mSingleMealPrice = $('.model-right .active #dataPrice').text();
         mTotalPrice = parseInt(mTotalPrice) + parseInt(mSingleMealPrice);
-
-        console.log(mTotalPrice,'mTotalPrice111','mSingleMealPrice',mSingleMealPrice)
-
         Cookies.set('mTotalPrice', mTotalPrice);
         $('.mtxtStatsPricePerMeal').text(mTotalPrice);
 
@@ -441,12 +438,12 @@ $(document).on('click','#modal-add-meal-btn',function(e){
         Cookies.set('mTotalFat', mTotalFat);
         $('.mtxtDebugDailyFat').text(mTotalFat);
 
-        mSingleMealCarb = $('.model-right .active #dataPrice').text();
+        mSingleMealCarb = $('.model-right .active #dataPCarb').text();
         mTotalCarb = parseInt(mTotalCarb) + parseInt(mSingleMealCarb);
         Cookies.set('mTotalCarb', mTotalCarb);
         $('.mtxtDebugDailyCarbs').text(mTotalCarb);
 
-        mSingleMealProtein = $('.model-right .active #dataPrice').text();
+        mSingleMealProtein = $('.model-right .active #dataProtein').text();
         mTotalProtein = parseInt(mTotalProtein) + parseInt(mSingleMealProtein);
         Cookies.set('mTotalProtein', mTotalProtein);
         $('.mtxtDebugDailyProtein').text(mTotalProtein);
@@ -559,12 +556,12 @@ $(document).on('click','#mSubmitBtn',function(){
                 'meal_data':meal_data}
             console.log(obj);
 
-                var mealdata = { 'protein':mTotalProtein,
+                var obj2 = { 'protein':mTotalProtein,
                 'fat':mTotalFat,
                 'carb':mTotalCarb,
                 'price':mTotalPrice
                 }
-            console.log(mealdata)
+            console.log(obj2)
             // $.ajax({
             //               url: '/post-values/',
             //               contentType: 'application/json',
