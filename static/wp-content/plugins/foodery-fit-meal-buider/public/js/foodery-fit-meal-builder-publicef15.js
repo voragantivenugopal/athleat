@@ -400,9 +400,10 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
                 for(var m=1; m<=m_curr_meals_per_day; m++){
                     str += '<div class="hand">';
 
-                        str += '<div class="btnCustomizerMeal" data-week="'+weekNum+'" data-day="'+dayNum+'" data-meal="'+m+'" data-type="" data-slug="" style="position:relative;">';
+                        str += '<div class="btnCustomizerMeal" id="'+weekNum+dayNum+m+'"  data-week="'+weekNum+'" data-day="'+dayNum+'" data-meal="'+m+'" data-type="" data-slug="" style="position:relative;">';
                             str += '<div class="btnCustomizerMealTitle">Meal '+m+'</div>';
                             str += '<div class="btnCustomizerMealDesc" style="color:red;">choose your meal</div>';
+                            str += '<div class="btnCustomizerMealPrice" style="color:red;">Price</div>';
                             // str += '<div class="btnCustomizerMealDesc"></div>';
                             str += '<div class="btnCustomizerMealDescBg "></div>';
                         str += '</div>';
@@ -450,6 +451,8 @@ data_meal = $(this).attr('data-meal');
             var mTotalCarb = 0;
             var mTotalProtein = 0;
             var mealidsw1d1 = '';
+            var mMealActiveID ='';
+            var meal_data_copy = {};
 $(document).on('click','#modal-add-meal-btn',function(e){
 
 
@@ -490,6 +493,16 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
         console.log('meal ID',meal_item_id);
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
+            $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealPrice').css('color','#4B5EEB').html('<strong>'+mSingleMealPrice+'</strong>');
+            mMealActiveID = $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"]').attr('id');
+            
+            meal_data_copy = {
+                'Meal Info': {
+                    'id' : mMealActiveID,
+                    'MealID':meal_item_id
+                }
+            }
+            console.log('mMealActiveID',mMealActiveID)
             $('#myModal').modal('hide');
             obj2 = {'Week':data_week,'Day':data_day,'Meal':data_meal,'Meal ID':meal_item_id};
             
