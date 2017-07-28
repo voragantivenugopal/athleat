@@ -36,29 +36,29 @@
 			                                        <li data-target="#step2" class="">
 			                                            <a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span id="mPlanTitle" class="title">Choose Your Meal Plan</span> </a>
 			                                        </li>
-			                                        <li data-target="#step3" class="">
+			                                        <!-- <li data-target="#step3" class="">
 			                                            <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span id="mGenderTitle" class="title">Gender</span> </a>
-			                                        </li>
+			                                        </li> -->
 			                                        <li data-target="#step4">
-			                                            <a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span id="mWeeksTitle" class="title">How Many Weeks</span> </a>
+			                                            <a href="#tab4" data-toggle="tab"> <span class="step">3</span> <span id="mWeeksTitle" class="title">How Many Weeks</span> </a>
 			                                        </li>
 			                                        <li data-target="#step5">
-			                                            <a href="#tab5" data-toggle="tab"> <span class="step">5</span> <span id="mMealsperDayTitle" class="title">How Many Meals Per Day</span> </a>
+			                                            <a href="#tab5" data-toggle="tab"> <span class="step">4</span> <span id="mMealsperDayTitle" class="title">How Many Meals Per Day</span> </a>
 			                                        </li>
 			                                        <li data-target="#step6">
-			                                            <a href="#tab6" data-toggle="tab"> <span class="step">6</span> <span id="mDislikesTitle" class="title">Dislikes and Allergies</span> </a>
+			                                            <a href="#tab6" data-toggle="tab"> <span class="step">5</span> <span id="mDislikesTitle" class="title">Dislikes and Allergies</span> </a>
 			                                        </li>
 			                                         <li data-target="#step7">
-			                                            <a href="#tab7" data-toggle="tab"> <span class="step">7</span> <span id="mAddonsTitle" class="title">Any Addons?</span> </a>
+			                                            <a href="#tab7" data-toggle="tab"> <span class="step">6</span> <span id="mAddonsTitle" class="title">Any Addons?</span> </a>
 			                                        </li>
 			                                        <li data-target="#step6-1" style="display: none;">
-			                                            <a href="#tab6-1" data-toggle="tab"> <span class="step">6</span> <span id="mChooseMealTitle" class="title">Choose Your Meal</span> </a>
+			                                            <a href="#tab6-1" data-toggle="tab"> <span class="step">5</span> <span id="mChooseMealTitle" class="title">Choose Your Meal</span> </a>
 			                                        </li>
 			                                         <li data-target="#step7-1" style="display: none;">
-			                                            <a href="#tab7-1" data-toggle="tab"> <span class="step">7</span> <span id="mClosetDateTitle" class="title">Closest Starting Date</span> </a>
+			                                            <a href="#tab7-1" data-toggle="tab"> <span class="step">6</span> <span id="mClosetDateTitle" class="title">Closest Starting Date</span> </a>
 			                                        </li>
 			                                        <li data-target="#step8">
-			                                            <a href="#tab8" data-toggle="tab"> <span class="step">8</span> <span class="title">Submit</span> </a>
+			                                            <a href="#tab8" data-toggle="tab"> <span class="step">7</span> <span class="title">Submit</span> </a>
 			                                        </li>
 			                                    </ul>
 			                                    <div class="clearfix"></div>
@@ -74,24 +74,28 @@
 			                                    <div class="tab-pane" id="tab2">
 			                                        <h5>Choose your meal plan?</h5>
 			                                        <div id="mChooseMealPlanBtn">
-				                                        <span  class="btn btn-default mChooseMealPlanBtn" data-mChoosePlan='Athleat'>Athleat/Fat Loss</span>
+				                                        <span  class="btn btn-default mChooseMealPlanBtn-A" data-mChoosePlan='Athleat'>Athleat/Fat Loss</span>
 				                                        <span class="btn btn-default mChooseMealPlanBtn" data-mChoosePlan='Customized'>Customized</span>
-				                                    </div>	
+				                                    </div>
+				                                    <div id="mChooseMealPlanBtn-A" style="display: none;">
+				                                        <span  class="btn btn-default mChooseMealPlanBtn-L" data-mChoosePlan='Athleat-l'>Low Carb</span>
+				                                        <span class="btn btn-default mChooseMealPlanBtn-H" data-mChoosePlan='Athleat-h'>High Carb</span>
+				                                    </div>		
 			                                    </div>
-			                                    <div class="tab-pane" id="tab3">
+			                                    <!-- <div class="tab-pane" id="tab3">
 			                                       	<h5>Gender</h5>
 			                                       	<div id="mGenderBtn">
 				                                       	<span class="btn btn-default mGenderBtn" data-mGender='Male'>Male</span>
 														<span class="btn btn-default mGenderBtn" data-mGender='Female'>Female</span>
 													</div>
-			                                    </div>
+			                                    </div> -->
 			                                    <div class="tab-pane" id="tab4">
 			                                       <h5>For how many weeks?</h5>
 													<div id="mHowManyWeeksBtn"> 
 														<span class="btn btn-default mHowManyWeeksBtn" data-mHowManyWeeks='4'>4</span>
 														<span class="btn btn-default mHowManyWeeksBtn" data-mHowManyWeeks='8'>8</span>
 														<span class="btn btn-default mHowManyWeeksBtn" data-mHowManyWeeks='12'>12</span>
-													</div> 
+													</div>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab5">
 			                                        <h5>Number of meals per day?</h5> 
@@ -99,6 +103,10 @@
 														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='2'>2</span>
 														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='3'>3</span>
 														<span class="btn btn-default mMealsPerDayBtn" data-mMealsPerDay='4'>4</span>
+													</div>
+													<div class="mAthleatPrice" style="display: none;">
+													<h2 ><span class="mAthleatPriceDesc"></span> <sapn>AED</sapn></h2>
+													<span id="mMealsPerDayNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
 													</div>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab6">
@@ -136,25 +144,70 @@
 			                                    </div>
 			                                    <div class="tab-pane" id="tab6-1">
 			                                        <h5>Choose Your Meal</h5> 
-
-													<div id="mChooseMealPlanData">
+			                                    <div class="row">
+													<div id="mChooseMealPlanData" class="col-md-9">
 														
 													</div>
-													<span id="mChooseMealPlanNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
+													<!-- Table -->
+			                                    <div id="colDir" class="col-md-3 matchHeight1" style="padding:85px 40px 0 10px; ">
+														<div id="sticky_stats-sticky-wrapper" class="sticky-wrapper" style="height: 348px;"><div id="sticky_stats" style="width: 286px;">
+															<div class="sticky_stats_area1">
+																<div style="float:left; padding-left:25px; font-size:13px; font-weight:700;">YOUR MEAL STATS</div>
+																<!-- <div style="float:right; padding-right:25px; font-size:11px;">on / off</div> -->
+																<div style="clear:both;"></div>
+															</div>
+												            
 
+												          <div class="sticky_stats_area3">
+												          	<table style="">
+												          		<tbody><tr>
+												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Price per meal</td>
+												          			<td style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">AED <span class="mtxtStatsPricePerMeal"> 0</span></td>
+												          		</tr>
+												          		
+												          		<tr>
+												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily protein (avg)</td>
+												          			<td class="mtxtDebugDailyProtein" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+												          		</tr>
+												          		<tr>
+												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily fat (avg)</td>
+												          			<td class="mtxtDebugDailyFat" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+												          		</tr>
+												          		<tr>
+												          			<td style="width:65%; text-align:left; font-size:12px; height:18px; line-height: 18px; color:#979797;">Daily carbs (avg)</td>
+												          			<td class="mtxtDebugDailyCarbs" style="width:35%; text-align:left; font-size:12px; height:18px; line-height: 18px; font-weight: 700; color:#32373c;">0 g</td>
+												          		</tr>
+												          	</tbody></table>
+												              <!-- <div style="">
+												                <div class="" style="display:inline-block; font-size:12px; width:8px; height:8px; background-color:orange;"></div>
+												                <div style="display:inline-block; padding-left:10px; font-size:12px; ">Meal X</div>
+												            </div> -->
+												        </div>
+												        <div class="sticky_stats_area4">
+												        	<!-- <div style="font-size:40px; font-weight: 700; text-align: center;"><span class="txtStatsPriceTotal"></span></div> -->
+												        	<div style="font-size:12px; padding-top:5px; text-align: center;">Free delivery included</div>
+												        </div>
+												        
+												        <div class="sticky_stats_area5 btnContinueToCheckout">
+												        	Submit Request
+												        </div>
+												    </div></div>
+												</div>
+												</div>
+												<!-- table end -->
+													<span id="mChooseMealPlanNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
 			                                    </div>
+
 			                                    <div class="tab-pane" id="tab7-1">
 			                                        <h5>Closest Starting Date</h5> <br>
 			                                        <h3 id="mNearestSaturdayDate"></h3><br>
-													<span id="mCloneStartDateNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
+													<span id="mClosestStartDateNext" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Next</span>
 			                                    </div>
 			                                    <div class="tab-pane" id="tab8">
 			                                        <div>
 			                                       <span id="mSubmitBtn" class="btn btn-default button_round_solid bg-blue button-200" style="height: 50px;line-height: 1.1 !important;color: #fff;">Submit</span>
 			                                       </div>
 			                                    </div>
-			                                    
-
 			                                </div>
 			                            </div>
 			                        </form>
@@ -193,7 +246,7 @@
 	.bootstrapWizard li {
 	    display: block;
 	    float: left;
-	    width: 12.5%;
+	    width: 14.2%;
 	    text-align: center;
 	    padding-left: 0
 	}
@@ -336,12 +389,14 @@
 											<span>Fat : {{data.fat}}</span><br>
 											<span>Carb :{{data.carb}}</span><br>
 											<span>Protein :{{data.protein}}</span><br>
+											<span>Price :{{data.price}}</span><br>
 										</div>
 										{% for data in custom_meal_data %}  
 										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
-											<span>Fat : {{data.fat}}</span><br>
-											<span>Carb :{{data.carb}}</span><br>
-											<span>Protein :{{data.protein}}</span><br>
+											<span>Fat :</span><span id="dataFat">{{data.fat}}</span><br>	
+											<span>Carb :</span><span id="dataCarb">{{data.carb}}</span><br>
+											<span>Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
+											<span>Price :</span><span id="dataPrice">{{data.price}}</span><br>
 										</div>{% endfor %}
 
 									</div>
