@@ -355,25 +355,9 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     // $('.mAthleatPriceDesc').text(mAthleatFinalPrice);
     //Cookies.set('mAthleatFinalPrice',mAthleatFinalPrice)
 
-    mCreateChooseMealPlan();
+    // mCreateChooseMealPlan();
 
     function mCreateChooseMealPlan(){
-        // mytable = $('<table></table>').attr({ id: "basicTable" });
-        // var mWeeks = new Number(m_curr_how_many_weeks);
-        // var mMealsPerDay = new Number(m_curr_meals_per_day);
-        // var mDays = 5;
-        // var tr = [];
-        // for (var i = 0; i < mWeeks; i++) {
-            
-        //     var row = $('<tr></tr>').attr({ class: ["class1", "class2", "class3"].join(' ') }).appendTo(mytable);
-        //     for (var j = 0; j < mDays; j++) {
-        //         $('<td></td>').text("text1").appendTo(row); 
-        //     }
-                     
-        // }
-        // console.log("TTTTT:"+mytable.html());
-        // mytable.appendTo("#mChooseMealPlanData");        
-        // $('#mChooseMealPlanData').html('');        
         
         for(var i=1; i<=m_curr_how_many_weeks; i++){
             str = '';
@@ -445,19 +429,9 @@ $(document).on('click','.btnCustomizerMeal',function(e){
 data_week = $(this).attr('data-week');
 data_day = $(this).attr('data-day');
 data_meal = $(this).attr('data-meal');
-      // console.log("$(this): ", $(this));
-
     $('#myModal').modal('show');
-        
-         // var info = $(this)('.btnCustomizerMealDesc').text();
-         // var meal_item = $(this).
-         // console.log('week',data_week)
-         // console.log('day',data_day)
-         // console.log('meal',data_meal)    
-
 });
-            var obj2 ={};
-            var meal_data = {};
+            var meal_data = [];
             var week1_obj = {};
             var meal_ids = [];
             var week = '';
@@ -466,24 +440,18 @@ data_meal = $(this).attr('data-meal');
             
             var mealIds = [];
             var dayvalue = [];
-            mealIds[week+day] =  [];
             var dayssingledata= [];
             var mSingleMealPrice = 0;
             var mSingleMealFat = 0;
             var mSingleMealCarb = 0;
             var mSingleMealProtein = 0;
-            // mtxtStatsPricePerMeal
             var mTotalPrice = 0;
             var mTotalFat = 0;
             var mTotalCarb = 0;
             var mTotalProtein = 0;
-            // var 'mealids'+week+day = [];
-            // dayssingledata = []; 
+            var mealidsw1d1 = '';
 $(document).on('click','#modal-add-meal-btn',function(e){
 
-         //    console.log('week',data_week)
-         // console.log('day',data_day)
-         // console.log('meal',data_meal)
 
         var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
         var meal_item_id = $('.modal-left #nav-tabs-wrapper .active a').attr('id');
@@ -539,15 +507,15 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             // meal_data[week] = day_data;
             // dayssingledata.push(meal_item_id);
             // Week1 Data
-            // if(week == 'Week1' && day == 'Day1'){
-            //      dayssingledata = 'mealids'+week+day
-            //      dayssingledata = JSON.parse("[" + dayssingledata + "]");
+            if(week == 'Week1' && day == 'Day1'){
+                 dayssingledata = 'mealids'+week+day
+                 // dayssingledata = JSON.parse("[" + dayssingledata + "]");
 
-            //     console.log('dayssingledata',dayssingledata);
-            //     dayssingledata.push(meal_item_id);
-            //     day_data[week+day] = mealidsw1d1;
-            //     meal_data[week] = day_data
-            // }
+                console.log('dayssingledata',dayssingledata);
+                // dayssingledata.push(meal_item_id);
+                day_data[week+day] = mealidsw1d1;
+                meal_data[week] = day_data
+            }
             // if(week == 'Week1' && day == 'Day1'){
             //     console.log('week 1 Day 1');
             //     mealidsw1d1.push(meal_item_id);
