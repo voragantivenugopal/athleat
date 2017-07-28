@@ -14,6 +14,7 @@ function getCookieInfo(){
     // m_curr_gender = Cookies.get('m_curr_gender');
     m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
     m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
+    m_meals_closest_date = Cookies.get('m_meals_closest_date');
     m_selected_dislikes_value = Cookies.get('m_selected_dislikes_value');
     m_selected_addons_value = Cookies.get('m_selected_addons_value');
     m_closest_date = Cookies.get('m_closest_date');
@@ -304,7 +305,9 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
             $('#mMealsperDayTitle').text('How Many Meals Per Day?');   
         }
         $('.mAthleatPrice').show();
+        Cookies.set('mAthleatFinalPrice',mAthleatFinalPrice)
         $('.mAthleatPriceDesc').text(mAthleatFinalPrice);
+        
 
 
         // $('[data-target="#step6"]').addClass('active');
@@ -344,12 +347,16 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
         // $('.mAthleatPriceDesc').text(mAthleatFinalPrice);
         mCreateChooseMealPlan();
     }
-
-    $('.mAthleatPriceDesc').text(mAthleatFinalPrice);
-    Cookies.set('mAthleatFinalPrice',mAthleatFinalPrice)
+    var date = moment().endOf('week');
+    var m_meals_closest_date = moment(date).format('DD-MM-YYYY');
+    $('#mMealsNearestSaturdayDate').text(m_meals_closest_date);
+    Cookies.set('m_meals_closest_date', m_meals_closest_date);
+    
+    // $('.mAthleatPriceDesc').text(mAthleatFinalPrice);
+    //Cookies.set('mAthleatFinalPrice',mAthleatFinalPrice)
 
     mCreateChooseMealPlan();
-    
+
     function mCreateChooseMealPlan(){
         // mytable = $('<table></table>').attr({ id: "basicTable" });
         // var mWeeks = new Number(m_curr_how_many_weeks);
@@ -524,29 +531,29 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
 
 
-            dayssingledata = ['mealids'+data_week+data_day+data_meal]
-            console.log(dayssingledata) 
-            console.log(dayssingledata) 
-            dayssingledata.push(meal_item_id);
-            day_data[day] =  dayssingledata;
-            meal_data[week] = day_data;
-            dayssingledata.push(meal_item_id);
-            Week1 Data
-            if(week == 'Week1' && day == 'Day1'){
-                 dayssingledata = 'mealids'+week+day
-                 dayssingledata = JSON.parse("[" + dayssingledata + "]");
+            // dayssingledata = ['mealids'+data_week+data_day+data_meal]
+            // console.log(dayssingledata) 
+            // console.log(dayssingledata) 
+            // dayssingledata.push(meal_item_id);
+            // day_data[day] =  dayssingledata;
+            // meal_data[week] = day_data;
+            // dayssingledata.push(meal_item_id);
+            // Week1 Data
+            // if(week == 'Week1' && day == 'Day1'){
+            //      dayssingledata = 'mealids'+week+day
+            //      dayssingledata = JSON.parse("[" + dayssingledata + "]");
 
-                console.log('dayssingledata',dayssingledata);
-                dayssingledata.push(meal_item_id);
-                day_data[week+day] = mealidsw1d1;
-                meal_data[week] = day_data
-            }
-            if(week == 'Week1' && day == 'Day1'){
-                console.log('week 1 Day 1');
-                mealidsw1d1.push(meal_item_id);
-                day_data[week+day] = mealidsw1d1;
-                meal_data[week] = day_data
-            }
+            //     console.log('dayssingledata',dayssingledata);
+            //     dayssingledata.push(meal_item_id);
+            //     day_data[week+day] = mealidsw1d1;
+            //     meal_data[week] = day_data
+            // }
+            // if(week == 'Week1' && day == 'Day1'){
+            //     console.log('week 1 Day 1');
+            //     mealidsw1d1.push(meal_item_id);
+            //     day_data[week+day] = mealidsw1d1;
+            //     meal_data[week] = day_data
+            // }
             
 
             console.log('meal_data',meal_data)
@@ -596,6 +603,8 @@ $(document).on('click','#mSubmitBtn',function(){
             // 'Gender':m_curr_gender,
             'Weeks':m_curr_how_many_weeks,
             'Meals Per Day':m_curr_meals_per_day,
+            'm_meals_closest_date':m_meals_closest_date,
+            'mAthleatFinalPrice':mAthleatFinalPrice,
             'Dislikes':m_selected_dislikes_value,
             'Addons':m_selected_addons_value}
         console.log(obj);
@@ -615,8 +624,7 @@ $(document).on('click','#mSubmitBtn',function(){
                 'Weeks':m_curr_how_many_weeks,
                 'Meals Per Day':m_curr_meals_per_day,
                 'm_closest_date':m_closest_date,
-                'meal_data':meal_data,
-                'mAthleatFinalPrice':mAthleatFinalPrice
+                'meal_data':meal_data                
             }
             console.log(obj);
 
@@ -654,6 +662,7 @@ function clearCookies(){
     // Cookies.remove('m_curr_gender');
     Cookies.remove('m_curr_how_many_weeks');
     Cookies.remove('m_curr_meals_per_day');
+    Cookies.remove('m_meals_closest_date');
     Cookies.remove('m_selected_dislikes_value');
     Cookies.remove('m_selected_addons_value');
     Cookies.remove('m_closest_date');
