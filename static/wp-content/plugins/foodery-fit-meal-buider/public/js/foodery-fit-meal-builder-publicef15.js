@@ -273,7 +273,17 @@ var mAthleatFinalPrice = '';
 $(document).on('click','.mMealsPerDayBtn',function(e){
     $('.mMealsPerDayBtn').removeClass('btn-success');
     $('#mChooseMealPlanData').html('');
+    clearPriceCookies();
+    getCookieInfo();
+    // $('.mtxtStatsPricePerMeal').text('');
+    // $('.mtxtDebugDailyProtein').text('');
+    // $('.mtxtDebugDailyFat').text('');
+    // $('.mtxtDebugDailyCarbs').text('');
     // $('#tab5').removeClass('active');
+    mPriceTotal = 0;
+    mFatTotal = 0;
+    mProteinTotal =0;
+    mCarbTotal =0;
 
 
     // $('[data-target="#step5"]').removeClass('active');
@@ -326,18 +336,21 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
         getCookieInfo();
         console.log('m_curr_meals_per_day',m_curr_meals_per_day);
         if(m_curr_meals_per_day == '2'){
+            clearPriceCookies()
             $('#mMealsperDayTitle').text('2 Meals Per Day');
             $(this).addClass('btn-success');
             // mAthleatFinalPrice = 400*m_curr_how_many_weeks;
             // console.log('mFinalPrice',mAthleatFinalPrice)
         }
         else if(m_curr_meals_per_day === '3'){
+            clearPriceCookies()
             // mAthleatFinalPrice = 575*m_curr_how_many_weeks;
             // console.log('mFinalPrice',mAthleatFinalPrice)
             $('#mMealsperDayTitle').text('3 Meals Per Day');
             $(this).addClass('btn-success');
         }
         else if(m_curr_meals_per_day === '4'){
+            clearPriceCookies()
             // mAthleatFinalPrice = 700*m_curr_how_many_weeks;
             // console.log('mFinalPrice',mAthleatFinalPrice)
             $('#mMealsperDayTitle').text('4 Meals Per Day');
@@ -694,6 +707,7 @@ $(document).on('click','#mSubmitBtn',function(){
       // window.location = "/menu";
       
     }
+    location.reload();
     });
 function clearPriceCookies(){
     Cookies.remove('mTotalPrice');
@@ -702,6 +716,7 @@ function clearPriceCookies(){
     Cookies.remove('mTotalCarb');
 }
 function clearCookies(){
+    clearPriceCookies();
     Cookies.remove('m_curr_choose_plan',null);
     // Cookies.remove('m_curr_gender');
     Cookies.remove('m_curr_how_many_weeks');
