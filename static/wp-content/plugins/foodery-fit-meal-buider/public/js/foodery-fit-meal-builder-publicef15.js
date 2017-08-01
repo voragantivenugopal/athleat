@@ -456,6 +456,10 @@ data_meal = $(this).attr('data-meal');
 
             var mMealActiveID ='';
             var meal_data_copy = {};
+            var mMealActiveIDs = {};
+            var mMealActiveIDsArry = [];
+            var testPrice = 0;
+
 
             getCookieInfo()
 
@@ -511,12 +515,19 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             console.log('mMealActiveID',mMealActiveID)
             $('#myModal').modal('hide');
             obj2 = {'Week':data_week,'Day':data_day,'Meal':data_meal,'Meal ID':meal_item_id};
-            
 
             week = 'Week'+data_week;
             day = 'Day'+data_day;
-
-
+            mMealActiveIDs[mMealActiveID] =   {
+                'dayId':mMealActiveID,
+                'Price': mSingleMealPrice,
+                'MealId':meal_item_id
+            }
+            mMealActiveIDsArry.push(mMealActiveIDs)
+            // mMealActiveIDs.push(mMealActiveID);
+            testPrice = ;
+            console.log('testPrice',testPrice)
+            console.log('mMealActiveIDs',mMealActiveIDs)
 
             // dayssingledata = ['mealids'+data_week+data_day+data_meal]
             // console.log(dayssingledata) 
@@ -526,15 +537,15 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             // meal_data[week] = day_data;
             // dayssingledata.push(meal_item_id);
             // Week1 Data
-            if(week == 'Week1' && day == 'Day1'){
-                 dayssingledata = 'mealids'+week+day
-                 // dayssingledata = JSON.parse("[" + dayssingledata + "]");
+            // if(week == 'Week1' && day == 'Day1'){
+            //      dayssingledata = 'mealids'+week+day
+            //      // dayssingledata = JSON.parse("[" + dayssingledata + "]");
 
-                console.log('dayssingledata',dayssingledata);
-                // dayssingledata.push(meal_item_id);
-                day_data[week+day] = mealidsw1d1;
-                meal_data[week] = day_data
-            }
+            //     console.log('dayssingledata',dayssingledata);
+            //     // dayssingledata.push(meal_item_id);
+            //     day_data[week+day] = mealidsw1d1;
+            //     meal_data[week] = day_data
+            // }
             // if(week == 'Week1' && day == 'Day1'){
             //     console.log('week 1 Day 1');
             //     mealidsw1d1.push(meal_item_id);
@@ -543,7 +554,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             // }
             
 
-            console.log('meal_data',meal_data)
+            // console.log('meal_data',meal_data)
 
            
     });
