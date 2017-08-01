@@ -407,7 +407,7 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
                         str += '<div class="btnCustomizerMeal" id="'+weekNum+dayNum+m+'"  data-week="'+weekNum+'" data-day="'+dayNum+'" data-meal="'+m+'" data-type="" data-slug="" style="position:relative;">';
                             str += '<div class="btnCustomizerMealTitle">Meal '+m+'</div>';
                             str += '<div class="btnCustomizerMealDesc" style="color:red;">choose your meal</div>';
-                            str += '<div class="btnCustomizerMealPrice" style="color:red;">Price</div>';
+                            //str += '<div class="btnCustomizerMealPrice" style="color:red;">Price</div>';
                             // str += '<div class="btnCustomizerMealDesc"></div>';
                             str += '<div class="btnCustomizerMealDescBg "></div>';
                         str += '</div>';
@@ -450,10 +450,10 @@ data_meal = $(this).attr('data-meal');
             var mSingleMealFat = 0;
             var mSingleMealCarb = 0;
             var mSingleMealProtein = 0;
-            var mTotalPrice = 0;
-            var mTotalFat = 0;
-            var mTotalCarb = 0;
-            var mTotalProtein = 0;
+            // var mTotalPrice = 0;
+            // var mTotalFat = 0;
+            // var mTotalCarb = 0;
+            // var mTotalProtein = 0;
             var mealidsw1d1 = '';
 
             var mMealActiveID ='';
@@ -560,7 +560,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
 
                 //console.log(mFatTotal,'mFatTotal')
-                console.log("mytotal",mPriceTotal);
+                //console.log("mytotal",mPriceTotal);
                 $('.mtxtStatsPricePerMeal').text(mPriceTotal);
                 $('.mtxtDebugDailyFat').text(mFatTotal);
                 $('.mtxtDebugDailyCarbs').text(mCarbTotal);
