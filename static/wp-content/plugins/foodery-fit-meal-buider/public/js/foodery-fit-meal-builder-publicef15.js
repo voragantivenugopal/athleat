@@ -1,4 +1,6 @@
 
+
+
 (function( $ ) {
 
 var m_curr_choose_plan = '';
@@ -463,13 +465,16 @@ data_meal = $(this).attr('data-meal');
 
             getCookieInfo()
 
+var mytotal = 0
 $(document).on('click','#modal-add-meal-btn',function(e){
 
         
         var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
         var meal_item_id = $('.modal-left #nav-tabs-wrapper .active a').attr('id');
 
-        mSingleMealPrice = $('.model-right .active #dataPrice').text();
+        mSingleMealPrice = parseInt($('.model-right .active #dataPrice').text());
+        // console.log('mSingleMealPrice',typeof(mSingleMealPrice));
+
         if(mTotalPrice == undefined){
             mTotalPrice = 0;
         }
@@ -512,22 +517,29 @@ $(document).on('click','#modal-add-meal-btn',function(e){
                     'MealID':meal_item_id
                 }
             }
-            console.log('mMealActiveID',mMealActiveID)
+            // console.log('mMealActiveID',mMealActiveID)
             $('#myModal').modal('hide');
             obj2 = {'Week':data_week,'Day':data_day,'Meal':data_meal,'Meal ID':meal_item_id};
 
             week = 'Week'+data_week;
             day = 'Day'+data_day;
+
+
             mMealActiveIDs[mMealActiveID] =   {
                 'dayId':mMealActiveID,
                 'Price': mSingleMealPrice,
                 'MealId':meal_item_id
             }
-            mMealActiveIDsArry.push(mMealActiveIDs)
-            // mMealActiveIDs.push(mMealActiveID);
-            testPrice = ;
-            console.log('testPrice',testPrice)
-            console.log('mMealActiveIDs',mMealActiveIDs)
+
+
+            var obj = mMealActiveIDsArry[0];
+            var mytotal = 0
+
+            Object.keys(obj).forEach(function(key) {
+                mytotal+= obj[key].Price
+                console.log("mytotal",mytotal)
+            });
+
 
             // dayssingledata = ['mealids'+data_week+data_day+data_meal]
             // console.log(dayssingledata) 
@@ -559,6 +571,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
            
     });
 
+mMealActiveIDsArry.push(mMealActiveIDs)
 
 
 $(document).on('click','.dislikes',function(){
