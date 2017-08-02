@@ -2,6 +2,103 @@
 
 
 (function( $ ) {
+var mealidsw1d1obj = {};
+var mealidsw2d1obj = {};
+var mealidsw3d1obj = {};
+var mealidsw4d1obj = {};
+var mealidsw5d1obj = {};
+var mealidsw6d1obj = {};
+var mealidsw7d1obj = {};
+var mealidsw8d1obj = {};
+var mealidsw9d1obj = {};
+var mealidsw10d1obj = {};
+var mealidsw11d1obj = {};
+var mealidsw12d1obj = {};
+
+var mealidsw1d2obj = {};
+var mealidsw2d2obj = {};
+var mealidsw3d2obj = {};
+var mealidsw4d2obj = {};
+var mealidsw5d2obj = {};
+var mealidsw6d2obj = {};
+var mealidsw7d2obj = {};
+var mealidsw8d2obj = {};
+var mealidsw9d2obj = {};
+var mealidsw10d2obj = {};
+var mealidsw11d2obj = {};
+var mealidsw12d2obj = {};
+
+var mealidsw1d3obj = {};
+var mealidsw2d3obj = {};
+var mealidsw3d3obj = {};
+var mealidsw4d3obj = {};
+var mealidsw5d3obj = {};
+var mealidsw6d3obj = {};
+var mealidsw7d3obj = {};
+var mealidsw8d3obj = {};
+var mealidsw9d3obj = {};
+var mealidsw10d3obj = {};
+var mealidsw11d3obj = {};
+var mealidsw12d3obj = {};
+
+var mealidsw1d4obj = {};
+var mealidsw2d4obj = {};
+var mealidsw3d4obj = {};
+var mealidsw4d4obj = {};
+var mealidsw5d4obj = {};
+var mealidsw6d4obj = {};
+var mealidsw7d4obj = {};
+var mealidsw8d4obj = {};
+var mealidsw9d4obj = {};
+var mealidsw10d4obj = {};
+var mealidsw11d4obj = {};
+var mealidsw12d4obj = {};
+
+var mealidsw1d5obj = {};
+var mealidsw2d5obj = {};
+var mealidsw3d5obj = {};
+var mealidsw4d5obj = {};
+var mealidsw5d5obj = {};
+var mealidsw6d5obj = {};
+var mealidsw7d5obj = {};
+var mealidsw8d5obj = {};
+var mealidsw9d5obj = {};
+var mealidsw10d5obj = {};
+var mealidsw11d5obj = {};
+var mealidsw12d5obj = {};
+
+var meal_data = [];
+var week1_obj = {};
+var meal_ids = [];
+var week = '';
+var day = '';
+var day_data = {}
+
+var mealIds = [];
+var dayvalue = [];
+var dayssingledata= [];
+var mSingleMealPrice = 0;
+var mSingleMealFat = 0;
+var mSingleMealCarb = 0;
+var mSingleMealProtein = 0;
+
+var mTotalPrice = 0;
+var mTotalFat = 0;
+var mTotalCarb = 0;
+var mTotalProtein = 0;
+
+var mMealActiveID ='';
+var meal_data_copy = {};
+var mMealActiveIDs = {};
+var mMealActiveIDsArry = [];
+var testPrice = 0;
+var meal_data_obj = {}            
+
+getCookieInfo()
+var dynamicVariablesDaylist = []
+var dynamicVariablesWeeklist = []
+var mytotal = 0
+
 
 var m_curr_choose_plan = '';
 // var m_curr_gender = '';
@@ -457,43 +554,10 @@ data_day = $(this).attr('data-day');
 data_meal = $(this).attr('data-meal');
     $('#myModal').modal('show');
 });
-            var meal_data = [];
-            var week1_obj = {};
-            var meal_ids = [];
-            var week = '';
-            var day = '';
-            var day_data = {}
+          
             
-            var mealIds = [];
-            var dayvalue = [];
-            var dayssingledata= [];
-            var mSingleMealPrice = 0;
-            var mSingleMealFat = 0;
-            var mSingleMealCarb = 0;
-            var mSingleMealProtein = 0;
+getCookieInfo();
 
-            var mTotalPrice = 0;
-            var mTotalFat = 0;
-            var mTotalCarb = 0;
-            var mTotalProtein = 0;
-            var mealidsw1d1 = [];
-            var mealidsw1d2 = [];
-            var mealidsw2d1 = [];
-            var mealidsw2d2 = [];
-
-
-            var mMealActiveID ='';
-            var meal_data_copy = {};
-            var mMealActiveIDs = {};
-            var mMealActiveIDsArry = [];
-            var testPrice = 0;
-            var meal_data_obj = {}
-            var mealidsw1d1obj = {};
-            
-            getCookieInfo()
-            var dynamicVariablesDaylist = []
-            var dynamicVariablesWeeklist = []
-var mytotal = 0
 function dynamicVariables(day_data){
     var day_data = new Array(day_data);
     for (var i=0; i<day_data.length; i++) {
@@ -625,31 +689,26 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             // }
 
             if(week == 'Week1' && day == 'Day1'){
-                console.log('week 1 Day 1');
                 mealidsw1d1obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
             }
             if(week == 'Week1' && day == 'Day2'){
-                console.log('week 1 Day 1');
                 mealidsw1d2obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
             }
             if(week == 'Week1' && day == 'Day3'){
-                console.log('week 1 Day 1');
                 mealidsw1d3obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
             }
             if(week == 'Week1' && day == 'Day4'){
-                console.log('week 1 Day 1');
                 mealidsw1d4obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
             }
             if(week == 'Week1' && day == 'Day5'){
-                console.log('week 1 Day 1');
                 mealidsw1d5obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
@@ -660,26 +719,22 @@ $(document).on('click','#modal-add-meal-btn',function(e){
                 }
             }
              if(week == 'Week2' && day == 'Day2'){
-                console.log('week 1 Day 1');
                 mealidsw2d2obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
             }
             if(week == 'Week2' && day == 'Day3'){
-                console.log('week 1 Day 1');
                 mealidsw2d3obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
             }
             if(week == 'Week2' && day == 'Day4'){
-                console.log('week 1 Day 1');
                 mealidsw2d4obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
             }
             if(week == 'Week2' && day == 'Day5'){
-                console.log('week 1 Day 1');
-                mealidsw3d5obj[mMealActiveID] = {
+                mealidsw2d5obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
             }
@@ -689,7 +744,6 @@ $(document).on('click','#modal-add-meal-btn',function(e){
                 }
             }
              if(week == 'Week3' && day == 'Day2'){
-                console.log('week 1 Day 1');
                 mealidsw3d2obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id
                 }
@@ -709,6 +763,233 @@ $(document).on('click','#modal-add-meal-btn',function(e){
                    'Meal ID' : meal_item_id
                 }
             }
+
+            if(week == 'Week4' && day == 'Day1'){
+                mealidsw4d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week4' && day == 'Day2'){
+                mealidsw4d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week4' && day == 'Day3'){
+                mealidsw4d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week4' && day == 'Day4'){
+                mealidsw4d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week4' && day == 'Day5'){
+                mealidsw4d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week5' && day == 'Day1'){
+                mealidsw5d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week5' && day == 'Day2'){
+                mealidsw5d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week5' && day == 'Day3'){
+                mealidsw5d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week5' && day == 'Day4'){
+                mealidsw5d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week5' && day == 'Day5'){
+                mealidsw5d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week6' && day == 'Day1'){
+                mealidsw6d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week6' && day == 'Day2'){
+                mealidsw6d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week6' && day == 'Day3'){
+                mealidsw6d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week6' && day == 'Day4'){
+                mealidsw6d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week6' && day == 'Day5'){
+                mealidsw6d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week7' && day == 'Day1'){
+                mealidsw7d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week7' && day == 'Day2'){
+                mealidsw7d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week7' && day == 'Day3'){
+                mealidsw7d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week7' && day == 'Day4'){
+                mealidsw7d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week7' && day == 'Day5'){
+                mealidsw7d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week8' && day == 'Day1'){
+                mealidsw8d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week8' && day == 'Day2'){
+                mealidsw8d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week8' && day == 'Day3'){
+                mealidsw8d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week8' && day == 'Day4'){
+                mealidsw8d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week8' && day == 'Day5'){
+                mealidsw8d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week9' && day == 'Day1'){
+                mealidsw9d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week9' && day == 'Day2'){
+                mealidsw9d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week9' && day == 'Day3'){
+                mealidsw9d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week9' && day == 'Day4'){
+                mealidsw9d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week9' && day == 'Day5'){
+                mealidsw9d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week10' && day == 'Day1'){
+                mealidsw10d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week10' && day == 'Day2'){
+                mealidsw10d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week10' && day == 'Day3'){
+                mealidsw10d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week10' && day == 'Day4'){
+                mealidsw10d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week10' && day == 'Day5'){
+                mealidsw10d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week11' && day == 'Day1'){
+                mealidsw11d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week11' && day == 'Day2'){
+                mealidsw11d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week11' && day == 'Day3'){
+                mealidsw11d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week11' && day == 'Day4'){
+                mealidsw11d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week11' && day == 'Day5'){
+                mealidsw11d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week12' && day == 'Day1'){
+                mealidsw12d1obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+             if(week == 'Week12' && day == 'Day2'){
+                mealidsw12d2obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week12' && day == 'Day3'){
+                mealidsw12d3obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week12' && day == 'Day4'){
+                mealidsw12d4obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+            if(week == 'Week12' && day == 'Day5'){
+                mealidsw12d5obj[mMealActiveID] = {
+                   'Meal ID' : meal_item_id
+                }
+            }
+
             meal_data_obj = {
                 'week1'   : {'day1':mealidsw1d1obj,'day2':mealidsw1d2obj,'day3':mealidsw1d3obj,'day4':mealidsw1d4obj,'day5':mealidsw1d5obj},
                 'week2'   : {'day1':mealidsw2d1obj,'day2':mealidsw2d2obj,'day3':mealidsw2d3obj,'day4':mealidsw2d4obj,'day5':mealidsw2d5obj},
@@ -723,7 +1004,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
                 'week11'  : {'day1':mealidsw11d1obj,'day2':mealidsw11d2obj,'day3':mealidsw11d3obj,'day4':mealidsw11d4obj,'day5':mealidsw11d5obj},
                 'week12'  : {'day1':mealidsw12d1obj,'day2':mealidsw12d2obj,'day3':mealidsw12d3obj,'day4':mealidsw12d4obj,'day5':mealidsw12d5obj},
             }
-            
+
             
             // var returnDay = dynamicVariablesDaylist.includes(meal_item_id)
            
@@ -758,7 +1039,8 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             //     meal_data_obj[week] = day_data
             // }
 
-            console.log("meal_data_obj",meal_data_obj)
+            console.log("meal_data",meal_data_obj)
+            Cookies.set('meal_data',meal_data_obj)
            
     });
 
@@ -858,9 +1140,9 @@ $(document).on('click','#mSubmitBtn',function(){
       // window.location = "/menu";
       
     }
-    clearCookies();
-    clearPriceCookies();
-    location.reload();
+    // clearCookies();
+    // clearPriceCookies();
+    // location.reload();
     });
 function clearPriceCookies(){
     Cookies.remove('mTotalPrice');
