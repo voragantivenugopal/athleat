@@ -1081,7 +1081,7 @@ $(document).on('click','#tab6-1',function(){
 
 var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
-    getCookieInfo();
+   getCookieInfo();
    if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h'){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
             // 'Gender':m_curr_gender,
@@ -1140,9 +1140,9 @@ $(document).on('click','#mSubmitBtn',function(){
       // window.location = "/menu";
       
     }
-    // clearCookies();
-    // clearPriceCookies();
-    // location.reload();
+    clearCookies();
+    clearPriceCookies();
+    location.reload();
     });
 function clearPriceCookies(){
 
