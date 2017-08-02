@@ -272,9 +272,20 @@ var mAthleatFinalPrice = '';
 $(document).on('click','.mMealsPerDayBtn',function(e){
     $('.mMealsPerDayBtn').removeClass('btn-success');
     $('#mChooseMealPlanData').html('');
-
     clearPriceCookies();
     getCookieInfo();
+    mPriceTotal = 0;
+    mFatTotal = 0;
+    mProteinTotal = 0;
+    mCarbTotal = 0;
+    Cookies.set('mPriceTotal', mPriceTotal);
+    Cookies.set('mFatTotal', mFatTotal);
+    Cookies.set('mProteinTotal', mProteinTotal);
+    Cookies.set('mCarbTotal', mCarbTotal);
+    getCookieInfo();
+    console.log('mPriceTotal',mPriceTotal)
+
+    obj = {};
     // $('.mtxtStatsPricePerMeal').text('');
     // $('.mtxtDebugDailyProtein').text('');
     // $('.mtxtDebugDailyFat').text('');
@@ -712,7 +723,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
                 'week11'  : {'day1':mealidsw11d1obj,'day2':mealidsw11d2obj,'day3':mealidsw11d3obj,'day4':mealidsw11d4obj,'day5':mealidsw11d5obj},
                 'week12'  : {'day1':mealidsw12d1obj,'day2':mealidsw12d2obj,'day3':mealidsw12d3obj,'day4':mealidsw12d4obj,'day5':mealidsw12d5obj},
             }
-            }
+            
             
             // var returnDay = dynamicVariablesDaylist.includes(meal_item_id)
            
@@ -856,6 +867,11 @@ function clearPriceCookies(){
     Cookies.remove('mTotalFat');
     Cookies.remove('mTotalProtein');
     Cookies.remove('mTotalCarb');
+    Cookies.remove('mPriceTotal');
+    Cookies.remove('mFatTotal');
+    Cookies.remove('mProteinTotal');
+    Cookies.remove('mCarbTotal');
+    
 }
 function clearCookies(){
     clearPriceCookies();
