@@ -977,29 +977,36 @@ $(document).on('click','#mSubmitBtn',function(){
         
         }
         else if(m_curr_choose_plan === 'Customized'){
-                var obj = {'Meal Plan':m_curr_choose_plan,
-                // 'Gender':m_curr_gender,
+            //     var obj = {
+            //         'Meal Plan':m_curr_choose_plan,
+            //     // 'Gender':m_curr_gender,
+            //     'Weeks':m_curr_how_many_weeks,
+            //     'Meals Per Day':m_curr_meals_per_day,
+            //     'm_closest_date':m_closest_date,
+            //     'meal_data':meal_data               
+            // }
+            // console.log(obj);
+
+            var obj2 = {
+                'Meal Plan':m_curr_choose_plan,
                 'Weeks':m_curr_how_many_weeks,
                 'Meals Per Day':m_curr_meals_per_day,
                 'm_closest_date':m_closest_date,
-                'meal_data':meal_data               
-            }
-            // console.log(obj);
-
-            var obj2 = {'mPriceTotal':mPriceTotal,
+                 'meal_data':meal_data_obj, 
+                'mPriceTotal':mPriceTotal,
                 'mFatTotal':mFatTotal,
                 'mProteinTotal':mProteinTotal,
                 'mCarbTotal':mCarbTotal
             }
-            // console.log(obj2);
+            console.log(obj2);
             
-            // $.ajax({
-            //               url: '/post-values/',
-            //               contentType: 'application/json',
-            //               data: JSON.stringify(obj),
-            //               type: 'POST',
-            //               success: postSuccess,
-            //         });
+            $.ajax({
+                          url: '/post-values/',
+                          contentType: 'application/json',
+                          data: JSON.stringify(obj2),
+                          type: 'POST',
+                          success: postSuccess,
+                    });
            
         }
 
@@ -1017,7 +1024,7 @@ $(document).on('click','#mSubmitBtn',function(){
 
     clearCookies();
     clearPriceCookies();
-    location.reload();
+    // location.reload();
     });
 function clearPriceCookies(){
 
