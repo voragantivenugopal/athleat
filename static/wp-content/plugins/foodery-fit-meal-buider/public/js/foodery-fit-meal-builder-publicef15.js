@@ -1022,7 +1022,7 @@ $(document).on('click','#mSubmitBtn',function(){
           'Sit back and let us take care of the rest. We will be getting in touch with you very soon.',
           'success'
         )
-      // window.location = "/menu";
+      window.location = "/menu";
       
     }
 
