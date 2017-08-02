@@ -1133,10 +1133,10 @@ $(document).on('click','#mSubmitBtn',function(){
     // location.reload();
     });
 function clearPriceCookies(){
-    Cookies.remove('mTotalPrice');
-    Cookies.remove('mTotalFat');
-    Cookies.remove('mTotalProtein');
-    Cookies.remove('mTotalCarb');
+    Cookies.remove('mPriceTotal');
+    Cookies.remove('mFatTotal');
+    Cookies.remove('mProteinTotal');
+    Cookies.remove('mCarbTotal');
 }
 function clearCookies(){
     clearPriceCookies();
