@@ -368,6 +368,9 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     
     // console.log('msummeryobj--',msummeryobj)
     if(m_curr_choose_plan == 'Athleat-l' || m_curr_choose_plan == 'Athleat-h'){    
+        $('.dislikes').prop('checked', false); 
+        console.log('unchecked')
+        $('.addons').prop('checked', false); 
         clearPriceCookies()
         getCookieInfo();
         var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');        
@@ -943,6 +946,7 @@ var m_selected_addons_value = []; // initialize empty array
         m_selected_addons_value.push($(this).val());
         Cookies.set('m_selected_addons_value', m_selected_addons_value);
     });
+    console.log('m_selected_addons_value',m_selected_addons_value)
 }
 
 //Displaying nearest saturday
@@ -965,7 +969,7 @@ $(document).on('click','#mSubmitBtn',function(){
             'mAthleatFinalPrice':mAthleatFinalPrice,
             'Dislikes':m_selected_dislikes_value,
             'Addons':m_selected_addons_value}
-        // console.log(obj);
+        console.log(obj);
 
         $.ajax({
                       url: '/post-values/',
