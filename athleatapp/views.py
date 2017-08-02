@@ -93,7 +93,19 @@ def mealBuilder(request):
 	addons_data = sock.execute(
 		DB_NAME, uid, PASSWORD, 'addons.conf', 'read', addon_ids, [])
 
-	return render(request, 'meal-builder.html', {'meal_info': meal_data, 'custom_meal_data': custom_meal_data, 'addons_data': addons_data})
+	# likes_ids = sock.execute(
+	# 	DB_NAME, uid, PASSWORD, 'likes.dislikes', 'search', [('type','=','likes')])
+
+	# likes_data = sock.execute(
+	# 	DB_NAME, uid, PASSWORD, 'likes.dislikes', 'read', likes_ids)
+
+	dislikes_ids = sock.execute(
+		DB_NAME, uid, PASSWORD, 'likes.dislikes', 'search', [('type','=','dislikes')])
+
+	dislikes_data = sock.execute(
+		DB_NAME, uid, PASSWORD, 'likes.dislikes', 'read', dislikes_ids)
+
+	return render(request, 'meal-builder.html', {'meal_info': meal_data, 'custom_meal_data': custom_meal_data, 'addons_data': addons_data, 'dislikes_data': meal_data})
 
 
 def resetPassword(request):
@@ -161,6 +173,8 @@ def getValues(request):
 
 	body = eval(request.body)
 	# print body
+	dislikes = [] 
+	addons = []
 	if 'Dislikes' in body:
 		dislikes = eval(body['Dislikes'])
 		dislikes = map(int, dislikes)
