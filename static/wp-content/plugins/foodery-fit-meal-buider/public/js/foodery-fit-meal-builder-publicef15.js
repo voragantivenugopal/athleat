@@ -454,18 +454,38 @@ data_meal = $(this).attr('data-meal');
             var mTotalFat = 0;
             var mTotalCarb = 0;
             var mTotalProtein = 0;
-            var mealidsw1d1 = '';
+            var mealidsw1d1 = [];
+            var mealidsw1d2 = [];
+            var mealidsw2d1 = [];
+            var mealidsw2d2 = [];
 
             var mMealActiveID ='';
             var meal_data_copy = {};
             var mMealActiveIDs = {};
             var mMealActiveIDsArry = [];
             var testPrice = 0;
+            var meal_data_obj = {}
 
 
             getCookieInfo()
-
+            var dynamicVariablesDaylist = []
+            var dynamicVariablesWeeklist = []
 var mytotal = 0
+function dynamicVariables(day_data){
+    var day_data = new Array(day_data);
+    for (var i=0; i<day_data.length; i++) {
+        var day_data = day_data[i];
+        return day_data = {}
+    }
+}
+
+function dynamicVariablesDay(week,day){
+    var mealids = new Array(day);
+    for (var i=0; i<mealids.length; i++) {
+        var mealids = mealids[i];
+        return mealids+week 
+    }
+}
 $(document).on('click','#modal-add-meal-btn',function(e){
 
         
@@ -534,40 +554,60 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
             var obj = mMealActiveIDsArry[0];
             var mytotal = 0
-
+            console.log("log",obj)
             Object.keys(obj).forEach(function(key) {
                 mytotal+= obj[key].Price
-                console.log("mytotal",mytotal)
+                // console.log("mytotal",mytotal)
             });
 
 
-            // dayssingledata = ['mealids'+data_week+data_day+data_meal]
-            // console.log(dayssingledata) 
-            // console.log(dayssingledata) 
-            // dayssingledata.push(meal_item_id);
-            // day_data[day] =  dayssingledata;
-            // meal_data[week] = day_data;
-            // dayssingledata.push(meal_item_id);
-            // Week1 Data
-            // if(week == 'Week1' && day == 'Day1'){
-            //      dayssingledata = 'mealids'+week+day
-            //      // dayssingledata = JSON.parse("[" + dayssingledata + "]");
-
-            //     console.log('dayssingledata',dayssingledata);
-            //     // dayssingledata.push(meal_item_id);
-            //     day_data[week+day] = mealidsw1d1;
-            //     meal_data[week] = day_data
-            // }
             // if(week == 'Week1' && day == 'Day1'){
             //     console.log('week 1 Day 1');
             //     mealidsw1d1.push(meal_item_id);
-            //     day_data[week+day] = mealidsw1d1;
-            //     meal_data[week] = day_data
+            //     day_data[day] = mealidsw1d1;
+            //     meal_data_obj[week] = day_data
             // }
+            // if(week == 'Week1' && day == 'Day2'){
+            //     mealidsw1d2.push(meal_item_id);
+            //     day_data[day] = mealidsw1d2;
+            //     meal_data_obj[week] = day_data
+            // }
+
             
+            var returnDay = dynamicVariablesDaylist.includes(meal_item_id)
+           
+            var returnWeek = dynamicVariablesWeeklist.includes(meal_item_id)
 
-            // console.log('meal_data',meal_data)
+            if(returnDay == true){
+                console.log("returnDay true",returnDay)
+                meal_ids_list.push(meal_item_id);
+                day_data[day] = meal_ids_list;
+                meal_data_obj[week] = day_data
+            }
+            else{
+                console.log("returnDay false",returnDay)
+                meal_ids_list = dynamicVariablesDay(week,day)
+                dynamicVariablesDaylist.push(meal_item_id)
+                day_data = {}
+                meal_ids_list = []
+                meal_ids_list.push(meal_item_id);
+                day_data[day] = meal_ids_list;
+                meal_data_obj[week] = day_data
+            }
+           
+            if(returnWeek == true){
+               console.log("returnWeek true");
+               day_data[day] = meal_ids_list;
+                meal_data_obj[week] = day_data
+            }
+            else{ 
+                console.log("returnWeek false");
+                day_data = dynamicVariables(week)
+                dynamicVariablesWeeklist.push(meal_item_id)
+                meal_data_obj[week] = day_data
+            }
 
+            console.log("meal_data_obj",meal_data_obj)
            
     });
 
