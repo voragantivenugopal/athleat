@@ -1039,7 +1039,8 @@ function clearPriceCookies(){
 
 }
 function clearCookies(){
-
+     $('.dislikes').prop('checked', false); 
+     $('.addons').prop('checked', false); 
     clearPriceCookies();
     Cookies.remove('m_curr_choose_plan',null);
     // Cookies.remove('m_curr_gender');
@@ -1072,7 +1073,7 @@ function clearCookies(){
         $('.mMealsPerDayBtn').removeClass('btn-success');
     }
 
-    // location.reload();
+    location.reload();
 
 }
 })( jQuery );
