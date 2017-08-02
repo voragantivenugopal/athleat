@@ -489,3 +489,9 @@ input[type="radio"] .styled:checked + label::after {
 .bootstrapWizard  li a{
 	pointer-events: none;
 }
+.btnCustomizerMealDesc{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 125px;
+}

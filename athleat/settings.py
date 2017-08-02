@@ -134,10 +134,10 @@ STATIC_ROOT = ''
 
 
 # XMLRPC CONNECTION SETTINGS
-XMLRPC_URL = 'http://192.168.1.3:8069'
-DB_NAME = 'athleat'
+XMLRPC_URL = 'http://128.199.220.254:8069'
+DB_NAME = 'Athleat'
 USERNAME = 'admin'
-PASSWORD = 'admin'
+PASSWORD = 'athleatadmin'
 sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')
 sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 

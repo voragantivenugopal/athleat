@@ -126,13 +126,13 @@ def displayMenu(request):
 	uid = getUserId(request)
 	sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 	meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
-							('carb_type', '!=', 'customize')])
+							('carb_type', '=', 'customize'),('customize_category','=','gourmet')])
 	meal_data = sock.execute(DB_NAME, uid, PASSWORD,
 							 'recipies.meal', 'read', meal_ids)
 
 	# Customized items
 	custom_meal_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
-								   ('carb_type', '=', 'customize')])
+								   ('carb_type', '=', 'customize'),('customize_category','=','own')])
 	custom_meal_data = sock.execute(
 		DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', custom_meal_ids)
 	return render(request, 'menu.html', {'meal_info': meal_data, 'custom_meal_data': custom_meal_data})
@@ -173,27 +173,43 @@ def getValues(request):
 
 	body = eval(request.body)
 	# print body
-	dislikes = [] 
+	cust_dict = {}
 	addons = []
 	if 'Dislikes' in body:
 		dislikes = eval(body['Dislikes'])
 		dislikes = map(int, dislikes)
+		cust_dict.update({'disliked_meals_ids': [[6, 0, dislikes]]})
+
 	if 'Addons' in body:
 		addons = eval(body['Addons'])
 
+	if 'Meal Plan' in body:
+		plan = body['Meal Plan']
+		# print plan
+		if plan == 'Athleat-h':
+			cust_dict.update({'carb_type':'high carb'})
+		
+		elif plan == 'Athleat-l':
+			cust_dict.update({'carb_type':'low carb'})
+
+		elif plan == 'Customized':
+			cust_dict.update({'carb_type':'customize'})
+		else:
+			plan = 'low carb'
+	
 	if request.method == 'POST':
 
 		uid = getUserId(request)
 		sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 		meal_item_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
 									 ('carb_type', '=', 'customize')])
-		meal_items = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', meal_item_ids, [
-								  'quantity', 'protein', 'fat', 'carb', 'calories', 'price'])
+		# meal_items = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', meal_item_ids, [
+								  # 'quantity', 'protein', 'fat', 'carb', 'calories', 'price'])
 		# customers = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'search',[('carb_type', '=', 'customized')])
 		meal_plan = []
 
 		customer_id = request.session['partner_id']
-		update = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, {'disliked_meals_ids': [[6, 0, dislikes]]})
+		update = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, cust_dict)
 
 		# for x in customers:
 		# for i in meal_items:
@@ -206,19 +222,20 @@ def getValues(request):
 			'days_per_week': 5,
 			'no_of_weeks': int(body['Weeks']),
 			'meals_per_day': int(body['Meals Per Day']),
+			'meal_plan_type': cust_dict['carb_type'],
 			# 'meal_plan' : random.sample(meal_plan, 4),#limiting total no of meal plan records-one2many
 		}
 
-		if 'Meal Plan' in body:
-			plan = body['Meal Plan']
-			if str(plan) == 'Customized':
-				plan_vals.update({
-					'meal_plan_type': 'customize'
-				})
-			else:
-				plan_vals.update({
-					'meal_plan_type': 'low carb'
-				})
+		# if 'Meal Plan' in body:
+		# 	plan = body['Meal Plan']
+		# 	if str(plan) == 'Customized':
+		# 		plan_vals.update({
+		# 			'meal_plan_type': 'customize'
+		# 		})
+		# 	else:
+		# 		plan_vals.update({
+		# 			'meal_plan_type': 'low carb'
+		# 		})
 
 		# sock.execute('meal.plans','_onchange_current_date',1, 30)
 
