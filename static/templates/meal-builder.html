@@ -388,16 +388,16 @@
 									<div class="tab-content">
 
 										<div role="tabpanel" class="tab-pane fade in active" >
+											<span>Protein :{{data.protein}}</span><br>
 											<span>Fat : {{data.fat}}</span><br>
 											<span>Carb :{{data.carb}}</span><br>
-											<span>Protein :{{data.protein}}</span><br>
 											<span>Price :{{data.price}}</span><br>
 										</div>
 										{% for data in custom_meal_data %}  
 										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
+											<span>Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
 											<span>Fat :</span><span id="dataFat">{{data.fat}}</span><br>	
 											<span>Carb :</span><span id="dataCarb">{{data.carb}}</span><br>
-											<span>Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
 											<span>Price :</span><span id="dataPrice">{{data.price}}</span><br>
 										</div>{% endfor %}
 
@@ -417,7 +417,7 @@
 
 									<div class="col-md-8">
 										<ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
-											{% for data in custom_meal_data %}<li class=""><a href="#{{data.id}}" data-toggle="tab">
+											{% for data in custom_meal_data %}<li class=""><a href="#p{{data.id}}" data-toggle="tab">
 											{{data.name}}<br>
 										</a></li>{% endfor %}
 										</ul>	
@@ -430,13 +430,17 @@
 								<div class="tab-content">
 
 									<div role="tabpanel" class="tab-pane fade in active" >
+										<span>Protein :</span><br>
 										<span>Fat : </span><br>
 										<span>Carb :</span><br>
-										<span>Protein :</span><br>
 									</div>
 									{% for data in custom_meal_data %}  
-									<div role="tabpanel" class="tab-pane fade in" id="{{data.id}}">
+									<div role="tabpanel" class="tab-pane fade in" id="p{{data.id}}">
 										<form>
+										  <div class="form-group form-inline">
+										    <label for=""><strong style="color: #4da1ff">Protein</strong> </label>
+										    <input type="text" class="form-control" id="" placeholder="25.05 g">
+										  </div>
 										  <div class="form-group form-inline">
 										    <label for=""><strong  style="color: #4da1ff">Fat</strong></label>
 										    <input type="text" class="form-control" id="" placeholder="20 g">
@@ -444,10 +448,6 @@
 										  <div class="form-group form-inline">
 										    <label for=""><strong style="color: #4da1ff">Carb</strong></label>
 										    <input type="text" class="form-control" id="" placeholder="20.00 g">
-										  </div>
-										  <div class="form-group form-inline">
-										    <label for=""><strong style="color: #4da1ff">Protein</strong> </label>
-										    <input type="text" class="form-control" id="" placeholder="25.05 g">
 										  </div>
 									</div>{% endfor %}
 
