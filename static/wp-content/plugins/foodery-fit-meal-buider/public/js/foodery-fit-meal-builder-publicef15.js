@@ -1001,6 +1001,8 @@ $(document).on('click','#tab6-1',function(){
 
 var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
+    $('.bootstrapWizard  li').css('pointer-events','none');
+    
    getCookieInfo();
    if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h'){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
