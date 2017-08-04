@@ -1001,6 +1001,8 @@ $(document).on('click','#tab6-1',function(){
 
 var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
+    $('.bootstrapWizard  li').css('pointer-events','none');
+    
    getCookieInfo();
    if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h' && (m_curr_how_many_weeks && m_curr_meals_per_day && m_meals_closest_date && mAthleatFinalPrice) != undefined){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
@@ -1107,7 +1109,7 @@ function clearCookies(){
         $('#mMealsperDayTitle').text('How Many Meals Per Day');
         $('.mMealsPerDayBtn').removeClass('btn-success');
     }
-    $('.bootstrapWizard  li a').css('pointer-events','none');
+    $('.bootstrapWizard  li').css('pointer-events','none');
 
     // location.reload();
 
