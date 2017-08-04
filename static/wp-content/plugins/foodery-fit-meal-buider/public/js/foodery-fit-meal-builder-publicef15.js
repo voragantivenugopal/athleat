@@ -1141,7 +1141,7 @@ function clearCookies(){
         $('.mMealsPerDayBtn').removeClass('btn-success');
     }
 
-    location.reload();
+    // location.reload();
 
 }
 })( jQuery );
