@@ -307,10 +307,50 @@ $(document).on('click','#mDislikesNext',function(e){
     $('[data-target="#step7"]').addClass('active');
 });
 $(document).on('click','#mChooseMealPlanNext',function(e){
-    $('#tab6-1').removeClass('active');
-    $('#tab7-1').addClass('active');
-    $('[data-target="#step6-1"]').removeClass('active');
-    $('[data-target="#step7-1"]').addClass('active');
+    getCookieInfo();
+    //console.log(meal_data_obj,'#################',meal_data_obj.m_curr_how_many_weeks,meal_data_obj.m_curr_how_many_weeks == 4,(meal_data_obj.week1.day1 && meal_data_obj.week1.day2),meal_data_obj.week1.day1)
+    if(m_curr_how_many_weeks == 4 && (Object.keys(meal_data_obj.week1.day1 && meal_data_obj.week1.day2 && meal_data_obj.week1.day3 && meal_data_obj.week1.day4 && meal_data_obj.week1.day5 &&
+        meal_data_obj.week2.day1 && meal_data_obj.week2.day2 && meal_data_obj.week2.day3 && meal_data_obj.week2.day4 && meal_data_obj.week2.day5 &&
+        meal_data_obj.week3.day1 && meal_data_obj.week3.day2 && meal_data_obj.week3.day3 && meal_data_obj.week3.day4 && meal_data_obj.week3.day5 &&
+        meal_data_obj.week4.day1 && meal_data_obj.week4.day2 && meal_data_obj.week4.day3 && meal_data_obj.week4.day4 && meal_data_obj.week4.day5
+        ).length == 0)){
+
+        swal('Please select all meals')        
+    }
+    else if(m_curr_how_many_weeks == 8 && (Object.keys(meal_data_obj.week1.day1 && meal_data_obj.week1.day2 && meal_data_obj.week1.day3 && meal_data_obj.week1.day4 && meal_data_obj.week1.day5 &&
+            meal_data_obj.week2.day1 && meal_data_obj.week2.day2 && meal_data_obj.week2.day3 && meal_data_obj.week2.day4 && meal_data_obj.week2.day5 &&
+            meal_data_obj.week3.day1 && meal_data_obj.week3.day2 && meal_data_obj.week3.day3 && meal_data_obj.week3.day4 && meal_data_obj.week3.day5 &&
+            meal_data_obj.week4.day1 && meal_data_obj.week4.day2 && meal_data_obj.week4.day3 && meal_data_obj.week4.day4 && meal_data_obj.week4.day5 &&
+            meal_data_obj.week5.day1 && meal_data_obj.week5.day2 && meal_data_obj.week5.day3 && meal_data_obj.week5.day4 && meal_data_obj.week5.day5 &&
+            meal_data_obj.week6.day1 && meal_data_obj.week6.day2 && meal_data_obj.week6.day3 && meal_data_obj.week6.day4 && meal_data_obj.week6.day5 &&
+            meal_data_obj.week7.day1 && meal_data_obj.week7.day2 && meal_data_obj.week7.day3 && meal_data_obj.week7.day4 && meal_data_obj.week7.day5 &&
+            meal_data_obj.week8.day1 && meal_data_obj.week8.day2 && meal_data_obj.week8.day3 && meal_data_obj.week8.day4 && meal_data_obj.week8.day5
+            ).length == 0)){
+
+            swal('Please select all meals')        
+    }
+    else if(m_curr_how_many_weeks == 12 && (Object.keys(meal_data_obj.week1.day1 && meal_data_obj.week1.day2 && meal_data_obj.week1.day3 && meal_data_obj.week1.day4 && meal_data_obj.week1.day5 &&
+        meal_data_obj.week2.day1 && meal_data_obj.week2.day2 && meal_data_obj.week2.day3 && meal_data_obj.week2.day4 && meal_data_obj.week2.day5 &&
+        meal_data_obj.week3.day1 && meal_data_obj.week3.day2 && meal_data_obj.week3.day3 && meal_data_obj.week3.day4 && meal_data_obj.week3.day5 &&
+        meal_data_obj.week4.day1 && meal_data_obj.week4.day2 && meal_data_obj.week4.day3 && meal_data_obj.week4.day4 && meal_data_obj.week4.day5 &&
+        meal_data_obj.week5.day1 && meal_data_obj.week5.day2 && meal_data_obj.week5.day3 && meal_data_obj.week5.day4 && meal_data_obj.week5.day5 &&
+        meal_data_obj.week6.day1 && meal_data_obj.week6.day2 && meal_data_obj.week6.day3 && meal_data_obj.week6.day4 && meal_data_obj.week6.day5 &&
+        meal_data_obj.week7.day1 && meal_data_obj.week7.day2 && meal_data_obj.week7.day3 && meal_data_obj.week7.day4 && meal_data_obj.week7.day5 &&
+        meal_data_obj.week8.day1 && meal_data_obj.week8.day2 && meal_data_obj.week8.day3 && meal_data_obj.week8.day4 && meal_data_obj.week8.day5 &&
+        meal_data_obj.week9.day1 && meal_data_obj.week9.day2 && meal_data_obj.week9.day3 && meal_data_obj.week9.day4 && meal_data_obj.week9.day5 &&
+        meal_data_obj.week10.day1 && meal_data_obj.week10.day2 && meal_data_obj.week10.day3 && meal_data_obj.week10.day4 && meal_data_obj.week10.day5 &&
+        meal_data_obj.week11.day1 && meal_data_obj.week11.day2 && meal_data_obj.week11.day3 && meal_data_obj.week11.day4 && meal_data_obj.week11.day5 &&
+        meal_data_obj.week12.day1 && meal_data_obj.week12.day2 && meal_data_obj.week12.day3 && meal_data_obj.week12.day4 && meal_data_obj.week12.day5
+        ).length == 0)){
+
+          swal('Please select all meals');                 
+        }
+    else{
+       $('#tab6-1').removeClass('active');
+       $('#tab7-1').addClass('active');
+       $('[data-target="#step6-1"]').removeClass('active');
+       $('[data-target="#step7-1"]').addClass('active');
+    }
 });
 
 
@@ -960,8 +1000,6 @@ $(document).on('click','#tab6-1',function(){
 var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
    getCookieInfo();
-   console.log(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h' && (m_curr_how_many_weeks && m_curr_meals_per_day && m_meals_closest_date && mAthleatFinalPrice) != undefined)
-   console.log(m_curr_how_many_weeks,'@@@@@@@@',m_curr_meals_per_day,m_meals_closest_date)
    if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h' && (m_curr_how_many_weeks && m_curr_meals_per_day && m_meals_closest_date && mAthleatFinalPrice) != undefined){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
             // 'Gender':m_curr_gender,
@@ -985,16 +1023,7 @@ $(document).on('click','#mSubmitBtn',function(){
         alert('Choose All Options');
     }
     if(m_curr_choose_plan === 'Customized'){
-        //     var obj = {
-        //         'Meal Plan':m_curr_choose_plan,
-        //     // 'Gender':m_curr_gender,
-        //     'Weeks':m_curr_how_many_weeks,
-        //     'Meals Per Day':m_curr_meals_per_day,
-        //     'm_closest_date':m_closest_date,
-        //     'meal_data':meal_data               
-        // }
-        // console.log(obj);
-
+        
         var obj2 = {
             'Meal Plan':m_curr_choose_plan,
             'Weeks':m_curr_how_many_weeks,
@@ -1008,77 +1037,13 @@ $(document).on('click','#mSubmitBtn',function(){
         } 
         console.log(obj2,obj2.m_meals_per_day)           
         //console.log(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2).length == 0)
-        if(obj2.Weeks == 4){
-            if(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2 && obj2.meal_data.week1.day3 && obj2.meal_data.week1.day4 && obj2.meal_data.week1.day5 &&
-                    obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
-                    obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
-                    obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5
-                    ).length == 0){
-                alert('Please select all meals')
-            }
-            else{
-                $.ajax({
+        $.ajax({
                           url: '/post-values/',
                           contentType: 'application/json',
                           data: JSON.stringify(obj2),
                           type: 'POST',
                           success: postSuccess,
-                    });
-            }
-        }
-        else if(obj2.Weeks == 8){
-                if(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2 && obj2.meal_data.week1.day3 && obj2.meal_data.week1.day4 && obj2.meal_data.week1.day5 &&
-                obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
-                obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
-                obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5 &&
-                obj2.meal_data.week5.day1 && obj2.meal_data.week5.day2 && obj2.meal_data.week5.day3 && obj2.meal_data.week5.day4 && obj2.meal_data.week5.day5 &&
-                obj2.meal_data.week6.day1 && obj2.meal_data.week6.day2 && obj2.meal_data.week6.day3 && obj2.meal_data.week6.day4 && obj2.meal_data.week6.day5 &&
-                obj2.meal_data.week7.day1 && obj2.meal_data.week7.day2 && obj2.meal_data.week7.day3 && obj2.meal_data.week7.day4 && obj2.meal_data.week7.day5 &&
-                obj2.meal_data.week8.day1 && obj2.meal_data.week8.day2 && obj2.meal_data.week8.day3 && obj2.meal_data.week8.day4 && obj2.meal_data.week8.day5 &&
-                obj2.meal_data.week9.day1 && obj2.meal_data.week9.day2 && obj2.meal_data.week9.day3 && obj2.meal_data.week9.day4 && obj2.meal_data.week9.day5 &&
-                obj2.meal_data.week10.day1 && obj2.meal_data.week10.day2 && obj2.meal_data.week10.day3 && obj2.meal_data.week10.day4 && obj2.meal_data.week10.day5 &&
-                obj2.meal_data.week11.day1 && obj2.meal_data.week11.day2 && obj2.meal_data.week11.day3 && obj2.meal_data.week11.day4 && obj2.meal_data.week11.day5 && 
-                obj2.meal_data.week12.day1 && obj2.meal_data.week12.day2 && obj2.meal_data.week12.day3 && obj2.meal_data.week12.day4 && obj2.meal_data.week12.day5).length == 0){
-                    alert('Please select all meals')
-                }
-                else{
-                    $.ajax({
-                          url: '/post-values/',
-                          contentType: 'application/json',
-                          data: JSON.stringify(obj2),
-                          type: 'POST',
-                          success: postSuccess,
-                    });
-                }
-        }
-        else if(obj2.Weeks == 12){
-                if(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2 && obj2.meal_data.week1.day3 && obj2.meal_data.week1.day4 && obj2.meal_data.week1.day5 &&
-                obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
-                obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
-                obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5 &&
-                obj2.meal_data.week5.day1 && obj2.meal_data.week5.day2 && obj2.meal_data.week5.day3 && obj2.meal_data.week5.day4 && obj2.meal_data.week5.day5 &&
-                obj2.meal_data.week6.day1 && obj2.meal_data.week6.day2 && obj2.meal_data.week6.day3 && obj2.meal_data.week6.day4 && obj2.meal_data.week6.day5 &&
-                obj2.meal_data.week7.day1 && obj2.meal_data.week7.day2 && obj2.meal_data.week7.day3 && obj2.meal_data.week7.day4 && obj2.meal_data.week7.day5 &&
-                obj2.meal_data.week8.day1 && obj2.meal_data.week8.day2 && obj2.meal_data.week8.day3 && obj2.meal_data.week8.day4 && obj2.meal_data.week8.day5 &&
-                obj2.meal_data.week9.day1 && obj2.meal_data.week9.day2 && obj2.meal_data.week9.day3 && obj2.meal_data.week9.day4 && obj2.meal_data.week9.day5 &&
-                obj2.meal_data.week10.day1 && obj2.meal_data.week10.day2 && obj2.meal_data.week10.day3 && obj2.meal_data.week10.day4 && obj2.meal_data.week10.day5 &&
-                obj2.meal_data.week11.day1 && obj2.meal_data.week11.day2 && obj2.meal_data.week11.day3 && obj2.meal_data.week11.day4 && obj2.meal_data.week11.day5 &&
-                obj2.meal_data.week12.day1 && obj2.meal_data.week12.day2 && obj2.meal_data.week12.day3 && obj2.meal_data.week12.day4 && obj2.meal_data.week12.day5).length == 0){
-                    alert('Please select all meals')
-                }
-                else{
-                    $.ajax({
-                          url: '/post-values/',
-                          contentType: 'application/json',
-                          data: JSON.stringify(obj2),
-                          type: 'POST',
-                          success: postSuccess,
-                    });
-                }
-            }
-        else{
-            swal('Error')
-        }
+        });        
        
     }
 
