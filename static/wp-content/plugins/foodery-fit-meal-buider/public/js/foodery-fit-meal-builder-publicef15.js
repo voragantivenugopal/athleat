@@ -341,7 +341,7 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     else{
         $('#mWeeksTitle').text('How Many Weeks');   
     }
-    $('.bootstrapWizard  li:lt(5) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(4) a').css('pointer-events','all');
 
 });
 
@@ -494,7 +494,7 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
 
       
     }
-    $('.bootstrapWizard  li:lt(9) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(4) a').css('pointer-events','all');
 
 });
 
@@ -926,6 +926,8 @@ mMealActiveIDsArry.push(mMealActiveIDs)
 
 $(document).on('click','.dislikes',function(){
     dislikesSelection();
+    $('.bootstrapWizard  li:lt(6) a').css('pointer-events','all');
+
 });
 
 function dislikesSelection(){
@@ -1140,6 +1142,7 @@ function clearCookies(){
         $('#mMealsperDayTitle').text('How Many Meals Per Day');
         $('.mMealsPerDayBtn').removeClass('btn-success');
     }
+    $('.bootstrapWizard  li a').css('pointer-events','none');
 
     // location.reload();
 
