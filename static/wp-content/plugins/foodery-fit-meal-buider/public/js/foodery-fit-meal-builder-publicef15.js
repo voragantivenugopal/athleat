@@ -568,14 +568,18 @@ function dynamicVariablesDay(week,day){
         return mealids+week 
     }
 }
+
+
 $(document).on('click','#modal-add-meal-btn',function(e){
+
             console.log('before msummeryobj',msummeryobj);
 
         
         // var meal_item = $('.modal-left #nav-tabs-wrapper .active a').text();
         var meal_item = $('.modal-body .tab-pane.active .nav-tabs .active a').text();
         console.log('meal_item====',meal_item)
-        var meal_item_id = $('.modal-left #nav-tabs-wrapper .active a').attr('id');
+        var meal_item_id = $('.modal-body .tab-pane.active .nav-tabs .active a').attr('id');
+        console.log('meal_item_id====',meal_item_id)
 
        
 

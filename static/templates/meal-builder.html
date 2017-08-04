@@ -417,7 +417,7 @@
 
 									<div class="col-md-8">
 										<ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
-											{% for data in custom_meal_data %}<li class=""><a href="#p{{data.id}}" data-toggle="tab">
+											{% for data in custom_meal_data %}<li class=""><a href="#p{{data.id}}" id="{{data.id}}" data-toggle="tab">
 											{{data.name}}<br>
 										</a></li>{% endfor %}
 										</ul>	
@@ -438,16 +438,28 @@
 									<div role="tabpanel" class="tab-pane fade in" id="p{{data.id}}">
 										<form>
 										  <div class="form-group form-inline">
+										    <label for=""><strong style="color: #4da1ff">Grams</strong> </label>
+										    <select class="form-control">
+										      <option>100</option>
+										      <option>150</option>
+										      <option>200</option>
+										    </select>
+										  </div>
+										  <div class="form-group form-inline">
 										    <label for=""><strong style="color: #4da1ff">Protein</strong> </label>
-										    <input type="text" class="form-control" id="" placeholder="25.05 g">
+										    <input type="text" class="form-control" id="" placeholder="25.05 g" value="{{data.protein}}" readonly=true>
 										  </div>
 										  <div class="form-group form-inline">
 										    <label for=""><strong  style="color: #4da1ff">Fat</strong></label>
-										    <input type="text" class="form-control" id="" placeholder="20 g">
+										    <input type="text" class="form-control" id="" placeholder="20 g" value="{{data.fat}}" readonly>
 										  </div>
 										  <div class="form-group form-inline">
 										    <label for=""><strong style="color: #4da1ff">Carb</strong></label>
-										    <input type="text" class="form-control" id="" placeholder="20.00 g">
+										    <input type="text" class="form-control" id="" placeholder="20.00 g" value="{{data.carb}}" readonly>
+										  </div>
+										  <div class="form-group form-inline">
+										    <label for=""><strong style="color: #4da1ff">Price</strong></label>
+										    <input type="text" class="form-control" id="" placeholder="20.00 g" value="{{data.price}}" readonly>
 										  </div>
 									</div>{% endfor %}
 
