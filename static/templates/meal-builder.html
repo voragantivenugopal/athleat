@@ -484,17 +484,32 @@ $('.mChangeGrams').on('change',function(){
 
     console.log('=========');
     var meal_price = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataPrice_A').text();
+    var meal_fat = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataFat_A').text();
+    var meal_carb = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataCarb_A').text();
+    var meal_protein = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataProtein_A').text();
     var selected_val = $(this).val();
     if(selected_val == 100){
         meal_price = meal_price*1;
+        meal_fat   =   meal_fat*1;
+        meal_carb  = meal_carb*1;
+        meal_protein = meal_protein*1;
     }
     else if(selected_val == 150) {
         meal_price = meal_price*1.5;
+        meal_fat   =   meal_fat*1.5;
+        meal_carb  = meal_carb*1.5;
+        meal_protein = meal_protein*1.5;
     }
     else if(selected_val == 200) {
         meal_price = meal_price*2;
+        meal_fat   =   meal_fat*2;
+        meal_carb  = meal_carb*2;
+        meal_protein = meal_protein*2;
     }
     $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataPrice').text(meal_price)
+    $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataFat').text(meal_fat)
+    $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataCarb').text(meal_carb)
+    $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataProtein').text(meal_protein)
 
 })
 </script>
