@@ -139,7 +139,7 @@ $(document).on('click','#mStartBtn',function(e){
     $('#tab2').addClass('active');
     $('[data-target="#step1"]').removeClass('active');
     $('[data-target="#step2"]').addClass('active');
-    $('.bootstrapWizard  li:lt(2) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(2)').css('pointer-events','all');
 
 });
 $(document).on('click','.mChooseMealPlanBtn-A',function(e){
@@ -201,7 +201,7 @@ $(document).on('click','.mChooseMealPlanBtn-L',function(e){
     else{
         $('#mPlanTitle').text('Choose Your Meal Plan');   
     }
-    $('.bootstrapWizard  li:lt(3) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(3)').css('pointer-events','all');
 
 });
 $(document).on('click','.mChooseMealPlanBtn-H',function(e){
@@ -234,7 +234,7 @@ $(document).on('click','.mChooseMealPlanBtn-H',function(e){
     else{
         $('#mPlanTitle').text('Choose Your Meal Plan');   
     }
-    $('.bootstrapWizard  li:lt(3) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(3)').css('pointer-events','all');
 
 });
 $(document).on('click','.mChooseMealPlanBtn',function(e){
@@ -272,7 +272,7 @@ $(document).on('click','.mChooseMealPlanBtn',function(e){
     else{
         $('#mPlanTitle').text('Choose Your Meal Plan');   
     }
-    $('.bootstrapWizard  li:lt(3) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(3)').css('pointer-events','all');
 
 });
 
@@ -381,7 +381,7 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     else{
         $('#mWeeksTitle').text('How Many Weeks');   
     }
-    $('.bootstrapWizard  li:lt(4) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(4)').css('pointer-events','all');
 
 });
 
@@ -534,7 +534,7 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
 
       
     }
-    $('.bootstrapWizard  li:lt(4) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(4)').css('pointer-events','all');
 
 });
 
@@ -966,7 +966,7 @@ mMealActiveIDsArry.push(mMealActiveIDs)
 
 $(document).on('click','.dislikes',function(){
     dislikesSelection();
-    $('.bootstrapWizard  li:lt(6) a').css('pointer-events','all');
+    $('.bootstrapWizard  li:lt(6)').css('pointer-events','all');
 
 });
 
@@ -1004,7 +1004,7 @@ $(document).on('click','#mSubmitBtn',function(){
     $('.bootstrapWizard  li').css('pointer-events','none');
     
    getCookieInfo();
-   if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h' && (m_curr_how_many_weeks && m_curr_meals_per_day && m_meals_closest_date && mAthleatFinalPrice) != undefined){ 
+   if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h'){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
             // 'Gender':m_curr_gender,
             'Weeks':m_curr_how_many_weeks,
@@ -1013,7 +1013,6 @@ $(document).on('click','#mSubmitBtn',function(){
             'mAthleatFinalPrice':mAthleatFinalPrice,
             'Dislikes':m_selected_dislikes_value,
             'Addons':m_selected_addons_value}
-        alert('post'); 
         $.ajax({
                       url: '/post-values/',
                       contentType: 'application/json',
@@ -1023,33 +1022,30 @@ $(document).on('click','#mSubmitBtn',function(){
                 });
         
     }
-    else{
-        alert('Choose All Options');
-    }
-    if(m_curr_choose_plan === 'Customized'){
-        
-        var obj2 = {
-            'Meal Plan':m_curr_choose_plan,
-            'Weeks':m_curr_how_many_weeks,
-            'Meals Per Day':m_curr_meals_per_day,
-            'm_closest_date':m_closest_date,
-            'meal_data':meal_data_obj, 
-            'mPriceTotal':mPriceTotal,
-            'mFatTotal':mFatTotal,
-            'mProteinTotal':mProteinTotal,
-            'mCarbTotal':mCarbTotal
-        } 
-        console.log(obj2,obj2.m_meals_per_day)           
-        //console.log(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2).length == 0)
-        $.ajax({
-                          url: '/post-values/',
-                          contentType: 'application/json',
-                          data: JSON.stringify(obj2),
-                          type: 'POST',
-                          success: postSuccess,
-        });        
-       
-    }
+    
+if(m_curr_choose_plan === 'Customized'){
+    
+    var obj2 = {
+        'Meal Plan':m_curr_choose_plan,
+        'Weeks':m_curr_how_many_weeks,
+        'Meals Per Day':m_curr_meals_per_day,
+        'm_closest_date':m_closest_date,
+        'meal_data':meal_data_obj, 
+        'mPriceTotal':mPriceTotal,
+        'mFatTotal':mFatTotal,
+        'mProteinTotal':mProteinTotal,
+        'mCarbTotal':mCarbTotal
+    } 
+    
+    $.ajax({
+                      url: '/post-values/',
+                      contentType: 'application/json',
+                      data: JSON.stringify(obj2),
+                      type: 'POST',
+                      success: postSuccess,
+    });        
+   
+}
 
     function postSuccess(data,textStatus,jqXHR)
     {
@@ -1092,7 +1088,8 @@ function clearCookies(){
     Cookies.remove('mFatTotal');
     Cookies.remove('mProteinTotal');
     Cookies.remove('mCarbTotal');
-    Cookies.remove('mAthleatFinalPrice')
+    Cookies.remove('mAthleatFinalPrice');
+    Cookies.remove('msummeryobj');
     
     getCookieInfo();
 
