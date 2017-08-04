@@ -603,10 +603,10 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
 
 
-            mSingleMealPrice = parseInt($('.modal-body .tab-pane.active .active #dataPrice').text());
-            mSingleMealFat = $('.model-right .active #dataFat').text();
-            mSingleMealCarb = $('.model-right .active #dataCarb').text();
-            mSingleMealProtein = $('.model-right .active #dataProtein').text();
+            mSingleMealPrice = parseInt($('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataPrice').text());
+            mSingleMealFat = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataFat').text();
+            mSingleMealCarb = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataCarb').text();
+            mSingleMealProtein = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataProtein').text();
 
             mMealActiveIDs[mMealActiveID] =   {
                 'dayId':mMealActiveID,
