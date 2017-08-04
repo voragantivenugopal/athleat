@@ -1119,4 +1119,6 @@ function clearCookies(){
     // location.reload();
 
 }
+
+
 })( jQuery );
