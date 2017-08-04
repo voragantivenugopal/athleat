@@ -603,7 +603,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
 
 
-            mSingleMealPrice = parseInt($('.model-right .active #dataPrice').text());
+            mSingleMealPrice = parseInt($('.modal-body .tab-pane.active .active #dataPrice').text());
             mSingleMealFat = $('.model-right .active #dataFat').text();
             mSingleMealCarb = $('.model-right .active #dataCarb').text();
             mSingleMealProtein = $('.model-right .active #dataProtein').text();
