@@ -960,7 +960,9 @@ $(document).on('click','#tab6-1',function(){
 var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
    getCookieInfo();
-   if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h'){ 
+   console.log(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h' && (m_curr_how_many_weeks && m_curr_meals_per_day && m_meals_closest_date && mAthleatFinalPrice) != undefined)
+   console.log(m_curr_how_many_weeks,'@@@@@@@@',m_curr_meals_per_day,m_meals_closest_date)
+   if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h' && (m_curr_how_many_weeks && m_curr_meals_per_day && m_meals_closest_date && mAthleatFinalPrice) != undefined){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
             // 'Gender':m_curr_gender,
             'Weeks':m_curr_how_many_weeks,
@@ -969,8 +971,7 @@ $(document).on('click','#mSubmitBtn',function(){
             'mAthleatFinalPrice':mAthleatFinalPrice,
             'Dislikes':m_selected_dislikes_value,
             'Addons':m_selected_addons_value}
-        console.log(obj);
-
+        alert('post'); 
         $.ajax({
                       url: '/post-values/',
                       contentType: 'application/json',
@@ -979,103 +980,107 @@ $(document).on('click','#mSubmitBtn',function(){
                       success: postSuccess,
                 });
         
-        }
-        else if(m_curr_choose_plan === 'Customized'){
-            //     var obj = {
-            //         'Meal Plan':m_curr_choose_plan,
-            //     // 'Gender':m_curr_gender,
-            //     'Weeks':m_curr_how_many_weeks,
-            //     'Meals Per Day':m_curr_meals_per_day,
-            //     'm_closest_date':m_closest_date,
-            //     'meal_data':meal_data               
-            // }
-            // console.log(obj);
+    }
+    else{
+        alert('Choose All Options');
+    }
+    if(m_curr_choose_plan === 'Customized'){
+        //     var obj = {
+        //         'Meal Plan':m_curr_choose_plan,
+        //     // 'Gender':m_curr_gender,
+        //     'Weeks':m_curr_how_many_weeks,
+        //     'Meals Per Day':m_curr_meals_per_day,
+        //     'm_closest_date':m_closest_date,
+        //     'meal_data':meal_data               
+        // }
+        // console.log(obj);
 
-            var obj2 = {
-                'Meal Plan':m_curr_choose_plan,
-                'Weeks':m_curr_how_many_weeks,
-                'Meals Per Day':m_curr_meals_per_day,
-                'm_closest_date':m_closest_date,
-                 'meal_data':meal_data_obj, 
-                'mPriceTotal':mPriceTotal,
-                'mFatTotal':mFatTotal,
-                'mProteinTotal':mProteinTotal,
-                'mCarbTotal':mCarbTotal
-            }            
-            //console.log(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2).length == 0)
-            if(obj2.Weeks == 4){
+        var obj2 = {
+            'Meal Plan':m_curr_choose_plan,
+            'Weeks':m_curr_how_many_weeks,
+            'Meals Per Day':m_curr_meals_per_day,
+            'm_closest_date':m_closest_date,
+            'meal_data':meal_data_obj, 
+            'mPriceTotal':mPriceTotal,
+            'mFatTotal':mFatTotal,
+            'mProteinTotal':mProteinTotal,
+            'mCarbTotal':mCarbTotal
+        } 
+        console.log(obj2,obj2.m_meals_per_day)           
+        //console.log(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2).length == 0)
+        if(obj2.Weeks == 4){
+            if(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2 && obj2.meal_data.week1.day3 && obj2.meal_data.week1.day4 && obj2.meal_data.week1.day5 &&
+                    obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
+                    obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
+                    obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5
+                    ).length == 0){
+                alert('Please select all meals')
+            }
+            else{
+                $.ajax({
+                          url: '/post-values/',
+                          contentType: 'application/json',
+                          data: JSON.stringify(obj2),
+                          type: 'POST',
+                          success: postSuccess,
+                    });
+            }
+        }
+        else if(obj2.Weeks == 8){
                 if(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2 && obj2.meal_data.week1.day3 && obj2.meal_data.week1.day4 && obj2.meal_data.week1.day5 &&
-                        obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
-                        obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
-                        obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5
-                        ).length == 0){
+                obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
+                obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
+                obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5 &&
+                obj2.meal_data.week5.day1 && obj2.meal_data.week5.day2 && obj2.meal_data.week5.day3 && obj2.meal_data.week5.day4 && obj2.meal_data.week5.day5 &&
+                obj2.meal_data.week6.day1 && obj2.meal_data.week6.day2 && obj2.meal_data.week6.day3 && obj2.meal_data.week6.day4 && obj2.meal_data.week6.day5 &&
+                obj2.meal_data.week7.day1 && obj2.meal_data.week7.day2 && obj2.meal_data.week7.day3 && obj2.meal_data.week7.day4 && obj2.meal_data.week7.day5 &&
+                obj2.meal_data.week8.day1 && obj2.meal_data.week8.day2 && obj2.meal_data.week8.day3 && obj2.meal_data.week8.day4 && obj2.meal_data.week8.day5 &&
+                obj2.meal_data.week9.day1 && obj2.meal_data.week9.day2 && obj2.meal_data.week9.day3 && obj2.meal_data.week9.day4 && obj2.meal_data.week9.day5 &&
+                obj2.meal_data.week10.day1 && obj2.meal_data.week10.day2 && obj2.meal_data.week10.day3 && obj2.meal_data.week10.day4 && obj2.meal_data.week10.day5 &&
+                obj2.meal_data.week11.day1 && obj2.meal_data.week11.day2 && obj2.meal_data.week11.day3 && obj2.meal_data.week11.day4 && obj2.meal_data.week11.day5 && 
+                obj2.meal_data.week12.day1 && obj2.meal_data.week12.day2 && obj2.meal_data.week12.day3 && obj2.meal_data.week12.day4 && obj2.meal_data.week12.day5).length == 0){
                     alert('Please select all meals')
                 }
                 else{
                     $.ajax({
-                              url: '/post-values/',
-                              contentType: 'application/json',
-                              data: JSON.stringify(obj2),
-                              type: 'POST',
-                              success: postSuccess,
-                        });
+                          url: '/post-values/',
+                          contentType: 'application/json',
+                          data: JSON.stringify(obj2),
+                          type: 'POST',
+                          success: postSuccess,
+                    });
                 }
-            }
-            else if(obj2.Weeks == 8){
-                    if(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2 && obj2.meal_data.week1.day3 && obj2.meal_data.week1.day4 && obj2.meal_data.week1.day5 &&
-                    obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
-                    obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
-                    obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5 &&
-                    obj2.meal_data.week5.day1 && obj2.meal_data.week5.day2 && obj2.meal_data.week5.day3 && obj2.meal_data.week5.day4 && obj2.meal_data.week5.day5 &&
-                    obj2.meal_data.week6.day1 && obj2.meal_data.week6.day2 && obj2.meal_data.week6.day3 && obj2.meal_data.week6.day4 && obj2.meal_data.week6.day5 &&
-                    obj2.meal_data.week7.day1 && obj2.meal_data.week7.day2 && obj2.meal_data.week7.day3 && obj2.meal_data.week7.day4 && obj2.meal_data.week7.day5 &&
-                    obj2.meal_data.week8.day1 && obj2.meal_data.week8.day2 && obj2.meal_data.week8.day3 && obj2.meal_data.week8.day4 && obj2.meal_data.week8.day5 &&
-                    obj2.meal_data.week9.day1 && obj2.meal_data.week9.day2 && obj2.meal_data.week9.day3 && obj2.meal_data.week9.day4 && obj2.meal_data.week9.day5 &&
-                    obj2.meal_data.week10.day1 && obj2.meal_data.week10.day2 && obj2.meal_data.week10.day3 && obj2.meal_data.week10.day4 && obj2.meal_data.week10.day5 &&
-                    obj2.meal_data.week11.day1 && obj2.meal_data.week11.day2 && obj2.meal_data.week11.day3 && obj2.meal_data.week11.day4 && obj2.meal_data.week11.day5 && 
-                    obj2.meal_data.week12.day1 && obj2.meal_data.week12.day2 && obj2.meal_data.week12.day3 && obj2.meal_data.week12.day4 && obj2.meal_data.week12.day5).length == 0){
-                        alert('Please select all meals')
-                    }
-                    else{
-                        $.ajax({
-                              url: '/post-values/',
-                              contentType: 'application/json',
-                              data: JSON.stringify(obj2),
-                              type: 'POST',
-                              success: postSuccess,
-                        });
-                    }
-            }
-            else if(obj2.Weeks == 12){
-                    if(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2 && obj2.meal_data.week1.day3 && obj2.meal_data.week1.day4 && obj2.meal_data.week1.day5 &&
-                    obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
-                    obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
-                    obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5 &&
-                    obj2.meal_data.week5.day1 && obj2.meal_data.week5.day2 && obj2.meal_data.week5.day3 && obj2.meal_data.week5.day4 && obj2.meal_data.week5.day5 &&
-                    obj2.meal_data.week6.day1 && obj2.meal_data.week6.day2 && obj2.meal_data.week6.day3 && obj2.meal_data.week6.day4 && obj2.meal_data.week6.day5 &&
-                    obj2.meal_data.week7.day1 && obj2.meal_data.week7.day2 && obj2.meal_data.week7.day3 && obj2.meal_data.week7.day4 && obj2.meal_data.week7.day5 &&
-                    obj2.meal_data.week8.day1 && obj2.meal_data.week8.day2 && obj2.meal_data.week8.day3 && obj2.meal_data.week8.day4 && obj2.meal_data.week8.day5 &&
-                    obj2.meal_data.week9.day1 && obj2.meal_data.week9.day2 && obj2.meal_data.week9.day3 && obj2.meal_data.week9.day4 && obj2.meal_data.week9.day5 &&
-                    obj2.meal_data.week10.day1 && obj2.meal_data.week10.day2 && obj2.meal_data.week10.day3 && obj2.meal_data.week10.day4 && obj2.meal_data.week10.day5 &&
-                    obj2.meal_data.week11.day1 && obj2.meal_data.week11.day2 && obj2.meal_data.week11.day3 && obj2.meal_data.week11.day4 && obj2.meal_data.week11.day5 &&
-                    obj2.meal_data.week12.day1 && obj2.meal_data.week12.day2 && obj2.meal_data.week12.day3 && obj2.meal_data.week12.day4 && obj2.meal_data.week12.day5).length == 0){
-                        alert('Please select all meals')
-                    }
-                    else{
-                        $.ajax({
-                              url: '/post-values/',
-                              contentType: 'application/json',
-                              data: JSON.stringify(obj2),
-                              type: 'POST',
-                              success: postSuccess,
-                        });
-                    }
-                }
-            else{
-                swal('Error')
-            }
-           
         }
+        else if(obj2.Weeks == 12){
+                if(Object.keys(obj2.meal_data.week1.day1 && obj2.meal_data.week1.day2 && obj2.meal_data.week1.day3 && obj2.meal_data.week1.day4 && obj2.meal_data.week1.day5 &&
+                obj2.meal_data.week2.day1 && obj2.meal_data.week2.day2 && obj2.meal_data.week2.day3 && obj2.meal_data.week2.day4 && obj2.meal_data.week2.day5 &&
+                obj2.meal_data.week3.day1 && obj2.meal_data.week3.day2 && obj2.meal_data.week3.day3 && obj2.meal_data.week3.day4 && obj2.meal_data.week3.day5 &&
+                obj2.meal_data.week4.day1 && obj2.meal_data.week4.day2 && obj2.meal_data.week4.day3 && obj2.meal_data.week4.day4 && obj2.meal_data.week4.day5 &&
+                obj2.meal_data.week5.day1 && obj2.meal_data.week5.day2 && obj2.meal_data.week5.day3 && obj2.meal_data.week5.day4 && obj2.meal_data.week5.day5 &&
+                obj2.meal_data.week6.day1 && obj2.meal_data.week6.day2 && obj2.meal_data.week6.day3 && obj2.meal_data.week6.day4 && obj2.meal_data.week6.day5 &&
+                obj2.meal_data.week7.day1 && obj2.meal_data.week7.day2 && obj2.meal_data.week7.day3 && obj2.meal_data.week7.day4 && obj2.meal_data.week7.day5 &&
+                obj2.meal_data.week8.day1 && obj2.meal_data.week8.day2 && obj2.meal_data.week8.day3 && obj2.meal_data.week8.day4 && obj2.meal_data.week8.day5 &&
+                obj2.meal_data.week9.day1 && obj2.meal_data.week9.day2 && obj2.meal_data.week9.day3 && obj2.meal_data.week9.day4 && obj2.meal_data.week9.day5 &&
+                obj2.meal_data.week10.day1 && obj2.meal_data.week10.day2 && obj2.meal_data.week10.day3 && obj2.meal_data.week10.day4 && obj2.meal_data.week10.day5 &&
+                obj2.meal_data.week11.day1 && obj2.meal_data.week11.day2 && obj2.meal_data.week11.day3 && obj2.meal_data.week11.day4 && obj2.meal_data.week11.day5 &&
+                obj2.meal_data.week12.day1 && obj2.meal_data.week12.day2 && obj2.meal_data.week12.day3 && obj2.meal_data.week12.day4 && obj2.meal_data.week12.day5).length == 0){
+                    alert('Please select all meals')
+                }
+                else{
+                    $.ajax({
+                          url: '/post-values/',
+                          contentType: 'application/json',
+                          data: JSON.stringify(obj2),
+                          type: 'POST',
+                          success: postSuccess,
+                    });
+                }
+            }
+        else{
+            swal('Error')
+        }
+       
+    }
 
     function postSuccess(data,textStatus,jqXHR)
     {
@@ -1091,7 +1096,7 @@ $(document).on('click','#mSubmitBtn',function(){
 
     clearCookies();
     clearPriceCookies();
-    location.reload();
+    //location.reload();
     });
 function clearPriceCookies(){
 
