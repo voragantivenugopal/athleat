@@ -161,7 +161,7 @@ def userSignup(request):
 			request.session['partner_id'] = user_data['partner_id'][0]
 			# return render(request, 'login.html', {'error': 'Thank You for
 			# choosing us !'})
-			return HttpResponseRedirect('/menu')
+			return HttpResponseRedirect('/meal-builder')
 		except Exception as e:
 			print e
 			return render(request, 'login.html', {'error': 'Email already exists! If you forgot your password, please reset it !'})
