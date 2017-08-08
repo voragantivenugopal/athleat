@@ -436,26 +436,26 @@
 									</div>
 									{% for data in custom_meal_data %}  
 									<div role="tabpanel" class="tab-pane fade in" id="p{{data.id}}">
-										  <div class="col-md-6">
+										  <div class="col-md-6" style="text-align: left;">
 										  <div class="form-group form-inline">
 										    <label for=""><strong style="color: #4da1ff">Grams</strong> </label>
-										    <select class="form-control mChangeGrams" >
+										    <select class="form-control mChangeGrams" style="height: 40px;">
 										      <option value="100">100</option>
 										      <option value="150">150</option>
 										      <option value="200">200</option>
 										    </select>
 										  </div>
-										  	<span>Protein :</span><span id="dataProtein_A">{{data.protein}}</span><br>
-											<span>Fat :</span><span id="dataFat_A">{{data.fat}}</span><br>	
-											<span>Carb :</span><span id="dataCarb_A">{{data.carb}}</span><br>
-											<span>Price :</span><span id="dataPrice_A">{{data.price}}</span><br>
+										  	<span>Protein :</span><span id="dataProtein_A">{{data.protein}}</span> g<br>
+											<span>Fat :</span><span id="dataFat_A">{{data.fat}}</span> g<br>	
+											<span>Carb :</span><span id="dataCarb_A">{{data.carb}}</span> g<br>
+											<span>Price :</span><span id="dataPrice_A">{{data.price}}</span> AED<br>
 										  </div>
-										  <div class="col-md-6">
+										  <div class="col-md-6" style="text-align: left;">
 										  
-										  <span>Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
-											<span>Fat :</span><span id="dataFat">{{data.fat}}</span><br>	
-											<span>Carb :</span><span id="dataCarb">{{data.carb}}</span><br>
-											<span>Price :</span><span id="dataPrice">{{data.price}}</span><br>
+										  <span>Protein :</span><strong><span id="dataProtein">{{data.protein}}</span> g</strong><br>
+											<span>Fat :</span><strong><span id="dataFat">{{data.fat}}</span> g</strong><br>	
+											<span>Carb :</span><strong><span id="dataCarb">{{data.carb}}</span> g</strong><br>
+											<span>Price :</span><strong>AED <span id="dataPrice">{{data.price}}</span></strong><br>
 										  </div>
 
 									</div>{% endfor %}
