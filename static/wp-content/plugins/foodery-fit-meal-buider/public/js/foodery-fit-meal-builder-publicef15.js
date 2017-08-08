@@ -386,7 +386,136 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
 
 var mAthleatFinalPrice = '';
 $(document).on('click','.mMealsPerDayBtn',function(e){
+    mealidsw1d1obj = {};
+mealidsw2d1obj = {};
+mealidsw3d1obj = {};
+mealidsw4d1obj = {};
+mealidsw5d1obj = {};
+mealidsw6d1obj = {};
+mealidsw7d1obj = {};
+mealidsw8d1obj = {};
+mealidsw9d1obj = {};
+mealidsw10d1obj = {};
+mealidsw11d1obj = {};
+mealidsw12d1obj = {};
+mealidsw1d2obj = {};
+mealidsw2d2obj = {};
+mealidsw3d2obj = {};
+mealidsw4d2obj = {};
+mealidsw5d2obj = {};
+mealidsw6d2obj = {};
+mealidsw7d2obj = {};
+mealidsw8d2obj = {};
+mealidsw9d2obj = {};
+mealidsw10d2obj = {};
+mealidsw11d2obj = {};
+mealidsw12d2obj = {};
+mealidsw1d3obj = {};
+mealidsw2d3obj = {};
+mealidsw3d3obj = {};
+mealidsw4d3obj = {};
+mealidsw5d3obj = {};
+mealidsw6d3obj = {};
+mealidsw7d3obj = {};
+mealidsw8d3obj = {};
+mealidsw9d3obj = {};
+mealidsw10d3obj = {};
+mealidsw11d3obj = {};
+mealidsw12d3obj = {};
+mealidsw1d4obj = {};
+mealidsw2d4obj = {};
+mealidsw3d4obj = {};
+mealidsw4d4obj = {};
+mealidsw5d4obj = {};
+mealidsw6d4obj = {};
+mealidsw7d4obj = {};
+mealidsw8d4obj = {};
+mealidsw9d4obj = {};
+mealidsw10d4obj = {};
+mealidsw11d4obj = {};
+mealidsw12d4obj = {};
+mealidsw1d5obj = {};
+mealidsw2d5obj = {};
+mealidsw3d5obj = {};
+mealidsw4d5obj = {};
+mealidsw5d5obj = {};
+mealidsw6d5obj = {};
+mealidsw7d5obj = {};
+mealidsw8d5obj = {};
+mealidsw9d5obj = {};
+mealidsw10d5obj = {};
+mealidsw11d5obj = {};
+mealidsw12d5obj = {};
+console.log('mMealActiveIDs',mMealActiveIDs);
+mMealActiveIDs[111] =mMealActiveIDs[112]=mMealActiveIDs[113]=mMealActiveIDs[114]=
+mMealActiveIDs[121]=mMealActiveIDs[122]=mMealActiveIDs[123]=mMealActiveIDs[124]=
+mMealActiveIDs[131]=mMealActiveIDs[132]=mMealActiveIDs[133]=mMealActiveIDs[134]=
+mMealActiveIDs[141]=mMealActiveIDs[142]=mMealActiveIDs[143]=mMealActiveIDs[144]=
+mMealActiveIDs[151]=mMealActiveIDs[152]=mMealActiveIDs[153]=mMealActiveIDs[154]=
+mMealActiveIDs[211]=mMealActiveIDs[212]=mMealActiveIDs[213]=mMealActiveIDs[214]=
+mMealActiveIDs[221]=mMealActiveIDs[222]=mMealActiveIDs[223]=mMealActiveIDs[224]=
+mMealActiveIDs[231]=mMealActiveIDs[232]=mMealActiveIDs[233]=mMealActiveIDs[234]=
+mMealActiveIDs[241]=mMealActiveIDs[242]=mMealActiveIDs[243]=mMealActiveIDs[244]=
+mMealActiveIDs[251]=mMealActiveIDs[252]=mMealActiveIDs[253]=mMealActiveIDs[254]=
+mMealActiveIDs[311]=mMealActiveIDs[312]=mMealActiveIDs[313]=mMealActiveIDs[314]=
+mMealActiveIDs[321]=mMealActiveIDs[322]=mMealActiveIDs[323]=mMealActiveIDs[324]=
+mMealActiveIDs[331]=mMealActiveIDs[332]=mMealActiveIDs[333]=mMealActiveIDs[334]=
+mMealActiveIDs[341]=mMealActiveIDs[342]=mMealActiveIDs[343]=mMealActiveIDs[344]=
+mMealActiveIDs[351]=mMealActiveIDs[352]=mMealActiveIDs[353]=mMealActiveIDs[354]=
+mMealActiveIDs[411]=mMealActiveIDs[412]=mMealActiveIDs[413]=mMealActiveIDs[414]=
+mMealActiveIDs[421]=mMealActiveIDs[422]=mMealActiveIDs[423]=mMealActiveIDs[424]=
+mMealActiveIDs[431]=mMealActiveIDs[432]=mMealActiveIDs[433]=mMealActiveIDs[434]=
+mMealActiveIDs[441]=mMealActiveIDs[442]=mMealActiveIDs[443]=mMealActiveIDs[444]=
+mMealActiveIDs[451]=mMealActiveIDs[452]=mMealActiveIDs[453]=mMealActiveIDs[454]=
+mMealActiveIDs[511]=mMealActiveIDs[512]=mMealActiveIDs[513]=mMealActiveIDs[514]=
+mMealActiveIDs[521]=mMealActiveIDs[522]=mMealActiveIDs[523]=mMealActiveIDs[524]=
+mMealActiveIDs[531]=mMealActiveIDs[532]=mMealActiveIDs[533]=mMealActiveIDs[534]=
+mMealActiveIDs[541]=mMealActiveIDs[542]=mMealActiveIDs[543]=mMealActiveIDs[544]=
+mMealActiveIDs[551]=mMealActiveIDs[552]=mMealActiveIDs[553]=mMealActiveIDs[554]=
+mMealActiveIDs[611]=mMealActiveIDs[612]=mMealActiveIDs[613]=mMealActiveIDs[614]=
+mMealActiveIDs[621]=mMealActiveIDs[622]=mMealActiveIDs[623]=mMealActiveIDs[624]=
+mMealActiveIDs[631]=mMealActiveIDs[632]=mMealActiveIDs[633]=mMealActiveIDs[634]=
+mMealActiveIDs[641]=mMealActiveIDs[642]=mMealActiveIDs[643]=mMealActiveIDs[644]=
+mMealActiveIDs[651]=mMealActiveIDs[652]=mMealActiveIDs[653]=mMealActiveIDs[654]=
+mMealActiveIDs[711]=mMealActiveIDs[712]=mMealActiveIDs[713]=mMealActiveIDs[714]=
+mMealActiveIDs[721]=mMealActiveIDs[722]=mMealActiveIDs[723]=mMealActiveIDs[724]=
+mMealActiveIDs[731]=mMealActiveIDs[732]=mMealActiveIDs[733]=mMealActiveIDs[734]=
+mMealActiveIDs[741]=mMealActiveIDs[742]=mMealActiveIDs[743]=mMealActiveIDs[744]=
+mMealActiveIDs[751]=mMealActiveIDs[752]=mMealActiveIDs[753]=mMealActiveIDs[754]=
+mMealActiveIDs[811]=mMealActiveIDs[812]=mMealActiveIDs[813]=mMealActiveIDs[814]=
+mMealActiveIDs[821]=mMealActiveIDs[822]=mMealActiveIDs[823]=mMealActiveIDs[824]=
+mMealActiveIDs[831]=mMealActiveIDs[832]=mMealActiveIDs[833]=mMealActiveIDs[834]=
+mMealActiveIDs[841]=mMealActiveIDs[842]=mMealActiveIDs[843]=mMealActiveIDs[844]=
+mMealActiveIDs[851]=mMealActiveIDs[852]=mMealActiveIDs[853]=mMealActiveIDs[854]=
+mMealActiveIDs[911]=mMealActiveIDs[912]=mMealActiveIDs[913]=mMealActiveIDs[914]=
+mMealActiveIDs[921]=mMealActiveIDs[922]=mMealActiveIDs[923]=mMealActiveIDs[924]=
+mMealActiveIDs[931]=mMealActiveIDs[932]=mMealActiveIDs[933]=mMealActiveIDs[934]=
+mMealActiveIDs[941]=mMealActiveIDs[942]=mMealActiveIDs[943]=mMealActiveIDs[944]=
+mMealActiveIDs[951]=mMealActiveIDs[952]=mMealActiveIDs[953]=mMealActiveIDs[954]=
+mMealActiveIDs[1011]=mMealActiveIDs[1012]=mMealActiveIDs[1013]=mMealActiveIDs[1014]=
+mMealActiveIDs[1021]=mMealActiveIDs[1022]=mMealActiveIDs[1023]=mMealActiveIDs[1024]=
+mMealActiveIDs[1031]=mMealActiveIDs[1032]=mMealActiveIDs[1033]=mMealActiveIDs[1034]=
+mMealActiveIDs[1041]=mMealActiveIDs[1042]=mMealActiveIDs[1043]=mMealActiveIDs[1044]=
+mMealActiveIDs[1051]=mMealActiveIDs[1052]=mMealActiveIDs[1053]=mMealActiveIDs[1054]=
+mMealActiveIDs[1111]=mMealActiveIDs[1112]=mMealActiveIDs[1113]=mMealActiveIDs[1114]=
+mMealActiveIDs[1121]=mMealActiveIDs[1122]=mMealActiveIDs[1123]=mMealActiveIDs[1124]=
+mMealActiveIDs[1131]=mMealActiveIDs[1132]=mMealActiveIDs[1133]=mMealActiveIDs[1134]=
+mMealActiveIDs[1141]=mMealActiveIDs[1142]=mMealActiveIDs[1143]=mMealActiveIDs[1144]=
+mMealActiveIDs[1151]=mMealActiveIDs[1152]=mMealActiveIDs[1153]=mMealActiveIDs[1154]=
+mMealActiveIDs[1211]=mMealActiveIDs[1212]=mMealActiveIDs[1213]=mMealActiveIDs[1214]=
+mMealActiveIDs[1221]=mMealActiveIDs[1222]=mMealActiveIDs[1223]=mMealActiveIDs[1224]=
+mMealActiveIDs[1231]=mMealActiveIDs[1232]=mMealActiveIDs[1233]=mMealActiveIDs[1234]=
+mMealActiveIDs[1241]=mMealActiveIDs[1242]=mMealActiveIDs[1243]=mMealActiveIDs[1244]=
+mMealActiveIDs[1251]=mMealActiveIDs[1252]=mMealActiveIDs[1253]=mMealActiveIDs[1254]=
+  {'dayId':0,
+                'Price': 0,
+                'MealId':0,
+                'Fat': 0,
+                'Protein':0,
+                'Carb':0}
 
+// mMealActiveIDs.remove();
+console.log('mMealActiveIDs',mMealActiveIDs);
             
     // mMealActiveIDsArry = [];
     $('.mMealsPerDayBtn').removeClass('btn-success');
@@ -397,6 +526,10 @@ $(document).on('click','.mMealsPerDayBtn',function(e){
     mFatTotal = 0;
     mProteinTotal = 0;
     mCarbTotal = 0;
+    $('.mtxtStatsPricePerMeal').text(mPriceTotal);
+                $('.mtxtDebugDailyFat').text(mFatTotal);
+                $('.mtxtDebugDailyCarbs').text(mCarbTotal);
+                $('.mtxtDebugDailyProtein').text(mProteinTotal);
     Cookies.set('mPriceTotal', mPriceTotal);
     Cookies.set('mFatTotal', mFatTotal);
     Cookies.set('mProteinTotal', mProteinTotal);
@@ -558,7 +691,9 @@ function dynamicVariablesDay(week,day){
 
 
 $(document).on('click','#modal-add-meal-btn',function(e){
+
             getCookieInfo();
+
         var meal_item = $('.modal-body .tab-pane.active .nav-tabs .active a').text();
         var meal_item_id = $('.modal-body .tab-pane.active .nav-tabs .active a').attr('id');
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
@@ -937,6 +1072,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
     });
 
 mMealActiveIDsArry.push(mMealActiveIDs)
+
 
 
 $(document).on('click','.dislikes',function(){
