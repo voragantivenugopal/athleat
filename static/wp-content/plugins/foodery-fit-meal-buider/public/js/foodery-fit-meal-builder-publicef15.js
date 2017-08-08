@@ -1134,9 +1134,8 @@ $(document).on('click','#mSubmitBtn',function(){
                       error : postFailure,
                 });
         function postFailure(){
-
-        if(m_curr_how_many_weeks == '' || m_curr_meals_per_day == '' || m_meals_closest_date ==''|| mAthleatFinalPrice == ''){
         getCookieInfo();
+        if(m_curr_how_many_weeks == '' || m_curr_meals_per_day == '' || m_meals_closest_date ==''|| mAthleatFinalPrice == ''){
          swal(
               'Please Choose all options',
             )
@@ -1145,7 +1144,6 @@ $(document).on('click','#mSubmitBtn',function(){
                   'Something is missing, Please try again',
                 )
         }
-        window.location = "/";
         }
     }
     
@@ -1190,7 +1188,7 @@ if(m_curr_choose_plan === 'Customized'){
     function postcustomaizedFailure(data,textStatus,jqXHR)
     {   
         getCookieInfo();
-        if(m_curr_how_many_weeks == '' || m_curr_meals_per_day == '' || m_closest_date == ''|| meal_data == '' || mPriceTotal == 0 || mFatTotal == 0 || mProteinTotal == 0 || mCarbTotal == 0){
+        if(m_curr_how_many_week == '' || m_curr_meals_per_day == '' || m_closest_date == ''|| meal_data == '' || mPriceTotal == 0 || mFatTotal == 0 || mProteinTotal == 0 || mCarbTotal == 0){
          swal(
               'Please Choose all options',
             )
@@ -1199,8 +1197,6 @@ if(m_curr_choose_plan === 'Customized'){
                   'Something is missing, Please try again',
                 )
         }
-      window.location = "/";
-      
     }
 
     clearCookies();
