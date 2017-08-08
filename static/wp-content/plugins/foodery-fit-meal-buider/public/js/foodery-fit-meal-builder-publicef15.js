@@ -387,6 +387,7 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
 
 var mAthleatFinalPrice = '';
 $(document).on('click','.mMealsPerDayBtn',function(e){
+    // mMealActiveIDsArry = [];
     $('.mMealsPerDayBtn').removeClass('btn-success');
     $('#mChooseMealPlanData').html('');
     clearPriceCookies();

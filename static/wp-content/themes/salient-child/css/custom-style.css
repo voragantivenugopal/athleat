@@ -495,3 +495,9 @@ input[type="radio"] .styled:checked + label::after {
     text-overflow: ellipsis;
     max-width: 125px;
 }
+#myModal .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 3px 15px;
+    font-size: 13px;
+}
