@@ -1153,6 +1153,7 @@ if(m_curr_choose_plan === 'Customized'){
                       data: JSON.stringify(obj2),
                       type: 'POST',
                       success: postSuccess,
+                      // error: postFailure,
     });        
    
 }
@@ -1168,6 +1169,18 @@ if(m_curr_choose_plan === 'Customized'){
       window.location = "/";
       
     }
+
+    // function postFailure(data,textStatus,jqXHR)
+    // {
+    //     // alert('Sit back and let us take care of the rest. We will be getting in touch with you very soon.');
+    //       swal(
+    //       'Something is Happened',
+    //       'Please check once All the options',
+    //       'error'
+    //     )
+    //   window.location = "/";
+      
+    // }
 
     clearCookies();
     clearPriceCookies();
