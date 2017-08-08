@@ -1146,7 +1146,7 @@ if(m_curr_choose_plan === 'Customized'){
         'mProteinTotal':mProteinTotal,
         'mCarbTotal':mCarbTotal
     } 
-    
+    console.log(obj2,'Customized Data');
     $.ajax({
                       url: '/post-values/',
                       contentType: 'application/json',
@@ -1165,7 +1165,7 @@ if(m_curr_choose_plan === 'Customized'){
           'Sit back and let us take care of the rest. We will be getting in touch with you very soon.',
           'success'
         )
-      window.location = "/menu";
+      window.location = "/";
       
     }
 
