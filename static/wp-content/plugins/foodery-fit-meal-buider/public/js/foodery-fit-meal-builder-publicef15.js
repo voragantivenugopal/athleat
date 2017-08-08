@@ -1124,13 +1124,29 @@ $(document).on('click','#mSubmitBtn',function(){
             'mAthleatFinalPrice':mAthleatFinalPrice,
             'Dislikes':m_selected_dislikes_value,
             'Addons':m_selected_addons_value}
+        
         $.ajax({
                       url: '/post-values/',
                       contentType: 'application/json',
                       data: JSON.stringify(obj),
                       type: 'POST',
                       success: postSuccess,
+                      error : postFailure,
                 });
+        function postFailure(){
+
+        if(m_curr_how_many_weeks == '' || m_curr_meals_per_day == '' || m_meals_closest_date ==''|| mAthleatFinalPrice == ''){
+        getCookieInfo();
+         swal(
+              'Please Choose all options',
+            )
+        }else{
+             swal(
+                  'Something is missing, Please try again',
+                )
+        }
+        window.location = "/";
+        }
     }
     
 if(m_curr_choose_plan === 'Customized'){
@@ -1147,13 +1163,14 @@ if(m_curr_choose_plan === 'Customized'){
         'mCarbTotal':mCarbTotal
     } 
     console.log(obj2,'Customized Data');
+
     $.ajax({
                       url: '/post-values/',
                       contentType: 'application/json',
                       data: JSON.stringify(obj2),
                       type: 'POST',
                       success: postSuccess,
-                      // error: postFailure,
+                      error: postcustomaizedFailure,
     });        
    
 }
@@ -1170,17 +1187,21 @@ if(m_curr_choose_plan === 'Customized'){
       
     }
 
-    // function postFailure(data,textStatus,jqXHR)
-    // {
-    //     // alert('Sit back and let us take care of the rest. We will be getting in touch with you very soon.');
-    //       swal(
-    //       'Something is Happened',
-    //       'Please check once All the options',
-    //       'error'
-    //     )
-    //   window.location = "/";
+    function postcustomaizedFailure(data,textStatus,jqXHR)
+    {   
+        getCookieInfo();
+        if(m_curr_how_many_weeks == '' || m_curr_meals_per_day == '' || m_closest_date == ''|| meal_data == '' || mPriceTotal == 0 || mFatTotal == 0 || mProteinTotal == 0 || mCarbTotal == 0){
+         swal(
+              'Please Choose all options',
+            )
+        }else{
+             swal(
+                  'Something is missing, Please try again',
+                )
+        }
+      window.location = "/";
       
-    // }
+    }
 
     clearCookies();
     clearPriceCookies();
