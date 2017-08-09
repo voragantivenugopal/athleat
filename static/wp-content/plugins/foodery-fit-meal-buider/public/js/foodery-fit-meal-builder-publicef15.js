@@ -2,81 +2,10 @@
 
 
 (function( $ ) {
-var mealidsw1d1obj = {};
-var mealidsw2d1obj = {};
-var mealidsw3d1obj = {};
-var mealidsw4d1obj = {};
-var mealidsw5d1obj = {};
-var mealidsw6d1obj = {};
-var mealidsw7d1obj = {};
-var mealidsw8d1obj = {};
-var mealidsw9d1obj = {};
-var mealidsw10d1obj = {};
-var mealidsw11d1obj = {};
-var mealidsw12d1obj = {};
 
-var mealidsw1d2obj = {};
-var mealidsw2d2obj = {};
-var mealidsw3d2obj = {};
-var mealidsw4d2obj = {};
-var mealidsw5d2obj = {};
-var mealidsw6d2obj = {};
-var mealidsw7d2obj = {};
-var mealidsw8d2obj = {};
-var mealidsw9d2obj = {};
-var mealidsw10d2obj = {};
-var mealidsw11d2obj = {};
-var mealidsw12d2obj = {};
-
-var mealidsw1d3obj = {};
-var mealidsw2d3obj = {};
-var mealidsw3d3obj = {};
-var mealidsw4d3obj = {};
-var mealidsw5d3obj = {};
-var mealidsw6d3obj = {};
-var mealidsw7d3obj = {};
-var mealidsw8d3obj = {};
-var mealidsw9d3obj = {};
-var mealidsw10d3obj = {};
-var mealidsw11d3obj = {};
-var mealidsw12d3obj = {};
-
-var mealidsw1d4obj = {};
-var mealidsw2d4obj = {};
-var mealidsw3d4obj = {};
-var mealidsw4d4obj = {};
-var mealidsw5d4obj = {};
-var mealidsw6d4obj = {};
-var mealidsw7d4obj = {};
-var mealidsw8d4obj = {};
-var mealidsw9d4obj = {};
-var mealidsw10d4obj = {};
-var mealidsw11d4obj = {};
-var mealidsw12d4obj = {};
-
-var mealidsw1d5obj = {};
-var mealidsw2d5obj = {};
-var mealidsw3d5obj = {};
-var mealidsw4d5obj = {};
-var mealidsw5d5obj = {};
-var mealidsw6d5obj = {};
-var mealidsw7d5obj = {};
-var mealidsw8d5obj = {};
-var mealidsw9d5obj = {};
-var mealidsw10d5obj = {};
-var mealidsw11d5obj = {};
-var mealidsw12d5obj = {};
-
-var meal_data = [];
-var week1_obj = {};
-var meal_ids = [];
-var week = '';
-var day = '';
-var day_data = {}
-
-var mealIds = [];
-var dayvalue = [];
-var dayssingledata= [];
+// var mealIds = [];
+// var dayvalue = [];
+// var dayssingledata= [];
 var mSingleMealPrice = 0;
 var mSingleMealFat = 0;
 var mSingleMealCarb = 0;
@@ -91,13 +20,13 @@ var mMealActiveID ='';
 var meal_data_copy = {};
 var mMealActiveIDs = {};
 var mMealActiveIDsArry = [];
-var testPrice = 0;
+// var testPrice = 0;
 var meal_data_obj = {}            
 
 getCookieInfo()
-var dynamicVariablesDaylist = []
-var dynamicVariablesWeeklist = []
-var mytotal = 0
+// var dynamicVariablesDaylist = []
+// var dynamicVariablesWeeklist = []
+// var mytotal = 0
 
 
 var m_curr_choose_plan = '';
@@ -386,7 +315,7 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
 
 var mAthleatFinalPrice = '';
 $(document).on('click','.mMealsPerDayBtn',function(e){
-    mealidsw1d1obj = {};
+mealidsw1d1obj = {};
 mealidsw2d1obj = {};
 mealidsw3d1obj = {};
 mealidsw4d1obj = {};
@@ -446,6 +375,14 @@ mealidsw9d5obj = {};
 mealidsw10d5obj = {};
 mealidsw11d5obj = {};
 mealidsw12d5obj = {};
+
+var meal_data = [];
+var week1_obj = {};
+var meal_ids = [];
+var week = '';
+var day = '';
+var day_data = {}
+
 console.log('mMealActiveIDs',mMealActiveIDs);
 mMealActiveIDs[111] =mMealActiveIDs[112]=mMealActiveIDs[113]=mMealActiveIDs[114]=
 mMealActiveIDs[121]=mMealActiveIDs[122]=mMealActiveIDs[123]=mMealActiveIDs[124]=
@@ -508,11 +445,11 @@ mMealActiveIDs[1231]=mMealActiveIDs[1232]=mMealActiveIDs[1233]=mMealActiveIDs[12
 mMealActiveIDs[1241]=mMealActiveIDs[1242]=mMealActiveIDs[1243]=mMealActiveIDs[1244]=
 mMealActiveIDs[1251]=mMealActiveIDs[1252]=mMealActiveIDs[1253]=mMealActiveIDs[1254]=
   {'dayId':0,
-                'Price': 0,
-                'MealId':0,
-                'Fat': 0,
-                'Protein':0,
-                'Carb':0}
+    'Price': 0,
+    'MealId':0,
+    'Fat': 0,
+    'Protein':0,
+    'Carb':0}
 
 // mMealActiveIDs.remove();
 //console.log('mMealActiveIDs',mMealActiveIDs);
@@ -520,29 +457,27 @@ mMealActiveIDs[1251]=mMealActiveIDs[1252]=mMealActiveIDs[1253]=mMealActiveIDs[12
     // mMealActiveIDsArry = [];
     $('.mMealsPerDayBtn').removeClass('btn-success');
     $('#mChooseMealPlanData').html('');
-    clearPriceCookies();
-    getCookieInfo();
+    // clearPriceCookies();
+    // getCookieInfo();
     mPriceTotal = 0;
     mFatTotal = 0;
     mProteinTotal = 0;
     mCarbTotal = 0;
     $('.mtxtStatsPricePerMeal').text(mPriceTotal);
-                $('.mtxtDebugDailyFat').text(mFatTotal);
-                $('.mtxtDebugDailyCarbs').text(mCarbTotal);
-                $('.mtxtDebugDailyProtein').text(mProteinTotal);
+    $('.mtxtDebugDailyFat').text(mFatTotal);
+    $('.mtxtDebugDailyCarbs').text(mCarbTotal);
+    $('.mtxtDebugDailyProtein').text(mProteinTotal);
     Cookies.set('mPriceTotal', mPriceTotal);
     Cookies.set('mFatTotal', mFatTotal);
     Cookies.set('mProteinTotal', mProteinTotal);
     Cookies.set('mCarbTotal', mCarbTotal);
     Cookies.set('msummeryobj', msummeryobj);
-    clearPriceCookies();
 
-    getCookieInfo();
     if(m_curr_choose_plan == 'Athleat-l' || m_curr_choose_plan == 'Athleat-h'){    
         $('.dislikes').prop('checked', false); 
         $('.addons').prop('checked', false); 
-        clearPriceCookies()
-        getCookieInfo();
+        // clearPriceCookies()
+        // getCookieInfo();
         var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');        
         Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);                
         if(m_curr_meals_per_day == '2'){
