@@ -2,7 +2,6 @@
 
 
 (function( $ ) {
-
 // var mealIds = [];
 // var dayvalue = [];
 // var dayssingledata= [];
@@ -23,7 +22,7 @@ var mMealActiveIDsArry = [];
 // var testPrice = 0;
 var meal_data_obj = {}            
 
-getCookieInfo()
+// getCookieInfo()
 // var dynamicVariablesDaylist = []
 // var dynamicVariablesWeeklist = []
 // var mytotal = 0
@@ -237,41 +236,39 @@ $(document).on('click','#mDislikesNext',function(e){
 });
 $(document).on('click','#mChooseMealPlanNext',function(e){
     getCookieInfo();
-    if(m_curr_how_many_weeks == 4 && (Object.keys(meal_data_obj.week1.day1 && meal_data_obj.week1.day2 && meal_data_obj.week1.day3 && meal_data_obj.week1.day4 && meal_data_obj.week1.day5 &&
-        meal_data_obj.week2.day1 && meal_data_obj.week2.day2 && meal_data_obj.week2.day3 && meal_data_obj.week2.day4 && meal_data_obj.week2.day5 &&
-        meal_data_obj.week3.day1 && meal_data_obj.week3.day2 && meal_data_obj.week3.day3 && meal_data_obj.week3.day4 && meal_data_obj.week3.day5 &&
-        meal_data_obj.week4.day1 && meal_data_obj.week4.day2 && meal_data_obj.week4.day3 && meal_data_obj.week4.day4 && meal_data_obj.week4.day5
-        ).length == 0)){
+    // Condition for selecting all meals in a selected week or not
+    if(m_curr_how_many_weeks == 4 && (Object.keys(meal_data_obj.week1.day1).length == 0 || Object.keys(meal_data_obj.week1.day2).length == 0 || Object.keys(meal_data_obj.week1.day3).length == 0 || Object.keys(meal_data_obj.week1.day4).length == 0 || Object.keys(meal_data_obj.week1.day5).length == 0 ||
+       Object.keys(meal_data_obj.week2.day1).length == 0 || Object.keys(meal_data_obj.week2.day2).length == 0 || Object.keys(meal_data_obj.week2.day3).length == 0 || Object.keys(meal_data_obj.week2.day4).length == 0 || Object.keys(meal_data_obj.week2.day5).length == 0 ||
+       Object.keys(meal_data_obj.week3.day1).length == 0 || Object.keys(meal_data_obj.week3.day2).length == 0 || Object.keys(meal_data_obj.week3.day3).length == 0 || Object.keys(meal_data_obj.week3.day4).length == 0 || Object.keys(meal_data_obj.week3.day5).length == 0 ||
+       Object.keys(meal_data_obj.week4.day1).length == 0 || Object.keys(meal_data_obj.week4.day2).length == 0 || Object.keys(meal_data_obj.week4.day3).length == 0 || Object.keys(meal_data_obj.week4.day4).length == 0 || Object.keys(meal_data_obj.week4.day5).length == 0)){
 
-        swal('Please select all meals')        
+         swal('Please select all meals')        
     }
-    else if(m_curr_how_many_weeks == 8 && (Object.keys(meal_data_obj.week1.day1 && meal_data_obj.week1.day2 && meal_data_obj.week1.day3 && meal_data_obj.week1.day4 && meal_data_obj.week1.day5 &&
-            meal_data_obj.week2.day1 && meal_data_obj.week2.day2 && meal_data_obj.week2.day3 && meal_data_obj.week2.day4 && meal_data_obj.week2.day5 &&
-            meal_data_obj.week3.day1 && meal_data_obj.week3.day2 && meal_data_obj.week3.day3 && meal_data_obj.week3.day4 && meal_data_obj.week3.day5 &&
-            meal_data_obj.week4.day1 && meal_data_obj.week4.day2 && meal_data_obj.week4.day3 && meal_data_obj.week4.day4 && meal_data_obj.week4.day5 &&
-            meal_data_obj.week5.day1 && meal_data_obj.week5.day2 && meal_data_obj.week5.day3 && meal_data_obj.week5.day4 && meal_data_obj.week5.day5 &&
-            meal_data_obj.week6.day1 && meal_data_obj.week6.day2 && meal_data_obj.week6.day3 && meal_data_obj.week6.day4 && meal_data_obj.week6.day5 &&
-            meal_data_obj.week7.day1 && meal_data_obj.week7.day2 && meal_data_obj.week7.day3 && meal_data_obj.week7.day4 && meal_data_obj.week7.day5 &&
-            meal_data_obj.week8.day1 && meal_data_obj.week8.day2 && meal_data_obj.week8.day3 && meal_data_obj.week8.day4 && meal_data_obj.week8.day5
-            ).length == 0)){
+    else if(m_curr_how_many_weeks == 8 && (Object.keys(meal_data_obj.week1.day1).length == 0 || Object.keys(meal_data_obj.week1.day2).length == 0 || Object.keys(meal_data_obj.week1.day3).length == 0 || Object.keys(meal_data_obj.week1.day4).length == 0 || Object.keys(meal_data_obj.week1.day5).length == 0 ||
+            Object.keys(meal_data_obj.week2.day1).length == 0 || Object.keys(meal_data_obj.week2.day2).length == 0 || Object.keys(meal_data_obj.week2.day3).length == 0 || Object.keys(meal_data_obj.week2.day4).length == 0 || Object.keys(meal_data_obj.week2.day5).length == 0 ||
+            Object.keys(meal_data_obj.week3.day1).length == 0 || Object.keys(meal_data_obj.week3.day2).length == 0 || Object.keys(meal_data_obj.week3.day3).length == 0 || Object.keys(meal_data_obj.week3.day4).length == 0 || Object.keys(meal_data_obj.week3.day5).length == 0 ||
+            Object.keys(meal_data_obj.week4.day1).length == 0 || Object.keys(meal_data_obj.week4.day2).length == 0 || Object.keys(meal_data_obj.week4.day3).length == 0 || Object.keys(meal_data_obj.week4.day4).length == 0 || Object.keys(meal_data_obj.week4.day5).length == 0 ||
+            Object.keys(meal_data_obj.week5.day1).length == 0 || Object.keys(meal_data_obj.week5.day2).length == 0 || Object.keys(meal_data_obj.week5.day3).length == 0 || Object.keys(meal_data_obj.week5.day4).length == 0 || Object.keys(meal_data_obj.week5.day5).length == 0 ||
+            Object.keys(meal_data_obj.week6.day1).length == 0 || Object.keys(meal_data_obj.week6.day2).length == 0 || Object.keys(meal_data_obj.week6.day3).length == 0 || Object.keys(meal_data_obj.week6.day4).length == 0 || Object.keys(meal_data_obj.week6.day5).length == 0 ||
+            Object.keys(meal_data_obj.week7.day1).length == 0 || Object.keys(meal_data_obj.week7.day2).length == 0 || Object.keys(meal_data_obj.week7.day3).length == 0 || Object.keys(meal_data_obj.week7.day4).length == 0 || Object.keys(meal_data_obj.week7.day5).length == 0 ||
+            Object.keys(meal_data_obj.week8.day1).length == 0 || Object.keys(meal_data_obj.week8.day2).length == 0 || Object.keys(meal_data_obj.week8.day3).length == 0 || Object.keys(meal_data_obj.week8.day4).length == 0 || Object.keys(meal_data_obj.week8.day5).length == 0)){
 
-            swal('Please select all meals')        
+              swal('Please select all meals')        
     }
-    else if(m_curr_how_many_weeks == 12 && (Object.keys(meal_data_obj.week1.day1 && meal_data_obj.week1.day2 && meal_data_obj.week1.day3 && meal_data_obj.week1.day4 && meal_data_obj.week1.day5 &&
-        meal_data_obj.week2.day1 && meal_data_obj.week2.day2 && meal_data_obj.week2.day3 && meal_data_obj.week2.day4 && meal_data_obj.week2.day5 &&
-        meal_data_obj.week3.day1 && meal_data_obj.week3.day2 && meal_data_obj.week3.day3 && meal_data_obj.week3.day4 && meal_data_obj.week3.day5 &&
-        meal_data_obj.week4.day1 && meal_data_obj.week4.day2 && meal_data_obj.week4.day3 && meal_data_obj.week4.day4 && meal_data_obj.week4.day5 &&
-        meal_data_obj.week5.day1 && meal_data_obj.week5.day2 && meal_data_obj.week5.day3 && meal_data_obj.week5.day4 && meal_data_obj.week5.day5 &&
-        meal_data_obj.week6.day1 && meal_data_obj.week6.day2 && meal_data_obj.week6.day3 && meal_data_obj.week6.day4 && meal_data_obj.week6.day5 &&
-        meal_data_obj.week7.day1 && meal_data_obj.week7.day2 && meal_data_obj.week7.day3 && meal_data_obj.week7.day4 && meal_data_obj.week7.day5 &&
-        meal_data_obj.week8.day1 && meal_data_obj.week8.day2 && meal_data_obj.week8.day3 && meal_data_obj.week8.day4 && meal_data_obj.week8.day5 &&
-        meal_data_obj.week9.day1 && meal_data_obj.week9.day2 && meal_data_obj.week9.day3 && meal_data_obj.week9.day4 && meal_data_obj.week9.day5 &&
-        meal_data_obj.week10.day1 && meal_data_obj.week10.day2 && meal_data_obj.week10.day3 && meal_data_obj.week10.day4 && meal_data_obj.week10.day5 &&
-        meal_data_obj.week11.day1 && meal_data_obj.week11.day2 && meal_data_obj.week11.day3 && meal_data_obj.week11.day4 && meal_data_obj.week11.day5 &&
-        meal_data_obj.week12.day1 && meal_data_obj.week12.day2 && meal_data_obj.week12.day3 && meal_data_obj.week12.day4 && meal_data_obj.week12.day5
-        ).length == 0)){
+    else if(m_curr_how_many_weeks == 12 && (Object.keys(meal_data_obj.week1.day1).length == 0 || Object.keys(meal_data_obj.week1.day2).length == 0 || Object.keys(meal_data_obj.week1.day3).length == 0 || Object.keys(meal_data_obj.week1.day4).length == 0 || Object.keys(meal_data_obj.week1.day5).length == 0 ||
+            Object.keys(meal_data_obj.week2.day1).length == 0 || Object.keys(meal_data_obj.week2.day2).length == 0 || Object.keys(meal_data_obj.week2.day3).length == 0 || Object.keys(meal_data_obj.week2.day4).length == 0 || Object.keys(meal_data_obj.week2.day5).length == 0 ||
+            Object.keys(meal_data_obj.week3.day1).length == 0 || Object.keys(meal_data_obj.week3.day2).length == 0 || Object.keys(meal_data_obj.week3.day3).length == 0 || Object.keys(meal_data_obj.week3.day4).length == 0 || Object.keys(meal_data_obj.week3.day5).length == 0 ||
+            Object.keys(meal_data_obj.week4.day1).length == 0 || Object.keys(meal_data_obj.week4.day2).length == 0 || Object.keys(meal_data_obj.week4.day3).length == 0 || Object.keys(meal_data_obj.week4.day4).length == 0 || Object.keys(meal_data_obj.week4.day5).length == 0 ||
+            Object.keys(meal_data_obj.week5.day1).length == 0 || Object.keys(meal_data_obj.week5.day2).length == 0 || Object.keys(meal_data_obj.week5.day3).length == 0 || Object.keys(meal_data_obj.week5.day4).length == 0 || Object.keys(meal_data_obj.week5.day5).length == 0 ||
+            Object.keys(meal_data_obj.week6.day1).length == 0 || Object.keys(meal_data_obj.week6.day2).length == 0 || Object.keys(meal_data_obj.week6.day3).length == 0 || Object.keys(meal_data_obj.week6.day4).length == 0 || Object.keys(meal_data_obj.week6.day5).length == 0 ||
+            Object.keys(meal_data_obj.week7.day1).length == 0 || Object.keys(meal_data_obj.week7.day2).length == 0 || Object.keys(meal_data_obj.week7.day3).length == 0 || Object.keys(meal_data_obj.week7.day4).length == 0 || Object.keys(meal_data_obj.week7.day5).length == 0 ||
+            Object.keys(meal_data_obj.week8.day1).length == 0 || Object.keys(meal_data_obj.week8.day2).length == 0 || Object.keys(meal_data_obj.week8.day3).length == 0 || Object.keys(meal_data_obj.week8.day4).length == 0 || Object.keys(meal_data_obj.week8.day5).length == 0 ||
+            Object.keys(meal_data_obj.week9.day1).length == 0 || Object.keys(meal_data_obj.week9.day2).length == 0 || Object.keys(meal_data_obj.week9.day3).length == 0 || Object.keys(meal_data_obj.week9.day4).length == 0 || Object.keys(meal_data_obj.week9.day5).length == 0 ||
+            Object.keys(meal_data_obj.week10.day1).length == 0 || Object.keys(meal_data_obj.week10.day2).length == 0 || Object.keys(meal_data_obj.week10.day3).length == 0 || Object.keys(meal_data_obj.week10.day4).length == 0 || Object.keys(meal_data_obj.week10.day5).length == 0 ||
+            Object.keys(meal_data_obj.week11.day1).length == 0 || Object.keys(meal_data_obj.week11.day2).length == 0 || Object.keys(meal_data_obj.week11.day3).length == 0 || Object.keys(meal_data_obj.week11.day4).length == 0 || Object.keys(meal_data_obj.week11.day5).length == 0 ||
+            Object.keys(meal_data_obj.week12.day1).length == 0 || Object.keys(meal_data_obj.week12.day2).length == 0 || Object.keys(meal_data_obj.week12.day3).length == 0 || Object.keys(meal_data_obj.week12.day4).length == 0 || Object.keys(meal_data_obj.week12.day5).length == 0)){
 
-          swal('Please select all meals');                 
+              swal('Please select all meals');                 
         }
     else{
        $('#tab6-1').removeClass('active');
