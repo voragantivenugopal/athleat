@@ -474,7 +474,7 @@ mMealActiveIDs[1251]=mMealActiveIDs[1252]=mMealActiveIDs[1253]=mMealActiveIDs[12
         $('.dislikes').prop('checked', false); 
         $('.addons').prop('checked', false); 
         // clearPriceCookies()
-        // getCookieInfo();
+        getCookieInfo();
         var m_curr_meals_per_day = $(this).attr('data-mMealsPerDay');        
         Cookies.set('m_curr_meals_per_day', m_curr_meals_per_day);                
         if(m_curr_meals_per_day == '2'){
