@@ -515,7 +515,7 @@ mMealActiveIDs[1251]=mMealActiveIDs[1252]=mMealActiveIDs[1253]=mMealActiveIDs[12
                 'Carb':0}
 
 // mMealActiveIDs.remove();
-console.log('mMealActiveIDs',mMealActiveIDs);
+//console.log('mMealActiveIDs',mMealActiveIDs);
             
     // mMealActiveIDsArry = [];
     $('.mMealsPerDayBtn').removeClass('btn-success');
@@ -1113,7 +1113,6 @@ $(document).on('click','#tab6-1',function(){
 var obj = [];
 $(document).on('click','#mSubmitBtn',function(){
     $('.bootstrapWizard  li').css('pointer-events','none');
-
    getCookieInfo();
    if(m_curr_choose_plan === 'Athleat-l' || m_curr_choose_plan === 'Athleat-h'){ 
             var obj = {'Meal Plan':m_curr_choose_plan,
@@ -1124,27 +1123,45 @@ $(document).on('click','#mSubmitBtn',function(){
             'mAthleatFinalPrice':mAthleatFinalPrice,
             'Dislikes':m_selected_dislikes_value,
             'Addons':m_selected_addons_value}
-        
-        $.ajax({
+            console.log(obj,'Athleat data');
+
+            if(m_curr_choose_plan == '' || undefined){
+                swal('Please select Choose Meal Plan')
+            }
+            else if(m_curr_how_many_weeks == '' || undefined){
+                swal('Please select Number of Weeks')
+            }
+            else if(m_curr_meals_per_day == '' || undefined){
+                swal('Please select Meals per day')
+            }
+            else if(m_meals_closest_date == '' || undefined){
+                swal('Please select meal closest Date')
+            }
+            else if(mAthleatFinalPrice == '' || undefined){
+                swal('Please select Athleat Final Price')
+            }
+            else{
+                $.ajax({
                       url: '/post-values/',
                       contentType: 'application/json',
                       data: JSON.stringify(obj),
                       type: 'POST',
-                      success: postSuccess,
-                      error : postFailure,
+                      success: postSuccess
+                      // error : postFailure
                 });
-        function postFailure(){
-        getCookieInfo();
-        if(m_curr_how_many_weeks == '' || m_curr_meals_per_day == '' || m_meals_closest_date ==''|| mAthleatFinalPrice == ''){
-         swal(
-              'Please Choose all options',
-            )
-        }else{
-             swal(
-                  'Something is missing, Please try again',
-                )
-        }
-        }
+            }
+        // function postFailure(){
+        // getCookieInfo();
+        // if(m_curr_how_many_weeks == '' || m_curr_meals_per_day == '' || m_meals_closest_date ==''|| mAthleatFinalPrice == ''){
+        //  swal(
+        //       'Please Choose all options',
+        //     )
+        // }else{
+        //      swal(
+        //           'Something is missing, Please try again',
+        //         )
+        // }
+        // }
     }
     
 if(m_curr_choose_plan === 'Customized'){
@@ -1162,14 +1179,31 @@ if(m_curr_choose_plan === 'Customized'){
     } 
     console.log(obj2,'Customized Data');
 
-    $.ajax({
-                      url: '/post-values/',
-                      contentType: 'application/json',
-                      data: JSON.stringify(obj2),
-                      type: 'POST',
-                      success: postSuccess,
-                      error: postcustomaizedFailure,
-    });        
+    if(m_curr_choose_plan == '' || undefined){
+        swal('Please select Choose Meal Plan')
+    }
+    else if(m_curr_how_many_weeks == '' || undefined){
+        swal('Please select Number of Weeks')
+    }
+    else if(m_curr_meals_per_day == '' || undefined){
+        swal('Please select Meals per day')
+    }
+    else if(m_closest_date == '' || undefined){
+        swal('Please select meal closest Date')
+    }
+    else if(mPriceTotal == 0 || (meal_data == '' || undefined)){
+        swal('Please select Meal Data')
+    }
+    else{
+        $.ajax({
+                  url: '/post-values/',
+                  contentType: 'application/json',
+                  data: JSON.stringify(obj2),
+                  type: 'POST',
+                  success: postSuccess
+                  // error: postcustomaizedFailure
+        });
+    }      
    
 }
 
@@ -1185,19 +1219,19 @@ if(m_curr_choose_plan === 'Customized'){
       
     }
 
-    function postcustomaizedFailure(data,textStatus,jqXHR)
-    {   
-        getCookieInfo();
-        if(m_curr_how_many_week == '' || m_curr_meals_per_day == '' || m_closest_date == ''|| meal_data == '' || mPriceTotal == 0 || mFatTotal == 0 || mProteinTotal == 0 || mCarbTotal == 0){
-         swal(
-              'Please Choose all options',
-            )
-        }else{
-             swal(
-                  'Something is missing, Please try again',
-                )
-        }
-    }
+    // function postcustomaizedFailure(data,textStatus,jqXHR)
+    // {   
+    //     getCookieInfo();
+    //     if(m_curr_how_many_week == '' || m_curr_meals_per_day == '' || m_closest_date == ''|| meal_data == '' || mPriceTotal == 0 || mFatTotal == 0 || mProteinTotal == 0 || mCarbTotal == 0){
+    //      swal(
+    //           'Please Choose all options',
+    //         )
+    //     }else{
+    //          swal(
+    //               'Something is missing, Please try again',
+    //             )
+    //     }
+    // }
 
     clearCookies();
     clearPriceCookies();
