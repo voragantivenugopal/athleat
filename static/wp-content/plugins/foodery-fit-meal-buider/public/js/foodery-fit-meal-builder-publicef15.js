@@ -2,6 +2,67 @@
 
 
 (function( $ ) {
+
+var mealidsw1d1obj = {};
+var mealidsw2d1obj = {};
+var mealidsw3d1obj = {};
+var mealidsw4d1obj = {};
+var mealidsw5d1obj = {};
+var mealidsw6d1obj = {};
+var mealidsw7d1obj = {};
+var mealidsw8d1obj = {};
+var mealidsw9d1obj = {};
+var mealidsw10d1obj = {};
+var mealidsw11d1obj = {};
+var mealidsw12d1obj = {};
+var mealidsw1d2obj = {};
+var mealidsw2d2obj = {};
+var mealidsw3d2obj = {};
+var mealidsw4d2obj = {};
+var mealidsw5d2obj = {};
+var mealidsw6d2obj = {};
+var mealidsw7d2obj = {};
+var mealidsw8d2obj = {};
+var mealidsw9d2obj = {};
+var mealidsw10d2obj = {};
+var mealidsw11d2obj = {};
+var mealidsw12d2obj = {};
+var mealidsw1d3obj = {};
+var mealidsw2d3obj = {};
+var mealidsw3d3obj = {};
+var mealidsw4d3obj = {};
+var mealidsw5d3obj = {};
+var mealidsw6d3obj = {};
+var mealidsw7d3obj = {};
+var mealidsw8d3obj = {};
+var mealidsw9d3obj = {};
+var mealidsw10d3obj = {};
+var mealidsw11d3obj = {};
+var mealidsw12d3obj = {};
+var mealidsw1d4obj = {};
+var mealidsw2d4obj = {};
+var mealidsw3d4obj = {};
+var mealidsw4d4obj = {};
+var mealidsw5d4obj = {};
+var mealidsw6d4obj = {};
+var mealidsw7d4obj = {};
+var mealidsw8d4obj = {};
+var mealidsw9d4obj = {};
+var mealidsw10d4obj = {};
+var mealidsw11d4obj = {};
+var mealidsw12d4obj = {};
+var mealidsw1d5obj = {};
+var mealidsw2d5obj = {};
+var mealidsw3d5obj = {};
+var mealidsw4d5obj = {};
+var mealidsw5d5obj = {};
+var mealidsw6d5obj = {};
+var mealidsw7d5obj = {};
+var mealidsw8d5obj = {};
+var mealidsw9d5obj = {};
+var mealidsw10d5obj = {};
+var mealidsw11d5obj = {};
+var mealidsw12d5obj = {};
 // var mealIds = [];
 // var dayvalue = [];
 // var dayssingledata= [];
@@ -380,7 +441,7 @@ var week = '';
 var day = '';
 var day_data = {}
 
-console.log('mMealActiveIDs',mMealActiveIDs);
+ console.log('mMealActiveIDs',mMealActiveIDs);
 mMealActiveIDs[111] =mMealActiveIDs[112]=mMealActiveIDs[113]=mMealActiveIDs[114]=
 mMealActiveIDs[121]=mMealActiveIDs[122]=mMealActiveIDs[123]=mMealActiveIDs[124]=
 mMealActiveIDs[131]=mMealActiveIDs[132]=mMealActiveIDs[133]=mMealActiveIDs[134]=
