@@ -173,7 +173,7 @@ def userSignup(request):
 def getValues(request):
 
 	body = eval(request.body)
-	print body['meal_data']
+	print body
 	cust_dict = {}
 	addons = []
 	if 'Dislikes' in body:
@@ -233,6 +233,7 @@ def getValues(request):
 		item_id = []
 		plan_recs =[]
 		xyz=[]
+		# mm=[]
 		protein = str(body['mProteinTotal'])
 		carb = str(body['mCarbTotal'])
 		price = str(body['mPriceTotal'])
@@ -253,21 +254,22 @@ def getValues(request):
 
 			for day in days:
 				if xyz[days.index(day)]:
+					mm=[]
+					for each in xyz[days.index(day)]:
+						meal_info = sock.execute(DB_NAME, uid, PASSWORD,'recipies.meal', 'search_read', [('id', '=', each)],[])
+						mm=mm+[(0,0,{'meal_no':(xyz[days.index(day)].index(each))+1,'item_id':each,'carb':meal_info[0]['carb'] ,'fat':meal_info[0]['fat'] ,'price':meal_info[0]['price'] ,'protein':meal_info[0]['protein'] })]
 					plan_recs += [(0,0,{
 						'cust':customer_id,
-						'items':[(6,0,xyz[days.index(day)])],
-						'day':day,
-						'carb':carb,
-						'protein':protein,
-						'fat':fat,
+						'plan_meal_items':mm,
+						'day':(days.index(day))+1,
+					
 					})]
-
 			plan_vals.update({'customer': customer_id,
 						'days_per_week': 5,
 						'no_of_weeks': int(body['Weeks']),
 						'meals_per_day': int(body['Meals Per Day']),
 					'meal_plan_type': str(cust_dict['carb_type']),
-					'meal_plan':plan_recs
+					'meal_plan_customized':plan_recs
 					})
 
 		# sock.execute(DB_NAME, uid, PASSWORD,
