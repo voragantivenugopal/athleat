@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'athleat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'athleatmeal',
-        'USER': 'anipr',
-        'PASSWORD': 'anipr',
+        'NAME': 'athlee',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
         'PORT': '',
 
