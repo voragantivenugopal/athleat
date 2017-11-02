@@ -105,6 +105,7 @@ def mealBuilder(request):
 	dislikes_data = sock.execute(
 		DB_NAME, uid, PASSWORD, 'likes.dislikes', 'read', dislikes_ids)
 
+
 	return render(request, 'meal-builder.html', {'meal_info': meal_data, 'custom_meal_data': custom_meal_data, 'addons_data': addons_data, 'dislikes_data': meal_data})
 
 
@@ -224,6 +225,57 @@ def getValues(request):
 			plan_vals.update({ 'plan_price': 2300})
 		else:
 			plan_vals.update({ 'plan_price': 2800})
+
+		weeks = ['week1','week2','week3','week4','week5','week6','week7','week8','week9','week10','week11','week12']
+		days = ['day1','day2','day3','day4','day5']
+		meals_count = int(body['Meals Per Day'])
+		item_id = []
+		plan_recs =[]
+		xyz=[]
+		# mm=[]
+		
+		if 'mProteinTotal' in body:
+			protein = str(body['mProteinTotal'])
+		if 'mCarbTotal' in body:
+			carb = str(body['mCarbTotal'])
+		if 'mPriceTotal' in body:
+			price = str(body['mPriceTotal'])
+		if 'mPriceTotal' in body:
+			fat = str(body['mPriceTotal'])
+
+
+		if plan == 'Customized':
+			for i in weeks:
+				for day in days:
+					if body['meal_data'][i][day] != {}:
+						day_meals = body['meal_data'][i][day]
+						for x in range(len( day_meals.values())):
+							item_id += [int(day_meals.values()[range(len( day_meals.values())).index(x)].values()[0])]
+		
+			
+			for li in xrange(0, len(item_id), meals_count):
+				xyz =  xyz+[item_id[li:li + meals_count]] 
+
+			# print item_id
+			for day in days:
+				if xyz[days.index(day)]:
+					mm=[]
+					for each in xyz[days.index(day)]:
+						meal_info = sock.execute(DB_NAME, uid, PASSWORD,'recipies.meal', 'search_read', [('id', '=', each)],[])#reading out item grammage
+						mm=mm+[(0,0,{'meal_no':(xyz[days.index(day)].index(each))+1,'item_id':each,'carb':meal_info[0]['carb'] ,'fat':meal_info[0]['fat'] ,'price':meal_info[0]['price'] ,'protein':meal_info[0]['protein'] })]
+					plan_recs += [(0,0,{
+						'cust':customer_id,
+						'plan_meal_items':mm,
+						'day':(days.index(day))+1,
+					
+					})]
+			plan_vals.update({'customer': customer_id,
+						'days_per_week': 5,
+						'no_of_weeks': int(body['Weeks']),
+						'meals_per_day': int(body['Meals Per Day']),
+						'meal_plan_type': str(cust_dict['carb_type']),
+						'meal_plan_customized':plan_recs
+					})
 
 
 		if sock.execute(DB_NAME, uid, PASSWORD, 'meal.plans', 'search', [('customer', '=', customer_id)]):
