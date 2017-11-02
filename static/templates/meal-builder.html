@@ -388,16 +388,16 @@
 									<div class="tab-content">
 
 										<div role="tabpanel" class="tab-pane fade in active" >
+											<span>Protein :{{data.protein}}</span><br>
 											<span>Fat : {{data.fat}}</span><br>
 											<span>Carb :{{data.carb}}</span><br>
-											<span>Protein :{{data.protein}}</span><br>
 											<span>Price :{{data.price}}</span><br>
 										</div>
 										{% for data in custom_meal_data %}  
 										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
+											<span>Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
 											<span>Fat :</span><span id="dataFat">{{data.fat}}</span><br>	
 											<span>Carb :</span><span id="dataCarb">{{data.carb}}</span><br>
-											<span>Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
 											<span>Price :</span><span id="dataPrice">{{data.price}}</span><br>
 										</div>{% endfor %}
 
@@ -417,7 +417,7 @@
 
 									<div class="col-md-8">
 										<ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
-											{% for data in custom_meal_data %}<li class=""><a href="#{{data.id}}" data-toggle="tab">
+											{% for data in custom_meal_data %}<li class=""><a href="#p{{data.id}}" id="{{data.id}}" data-toggle="tab">
 											{{data.name}}<br>
 										</a></li>{% endfor %}
 										</ul>	
@@ -430,25 +430,34 @@
 								<div class="tab-content">
 
 									<div role="tabpanel" class="tab-pane fade in active" >
+										<span>Protein :</span><br>
 										<span>Fat : </span><br>
 										<span>Carb :</span><br>
-										<span>Protein :</span><br>
 									</div>
 									{% for data in custom_meal_data %}  
-									<div role="tabpanel" class="tab-pane fade in" id="{{data.id}}">
-										<form>
+									<div role="tabpanel" class="tab-pane fade in" id="p{{data.id}}">
+										  <div class="col-md-6" style="text-align: left;">
 										  <div class="form-group form-inline">
-										    <label for=""><strong  style="color: #4da1ff">Fat</strong></label>
-										    <input type="text" class="form-control" id="" placeholder="20 g">
+										    <label for=""><strong style="color: #4da1ff">Grams</strong> </label>
+										    <select class="form-control mChangeGrams" style="height: 40px;">
+										      <option value="100">100</option>
+										      <option value="150">150</option>
+										      <option value="200">200</option>
+										    </select>
 										  </div>
-										  <div class="form-group form-inline">
-										    <label for=""><strong style="color: #4da1ff">Carb</strong></label>
-										    <input type="text" class="form-control" id="" placeholder="20.00 g">
+										  	<span>Protein :</span><span id="dataProtein_A">{{data.protein}}</span> g<br>
+											<span>Fat :</span><span id="dataFat_A">{{data.fat}}</span> g<br>	
+											<span>Carb :</span><span id="dataCarb_A">{{data.carb}}</span> g<br>
+											<span>Price :</span><span id="dataPrice_A">{{data.price}}</span> AED<br>
 										  </div>
-										  <div class="form-group form-inline">
-										    <label for=""><strong style="color: #4da1ff">Protein</strong> </label>
-										    <input type="text" class="form-control" id="" placeholder="25.05 g">
+										  <div class="col-md-6" style="text-align: left;">
+										  
+										  <span>Protein :</span><strong><span id="dataProtein">{{data.protein}}</span> g</strong><br>
+											<span>Fat :</span><strong><span id="dataFat">{{data.fat}}</span> g</strong><br>	
+											<span>Carb :</span><strong><span id="dataCarb">{{data.carb}}</span> g</strong><br>
+											<span>Price :</span><strong>AED <span id="dataPrice">{{data.price}}</span></strong><br>
 										  </div>
+
 									</div>{% endfor %}
 
 								</div>
@@ -469,4 +478,39 @@
 	</div>
 </div>
 </div>
+<script type="text/javascript">
+$('.mChangeGrams').on('change',function(){
+
+
+    console.log('=========');
+    var meal_price = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataPrice_A').text();
+    var meal_fat = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataFat_A').text();
+    var meal_carb = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataCarb_A').text();
+    var meal_protein = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataProtein_A').text();
+    var selected_val = $(this).val();
+    if(selected_val == 100){
+        meal_price = meal_price*1;
+        meal_fat   =   meal_fat*1;
+        meal_carb  = meal_carb*1;
+        meal_protein = meal_protein*1;
+    }
+    else if(selected_val == 150) {
+        meal_price = meal_price*1.5;
+        meal_fat   =   meal_fat*1.5;
+        meal_carb  = meal_carb*1.5;
+        meal_protein = meal_protein*1.5;
+    }
+    else if(selected_val == 200) {
+        meal_price = meal_price*2;
+        meal_fat   =   meal_fat*2;
+        meal_carb  = meal_carb*2;
+        meal_protein = meal_protein*2;
+    }
+    $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataPrice').text(meal_price)
+    $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataFat').text(meal_fat)
+    $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataCarb').text(meal_carb)
+    $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataProtein').text(meal_protein)
+
+})
+</script>
 {% endblock %}

@@ -486,7 +486,7 @@ input[type="radio"] .styled:checked + label::after {
 .tab-content .container{
 	padding: 0px;
 }
-.bootstrapWizard  li a{
+.bootstrapWizard  li{
 	pointer-events: none;
 }
 .btnCustomizerMealDesc{
@@ -495,3 +495,12 @@ input[type="radio"] .styled:checked + label::after {
     text-overflow: ellipsis;
     max-width: 125px;
 }
+#myModal .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 3px 15px;
+    font-size: 13px;
+}
+  .modal-body .nav-head li a{ 
+    padding: 17px 23px !important;
+    font-size: 17px !important;}

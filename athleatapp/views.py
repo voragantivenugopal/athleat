@@ -164,7 +164,7 @@ def userSignup(request):
 			return HttpResponseRedirect('/meal-builder')
 		except Exception as e:
 			print e
-			return render(request, 'login.html', {'error': 'Email already exists! If you forgot your password, please reset it !'})
+			return render(request, 'register.html', {'error': 'Email already exists! If you forgot your password, please reset it !'})
 	return HttpResponseRedirect('/menu')
 
 
@@ -182,6 +182,7 @@ def getValues(request):
 
 	if 'Addons' in body:
 		addons = eval(body['Addons'])
+		addons = map(int, addons)
 
 	if 'Meal Plan' in body:
 		plan = body['Meal Plan']
@@ -203,19 +204,10 @@ def getValues(request):
 		sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 		meal_item_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
 									 ('carb_type', '=', 'customize')])
-		# meal_items = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', meal_item_ids, [
-								  # 'quantity', 'protein', 'fat', 'carb', 'calories', 'price'])
-		# customers = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'search',[('carb_type', '=', 'customized')])
 		meal_plan = []
 
 		customer_id = request.session['partner_id']
 		update = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, cust_dict)
-
-		# for x in customers:
-		# for i in meal_items:
-		#   item_id = i['id']#fetching item id from meal items page
-		#   i.update({'item':item_id,'meals_type':'regular'})#updating active meal record fields
-		#   meal_plan += [(0, 0, i)]
 
 		plan_vals = {
 			'customer': customer_id,
@@ -223,21 +215,16 @@ def getValues(request):
 			'no_of_weeks': int(body['Weeks']),
 			'meals_per_day': int(body['Meals Per Day']),
 			'meal_plan_type': cust_dict['carb_type'],
-			# 'meal_plan' : random.sample(meal_plan, 4),#limiting total no of meal plan records-one2many
+			'addons': [[6, 0, addons]]
 		}
 
-		# if 'Meal Plan' in body:
-		# 	plan = body['Meal Plan']
-		# 	if str(plan) == 'Customized':
-		# 		plan_vals.update({
-		# 			'meal_plan_type': 'customize'
-		# 		})
-		# 	else:
-		# 		plan_vals.update({
-		# 			'meal_plan_type': 'low carb'
-		# 		})
+		if plan_vals['meals_per_day'] == 2:
+			plan_vals.update({ 'plan_price': 1600})
+		elif plan_vals['meals_per_day'] == 3:
+			plan_vals.update({ 'plan_price': 2300})
+		else:
+			plan_vals.update({ 'plan_price': 2800})
 
-		# sock.execute('meal.plans','_onchange_current_date',1, 30)
 
 		if sock.execute(DB_NAME, uid, PASSWORD, 'meal.plans', 'search', [('customer', '=', customer_id)]):
 			pass
@@ -245,7 +232,7 @@ def getValues(request):
 			sock.execute(DB_NAME, uid, PASSWORD,
 						 'meal.plans', 'create', plan_vals)
 
-	return HttpResponse('Hii')
+	return HttpResponse('Success')
 
 # User Current Plan
 
