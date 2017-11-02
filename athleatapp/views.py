@@ -162,10 +162,10 @@ def userSignup(request):
 			request.session['partner_id'] = user_data['partner_id'][0]
 			# return render(request, 'login.html', {'error': 'Thank You for
 			# choosing us !'})
-			return HttpResponseRedirect('/menu')
+			return HttpResponseRedirect('/meal-builder')
 		except Exception as e:
 			print e
-			return render(request, 'login.html', {'error': 'Email already exists! If you forgot your password, please reset it !'})
+			return render(request, 'register.html', {'error': 'Email already exists! If you forgot your password, please reset it !'})
 	return HttpResponseRedirect('/menu')
 
 
@@ -173,7 +173,7 @@ def userSignup(request):
 def getValues(request):
 
 	body = eval(request.body)
-	print body
+	# print body
 	cust_dict = {}
 	addons = []
 	if 'Dislikes' in body:
@@ -183,6 +183,7 @@ def getValues(request):
 
 	if 'Addons' in body:
 		addons = eval(body['Addons'])
+		addons = map(int, addons)
 
 	if 'Meal Plan' in body:
 		plan = body['Meal Plan']
@@ -204,28 +205,26 @@ def getValues(request):
 		sock = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/object')
 		meal_item_ids = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'search', [
 									 ('carb_type', '=', 'customize')])
-		# meal_items = sock.execute(DB_NAME, uid, PASSWORD, 'recipies.meal', 'read', meal_item_ids, [
-								  # 'quantity', 'protein', 'fat', 'carb', 'calories', 'price'])
-		# customers = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'search',[('carb_type', '=', 'customized')])
 		meal_plan = []
 
 		customer_id = request.session['partner_id']
 		update = sock.execute(DB_NAME, uid, PASSWORD,'res.partner', 'write', customer_id, cust_dict)
-
-		# for x in customers:
-		# for i in meal_items:
-		#   item_id = i['id']#fetching item id from meal items page
-		#   i.update({'item':item_id,'meals_type':'regular'})#updating active meal record fields
-		#   meal_plan += [(0, 0, i)]
 
 		plan_vals = {
 			'customer': customer_id,
 			'days_per_week': 5,
 			'no_of_weeks': int(body['Weeks']),
 			'meals_per_day': int(body['Meals Per Day']),
-			'meal_plan_type': str(cust_dict['carb_type']),
-			# 'meal_plan' : random.sample(meal_plan, 4),#limiting total no of meal plan records-one2many
+			'meal_plan_type': cust_dict['carb_type'],
+			'addons': [[6, 0, addons]]
 		}
+
+		if plan_vals['meals_per_day'] == 2:
+			plan_vals.update({ 'plan_price': 1600})
+		elif plan_vals['meals_per_day'] == 3:
+			plan_vals.update({ 'plan_price': 2300})
+		else:
+			plan_vals.update({ 'plan_price': 2800})
 
 		weeks = ['week1','week2','week3','week4','week5','week6','week7','week8','week9','week10','week11','week12']
 		days = ['day1','day2','day3','day4','day5']
@@ -234,10 +233,15 @@ def getValues(request):
 		plan_recs =[]
 		xyz=[]
 		# mm=[]
-		protein = str(body['mProteinTotal'])
-		carb = str(body['mCarbTotal'])
-		price = str(body['mPriceTotal'])
-		fat = str(body['mFatTotal'])
+		
+		if 'mProteinTotal' in body:
+			protein = str(body['mProteinTotal'])
+		if 'mCarbTotal' in body:
+			carb = str(body['mCarbTotal'])
+		if 'mPriceTotal' in body:
+			price = str(body['mPriceTotal'])
+		if 'mPriceTotal' in body:
+			fat = str(body['mPriceTotal'])
 
 
 		if plan == 'Customized':
@@ -252,6 +256,7 @@ def getValues(request):
 			for li in xrange(0, len(item_id), meals_count):
 				xyz =  xyz+[item_id[li:li + meals_count]] 
 
+			# print item_id
 			for day in days:
 				if xyz[days.index(day)]:
 					mm=[]
@@ -268,32 +273,10 @@ def getValues(request):
 						'days_per_week': 5,
 						'no_of_weeks': int(body['Weeks']),
 						'meals_per_day': int(body['Meals Per Day']),
-					'meal_plan_type': str(cust_dict['carb_type']),
-					'meal_plan_customized':plan_recs
+						'meal_plan_type': str(cust_dict['carb_type']),
+						'meal_plan_customized':plan_recs
 					})
 
-		# sock.execute(DB_NAME, uid, PASSWORD,
-		# 				 'meal.plans', 'create', {
-		# 				 # 'cust':customer_id,
-		# 				 							# 'addons':addons,
-		# 											# 'meals_per_day':int(body['Meals Per Day']),
-		# 											# 'meal_plan_type':'customize',
-		# 											# 'no_of_weeks': int(body['Weeks']),
-		# 											# 'days_per_week':5,
-		# 											'meal_plan':plan_recs
-		# 											})
-		# if 'Meal Plan' in body:
-		# 	plan = body['Meal Plan']
-		# 	if str(plan) == 'Customized':
-		# 		plan_vals.update({
-		# 			'meal_plan_type': 'customize'
-		# 		})
-		# 	else:
-		# 		plan_vals.update({
-		# 			'meal_plan_type': 'low carb'
-		# 		})
-
-		# sock.execute('meal.plans','_onchange_current_date',1, 30)
 
 		if sock.execute(DB_NAME, uid, PASSWORD, 'meal.plans', 'search', [('customer', '=', customer_id)]):
 			pass
@@ -301,7 +284,7 @@ def getValues(request):
 			sock.execute(DB_NAME, uid, PASSWORD,
 						 'meal.plans', 'create', plan_vals)
 
-	return HttpResponse('Hii')
+	return HttpResponse('Success')
 
 # User Current Plan
 

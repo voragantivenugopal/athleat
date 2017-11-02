@@ -594,7 +594,8 @@ mMealActiveIDs[1251]=mMealActiveIDs[1252]=mMealActiveIDs[1253]=mMealActiveIDs[12
 
     function mCreateChooseMealPlan(){
         getCookieInfo();
-        for(var i=1; i<=m_curr_how_many_weeks; i++){
+        for(var i=1; i<=1; i++){
+        // for(var i=1; i<=m_curr_how_many_weeks; i++){
             str = '';
             str += '<div class="customizerSpacer1"></div>';
             str += '<div class="cWeekHeader">';

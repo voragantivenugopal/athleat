@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'athleat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'athlee',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
+        'NAME': 'athleatmeal',
+        'USER': 'venugopal',
+        'PASSWORD': 'venugopal',
         'HOST': 'localhost',
         'PORT': '',
 
@@ -134,8 +134,8 @@ STATIC_ROOT = ''
 
 
 # XMLRPC CONNECTION SETTINGS
-XMLRPC_URL = 'http://localhost:8069'
-DB_NAME = 'athlee'
+XMLRPC_URL = 'http://192.168.2.24:8069'
+DB_NAME = 'athleat'
 USERNAME = 'admin'
 PASSWORD = 'admin'
 sock_common = xmlrpclib.ServerProxy(str(XMLRPC_URL) + '/xmlrpc/common')
