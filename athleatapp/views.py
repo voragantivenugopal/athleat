@@ -220,11 +220,32 @@ def getValues(request):
 		}
 
 		if plan_vals['meals_per_day'] == 2:
-			plan_vals.update({ 'plan_price': 1600})
+			if plan_vals['no_of_weeks'] == 4:
+				plan_vals.update({ 'plan_price': 1600})
+			elif plan_vals['no_of_weeks'] == 8:
+				plan_vals.update({ 'plan_price': 1600 * 2})
+			elif plan_vals['no_of_weeks'] == 12:
+				plan_vals.update({ 'plan_price': 1600 * 3})
+			else:
+				pass
 		elif plan_vals['meals_per_day'] == 3:
-			plan_vals.update({ 'plan_price': 2300})
+			if plan_vals['no_of_weeks'] == 4:
+				plan_vals.update({ 'plan_price': 2300})
+			elif plan_vals['no_of_weeks'] == 8:
+				plan_vals.update({ 'plan_price': 2300 * 2})
+			elif plan_vals['no_of_weeks'] == 12:
+				plan_vals.update({ 'plan_price': 2300 * 3})
+			else:
+				pass
 		else:
-			plan_vals.update({ 'plan_price': 2800})
+			if plan_vals['no_of_weeks'] == 4:
+				plan_vals.update({ 'plan_price': 2800})
+			elif plan_vals['no_of_weeks'] == 8:
+				plan_vals.update({ 'plan_price': 2800 * 2})
+			elif plan_vals['no_of_weeks'] == 12:
+				plan_vals.update({ 'plan_price': 2800 * 3})
+			else:
+				pass
 
 		weeks = ['week1','week2','week3','week4','week5','week6','week7','week8','week9','week10','week11','week12']
 		days = ['day1','day2','day3','day4','day5']
