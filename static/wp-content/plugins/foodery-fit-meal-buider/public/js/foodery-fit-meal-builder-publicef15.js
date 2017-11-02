@@ -690,6 +690,18 @@ $(document).on('click','#modal-add-meal-btn',function(e){
 
         var meal_item = $('.modal-body .tab-pane.active .nav-tabs .active a').text();
         var meal_item_id = $('.modal-body .tab-pane.active .nav-tabs .active a').attr('id');
+        var homeID = $( "#home" ).hasClass( "active" );
+        var ProfileID = $( "#profile" ).hasClass( "active" );
+        if (homeID){
+        var myour_own_meal_grms = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataGrams1').text();
+
+            console.log('home')
+        }
+        else if ( ProfileID){
+        var myour_own_meal_grms = $('.modal-body .tab-pane.active .tab-content .tab-pane.active .dataGrams').val();
+            console.log('profile')
+
+        }
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealPrice').css('color','#4B5EEB').html('<strong>'+mSingleMealPrice+'</strong>');
             mMealActiveID = $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"]').attr('id');

@@ -392,6 +392,7 @@
 											<span>Fat : {{data.fat}}</span><br>
 											<span>Carb :{{data.carb}}</span><br>
 											<span>Price :{{data.price}}</span><br>
+											<span>Grams :{{data.quantity}}</span><br>
 										</div>
 										{% for data in custom_meal_data %}  
 										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
@@ -399,6 +400,7 @@
 											<span>Fat :</span><span id="dataFat">{{data.fat}}</span><br>	
 											<span>Carb :</span><span id="dataCarb">{{data.carb}}</span><br>
 											<span>Price :</span><span id="dataPrice">{{data.price}}</span><br>
+											<span>Grams :</span><span id="dataGrams1" class="gourmet_Grams">{{data.quantity}}</span><br>
 										</div>{% endfor %}
 
 									</div>
@@ -439,7 +441,7 @@
 										  <div class="col-md-6" style="text-align: left;">
 										  <div class="form-group form-inline">
 										    <label for=""><strong style="color: #4da1ff">Grams</strong> </label>
-										    <select class="form-control mChangeGrams" style="height: 40px;">
+										    <select id="dataGrams" class="form-control mChangeGrams dataGrams" style="height: 40px;">
 										      <option value="100">100</option>
 										      <option value="150">150</option>
 										      <option value="200">200</option>
