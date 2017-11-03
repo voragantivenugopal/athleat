@@ -131,7 +131,7 @@ img.wp-smiley,
 }
 .model-right{
 	padding: 30px 40px;
-	background: #f4f7f9;
+	/*background: #f4f7f9;*/
 }
 
 .modal-left .nav-pills > li.active > a,.modal-left .nav-pills > li.active > a:focus,.modal-left .nav-pills > li.active > a:hover ,
@@ -504,3 +504,18 @@ input[type="radio"] .styled:checked + label::after {
   .modal-body .nav-head li a{ 
     padding: 17px 23px !important;
     font-size: 17px !important;}
+
+    .nutri_title{
+    	float:left;
+    	font-weight:bold;
+    	color:#4b58f1;
+		min-width:80px;
+    }
+    .nutri_data{text-align:left;}
+.custom_nutri_title{
+    	float:left;
+    	font-weight:bold;
+    	color:#ff7250;
+		min-width:80px;
+    }
+

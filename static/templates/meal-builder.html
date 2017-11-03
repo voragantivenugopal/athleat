@@ -387,20 +387,20 @@
 
 									<div class="tab-content">
 
-										<div role="tabpanel" class="tab-pane fade in active" >
-											<span>Protein :{{data.protein}}</span><br>
-											<span>Fat : {{data.fat}}</span><br>
-											<span>Carb :{{data.carb}}</span><br>
-											<span>Price :{{data.price}}</span><br>
-											<span>Grams :{{data.quantity}}</span><br>
-										</div>
+										<!-- <div role="tabpanel" class="tab-pane fade in active" >
+											<span class="nutri_title">Protein :{{data.protein}}</span><br>
+											<span class="nutri_title">Fat : {{data.fat}}</span><br>
+											<span class="nutri_title">Carb :{{data.carb}}</span><br>
+											<span class="nutri_title">Price :{{data.price}}</span><br>
+											<span class="nutri_title">Grams :{{data.quantity}}</span><br>
+										</div> -->
 										{% for data in custom_meal_data %}  
-										<div role="tabpanel" class="tab-pane fade in" id="m{{data.id}}">
-											<span>Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
-											<span>Fat :</span><span id="dataFat">{{data.fat}}</span><br>	
-											<span>Carb :</span><span id="dataCarb">{{data.carb}}</span><br>
-											<span>Price :</span><span id="dataPrice">{{data.price}}</span><br>
-											<span>Grams :</span><span id="dataGrams1" class="gourmet_Grams">{{data.quantity}}</span><br>
+										<div role="tabpanel" class="nutri_data tab-pane fade in" id="m{{data.id}}">
+											<span class="nutri_title">Protein :</span><span id="dataProtein">{{data.protein}}</span><br>
+											<span class="nutri_title">Fat :</span><span id="dataFat">{{data.fat}}</span><br>	
+											<span class="nutri_title">Carb :</span><span id="dataCarb">{{data.carb}}</span><br>
+											<span class="nutri_title">Price :</span><span id="dataPrice">{{data.price}}</span><br>
+											<span class="nutri_title">Grams :</span><span id="dataGrams1" class="gourmet_Grams">{{data.quantity}}</span><br>
 										</div>{% endfor %}
 
 									</div>
@@ -431,11 +431,11 @@
 								
 								<div class="tab-content">
 
-									<div role="tabpanel" class="tab-pane fade in active" >
-										<span>Protein :</span><br>
-										<span>Fat : </span><br>
-										<span>Carb :</span><br>
-									</div>
+									<!-- <div role="tabpanel" class="tab-pane fade in active" >
+										<span class="nutri_title">Protein :</span><br>
+										<span class="nutri_title">Fat : </span><br>
+										<span class="nutri_title">Carb :</span><br>
+									</div> -->
 									{% for data in custom_meal_data %}  
 									<div role="tabpanel" class="tab-pane fade in" id="p{{data.id}}">
 										  <div class="col-md-6" style="text-align: left;">
@@ -447,17 +447,17 @@
 										      <option value="200">200</option>
 										    </select>
 										  </div>
-										  	<span>Protein :</span><span id="dataProtein_A">{{data.protein}}</span> g<br>
-											<span>Fat :</span><span id="dataFat_A">{{data.fat}}</span> g<br>	
-											<span>Carb :</span><span id="dataCarb_A">{{data.carb}}</span> g<br>
-											<span>Price :</span><span id="dataPrice_A">{{data.price}}</span> AED<br>
+										  	<span class="custom_nutri_title">Protein :</span><span id="dataProtein_A">{{data.protein}}</span><br>
+											<span class="custom_nutri_title">Fat :</span><span id="dataFat_A">{{data.fat}}</span><br>	
+											<span class="custom_nutri_title">Carb :</span><span id="dataCarb_A">{{data.carb}}</span><br>
+											<span class="custom_nutri_title">Price :</span><span id="dataPrice_A">{{data.price}}</span><br>
 										  </div>
 										  <div class="col-md-6" style="text-align: left;">
 										  
-										  <span>Protein :</span><strong><span id="dataProtein">{{data.protein}}</span> g</strong><br>
-											<span>Fat :</span><strong><span id="dataFat">{{data.fat}}</span> g</strong><br>	
-											<span>Carb :</span><strong><span id="dataCarb">{{data.carb}}</span> g</strong><br>
-											<span>Price :</span><strong>AED <span id="dataPrice">{{data.price}}</span></strong><br>
+										  	<span class="custom_nutri_title">Protein :</span><strong><span id="dataProtein">{{data.protein}}</span></strong><br>
+											<span class="custom_nutri_title">Fat :</span><strong><span id="dataFat">{{data.fat}}</span></strong><br>	
+											<span class="custom_nutri_title">Carb :</span><strong><span id="dataCarb">{{data.carb}}</span></strong><br>
+											<span class="custom_nutri_title">Price :</span><strong><span id="dataPrice">{{data.price}}</span></strong><br>
 										  </div>
 
 									</div>{% endfor %}
