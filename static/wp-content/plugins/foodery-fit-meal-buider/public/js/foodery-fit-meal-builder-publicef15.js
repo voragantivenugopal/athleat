@@ -564,7 +564,8 @@ $(document).on('click','#modal-add-meal-btn',function(e){
                 'MealId':meal_item_id,
                 'Fat': mSingleMealFat,
                 'Protein':mSingleMealProtein,
-                'Carb':mSingleMealCarb
+                'Carb':mSingleMealCarb,
+                'Grams':myour_own_meal_grms
 
             }
 
@@ -596,31 +597,51 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             if(week == 'Week1' && day == 'Day1'){
                 mealidsw1d1obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id,
-                   'Grams':myour_own_meal_grms
+                   'Grams':myour_own_meal_grms,
+                   'Fat': mSingleMealFat,
+                    'Protein':mSingleMealProtein,
+                    'Carb':mSingleMealCarb,
+                    'Price': mSingleMealPrice,
                 }
             }
             if(week == 'Week1' && day == 'Day2'){
                 mealidsw1d2obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id,
-                   'Grams':myour_own_meal_grms
+                   'Grams':myour_own_meal_grms,
+                    'Fat': mSingleMealFat,
+                    'Protein':mSingleMealProtein,
+                    'Carb':mSingleMealCarb,
+                    'Price': mSingleMealPrice,
                 }
             }
             if(week == 'Week1' && day == 'Day3'){
                 mealidsw1d3obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id,
-                   'Grams':myour_own_meal_grms
+                   'Grams':myour_own_meal_grms,
+                    'Fat': mSingleMealFat,
+                    'Protein':mSingleMealProtein,
+                    'Carb':mSingleMealCarb,
+                    'Price': mSingleMealPrice,
                 }
             }
             if(week == 'Week1' && day == 'Day4'){
                 mealidsw1d4obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id,
-                   'Grams':myour_own_meal_grms
+                   'Grams':myour_own_meal_grms,
+                    'Fat': mSingleMealFat,
+                    'Protein':mSingleMealProtein,
+                    'Carb':mSingleMealCarb,
+                    'Price': mSingleMealPrice,
                 }
             }
             if(week == 'Week1' && day == 'Day5'){
                 mealidsw1d5obj[mMealActiveID] = {
                    'Meal ID' : meal_item_id,
-                   'Grams':myour_own_meal_grms
+                   'Grams':myour_own_meal_grms,
+                    'Fat': mSingleMealFat,
+                    'Protein':mSingleMealProtein,
+                    'Carb':mSingleMealCarb,
+                    'Price': mSingleMealPrice,
                 }
             }
             
@@ -734,6 +755,7 @@ if(m_curr_choose_plan === 'Customized'){
         'Meals Per Day':m_curr_meals_per_day,
         'm_closest_date':m_closest_date,
         'meal_data':meal_data_obj, 
+        'meal_data_new':mMealActiveIDs, 
         'mPriceTotal':mPriceTotal,
         'mFatTotal':mFatTotal,
         'mProteinTotal':mProteinTotal,
@@ -777,19 +799,18 @@ if(m_curr_choose_plan === 'Customized'){
                             title: "Good Job!",
                             text: 'Sit back and let us take care of the rest. We will be getting in touch with you very soon.',   
                             type: "success",   
-                            // showCancelButton: true,   
                             confirmButtonColor: "#DD6B55",   
                             confirmButtonText: "Ok",   
-                            // cancelButtonText: "Cancel",   
-                            closeOnConfirm: true,   
-                            closeOnCancel: true, 
-                        },
-                        function(isConfirm){   
-                            window.location = "http://athleat.ae";
+                                                      
+                        }),
+                        function(){   
+                                                console.log('----')
+                                                window.location.replace("http://athleat.ae");            
+                                       
                                 
                         }
 
-                    )
+                    
       
     }
 
