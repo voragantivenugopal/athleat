@@ -804,7 +804,7 @@ if(m_curr_choose_plan === 'Customized'){
                                                       
                         }).then(function(){   
                                                 console.log('----')
-                                                window.location.replace("http://athleat.ae");            
+                                                window.location = "/menu";            
                                        
                                 
                         })
@@ -824,7 +824,7 @@ if(m_curr_choose_plan === 'Customized'){
                                                       
                         }).then(function(){   
                                                 console.log('----')
-                                                window.location.replace("http://athleat.ae");            
+                                                window.location = "/menu";            
                                        
                                 
                         })
