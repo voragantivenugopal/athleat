@@ -1,3 +1,6 @@
+
+
+
 (function( $ ) {
 
 var mealidsw1d1obj = {};
@@ -232,9 +235,10 @@ $(document).on('click','#mDislikesNext',function(e){
 });
 $(document).on('click','#mChooseMealPlanNext',function(e){
     getCookieInfo();
-
+    console.log('mMealActiveIDs----',mMealActiveIDs)
     // console.log('meal_data_obj',meal_data_obj.week1.day1[111])
 
+    // Condition for selecting all meals in a selected week or not
     if(m_curr_meals_per_day == 2 && 
         (mMealActiveIDs[111].dayId == 0 || mMealActiveIDs[112].dayId == 0 ||
          mMealActiveIDs[121].dayId == 0 || mMealActiveIDs[122].dayId == 0 ||
@@ -255,10 +259,7 @@ $(document).on('click','#mChooseMealPlanNext',function(e){
          mMealActiveIDs[141].dayId == 0 || mMealActiveIDs[142].dayId == 0 || mMealActiveIDs[143].dayId == 0 ||
          mMealActiveIDs[151].dayId == 0 || mMealActiveIDs[152].dayId == 0 || mMealActiveIDs[153].dayId == 0 )){
 
-        swal({
-                text  : 'Please Select All Meals',
-                type : 'warning'
-            })      
+         swal('Please select all meals')        
     } 
  
     else if(m_curr_meals_per_day == 4 &&  
@@ -268,12 +269,8 @@ $(document).on('click','#mChooseMealPlanNext',function(e){
          mMealActiveIDs[141].dayId == 0 || mMealActiveIDs[142].dayId == 0 || mMealActiveIDs[143].dayId == 0 || mMealActiveIDs[144].dayId == 0 ||
          mMealActiveIDs[151].dayId == 0 || mMealActiveIDs[152].dayId == 0 || mMealActiveIDs[153].dayId == 0 || mMealActiveIDs[154].dayId == 0)){
 
-        swal({
-                text  : 'Please Select All Meals',
-                type : 'warning'
-            })      
+         swal('Please select all meals')        
     }
-    
    
     
     else{
@@ -318,6 +315,7 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
 
 var mAthleatFinalPrice = '';
 $(document).on('click','.mMealsPerDayBtn',function(e){
+mMealActiveIDs = {};
 mealidsw1d1obj = {};
 mealidsw1d2obj = {};
 mealidsw1d3obj = {};
@@ -332,21 +330,7 @@ var day = '';
 var day_data = {}
 
  console.log('mMealActiveIDs',mMealActiveIDs);
-mMealActiveIDs[111] =mMealActiveIDs[112]=mMealActiveIDs[113]=mMealActiveIDs[114]=
-mMealActiveIDs[121]=mMealActiveIDs[122]=mMealActiveIDs[123]=mMealActiveIDs[124]=
-mMealActiveIDs[131]=mMealActiveIDs[132]=mMealActiveIDs[133]=mMealActiveIDs[134]=
-mMealActiveIDs[141]=mMealActiveIDs[142]=mMealActiveIDs[143]=mMealActiveIDs[144]=
-mMealActiveIDs[151]=mMealActiveIDs[152]=mMealActiveIDs[153]=mMealActiveIDs[154]=
-  {'dayId':0,
-    'Price': 0,
-    'MealId':0,
-    'Fat': 0,
-    'Protein':0,
-    'Carb':0}
-
-// mMealActiveIDs.remove();
-//console.log('mMealActiveIDs',mMealActiveIDs);
-            
+  
     // mMealActiveIDsArry = [];
     $('.mMealsPerDayBtn').removeClass('btn-success');
     $('#mChooseMealPlanData').html('');
@@ -420,6 +404,50 @@ mMealActiveIDs[151]=mMealActiveIDs[152]=mMealActiveIDs[153]=mMealActiveIDs[154]=
             $('#tab5').removeClass('active');
         mCreateChooseMealPlan();
     }
+ console.log('m_curr_meals_per_day',m_curr_meals_per_day)
+
+         if(m_curr_meals_per_day == '2'){
+
+                mMealActiveIDs[111]=mMealActiveIDs[112]=
+                mMealActiveIDs[121]=mMealActiveIDs[122]=
+                mMealActiveIDs[131]=mMealActiveIDs[132]=
+                mMealActiveIDs[141]=mMealActiveIDs[142]=
+                mMealActiveIDs[151]=mMealActiveIDs[152]=
+                  {'dayId':0,
+                    'Price': 0,
+                    'MealId':0,
+                    'Fat': 0,
+                    'Protein':0,
+                    'Carb':0}
+        }
+        else if(m_curr_meals_per_day === '3'){
+            mMealActiveIDs[111]=mMealActiveIDs[112]=mMealActiveIDs[113]=
+            mMealActiveIDs[121]=mMealActiveIDs[122]=mMealActiveIDs[123]=
+            mMealActiveIDs[131]=mMealActiveIDs[132]=mMealActiveIDs[133]=
+            mMealActiveIDs[141]=mMealActiveIDs[142]=mMealActiveIDs[143]=
+            mMealActiveIDs[151]=mMealActiveIDs[152]=mMealActiveIDs[153]=
+  {'dayId':0,
+    'Price': 0,
+    'MealId':0,
+    'Fat': 0,
+    'Protein':0,
+    'Carb':0}
+
+        }
+        else if(m_curr_meals_per_day === '4'){
+                mMealActiveIDs[111]=mMealActiveIDs[112]=mMealActiveIDs[113]=mMealActiveIDs[114]=
+                mMealActiveIDs[121]=mMealActiveIDs[122]=mMealActiveIDs[123]=mMealActiveIDs[124]=
+                mMealActiveIDs[131]=mMealActiveIDs[132]=mMealActiveIDs[133]=mMealActiveIDs[134]=
+                mMealActiveIDs[141]=mMealActiveIDs[142]=mMealActiveIDs[143]=mMealActiveIDs[144]=
+                mMealActiveIDs[151]=mMealActiveIDs[152]=mMealActiveIDs[153]=mMealActiveIDs[154]=
+  {'dayId':0,
+    'Price': 0,
+    'MealId':0,
+    'Fat': 0,
+    'Protein':0,
+    'Carb':0}
+        }
+
     var date = moment().endOf('week');
     var m_meals_closest_date = moment(date).format('DD-MM-YYYY');
     $('#mMealsNearestSaturdayDate').text(m_meals_closest_date);
@@ -520,6 +548,17 @@ function dynamicVariablesDay(week,day){
 
 
 $(document).on('click','#modal-add-meal-btn',function(e){
+    mMealActiveIDs[111]=mMealActiveIDs[112]=mMealActiveIDs[113]=mMealActiveIDs[114]=
+                mMealActiveIDs[121]=mMealActiveIDs[122]=mMealActiveIDs[123]=mMealActiveIDs[124]=
+                mMealActiveIDs[131]=mMealActiveIDs[132]=mMealActiveIDs[133]=mMealActiveIDs[134]=
+                mMealActiveIDs[141]=mMealActiveIDs[142]=mMealActiveIDs[143]=mMealActiveIDs[144]=
+                mMealActiveIDs[151]=mMealActiveIDs[152]=mMealActiveIDs[153]=mMealActiveIDs[154]=
+  {'dayId':0,
+    'Price': 0,
+    'MealId':0,
+    'Fat': 0,
+    'Protein':0,
+    'Carb':0}
 
             getCookieInfo();
         console.log('mMealActiveIDs',mMealActiveIDs);
@@ -576,7 +615,7 @@ $(document).on('click','#modal-add-meal-btn',function(e){
             var mProteinTotal =0;
             var mCarbTotal =0;
             Cookies.set('msummeryobj', msummeryobj);
-            
+            console.log('msummeryobj', msummeryobj)
             Object.keys(msummeryobj).forEach(function(key) {
                 mPriceTotal+= msummeryobj[key].Price;
                 mFatTotal= parseFloat(mFatTotal) + parseFloat(msummeryobj[key].Fat);
@@ -777,14 +816,11 @@ if(m_curr_choose_plan === 'Customized'){
                             title: "Good Job!",
                             text: 'Sit back and let us take care of the rest. We will be getting in touch with you very soon.',   
                             type: "success",   
-                            // showCancelButton: true,   
-                            confirmButtonColor: "#DD6B55",   
                             confirmButtonText: "Ok",   
-                            // cancelButtonText: "Cancel",   
-                            closeOnConfirm: true,   
                             closeOnCancel: true, 
                         },
                         function(isConfirm){   
+                            console.log('oookkk')
                             window.location = "http://athleat.ae";
                                 
                         }
