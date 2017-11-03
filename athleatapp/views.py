@@ -266,32 +266,81 @@ def getValues(request):
 			fat = str(body['mPriceTotal'])
 
 
+		for i in body['meal_data']['week1']:
+			mm = []
+			# for j in map(int, (body['meal_data']['week1'][i].keys())):
+			if str(i) == 'day1':
+				for k in body['meal_data']['week1'][i].keys():
+					meal_line = body['meal_data']['week1'][i][k]
+					mm.append([(0,False,{'meal_no':(int(k) % 10),'item_id': meal_line['Meal ID'],'carb': meal_line['Carb'] ,'fat': meal_line['Fat'] ,'price': meal_line['Price'] ,'protein': meal_line['Protein'] })])
+
+					plan_recs.append([(0,False,{
+						'plan_meal_items':mm,
+						'day': 1,
+					
+					})])
+
+			if str(i) == 'day2':
+				for k in body['meal_data']['week1'][i].keys():
+					meal_line = body['meal_data']['week1'][i][k]
+					mm.append([(0,False,{'meal_no':(int(k) % 10),'item_id': meal_line['Meal ID'],'carb': meal_line['Carb'] ,'fat': meal_line['Fat'] ,'price': meal_line['Price'] ,'protein': meal_line['Protein'] })])
+
+					plan_recs.append([(0,False,{
+						'plan_meal_items':mm,
+						'day': 2,
+					
+					})])
+
+			if str(i) == 'day3':
+				for k in body['meal_data']['week1'][i].keys():
+					meal_line = body['meal_data']['week1'][i][k]
+					mm.append([(0,False,{'meal_no':(int(k) % 10),'item_id': meal_line['Meal ID'],'carb': meal_line['Carb'] ,'fat': meal_line['Fat'] ,'price': meal_line['Price'] ,'protein': meal_line['Protein'] })])
+
+					plan_recs.append([(0,False,{
+						'plan_meal_items':mm,
+						'day': 3,
+					
+					})])
+
+			# if str(i) == 'day4':
+			# 	for k in body['meal_data']['week1'][i].keys():
+			# 		meal_line = body['meal_data']['week1'][i][k]
+			# 		mm=mm+[(0,0,{'cust':customer_id,'meal_no':(int(k) % 10),'item_id': meal_line['Meal ID'],'carb': meal_line['Carb'] ,'fat': meal_line['Fat'] ,'price': meal_line['Price'] ,'protein': meal_line['Protein'] })]
+					
+
+			# if str(i) == 'day5':
+			# 	for k in body['meal_data']['week1'][i].keys():
+			# 		meal_line = body['meal_data']['week1'][i][k]
+			# 		mm=mm+[(0,0,{'cust':customer_id,'meal_no':(int(k) % 10),'item_id': meal_line['Meal ID'],'carb': meal_line['Carb'] ,'fat': meal_line['Fat'] ,'price': meal_line['Price'] ,'protein': meal_line['Protein'] })]
+					
+		print plan_recs
+		
 		if plan == 'Customized':
 			for i in weeks:
 				for day in days:
 					if body['meal_data'][i][day] != {}:
+						# day_meals = body['meal_data'][i][day]
 						day_meals = body['meal_data'][i][day]
 						for x in range(len( day_meals.values())):
 							item_id += [int(day_meals.values()[range(len( day_meals.values())).index(x)].values()[0])]
 		
-			
 			for li in xrange(0, len(item_id), meals_count):
 				xyz =  xyz+[item_id[li:li + meals_count]] 
 
 			# print item_id
-			for day in days:
-				if xyz[days.index(day)]:
-					mm=[]
-					for each in xyz[days.index(day)]:
-						meal_info = sock.execute(DB_NAME, uid, PASSWORD,'recipies.meal', 'search_read', [('id', '=', each)],[])#reading out item grammage
-						mm=mm+[(0,0,{'meal_no':(xyz[days.index(day)].index(each))+1,'item_id':each,'carb':meal_info[0]['carb'] ,'fat':meal_info[0]['fat'] ,'price':meal_info[0]['price'] ,'protein':meal_info[0]['protein'] })]
-						print mm
-					plan_recs1 += [(0,0,{
-						'cust':customer_id,
-						'plan_meal_items':mm,
-						'day':(days.index(day))+1,
+			# for day in days:
+			# 	if xyz[days.index(day)]:
+			# 		mm=[]
+			# 		for each in xyz[days.index(day)]:
+			# 			meal_info = sock.execute(DB_NAME, uid, PASSWORD,'recipies.meal', 'search_read', [('id', '=', each)],[])#reading out item grammage
+			# 			# mm=mm+[(0,0,{'meal_no':(xyz[days.index(day)].index(each))+1,'item_id':each,'carb':meal_info[0]['carb'] ,'fat':meal_info[0]['fat'] ,'price':meal_info[0]['price'] ,'protein':meal_info[0]['protein'] })]
+			# 			mm=mm+[(0,0,{'meal_no':(xyz[days.index(day)].index(each))+1,'item_id':each,'carb':meal_info[0]['carb'] ,'fat':meal_info[0]['fat'] ,'price':meal_info[0]['price'] ,'protein':meal_info[0]['protein'] })]
+			# 		plan_recs += [(0,0,{
+			# 			'cust':customer_id,
+			# 			'plan_meal_items':mm,
+			# 			'day':(days.index(day))+1,
 					
-					})]
+			# 		})]
 			plan_vals.update({'customer': customer_id,
 						'days_per_week': 5,
 						'no_of_weeks': int(body['Weeks']),
