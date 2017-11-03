@@ -729,8 +729,8 @@ $(document).on('click','#mSubmitBtn',function(){
                       contentType: 'application/json',
                       data: JSON.stringify(obj),
                       type: 'POST',
-                      success: postSuccess
-                      // error : postFailure
+                      success: postSuccess,
+                      error : postFailure
                 });
             }
         // function postFailure(){
@@ -802,16 +802,33 @@ if(m_curr_choose_plan === 'Customized'){
                             confirmButtonColor: "#DD6B55",   
                             confirmButtonText: "Ok",   
                                                       
-                        }),
-                        function(){   
+                        }).then(function(){   
                                                 console.log('----')
                                                 window.location.replace("http://athleat.ae");            
                                        
                                 
-                        }
+                        })
 
                     
       
+    }
+    function postFailure(data,textStatus,jqXHR){
+        // alert('Sit back and let us take care of the rest. We will be getting in touch with you very soon.');
+         swal(
+                        {   
+                            // title: "Good Job!",
+                            text: 'Please Try Again',   
+                            type: "error",   
+                            confirmButtonColor: "#DD6B55",   
+                            confirmButtonText: "Ok",   
+                                                      
+                        }).then(function(){   
+                                                console.log('----')
+                                                window.location.replace("http://athleat.ae");            
+                                       
+                                
+                        })
+
     }
 
     // function postcustomaizedFailure(data,textStatus,jqXHR)
