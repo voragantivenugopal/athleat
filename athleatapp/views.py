@@ -247,7 +247,8 @@ def getValues(request):
 			else:
 				pass
 
-		weeks = ['week1','week2','week3','week4','week5','week6','week7','week8','week9','week10','week11','week12']
+		# weeks = ['week1','week2','week3','week4','week5','week6','week7','week8','week9','week10','week11','week12']
+		weeks = ['week1']
 		days = ['day1','day2','day3','day4','day5']
 		meals_count = int(body['Meals Per Day'])
 		item_id = []
