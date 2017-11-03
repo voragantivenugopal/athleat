@@ -331,7 +331,7 @@ var week = '';
 var day = '';
 var day_data = {}
 
- console.log('mMealActiveIDs',mMealActiveIDs);
+ // console.log('mMealActiveIDs',mMealActiveIDs);
 mMealActiveIDs[111] =mMealActiveIDs[112]=mMealActiveIDs[113]=mMealActiveIDs[114]=
 mMealActiveIDs[121]=mMealActiveIDs[122]=mMealActiveIDs[123]=mMealActiveIDs[124]=
 mMealActiveIDs[131]=mMealActiveIDs[132]=mMealActiveIDs[133]=mMealActiveIDs[134]=
@@ -522,20 +522,23 @@ function dynamicVariablesDay(week,day){
 $(document).on('click','#modal-add-meal-btn',function(e){
 
             getCookieInfo();
-        console.log('mMealActiveIDs',mMealActiveIDs);
+        // console.log('mMealActiveIDs',mMealActiveIDs);
 
-        var meal_item = $('.modal-body .tab-pane.active .nav-tabs .active a').text();
+        // var meal_item = $('.modal-body .tab-pane.active .nav-tabs .active a').text();
         var meal_item_id = $('.modal-body .tab-pane.active .nav-tabs .active a').attr('id');
         var homeID = $( "#home" ).hasClass( "active" );
         var ProfileID = $( "#profile" ).hasClass( "active" );
         if (homeID){
         var myour_own_meal_grms = $('.modal-body .tab-pane.active .tab-content .tab-pane.active #dataGrams1').text();
+        var meal_item = $('.modal-body #home.tab-pane.active .modal-left .nav-tabs .active a').text();
 
-            console.log('home')
+            // console.log('home')
         }
         else if ( ProfileID){
         var myour_own_meal_grms = $('.modal-body .tab-pane.active .tab-content .tab-pane.active .dataGrams').val();
-            console.log('profile')
+        var meal_item = $('.modal-body #profile.tab-pane.active .nav-tabs .active a').text();
+
+            // console.log('profile')
 
         }
             $('.btnCustomizerMeal[data-week="'+data_week+'"][data-day="'+data_day+'"][data-meal="'+data_meal+'"] .btnCustomizerMealDesc').css('color','#4B5EEB').html('<strong>'+meal_item+'</strong>');
