@@ -285,7 +285,8 @@ def getValues(request):
 					for each in xyz[days.index(day)]:
 						meal_info = sock.execute(DB_NAME, uid, PASSWORD,'recipies.meal', 'search_read', [('id', '=', each)],[])#reading out item grammage
 						mm=mm+[(0,0,{'meal_no':(xyz[days.index(day)].index(each))+1,'item_id':each,'carb':meal_info[0]['carb'] ,'fat':meal_info[0]['fat'] ,'price':meal_info[0]['price'] ,'protein':meal_info[0]['protein'] })]
-					plan_recs += [(0,0,{
+						print mm
+					plan_recs1 += [(0,0,{
 						'cust':customer_id,
 						'plan_meal_items':mm,
 						'day':(days.index(day))+1,
