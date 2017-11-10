@@ -38,6 +38,7 @@ function getCookieInfo(){
     m_curr_choose_plan = Cookies.get('m_curr_choose_plan');
     // m_curr_gender = Cookies.get('m_curr_gender');
     m_curr_how_many_weeks = Cookies.get('m_curr_how_many_weeks');
+    m_curr_how_many_days = Cookies.get('m_curr_how_many_days');
     m_curr_meals_per_day = Cookies.get('m_curr_meals_per_day');
     m_meals_closest_date = Cookies.get('m_meals_closest_date');
     m_selected_dislikes_value = Cookies.get('m_selected_dislikes_value');
@@ -296,23 +297,29 @@ $(document).on('click','.mHowManyWeeksBtn',function(e){
     getCookieInfo();
     $('.mHowManyWeeksBtn').removeClass('btn-success');
     var m_curr_how_many_weeks = $(this).attr('data-mHowManyWeeks');    
+    var m_curr_how_many_days = 0;    
     Cookies.set('m_curr_how_many_weeks', m_curr_how_many_weeks);    
     if(m_curr_how_many_weeks === '4'){
-        $('#mWeeksTitle').text('4 Weeks');
+        $('#mWeeksTitle').text('20 Days');
+        m_curr_how_many_days = 20;
         $(this).addClass('btn-success');
     }
     else if(m_curr_how_many_weeks === '8'){
-        $('#mWeeksTitle').text('8 Weeks');
+        $('#mWeeksTitle').text('40 Days');
+        m_curr_how_many_days = 40;
+
         $(this).addClass('btn-success');
     }
     else if(m_curr_how_many_weeks === '12'){
-        $('#mWeeksTitle').text('12 Weeks');
+        $('#mWeeksTitle').text('60 Days');
+        m_curr_how_many_days = 60;
         $(this).addClass('btn-success');
     }
     else{
         $('#mWeeksTitle').text('How Many Weeks');   
     }
     $('.bootstrapWizard  li:lt(4)').css({"pointer-events": "all", "cursor": "pointer"});
+    Cookies.set('m_curr_how_many_days', m_curr_how_many_days);    
 
 });
 
@@ -704,6 +711,7 @@ $(document).on('click','#mSubmitBtn',function(){
             var obj = {'Meal Plan':m_curr_choose_plan,
             // 'Gender':m_curr_gender,
             'Weeks':m_curr_how_many_weeks,
+            'Days':m_curr_how_many_days,
             'Meals Per Day':m_curr_meals_per_day,
             'm_meals_closest_date':m_meals_closest_date,
             'mAthleatFinalPrice':mAthleatFinalPrice,
