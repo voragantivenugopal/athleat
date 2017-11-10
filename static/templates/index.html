@@ -218,12 +218,12 @@ window.wc_ga_pro.is_valid_email = function( email ) {
 								<li id="menu-item-502" class="NavLinks menu-item menu-item-type-post_type menu-item-object-page menu-item-502"><a href="../blog/index.html">Blog</a></li> -->
 								{% if request.session.user_id %}<li id="menu-item-456" class="btnNavStartPlan menu-item menu-item-type-custom menu-item-object-custom button_solid_color menu-item-456"><a href="/meal-builder">Start plan</a></li>
 								{% endif %}
-								<!-- <li class="NavLogin"><a rel="nofollow" href="/login">Log in</a></li> -->
-                                {% if not request.session.user_id %}<li class="NavLogin"><a rel="nofollow" href="/user-register">Sign up</a></li>
+                                {% if not request.session.user_id %}
+								<li class="NavLogin"><a rel="nofollow" href="/login">Log in</a></li>
+                                <li class="NavLogin"><a rel="nofollow" href="/user-register">Sign up</a></li>
 								{% else %}
-
+								<li class="NavLogin"><a rel="nofollow" href="/dashboard">Dashboard</a></li>
 								<li class="NavLogin"><a rel="nofollow" href="/logout">Logout</a></li>
-
 								{% endif %}						
 							</ul>
 

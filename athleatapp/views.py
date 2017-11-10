@@ -51,7 +51,7 @@ def doLogin(request):
 			request.session['cid'] = user_data['partner_id'][0]
 			customer_data = sock.execute(
 				DB_NAME, UID, PASSWORD, 'res.partner', 'read', user_data['partner_id'][0], [])
-			# return HttpResponseRedirect('/dashboard')
+			return HttpResponseRedirect('/dashboard')
 			return render(request, 'dashboard.html', {'user_data': customer_data})
 		else:
 			return render(request, 'login.html', {'error': 'Username or Password is wrong !'})

@@ -1,0 +1,53 @@
+<!doctype html>
+{% extends 'customer-index.html' %}
+{% load static %}
+{% block child %}
+{%for data in custom_meal_data%}
+											<div id="fws_5955f562f0d58" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row  vc_row-o-equal-height vc_row-flex standard_section   cMenuCardWrap " style="padding-top: 0px; width:500px; margin: auto 30px; padding-bottom: 20px; ">
+												<div class="row-bg-wrap"> <div class="row-bg " style=""></div> </div>
+												<!-- <div class="col span_12  left"> --><!--vc_col-sm-6 vc_col-lg-6-->
+												<div class="row">
+													<div class="vc_col-md-6 cMenuCard wpb_column column_container vc_column_container col no-extra-padding instance-7 no-left-margin" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
+														<div class="vc_column-inner">
+															<div class="wpb_wrapper">
+
+																<div class="img-with-aniamtion-wrap " data-max-width="100%"><div class="inner"> 
+																	{% if data.image %}
+																	<img src="data:image/png;base64, {{data.image}}" data-shadow="none" data-shadow-direction="middle" class="img-with-animation imgMenuCard animated-in" data-delay="0" height="200" width="200" data-animation="fade-in" sizes="100vw" alt="" style="opacity: 1;">
+																	{% else %}
+																	<img src='{% static "/wp-content/uploads/2017/06/No_Image_Available.png" %}' data-shadow="none" data-shadow-direction="middle" class="img-with-animation imgMenuCard animated-in" data-delay="0" height="300" width="350" data-animation="fade-in" sizes="100vw" alt="" style="opacity: 1;"> 
+																	{% endif %}
+																</div></div>
+																<div class="wpb_text_column wpb_content_element  txtMenuTitle black txtMenuCard">
+																	<div class="wpb_wrapper">
+																		<p>{{data.name}} 
+																			{% if data.meal_preference == 'veg' %}
+																			<a class="dietsymbol vegetarian" data-tooltip="Vegetarian"><img class="alignnone size-20 wp-image-473" src="https://fooderyfit.com/wp-content/uploads/2017/06/Symbol-Vegetarian.svg" width="20px" height="20px"></a> 
+																			{% endif %}
+																		</p>
+
+																	</div>
+																</div>
+
+																<div class="wpb_text_column wpb_content_element  txtMenuCategory txtVegs txtMenuCard">
+																	<div class="wpb_wrapper">
+																		<p>{{data.meal_preference}}</p>
+
+																	</div>
+																</div>
+
+																<div class="wpb_text_column wpb_content_element  txtMenuMacros black60 txtMenuCard">
+																	<div class="wpb_wrapper">
+																		<p class="p1"><span class="s1">Fat {{data.fat}}g, Carbs {{data.carb}}g, Protein {{data.protein}}g</span></p>
+
+																	</div>
+																</div>
+
+															</div>
+														</div>
+													</div> <!--vc_col-sm-6 vc_col-lg-6-->
+														{% endfor %}
+													</div>
+
+												</div><!--row span12-->
+{% endblock child%}
